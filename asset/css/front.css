@@ -1,0 +1,32 @@
+.toptext {
+    text-align: justify;
+}
+
+.sidetext {
+    text-align: justify;
+    padding: 5px 0;
+    margin: 10px 0;
+}
+
+.bottomtext {
+    text-align: justify;
+}
+
+.googlemap {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.department-list {
+    padding: 5px 0;
+    margin: 5px 0;
+}
+
+.contact-form {
+    padding: 5px 0;
+    margin: 5px 0;
+}
+
+.submit-button {
+    margin-top: 10px;
+}

@@ -1,0 +1,21 @@
+[comment]Contact us mail HTML template[/comment]
+
+[format]html[/format]
+
+[subject]%subject%[/subject]
+
+[body]
+<div style="margin-bottom: 5px"><strong>Subject : </strong>%subject%</div>
+<div style="margin: 5px">%message%</div>
+<div style="margin-top: 10px">
+   <p>Department : %department_title%</p>
+   <p>Email : %email%</p>
+   <p>Name : %name%</p>
+   <p>Organization : %organization%</p>
+   <p>Homepage : %homepage%</p>
+   <p>Location : %location%</p>
+   <p>Phone : %phone%</p>
+   <p>Create : %create%</p>
+   <p>Address : %address%</p>
+</div>
+[/body]

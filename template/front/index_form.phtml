@@ -1,0 +1,31 @@
+<?php $this->css($this->assetModule('css/front.css')); ?>
+<div class="contact">
+    <h3><?php echo $this->escape($title); ?></h3>
+    <?php if (!empty($homeConfig['toptext'])) { ?>
+    <div class="toptext">
+        <?php echo $homeConfig['toptext']; ?>
+    </div>
+    <?php } ?>
+    <div class="row-fluid">
+     <?php if (!empty($homeConfig['sidetext'])) {
+		     $class = 'span6';
+		  } else {
+		     $class = 'span12';
+		  } ?>
+        <div class="<?php echo $class ?>">
+            <?php include $this->templateComponent('form'); ?>
+        </div>
+        <?php if (!empty($homeConfig['sidetext'])) { ?>
+        <div class="span6">
+            <div class="sidetext">
+                <?php echo $homeConfig['sidetext']; ?>
+            </div>
+        </div>
+        <?php } ?>
+    </div>
+    <?php if (!empty($homeConfig['bottomtext'])) { ?>
+    <div class="bottomtext">
+        <?php echo $homeConfig['bottomtext']; ?>
+    </div>
+    <?php } ?>
+</div>

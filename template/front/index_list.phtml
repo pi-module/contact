@@ -1,0 +1,43 @@
+<?php $this->css($this->assetModule('css/front.css')); ?>
+<div class="contact">
+    <h3><?php echo $this->escape($title); ?></h3>
+    <?php if (!empty($message)) { ?>
+    <div class="page-message">
+        <div class="alert"><?php echo $message; ?></div>
+    </div>
+    <?php } ?>
+
+    <?php if (!empty($homeConfig['toptext'])) { ?>
+    <div class="toptext">
+        <?php echo $homeConfig['toptext']; ?>
+    </div>
+    <?php } ?>
+    <div class="row-fluid">
+     <?php if (!empty($homeConfig['sidetext'])) {
+		     $class = 'span6';
+		  } else {
+		     $class = 'span12';
+		  } ?>
+        <div class="<?php echo $class ?>">
+            <div id="department-list">
+                <ul>
+                    <?php foreach ($lists as $list) { ?>
+                    <li><a title="<?php echo $this->escape($list['title']); ?>" href="<?php echo $this->escape($list['url']);  ?>"><?php echo $this->escape($list['title']); ?></a></li>
+                    <?php } ?>
+                </ul>
+            </div>
+        </div>
+        <?php if (!empty($homeConfig['sidetext'])) { ?>
+        <div class="span6">
+            <div class="sidetext">
+                <?php echo $homeConfig['sidetext']; ?>
+            </div>
+        </div>
+        <?php } ?>
+    </div>
+    <?php if (!empty($homeConfig['bottomtext'])) { ?>
+    <div class="bottomtext">
+        <?php echo $homeConfig['bottomtext']; ?>
+    </div>
+    <?php } ?>
+</div>

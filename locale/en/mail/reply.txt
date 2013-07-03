@@ -1,0 +1,13 @@
+[comment]Contact us reply HTML template[/comment]
+
+[format]html[/format]
+
+[subject]%subject%[/subject]
+
+[body]
+<div style="margin: 5px">%message%</div>
+<div style="margin-top: 10px">
+   <p>Department : %department_title%</p>
+   <p>Create : %create%</p>
+</div>
+[/body]
