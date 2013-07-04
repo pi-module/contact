@@ -62,7 +62,7 @@ class DepartmentController extends ActionController
                     }
                 }
                 // Set alias
-                $values['alias'] = $this->alias($values['title'], $values['id'], $this->getModel('department'));
+                $values['alias'] = Pi::service('api')->contact(array('Text', 'alias'), $values['title'], $values['id'], $this->getModel('department'));
                 // Save values
                 if (!empty($values['id'])) {
                     $row = $this->getModel('department')->find($values['id']);
