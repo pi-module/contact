@@ -24,8 +24,15 @@ use Zend\InputFilter\InputFilter;
 
 class DepartmentFilter extends InputFilter
 {
-    public function __construct()
+    public function __construct($options = array())
     {
+        	
+		$params = array(
+            'table' => 'department',
+        );
+        if (isset($options['id']) and $options['id']) {
+            $params['id'] = $options['id'];
+        }
         // id
         $this->add(array(
             'name' => 'id',
@@ -43,6 +50,22 @@ class DepartmentFilter extends InputFilter
             'filters' => array(
                 array(
                     'name' => 'StringTrim',
+                ),
+            ),
+        ));
+		// slug
+        $this->add(array(
+            'name' => 'slug',
+            'required' => false,
+            'filters' => array(
+                array(
+                    'name' => 'StringTrim',
+                ),
+            ),
+            'validators' => array(
+                array(
+                    'name' => 'Module\Contact\Validator\Slug',
+                    'options' => $params,
                 ),
             ),
         ));

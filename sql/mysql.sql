@@ -27,10 +27,10 @@ CREATE TABLE `{message}` (
 CREATE TABLE `{department}` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
-  `alias` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
   `email` varchar(64) NOT NULL,
   `status` tinyint(1) unsigned NOT NULL default '1',
   PRIMARY KEY (`id`),
-  UNIQUE KEY `alias` (`alias`),
+  UNIQUE KEY `slug` (`slug`),
   KEY `status` (`status`)
 );

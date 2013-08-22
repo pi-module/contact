@@ -50,7 +50,7 @@ class Install extends BasicInstall
         $model = Pi::model($module = $e->getParam('module') . '/department');
         $data = array(
             'title' => __('Default'),
-            'alias' => __('default'),
+            'slug' => __('default'),
             'email' => $config['adminmail'],
             'status' => 1,
         );

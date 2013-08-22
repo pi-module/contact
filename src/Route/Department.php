@@ -28,7 +28,7 @@ use Zend\Stdlib\RequestInterface as Request;
 /**
  * Route for contents
  *
- *  1. Alias: /url/contact/department/my-alias
+ *  1. slug: /url/contact/department/my-slug
  */
 class Department extends Standard
 {

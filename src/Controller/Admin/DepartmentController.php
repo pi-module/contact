@@ -27,7 +27,7 @@ use Module\Contact\Form\DepartmentFilter;
 class DepartmentController extends ActionController
 {
     protected $departmentColumns = array(
-        'id', 'title', 'alias', 'email', 'status'
+        'id', 'title', 'slug', 'email', 'status'
     );
 
     public function indexAction()
@@ -52,7 +52,26 @@ class DepartmentController extends ActionController
         $form = new DepartmentForm('department');
         if ($this->request->isPost()) {
             $data = $this->request->getPost();
-            $form->setInputFilter(new DepartmentFilter);
+			
+			/*
+			 *  Start Check slug
+			 */
+			// Set option
+			$options = array();
+			if(isset($data['id']) && !empty($data['id'])) {
+				$options['id'] = $data['id'];
+			}
+			// Set slug
+            $slug = ($data['slug']) ? $data['slug'] : $data['title'];
+			$slug = _strip($slug);
+			$slug = strtolower(trim($slug));
+			$slug = array_filter(explode(' ', $slug));
+			$data['slug'] = implode('-', $slug);
+			/*
+			 *  End Check slug
+			 */	
+			
+            $form->setInputFilter(new DepartmentFilter($options));
             $form->setData($data);
             if ($form->isValid()) {
                 $values = $form->getData();
@@ -61,8 +80,6 @@ class DepartmentController extends ActionController
                         unset($values[$key]);
                     }
                 }
-                // Set alias
-                $values['alias'] = Pi::service('api')->contact(array('Text', 'alias'), $values['title'], $values['id'], $this->getModel('department'));
                 // Save values
                 if (!empty($values['id'])) {
                     $row = $this->getModel('department')->find($values['id']);

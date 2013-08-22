@@ -52,6 +52,16 @@ class DepartmentForm extends BaseForm
                 'label' => __('Title'),
             )
         ));
+		// slug
+        $this->add(array(
+            'name' => 'slug',
+            'options' => array(
+                'label' => __('Slug'),
+            ),
+            'attributes' => array(
+                'type' => 'text',
+            )
+        ));
         // Email
         $this->add(array(
             'name' => 'email',

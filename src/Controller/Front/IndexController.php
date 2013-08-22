@@ -176,12 +176,14 @@ class IndexController extends ActionController
         $homeConfig = Pi::service('registry')->config->read($this->params('module'), 'home');
         // Set form department
         if ($this->params('department')) {
-            $row = $this->getModel('department')->find($this->params('department'), 'alias');
+            $row = $this->getModel('department')->find($this->params('department'), 'slug');
             if (!$row instanceof RowGateway || !$row->status) {
                 $data['department'] = $this->config('default_department');
+				$title = __('Contact Us');
             } else {
                 $row = $row->toArray();
                 $data['department'] = $row['id'];
+				$title = $row['title'];
             }
         } else {
             $data['department'] = $this->config('default_department');
@@ -190,9 +192,21 @@ class IndexController extends ActionController
         $form = new ContactForm('contact', $this->params('module'));
         $form->setAttribute('action', $this->url('.department', array('action' => 'save')));
         $form->setData($data);
+        // Set keywords
+        $keywords = _strip($title);
+        $keywords = strtolower(trim($keywords));
+        $keywords = array_unique(array_filter(explode(' ', $keywords)));
+        $keywords = implode(',', $keywords);
+        // Set Description
+        $description = _strip($title);
+		$description = strtolower(trim($description));
+        $description = preg_replace('/[\s]+/', ' ', $description);
         // Set view
+        $this->view()->headTitle($title);
+        $this->view()->headDescription($description, 'append');
+        $this->view()->headKeywords($keywords, 'append');
         $this->view()->setTemplate('index_form');
-        $this->view()->assign('title', __('Contact Us'));
+        $this->view()->assign('title', $title);
         $this->view()->assign('form', $form);
         $this->view()->assign('homeConfig', $homeConfig);
     }
@@ -207,9 +221,21 @@ class IndexController extends ActionController
         // Make list
         foreach ($rowset as $row) {
             $list[$row->id] = $row->toArray();
-            $list[$row->id]['url'] = $this->url('.department', array('module' => $this->params('module'), 'department' => $list[$row->id]['alias']));
+            $list[$row->id]['url'] = $this->url('.department', array('module' => $this->params('module'), 'department' => $list[$row->id]['slug']));
         }
+        // Set keywords
+        $keywords = _strip(__('Select Department Form contact us'));
+        $keywords = strtolower(trim($keywords));
+        $keywords = array_unique(array_filter(explode(' ', $keywords)));
+        $keywords = implode(',', $keywords);
+        // Set Description
+        $description = _strip(__('Select Department Form contact us'));
+		$description = strtolower(trim($description));
+        $description = preg_replace('/[\s]+/', ' ', $description);
         // Set view
+        $this->view()->headTitle(__('Contact Us'));
+        $this->view()->headDescription($description, 'append');
+        $this->view()->headKeywords($keywords, 'append');
         $this->view()->setTemplate('index_list');
         $this->view()->assign('title', __('Contact Us'));
         $this->view()->assign('message', __('Select Department Form contact us'));
