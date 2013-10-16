@@ -1,0 +1,58 @@
+<div id="social-items">
+<?php if (!empty($socialConfig['social_twitter'])) { ?>
+    <?php if(!empty($socialConfig['social_twitter_icon'])) {
+        $icon = sprintf('<img src="%s" alt="%s" />', $socialConfig['social_twitter_icon'], __('Twitter'));
+    } else {
+        $icon = '<i class="icon-twitter-sign"></i>';
+    } ?>
+    <span id="social-twitter"><a rel="nofollow" title="<?php _e('Twitter') ?>" href="<?php echo $socialConfig['social_twitter']; ?>"><?php echo $icon; ?></a></span>
+<?php } ?>
+<?php if (!empty($socialConfig['social_facebook'])) { ?>
+    <?php if(!empty($socialConfig['social_facebook_icon'])) {
+        $icon = sprintf('<img src="%s" alt="%s" />', $socialConfig['social_facebook_icon'], __('Facebook'));
+    } else {
+        $icon = '<i class="icon-facebook-sign"></i>';
+    } ?>
+    <span id="social-facebook"><a rel="nofollow" title="<?php _e('Facebook') ?>" href="<?php echo $socialConfig['social_facebook']; ?>"><?php echo $icon; ?></a></span>
+<?php } ?>
+<?php if (!empty($socialConfig['social_google'])) { ?>
+    <?php if(!empty($socialConfig['social_google_icon'])) {
+        $icon = sprintf('<img src="%s" alt="%s" />', $socialConfig['social_google_icon'], __('Google'));
+    } else {
+        $icon = '<i class="icon-google-plus-sign"></i>';
+    } ?>
+    <span id="social-google"><a rel="nofollow" title="<?php _e('Google') ?>" href="<?php echo $socialConfig['social_google']; ?>"><?php echo $icon; ?></a></span>
+<?php } ?>
+<?php if (!empty($socialConfig['social_youtube'])) { ?>
+    <?php if(!empty($socialConfig['social_youtube_icon'])) {
+        $icon = sprintf('<img src="%s" alt="%s" />', $socialConfig['social_youtube_icon'], __('YouTube'));
+    } else {
+        $icon = '<i class="icon-youtube-sign"></i>';
+    } ?>
+    <span id="social-youtube"><a rel="nofollow" title="<?php _e('YouTube') ?>" href="<?php echo $socialConfig['social_youtube']; ?>"><?php echo $icon; ?></a></span>
+<?php } ?>
+<?php if (!empty($socialConfig['social_pinterest'])) { ?>
+    <?php if(!empty($socialConfig['social_pinterest_icon'])) {
+        $icon = sprintf('<img src="%s" alt="%s" />', $socialConfig['social_pinterest_icon'], __('Pinterest'));
+    } else {
+        $icon = '<i class="icon-pinterest-sign"></i>';
+    } ?>
+    <span id="social-pinterest"><a rel="nofollow" title="<?php _e('Pinterest') ?>" href="<?php echo $socialConfig['social_pinterest']; ?>"><?php echo $icon; ?></a></span>
+<?php } ?>
+<?php if (!empty($socialConfig['social_linkedin'])) { ?>
+    <?php if(!empty($socialConfig['social_linkedin_icon'])) {
+        $icon = sprintf('<img src="%s" alt="%s" />', $socialConfig['social_linkedin_icon'], __('LinkedIn'));
+    } else {
+        $icon = '<i class="icon-linkedin-sign"></i>';
+    } ?>
+    <span id="social-linkedin"><a rel="nofollow" title="<?php _e('LinkedIn') ?>" href="<?php echo $socialConfig['social_linkedin']; ?>"><?php echo $icon; ?></a></span>
+<?php } ?>
+<?php if (!empty($socialConfig['social_github'])) { ?>
+    <?php if(!empty($socialConfig['social_github_icon'])) {
+        $icon = sprintf('<img src="%s" alt="%s" />', $socialConfig['social_github_icon'], __('Github'));
+    } else {
+        $icon = '<i class="icon-github-alt"></i>';
+    } ?>
+    <span id="social-github"><a rel="nofollow" title="<?php _e('Github') ?>" href="<?php echo $socialConfig['social_github']; ?>"><?php echo $icon; ?></a></span>
+<?php } ?>
+</div>

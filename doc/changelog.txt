@@ -1,0 +1,5 @@
+Contact module changelog
+
+Cersion 1.0.0
+=============================
+1. Update version to 1.0.0

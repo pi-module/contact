@@ -1,20 +1,15 @@
-.toptext {
+.top-text {
     text-align: justify;
 }
 
-.sidetext {
+.side-text {
     text-align: justify;
     padding: 5px 0;
     margin: 10px 0;
 }
 
-.bottomtext {
+.bottom-text {
     text-align: justify;
-}
-
-.googlemap {
-    margin: 0 auto;
-    text-align: center;
 }
 
 .department-list {
@@ -29,4 +24,17 @@
 
 .submit-button {
     margin-top: 10px;
+}
+
+#social-items {
+    font-size: 2.5em;
+    text-align: center;
+}
+
+#social-items a:hover {
+    text-decoration: none;
+}
+
+#social-items #social-twitter a {
+    color: 
 }

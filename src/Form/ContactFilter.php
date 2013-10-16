@@ -81,35 +81,35 @@ class ContactFilter extends InputFilter
         if ($config['show_organization']) {
             $this->add(array(
                 'name' => 'organization',
-                'required' => false,
+                'required' => $config['required_organization'] ? true : false,
             ));
         }
         // Homepage
         if ($config['show_homepage']) {
             $this->add(array(
                 'name' => 'homepage',
-                'required' => false,
+                'required' => $config['required_homepage'] ? true : false,
             ));
         }
         // Location
         if ($config['show_location']) {
             $this->add(array(
                 'name' => 'location',
-                'required' => false,
+                'required' => $config['required_location'] ? true : false,
             ));
         }
         // Phone
         if ($config['show_phone']) {
             $this->add(array(
                 'name' => 'phone',
-                'required' => false,
+                'required' => $config['required_phone'] ? true : false,
             ));
         }
         // Address
         if ($config['show_address']) {
             $this->add(array(
                 'name' => 'address',
-                'required' => false,
+                'required' => $config['required_address'] ? true : false,
             ));
         }
         // Message

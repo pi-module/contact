@@ -86,11 +86,13 @@ class IndexController extends ActionController
     {
         // Get Module Config
         $homeConfig = Pi::service('registry')->config->read($this->params('module'), 'home');
+        $socialConfig = Pi::service('registry')->config->read($this->params('module'), 'social');
         // Set view
         $this->view()->setTemplate('index_finish');
         $this->view()->assign('title', __('Contact Us'));
         $this->view()->assign('message', __('Contact Us'));
         $this->view()->assign('homeConfig', $homeConfig);
+        $this->view()->assign('socialConfig', $socialConfig);
     }
     
     public function ajaxAction() {
@@ -105,31 +107,31 @@ class IndexController extends ActionController
             $form->setInputFilter(new ContactFilter($this->params('module')));
             $form->setData($data);
             if ($form->isValid()) {
-			            // Set values
-			            $values = $form->getData();
-			            foreach (array_keys($values) as $key) {
-			                if (!in_array($key, $this->messageColumns)) {
-			                    unset($values[$key]);
-			                }
-			            }
-			            $values['ip'] = getenv('REMOTE_ADDR');
-			            $values['create'] = time();
-			            // Save
-			            $row = $this->getModel('message')->createRow();
-			            $row->assign($values);
-			            $row->save();
-			            // Set department
-			            $department = $this->getModel('department')->find($values['department'])->toArray();
-			            $values['department_title'] = $department['title'];
-			            $values['department_email'] = $department['email'];
-			            // Send as mail
-			            $this->sendMail($values);
-			            // return
-			            $return['message'] = __('Your Contact send and saved successfully');
-			            $return['submit'] = 1;
+			    // Set values
+			    $values = $form->getData();
+			    foreach (array_keys($values) as $key) {
+			        if (!in_array($key, $this->messageColumns)) {
+			            unset($values[$key]);
+			        }
+			    }
+			    $values['ip'] = getenv('REMOTE_ADDR');
+			    $values['create'] = time();
+			    // Save
+			    $row = $this->getModel('message')->createRow();
+			    $row->assign($values);
+			    $row->save();
+			    // Set department
+			    $department = $this->getModel('department')->find($values['department'])->toArray();
+			    $values['department_title'] = $department['title'];
+			    $values['department_email'] = $department['email'];
+			    // Send as mail
+			    $this->sendMail($values);
+			    // return
+			    $return['message'] = __('Your Contact send and saved successfully');
+			    $return['submit'] = 1;
             } else {
-			            $return['message'] = __('Send information not valid');
-			            $return['submit'] = 0;
+			    $return['message'] = __('Send information not valid');
+			    $return['submit'] = 0;
             }	
         } else {
             $return['message'] = __('Nothing send');
@@ -146,26 +148,20 @@ class IndexController extends ActionController
             Pi::config('adminmail', 'mail') => Pi::config('adminname', 'mail'),
             $values['department_email'] => $values['department_title'],
         );
-        
         // Set template info
         $values['create'] = _date($values['create']);
-        
         // Set template
         $data = Pi::service('mail')->template('contact', $values);
-        
         // Set subject and body
         $subject = $data['subject'];
         $body = $data['body'];
         $type = $data['format'];
-        
         // Set message
         $message = Pi::service('mail')->message($subject, $body, $type);
         $message->addTo($to);
         $message->setEncoding("UTF-8");
-        
         // Send mail
         $result = Pi::service('mail')->send($message);
-        
         // Return
         return $result;
     }
@@ -174,6 +170,7 @@ class IndexController extends ActionController
     {
         // Get Module Config
         $homeConfig = Pi::service('registry')->config->read($this->params('module'), 'home');
+        $socialConfig = Pi::service('registry')->config->read($this->params('module'), 'social');
         // Set form department
         if ($this->params('department')) {
             $row = $this->getModel('department')->find($this->params('department'), 'slug');
@@ -209,12 +206,14 @@ class IndexController extends ActionController
         $this->view()->assign('title', $title);
         $this->view()->assign('form', $form);
         $this->view()->assign('homeConfig', $homeConfig);
+        $this->view()->assign('socialConfig', $socialConfig);
     }
 
     protected function renderList()
     {
         // Get Module Config
         $homeConfig = Pi::service('registry')->config->read($this->params('module'), 'home');
+        $socialConfig = Pi::service('registry')->config->read($this->params('module'), 'social');
         // get department list
         $select = $this->getModel('department')->select()->where(array('status' => 1))->order(array('id DESC'));
         $rowset = $this->getModel('department')->selectWith($select);
@@ -241,5 +240,6 @@ class IndexController extends ActionController
         $this->view()->assign('message', __('Select Department Form contact us'));
         $this->view()->assign('lists', $list);
         $this->view()->assign('homeConfig', $homeConfig);
+        $this->view()->assign('socialConfig', $socialConfig);
     }
 }
