@@ -1,22 +1,15 @@
 <?php
 /**
- * Contact admin department controller
+ * Pi Engine (http://pialog.org)
  *
- * You may not change or alter any portion of this comment or credits
- * of supporting developers from this source code or any supporting source code
- * which is considered copyrighted (c) material of the original comment or credit authors.
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- *
- * @copyright       Copyright (c) Pi Engine http://www.xoopsengine.org
- * @license         http://www.xoopsengine.org/license New BSD License
- * @author          Hossein Azizabadi <azizabadi@faragostaresh.com>
- * @since           3.0
- * @package         Module\Contact
- * @version         $Id$
+ * @link            http://code.pialog.org for the Pi Engine source repository
+ * @copyright       Copyright (c) Pi Engine http://pialog.org
+ * @license         http://pialog.org/license.txt New BSD License
  */
 
+/**
+ * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
+ */
 namespace Module\Contact\Controller\Admin;
 
 use Pi;
@@ -52,26 +45,11 @@ class DepartmentController extends ActionController
         $form = new DepartmentForm('department');
         if ($this->request->isPost()) {
             $data = $this->request->getPost();
-			
-			/*
-			 *  Start Check slug
-			 */
-			// Set option
-			$options = array();
-			if(isset($data['id']) && !empty($data['id'])) {
-				$options['id'] = $data['id'];
-			}
-			// Set slug
+            // Set slug
             $slug = ($data['slug']) ? $data['slug'] : $data['title'];
-			$slug = _strip($slug);
-			$slug = strtolower(trim($slug));
-			$slug = array_filter(explode(' ', $slug));
-			$data['slug'] = implode('-', $slug);
-			/*
-			 *  End Check slug
-			 */	
-			
-            $form->setInputFilter(new DepartmentFilter($options));
+            $data['slug'] = Pi::api('text', 'news')->slug($slug);
+            // Form filter
+            $form->setInputFilter(new DepartmentFilter);
             $form->setData($data);
             if ($form->isValid()) {
                 $values = $form->getData();
@@ -92,32 +70,21 @@ class DepartmentController extends ActionController
                 if ($row->id) {
                     $message = __('Department data saved successfully.');
                     $this->jump(array('action' => 'index'), $message);
-                } else {
-                    $message = __('Department data not saved.');
                 }
-            } else {
-                $message = __('Invalid data, please check and re-submit.');
             }
         } else {
             if ($id) {
                 $values = $this->getModel('department')->find($id)->toArray();
                 $form->setData($values);
-                $message = __('You can edit this departments');
-            } else {
-                $message = __('You can add new this departments');
             }
         }
         $this->view()->setTemplate('department_update');
         $this->view()->assign('form', $form);
         $this->view()->assign('title', __('Add a Department'));
-        $this->view()->assign('message', $message);
     }
 
     public function deleteAction()
     {
-        /*
-           * not completed and need confirm option
-           */
         // Get information
         $this->view()->setTemplate(false);
         $id = $this->params('id');

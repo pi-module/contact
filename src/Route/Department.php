@@ -1,80 +1,54 @@
 <?php
 /**
- * Content route implementation
+ * Pi Engine (http://pialog.org)
  *
- * You may not change or alter any portion of this comment or credits
- * of supporting developers from this source code or any supporting source code
- * which is considered copyrighted (c) material of the original comment or credit authors.
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- *
- * @copyright       Copyright (c) Pi Engine http://www.xoopsengine.org
- * @license         http://www.xoopsengine.org/license New BSD License
- * @author          Taiwen Jiang <taiwenjiang@tsinghua.org.cn>
- * @author          Hossein Azizabadi <azizabadi@faragostaresh.com>
- * @since           3.0
- * @package         Module\Contact
- * @subpackage      Route
- * @version         $Id$
+ * @link            http://code.pialog.org for the Pi Engine source repository
+ * @copyright       Copyright (c) Pi Engine http://pialog.org
+ * @license         http://pialog.org/license.txt New BSD License
  */
 
+/**
+ * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
+ */
 namespace Module\Contact\Route;
 
 use Pi\Mvc\Router\Http\Standard;
-use Zend\Mvc\Router\Http\RouteMatch;
-use Zend\Stdlib\RequestInterface as Request;
 
-/**
- * Route for contents
- *
- *  1. slug: /url/contact/department/my-slug
- */
 class Department extends Standard
 {
+    /**
+     * Default values.
+     * @var array
+     */
+    protected $defaults = array(
+        'module'        => 'contact',
+        'controller'    => 'index',
+        'action'        => 'index'
+    );
 
     protected $prefix = '/contact';
 
     /**
-     * Default values.
-     *
-     * @var array
+     * {@inheritDoc}
      */
-    protected $defaults = array(
-        'module' => 'contact',
-        'controller' => 'index',
-        'action' => 'index'
-    );
+    protected $structureDelimiter = '/';
 
     /**
-     * match(): defined by Route interface.
-     *
-     * @see    Route::match()
-     * @param  Request $request
-     * @return RouteMatch
+     * {@inheritDoc}
      */
-    public function match(Request $request, $pathOffset = null)
+    protected function parse($path)
     {
-        $result = $this->canonizePath($request, $pathOffset);
-        if (null === $result) {
-            return null;
-        }
+        $matches = array();
+        $parts = array_filter(explode($this->structureDelimiter, $path));
 
-        list($path, $pathLength) = $result;
-        if (empty($path)) {
-            return null;
-        }
-
-        $path = explode($this->paramDelimiter, $path);
-
-        if ($path[0] == 'department') {
-            $matches['department'] = $path[1] ? urldecode($path[1]) : null;
+        // Set controller
+        $matches = array_merge($this->defaults, $matches);
+        if (isset($parts[0]) && $parts[0] == 'department') {
+            $matches['department'] = $this->decode($parts[1]);
         } else {
-            $matches['action'] = $path[0] ? urldecode($path[0]) : 'index';
+            $matches['action'] = isset($parts[0]) ? $this->decode($parts[0]) : 'index';
         }
-
-
-        return new RouteMatch(array_merge($this->defaults, $matches), $pathLength);
+        return $matches;
     }
 
     /**
@@ -83,11 +57,12 @@ class Department extends Standard
      * @see    Route::assemble()
      * @param  array $params
      * @param  array $options
-     * @return mixed
+     * @return string
      */
-    public
-    function assemble(array $params = array(), array $options = array())
-    {
+    public function assemble(
+        array $params = array(),
+        array $options = array()
+    ) {
         $mergedParams = array_merge($this->defaults, $params);
         if (!$mergedParams) {
             return $this->prefix;

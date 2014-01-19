@@ -1,22 +1,15 @@
 <?php
 /**
- * Contact form
+ * Pi Engine (http://pialog.org)
  *
- * You may not change or alter any portion of this comment or credits
- * of supporting developers from this source code or any supporting source code
- * which is considered copyrighted (c) material of the original comment or credit authors.
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- *
- * @copyright       Copyright (c) Pi Engine http://www.xoopsengine.org
- * @license         http://www.xoopsengine.org/license New BSD License
- * @author          Hossein Azizabadi <azizabadi@faragostaresh.com>
- * @since           3.0
- * @package         Module\Contact
- * @version         $Id$
+ * @link            http://code.pialog.org for the Pi Engine source repository
+ * @copyright       Copyright (c) Pi Engine http://pialog.org
+ * @license         http://pialog.org/license.txt New BSD License
  */
 
+/**
+ * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
+ */
 namespace Module\Contact\Form;
 
 use Pi;
@@ -24,18 +17,16 @@ use Pi\Form\Form as BaseForm;
 
 class ContactForm extends BaseForm
 {
-    protected $classname = 'span12';
-
-    public function __construct($name = null, $module)
+    public function __construct($name = null)
     {
-        $this->module = $module;
+        $this->module = Pi::service('module')->current();
         parent::__construct($name);
     }
 
     public function getInputFilter()
     {
         if (!$this->filter) {
-            $this->filter = new ContactFilter($this->module);
+            $this->filter = new ContactFilter();
         }
         return $this->filter;
     }
@@ -44,12 +35,14 @@ class ContactForm extends BaseForm
     {
         // Get configs
         $config = Pi::service('registry')->config->read($this->module, 'form');
+        // Get user
+        $user = Pi::user()->bind();
         // User id
         $this->add(array(
             'name' => 'author',
             'attributes' => array(
                 'type' => 'hidden',
-                'value' => Pi::registry('user')->id,
+                'value' => $user->id,
             ),
         ));
         // Subject
@@ -60,7 +53,6 @@ class ContactForm extends BaseForm
             ),
             'attributes' => array(
                 'type' => 'text',
-                'class' => $this->classname,
             )
         ));
         // department
@@ -72,9 +64,6 @@ class ContactForm extends BaseForm
                     'label' => __('Department'),
                     'module' => $this->module,
                 ),
-                'attributes' => array(
-                    'class' => $this->classname,
-                )
             ));
         } else {
             $this->add(array(
@@ -92,8 +81,7 @@ class ContactForm extends BaseForm
             ),
             'attributes' => array(
                 'type' => 'text',
-                'value' => Pi::registry('user')->email,
-                'class' => $this->classname,
+                'value' => $user->email,
             )
         ));
         // Name
@@ -104,8 +92,7 @@ class ContactForm extends BaseForm
             ),
             'attributes' => array(
                 'type' => 'text',
-                'value' => Pi::registry('user')->identity,
-                'class' => $this->classname,
+                'value' => $user->identity,
             )
         ));
         // Organization
@@ -117,7 +104,6 @@ class ContactForm extends BaseForm
                 ),
                 'attributes' => array(
                     'type' => 'text',
-                    'class' => $this->classname,
                 )
             ));
         }
@@ -130,7 +116,6 @@ class ContactForm extends BaseForm
                 ),
                 'attributes' => array(
                     'type' => 'url',
-                    'class' => $this->classname,
                 )
             ));
         }
@@ -143,7 +128,6 @@ class ContactForm extends BaseForm
                 ),
                 'attributes' => array(
                     'type' => 'text',
-                    'class' => $this->classname,
                 )
             ));
         }
@@ -156,7 +140,6 @@ class ContactForm extends BaseForm
                 ),
                 'attributes' => array(
                     'type' => 'text',
-                    'class' => $this->classname,
                 )
             ));
         }
@@ -171,7 +154,6 @@ class ContactForm extends BaseForm
                     'type' => 'textarea',
                     'rows' => '2',
                     'cols' => '40',
-                    'class' => $this->classname,
                 )
             ));
         }
@@ -185,11 +167,10 @@ class ContactForm extends BaseForm
                 'type' => 'textarea',
                 'rows' => '5',
                 'cols' => '40',
-                'class' => $this->classname,
             )
         ));
         // captcha
-        if ($config['captcha'] && (Pi::registry('user')->id == 0)) {
+        if ($config['captcha'] && ($user->id == 0)) {
             $this->add(array(
                 'name' => 'captcha',
                 'type' => 'captcha',
@@ -203,7 +184,6 @@ class ContactForm extends BaseForm
             'name' => 'security',
             'type' => 'csrf',
         ));
-
         // Save
         $this->add(array(
             'name' => 'submit',

@@ -1,36 +1,37 @@
 <?php $this->css($this->assetModule('css/admin.css')); ?>
 <div class="contact">
 	<?php if($message['mid']) { ?>
-		<div class="main-message"><?php _e('Main Message is'); ?> : <a title="<?php echo $main['subject']; ?>" href="<?php echo $this->url('', array('action' => 'view', 'id' => $main['id'])); ?>"><?php echo $this->escape($main['subject']); ?></a></div>
-   <?php } ?>
+		<div class="main-message well"><?php _e('Main Message is'); ?> : <a title="<?php echo $main['subject']; ?>" href="<?php echo $this->url('', array('action' => 'view', 'id' => $main['id'])); ?>"><?php echo $this->escape($main['subject']); ?></a></div>
+	<?php } ?>
 	
-	<h2><?php _e('Subject'); ?> : <?php echo $this->escape($message['subject']); ?></h2>
-   <div class="main-info">
-	   <span><?php _e('Department'); ?> : <?php echo $this->escape($department['title']); ?></span>
-	   <span><?php _e('Auther'); ?> : <?php echo $this->escape($message['name']); ?> ( <?php echo $this->escape($message['author']); ?> )</span>
-	   <span><?php _e('Email'); ?> : <?php echo $this->escape($message['email']); ?></span>
-	   <span><?php _e('Create'); ?> : <?php echo $this->escape($message['create']); ?></span>
-   </div>
-   <div class="message"><?php echo $message['message']; ?></div>
-   <div class="sub-info">
-	   <?php if($message['organization']) { ?><span><?php _e('Organization'); ?> : <?php echo $this->escape($message['organization']); ?></span><?php } ?>
-	   <?php if($message['homepage']) { ?><span><?php _e('Homepage'); ?> : <?php echo $this->escape($message['homepage']); ?></span><?php } ?>
-	   <?php if($message['location']) { ?><span><?php _e('Location'); ?> : <?php echo $this->escape($message['location']); ?></span><?php } ?>
-	   <?php if($message['phone']) { ?><span><?php _e('Phone'); ?> : <?php echo $this->escape($message['phone']); ?></span><?php } ?>
-	   <?php if($message['ip']) { ?><span><?php _e('Ip'); ?> : <?php echo $this->escape($message['ip']); ?></span><?php } ?>
-	   <?php if($message['address']) { ?><span><?php _e('Address'); ?> : <?php echo $this->escape($message['address']); ?></span><?php } ?>
-   </div>
-   <div class="btn-group">
-	   <a class="btn" title="<?php _e('Back'); ?>" href="<?php echo $this->url('', array('action' => 'index')); ?>"><i class="icon-arrow-left"></i> <?php _e('Back'); ?></a>
-      <a class="btn" title="<?php _e('Reply'); ?>" href="<?php echo $this->url('', array('action' => 'reply', 'id' => $message['id'])); ?>"><i class="icon-edit"></i> <?php _e('Reply'); ?></a>
-		<a class="btn" title="<?php _e('Delete'); ?>" href="<?php echo $this->url('', array('action' => 'delete', 'id' => $message['id'])); ?>"><i class="icon-trash"></i> <?php _e('Delete'); ?></a>
-   </div>
-
-   <?php if($message['answered']) { ?>
+	<div class="main-info well">
+		<p><?php _e('Department'); ?> : <?php echo $this->escape($department['title']); ?></p>
+		<p><?php _e('Auther'); ?> : <?php echo $this->escape($message['name']); ?> ( <?php echo $this->escape($message['user']['identity']); ?> <?php echo $this->escape($message['user']['name']); ?> )</p>
+		<p><?php _e('Email'); ?> : <?php echo $this->escape($message['email']); ?></p>
+		<p><?php _e('Create'); ?> : <?php echo $this->escape($message['time_create']); ?></p>
+    </div>
+    <div class="message well">
+    	<h3><?php _e('Subject'); ?> : <?php echo $this->escape($message['subject']); ?></h3>
+    	<p><?php echo $message['message']; ?></p>
+    </div>
+    <div class="sub-info well">
+        <?php if($message['organization']) { ?><p><?php _e('Organization'); ?> : <?php echo $this->escape($message['organization']); ?></p><?php } ?>
+        <?php if($message['homepage']) { ?><p><?php _e('Homepage'); ?> : <?php echo $this->escape($message['homepage']); ?></p><?php } ?>
+        <?php if($message['location']) { ?><p><?php _e('Location'); ?> : <?php echo $this->escape($message['location']); ?></p><?php } ?>
+        <?php if($message['phone']) { ?><p><?php _e('Phone'); ?> : <?php echo $this->escape($message['phone']); ?></p><?php } ?>
+        <?php if($message['ip']) { ?><p><?php _e('Ip'); ?> : <?php echo $this->escape($message['ip']); ?></p><?php } ?>
+        <?php if($message['address']) { ?><p><?php _e('Address'); ?> : <?php echo $this->escape($message['address']); ?></p><?php } ?>
+    </div>
+    <p>
+        <a class="btn btn-primary" title="<?php _e('Back'); ?>" href="<?php echo $this->url('', array('action' => 'index')); ?>"><i class="fa fa-arrow-left"></i> <?php _e('Back'); ?></a>
+        <a class="btn btn-primary" title="<?php _e('Reply'); ?>" href="<?php echo $this->url('', array('action' => 'reply', 'id' => $message['id'])); ?>"><i class="fa fa-reply"></i> <?php _e('Reply'); ?></a>
+        <a class="btn btn-danger" title="<?php _e('Delete'); ?>" href="<?php echo $this->url('', array('action' => 'delete', 'id' => $message['id'])); ?>"><i class="fa fa-trash-o"></i> <?php _e('Delete'); ?></a>
+    </p>
+    <?php if($message['answered']) { ?>
 	<div>
 		<ul>
 		<?php foreach($answers as $answer) { ?>
-			<li><a title="<?php echo $this->escape($answer['subject']); ?>" href="<?php echo $this->url('', array('action' => 'view', 'id' => $answer['id'])); ?>"><?php echo $this->escape($answer['subject']); ?></a></li>
+		    <li><a title="<?php echo $this->escape($answer['subject']); ?>" href="<?php echo $this->url('', array('action' => 'view', 'id' => $answer['id'])); ?>"><?php echo $this->escape($answer['subject']); ?></a></li>
 		<?php } ?>
 		</ul>
 	</div>

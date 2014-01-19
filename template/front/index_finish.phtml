@@ -1,51 +1,39 @@
 <?php $this->css($this->assetModule('css/front.css')); ?>
 <div class="contact">
-    <h3><?php echo $this->escape($title); ?></h3>
-    <?php if (!empty($homeConfig['toptext'])) { ?>
+    <?php if (!empty($config['toptext'])) { ?>
     <div class="top-text">
-        <?php echo $homeConfig['toptext']; ?>
+        <?php echo $config['toptext']; ?>
     </div>
     <?php } ?>
-
-    <div class="row-fluid">
-        <?php if (
-            !empty($homeConfig['sidetext']) ||
-            !empty($socialConfig['social_twitter']) ||
-            !empty($socialConfig['social_facebook']) ||
-            !empty($socialConfig['social_google']) ||
-            !empty($socialConfig['social_youtube']) ||
-            !empty($socialConfig['social_pinterest']) ||
-            !empty($socialConfig['social_linkedin']) ||
-            !empty($socialConfig['social_github'])
-        ) {
-            $class = 'span6';
+    <div class="row">
+        <?php if (!empty($config['sidetext'])) {
+            $class = 'col-md-6';
             $side = true;
         } else {
-            $class = 'span12';
+            $class = 'col-md-12';
             $side = false;
         } ?>
         <div class="<?php echo $class ?>">
-        <?php if (!empty($homeConfig['finishtext'])) { ?>
+        <?php if (!empty($config['finishtext'])) { ?>
             <div class="side-text">
-            <?php echo $homeConfig['finishtext']; ?>
+            <?php echo $config['finishtext']; ?>
             </div>
         <?php } ?>
         </div>
         <?php if ($side) { ?>
-        <div class="span6">
+        <div class="col-md-6">
             <div class="side-text">
-            <?php echo $homeConfig['sidetext']; ?>
-            </div>
-            <div class="side-social">
-            <?php include $this->template('front/social'); ?>
+            <?php echo $config['sidetext']; ?>
             </div>
         </div>
         <?php } ?>
     </div>
-
-    <?php if (!empty($homeConfig['bottomtext'])) { ?>
+    <div class="side-social">
+        <?php include $this->template('front/social'); ?>
+    </div>
+    <?php if (!empty($config['bottomtext'])) { ?>
     <div class="bottom-text">
-        <?php echo $homeConfig['bottomtext']; ?>
+        <?php echo $config['bottomtext']; ?>
     </div>
     <?php } ?>
 </div>

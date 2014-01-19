@@ -1,26 +1,20 @@
 <?php
 /**
- * Contact admin message controller
+ * Pi Engine (http://pialog.org)
  *
- * You may not change or alter any portion of this comment or credits
- * of supporting developers from this source code or any supporting source code
- * which is considered copyrighted (c) material of the original comment or credit authors.
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- *
- * @copyright       Copyright (c) Pi Engine http://www.xoopsengine.org
- * @license         http://www.xoopsengine.org/license New BSD License
- * @author          Hossein Azizabadi <azizabadi@faragostaresh.com>
- * @since           3.0
- * @package         Module\Contact
- * @version         $Id$
+ * @link            http://code.pialog.org for the Pi Engine source repository
+ * @copyright       Copyright (c) Pi Engine http://pialog.org
+ * @license         http://pialog.org/license.txt New BSD License
  */
 
+/**
+ * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
+ */
 namespace Module\Contact\Controller\Admin;
 
 use Pi;
 use Pi\Mvc\Controller\ActionController;
+use Pi\Paginator\Paginator;
 use Module\Contact\Form\ReplyForm;
 use Module\Contact\Form\ReplyFilter;
 
@@ -28,17 +22,17 @@ class MessageController extends ActionController
 {
     protected $messageColumns = array(
         'id', 'subject', 'department', 'email', 'name', 'organization', 'homepage', 'location',
-        'phone', 'ip', 'address', 'message', 'mid', 'answered', 'author', 'create', 'platform'
+        'phone', 'ip', 'address', 'message', 'mid', 'answered', 'uid', 'time_create', 'platform'
     );
 
     public function indexAction()
     {
         // Get page
-        $page = $this->params('p', 1);
+        $page = $this->params('page', 1);
         // Set info
         $where = array('mid' => 0);
-        $columns = array('id', 'subject', 'department', 'name', 'author', 'create', 'answered');
-        $order = array('id DESC', 'create DESC');
+        $columns = array('id', 'subject', 'department', 'name', 'uid', 'time_create', 'answered');
+        $order = array('id DESC', 'time_create DESC');
         $offset = (int)($page - 1) * $this->config('admin_perpage');
         $limit = intval($this->config('admin_perpage'));
         //  Get department
@@ -61,28 +55,29 @@ class MessageController extends ActionController
         foreach ($rowset as $row) {
             $message[$row->id] = $row->toArray();
             $message[$row->id]['departmenttitle'] = $departmentList[$row->department]['title'];
-            $message[$row->id]['create'] = _date($message[$row->id]['create']);
+            $message[$row->id]['time_create'] = _date($message[$row->id]['time_create']);
+            // Get user info
+            $user = Pi::user()->bind($row->uid);
+            $message[$row->id]['user']['identity'] = $user->identity;
+            $message[$row->id]['user']['name'] = $user->name;
+            $message[$row->id]['user']['email'] = $user->email;
         }
         // Set paginator
-        $select = $this->getModel('message')->select()->where($where)->columns(array('count' => new \Zend\Db\Sql\Predicate\Expression('count(*)')));
+        $count = array('count' => new \Zend\Db\Sql\Predicate\Expression('count(*)'));
+        $select = $this->getModel('message')->select()->columns($count)->where($where);
         $count = $this->getModel('message')->selectWith($select)->current()->count;
-        $paginator = \Pi\Paginator\Paginator::factory(intval($count));
+        $paginator = Paginator::factory(intval($count));
         $paginator->setItemCountPerPage($this->config('admin_perpage'));
         $paginator->setCurrentPageNumber($page);
         $paginator->setUrlOptions(array(
-            // Use router to build URL for each page
-            'pageParam' => 'p',
-            'totalParam' => 't',
-            'router' => $this->getEvent()->getRouter(),
-            'route' => $this->getEvent()->getRouteMatch()->getMatchedRouteName(),
-            'params' => array(
-                'module' => $this->getModule(),
-                'controller' => 'message',
-                'action' => 'index',
-            ),
-            // Or use a URL template to create URLs
-            //'template'      => '/url/p/%page%/t/%total%',
-
+            'router'    => $this->getEvent()->getRouter(),
+            'route'     => $this->getEvent()->getRouteMatch()->getMatchedRouteName(),
+            'params'    => array_filter(array(
+                'module'        => $this->getModule(),
+                'controller'    => 'message',
+                'action'        => 'index',
+                'department'    => $department,
+            )),
         ));
         // Set view
         $this->view()->setTemplate('message_index');
@@ -101,16 +96,28 @@ class MessageController extends ActionController
         if (!$message->id) {
             $this->jump(array('action' => 'index'), __('Please select message'));
         }
+        // to array
+        $message = $message->toArray();
+        // Set user info
+        $user = Pi::user()->bind($message['uid']);
+        $message['user']['identity'] = $user->identity;
+        $message['user']['name'] = $user->name;
+        $message['user']['email'] = $user->email;
+        // Set date
+        $message['time_create'] = _date($message['time_create']);
         // Get department
-        $department = $this->getModel('department')->find($message->department);
+        $department = $this->getModel('department')->find($message['department']);
         // Get Main message if this message is answer
-        if ($message->mid) {
-            $main = $this->getModel('message')->find($message->mid);
+        if ($message['mid']) {
+            $main = $this->getModel('message')->find($message['mid']);
             $this->view()->assign('main', $main);
         }
         // Get all answeres to this message
-        if ($message->answered) {
-            $select = $this->getModel('message')->select()->where(array('mid' => $message->id))->columns(array('id', 'subject', 'create'))->order(array('create DESC', 'id DESC'));
+        if ($message['answered']) {
+            $where = array('mid' => $message['id']);
+            $columns = array('id', 'subject', 'time_create');
+            $order = array('time_create DESC', 'id DESC');
+            $select = $this->getModel('message')->select()->where($where)->columns($columns)->order($order);
             $rowset = $this->getModel('message')->selectWith($select);
             foreach ($rowset as $row) {
                 $answer[$row->id] = $row->toArray();
@@ -145,8 +152,8 @@ class MessageController extends ActionController
                         unset($values[$key]);
                     }
                 }
-                $values['ip'] = getenv('REMOTE_ADDR');
-                $values['create'] = time();
+                $values['ip'] = Pi::user()->getIp();
+                $values['time_create'] = time();
                 $values['department'] = $message->department;
                 // Save date
                 $row = $this->getModel('message')->createRow();
@@ -173,7 +180,7 @@ class MessageController extends ActionController
         } else {
             // Set values
             $values = array(
-                'author' => Pi::registry('user')->id,
+                'author' => Pi::user()->getId(),
                 'mid' => $message->id,
                 'name' => $message->name,
                 'email' => $message->email,
@@ -192,9 +199,6 @@ class MessageController extends ActionController
 
     public function deleteAction()
     {
-        /*
-           * not completed and need confirm option
-           */
         // Get information
         $this->view()->setTemplate(false);
         $id = $this->params('id');
@@ -215,29 +219,17 @@ class MessageController extends ActionController
         $to = array(
             $values['email'] => $values['name'],
         );
-        
         // Set template info
         $values['create'] = _date($values['create']);
-        
         // Set template
         $data = Pi::service('mail')->template('reply', $values);
-        
-        // Set subject and body
-        $subject = $data['subject'];
-        $body = $data['body'];
-        $type = $data['format'];
-        
         // Set message
-        $message = Pi::service('mail')->message($subject, $body, $type);
+        $message = Pi::service('mail')->message($data['subject'], $data['body'], $data['format']);
         $message->addTo($to);
         $message->setEncoding("UTF-8");
-        
         // Send mail
         $result = Pi::service('mail')->send($message);
-        
         // Return
-        return $result;
-        
-        
+        return $result;     
     }
 }
