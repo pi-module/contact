@@ -1,4 +1,24 @@
-<?php $this->css($this->assetModule('css/front.css')); ?>
+<?php 
+$this->css($this->assetModule('css/front.css')); 
+// Load google map
+if ($config['gmap_show']) {
+    $this->footScript()->prependFile('https://maps.googleapis.com/maps/api/js?sensor=false');
+    $this->footScript()->appendScript("
+        var myLatlng = new google.maps.LatLng(" . $config['gmap_longitude'] . ", " . $config['gmap_latitude'] . ");
+        var mapOptions = {
+            zoom: " . $config['gmap_zoon'] . ",
+            center: myLatlng
+        }
+        var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            draggable:true,
+            title: '" . $config['gmap_title'] . "'
+        });
+    ");
+}
+?>
 <div class="contact">
     <h3><?php echo $this->escape($title); ?></h3>
     <?php if (!empty($config['toptext'])) { ?>
@@ -7,21 +27,30 @@
     </div>
     <?php } ?>
     <div class="row">
-        <?php if (!empty($config['sidetext'])) {
-            $class = 'col-md-6';
+        <?php if (!empty($config['sidetext']) || $config['gmap_show']) {
+            $class = 'col-md-8';
             $side = true;
         } else {
             $class = 'col-md-12';
             $side = false;
         } ?>
         <div class="<?php echo $class ?>">
-        <?php include $this->templateComponent('forms'); ?>
+        <?php include $this->templateComponent('form'); ?>
         </div>
         <?php if ($side) { ?>
-        <div class="col-md-6">
+        <div class="col-md-4">
+            <?php if (!empty($config['sidetext'])) { ?>
             <div class="side-text">
             <?php echo $config['sidetext']; ?>
             </div>
+            <?php } ?>
+            <?php if ($config['gmap_show']) { ?>
+            <div class="side-gmap">
+                <div class="thumbnail">
+                    <div id="map_canvas"></div>
+                </div>
+            </div>
+            <?php } ?>
         </div>
         <?php } ?>
     </div>

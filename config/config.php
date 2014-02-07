@@ -25,6 +25,10 @@ return array(
             'name' => 'form'
         ),
         array(
+            'title' => __('Google Map'),
+            'name' => 'gmap'
+        ),
+        array(
             'title' => __('Social Network'),
             'name' => 'social'
         ),
@@ -349,6 +353,63 @@ return array(
             'filter' => 'string',
             'value' => '',
             'category' => 'social',
+        ),
+        'social_rss' => array(
+            'title' => __('Rss link'),
+            'description' => '',
+            'edit' => 'text',
+            'filter' => 'string',
+            'value' => '',
+            'category' => 'social',
+        ),
+        'social_rss_icon' => array(
+            'title' => __('Rss icon'),
+            'description' => __('Set icon url (Uploaded on your host) or leave empty to use default icon'),
+            'edit' => 'text',
+            'filter' => 'string',
+            'value' => '',
+            'category' => 'social',
+        ),
+        // Gmap
+        'gmap_show' => array(
+            'title' => __('Show Google Map'),
+            'description' => '',
+            'value' => 0,
+            'filter' => 'number_int',
+            'edit' => 'checkbox',
+            'category' => 'gmap',
+        ),
+        'gmap_longitude' => array(
+            'title' => __('Longitude'),
+            'description' => '',
+            'edit' => 'text',
+            'filter' => 'string',
+            'value' => '',
+            'category' => 'gmap',
+        ),
+        'gmap_latitude' => array(
+            'title' => __('Latitude'),
+            'description' => '',
+            'edit' => 'text',
+            'filter' => 'string',
+            'value' => '',
+            'category' => 'gmap',
+        ),
+        'gmap_zoon' => array(
+            'title' => __('Zoon'),
+            'description' => '',
+            'edit' => 'text',
+            'filter' => 'string',
+            'value' => '16',
+            'category' => 'gmap',
+        ),
+        'gmap_title' => array(
+            'title' => __('Title'),
+            'description' => '',
+            'edit' => 'text',
+            'filter' => 'string',
+            'value' => '',
+            'category' => 'gmap',
         ),
     ),
 );

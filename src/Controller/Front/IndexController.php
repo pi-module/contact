@@ -70,8 +70,8 @@ class IndexController extends ActionController
 			            unset($values[$key]);
 			        }
 			    }
-			    $values['ip'] = getenv('REMOTE_ADDR');
-			    $values['create'] = time();
+			    $values['ip'] = Pi::user()->getIp();
+			    $values['time_create'] = time();
 			    // Save
 			    $row = $this->getModel('message')->createRow();
 			    $row->assign($values);
@@ -81,7 +81,8 @@ class IndexController extends ActionController
 			    $values['department_title'] = $department['title'];
 			    $values['department_email'] = $department['email'];
 			    // Send as mail
-			    $this->sendMail($values);
+			    $this->sendMailToAdmin($values);
+                $this->sendMailToUser($values);
 			    // return
 			    $return['message'] = __('Your Contact send and saved successfully');
 			    $return['submit'] = 1;
@@ -97,7 +98,7 @@ class IndexController extends ActionController
         return Json::encode($return);
     }	
 
-    protected function sendMail($values)
+    protected function sendMailToAdmin($values)
     {
         // Set to
         $to = array(
@@ -113,9 +114,25 @@ class IndexController extends ActionController
         $message->addTo($to);
         $message->setEncoding("UTF-8");
         // Send mail
-        $result = Pi::service('mail')->send($message);
-        // Return
-        return $result;
+        Pi::service('mail')->send($message);
+    }
+
+    protected function sendMailToUser($values)
+    {
+        // Set to
+        $to = array(
+            $values['email']      => $values['name'],
+        );
+        // Set template info
+        $values['time_create'] = _date($values['time_create']);
+        // Set template
+        $data = Pi::service('mail')->template('user', $values);
+        // Set message
+        $message = Pi::service('mail')->message($data['subject'], $data['body'], $data['format']);
+        $message->addTo($to);
+        $message->setEncoding("UTF-8");
+        // Send mail
+        Pi::service('mail')->send($message);
     }
 
     protected function renderForm($data = null)
@@ -154,7 +171,7 @@ class IndexController extends ActionController
                         unset($values[$key]);
                     }
                 }
-                $values['ip'] = getenv('REMOTE_ADDR');
+                $values['ip'] = Pi::user()->getIp();
                 $values['time_create'] = time();
                 // Save
                 $row = $this->getModel('message')->createRow();
@@ -165,7 +182,8 @@ class IndexController extends ActionController
                 $values['department_title'] = $department['title'];
                 $values['department_email'] = $department['email'];
                 // Send as mail
-                $this->sendMail($values);
+                $this->sendMailToAdmin($values);
+                $this->sendMailToUser($values);
                 // Set jump
                 $url = array('action' => 'finish');
                 $message = __('Your Contact send and saved successfully');

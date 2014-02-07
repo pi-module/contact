@@ -1,5 +1,12 @@
 Contact module changelog
 
+Cersion 1.1.1
+=============================
+1. Fix bugs
+2. Add send message to user
+3. Improve templates
+4. Improve mail templates
+
 Cersion 1.1.0
 =============================
 1. Update module code for new version of PI

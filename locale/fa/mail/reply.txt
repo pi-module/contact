@@ -1,4 +1,4 @@
-[comment]Contact us reply HTML template[/comment]
+[comment]Reply HTML template[/comment]
 
 [format]html[/format]
 
@@ -7,7 +7,7 @@
 [body]
 <div style="margin: 5px">%message%</div>
 <div style="margin-top: 10px">
-   <p>بخش : %department_title%</p>
-   <p>تاریخ : %create%</p>
+    <p>بخش : %department_title%</p>
+    <p>تاریخ : %create%</p>
 </div>
 [/body]

@@ -79,4 +79,16 @@
     } ?>
     <span id="social-github"><a rel="nofollow" title="<?php _e('Github') ?>" href="<?php echo $config['social_github']; ?>"><?php echo $icon; ?></a></span>
 <?php } ?>
+
+
+<?php if (!empty($config['social_rss'])) { ?>
+    <?php if(!empty($config['social_rss_icon'])) {
+        $icon = sprintf('<img src="%s" alt="%s" />', $config['social_rss_icon'], __('Rss'));
+    } else {
+        $icon = '<i class="fa fa-rss"></i>';
+    } ?>
+    <span id="social-rss"><a rel="nofollow" title="<?php _e('Rss') ?>" href="<?php echo $config['social_rss']; ?>"><?php echo $icon; ?></a></span>
+<?php } ?>
+
+
 </div>

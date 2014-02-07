@@ -1,16 +1,16 @@
-[comment]Admin mail HTML template[/comment]
+[comment]User mail HTML template[/comment]
 
 [format]html[/format]
 
 [subject]%subject%[/subject]
 
 [body]
+<p>ما پیام شما را دریافت کرده ایم ، در اولین زمان ممکن پاسخ شما را ارسال می کنیم</p>
 <div style="margin-bottom: 5px"><strong>Subject : </strong>%subject%</div>
 <div style="margin: 5px">%message%</div>
 <div style="margin-top: 10px">
     <p>Department : %department_title%</p>
     <p>Email : %email%</p>
     <p>Name : %name%</p>
-    <p>Please Check full information on website</p>
 </div>
 [/body]

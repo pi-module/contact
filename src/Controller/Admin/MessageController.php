@@ -220,7 +220,7 @@ class MessageController extends ActionController
             $values['email'] => $values['name'],
         );
         // Set template info
-        $values['create'] = _date($values['create']);
+        $values['time_create'] = _date($values['time_create']);
         // Set template
         $data = Pi::service('mail')->template('reply', $values);
         // Set message
