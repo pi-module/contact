@@ -60,6 +60,14 @@ return array(
             'value' => 'from',
             'category' => 'home',
         ),
+        'breadcrumbs' => array(
+            'title' => __('Show breadcrumbs'),
+            'description' => '',
+            'value' => 1,
+            'filter' => 'number_int',
+            'edit' => 'checkbox',
+            'category' => 'home',
+        ),
         'toptext' => array(
             'title' => __('Top text'),
             'description' => '',

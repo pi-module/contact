@@ -1,11 +1,13 @@
 Contact module changelog
 
-Cersion 1.1.1
+Cersion 1.2.0
 =============================
 1. Fix bugs
 2. Add send message to user
-3. Improve templates
-4. Improve mail templates
+3. Add google map
+4. Add breadcrumbs
+5. Improve templates
+6. Improve mail templates
 
 Cersion 1.1.0
 =============================
