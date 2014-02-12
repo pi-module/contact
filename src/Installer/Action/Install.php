@@ -42,7 +42,7 @@ class Install extends BasicInstall
         $config = Pi::service('registry')->config->read('', 'mail');
         $model = Pi::model($module = $e->getParam('module') . '/department');
         $data = array(
-            'title' => __('Default'),
+            'title' => __('Contact'),
             'slug' => __('default'),
             'email' => $config['adminmail'],
             'status' => 1,

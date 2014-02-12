@@ -33,27 +33,6 @@ class IndexController extends ActionController
         $department = $this->params('department');
         // Get config
         $config = Pi::service('registry')->config->read($module);
-        // Check
-        if (!$department && $config['homepage'] == 'list') {
-            return $this->redirect()->toRoute('', array(
-                'action'     => 'list',
-            ));
-        }
-        // Set form department
-        if ($department) {
-            $department = $this->getModel('department')->find($department, 'slug');
-        } else {
-            $department = $this->getModel('department')->find($config['default_department']);
-        }
-        if (!$department instanceof RowGateway || !$department->status) {
-            $url = array('action' => 'list');
-            $message = __('Your selected department not exist');
-            $this->jump($url, $message);
-        } else {
-            $department = $department->toArray();
-            $data['department'] = $department['id'];
-            $title = $department['title'];
-        }
         // Set form
         $form = new ContactForm('contact');
         if ($this->request->isPost()) {
@@ -68,6 +47,10 @@ class IndexController extends ActionController
                         unset($values[$key]);
                     }
                 }
+                // Get department
+                $department = $this->getModel('department')->find($department)->toArray();
+                // Set values
+                $values['department'] = $department['id'];
                 $values['ip'] = Pi::user()->getIp();
                 $values['time_create'] = time();
                 // Save
@@ -86,14 +69,28 @@ class IndexController extends ActionController
                 $this->jump($url, $message);
             }
         } else {
+            // Check
+            if ($config['homepage'] == 'list') {
+                return $this->redirect()->toRoute('', array(
+                    'action'     => 'list',
+                ));
+            }
+            // Get department
+            if (!empty($department)) {
+                $department = $this->getModel('department')->find($department, 'slug')->toArray();
+            } else {
+                $department = $this->getModel('department')->find($config['default_department'])->toArray();
+            }
+            // Set data
+            $data['department'] = $department['id'];
             $form->setData($data);
         }
         // Set keywords
-        $keywords = Pi::api('text', 'contact')->keywords($title);
+        $keywords = Pi::api('text', 'contact')->keywords($department['title']);
         // Set Description
-        $description = Pi::api('text', 'contact')->description($title);
+        $description = Pi::api('text', 'contact')->description($department['title']);
         // Set view
-        $this->view()->headTitle($title);
+        $this->view()->headTitle($department['title']);
         $this->view()->headDescription($description, 'set');
         $this->view()->headKeywords($keywords, 'set');
         $this->view()->setTemplate('index_form');
@@ -231,5 +228,5 @@ class IndexController extends ActionController
         $message->setEncoding("UTF-8");
         // Send mail
         Pi::service('mail')->send($message);
-    }    
+    } 
 }

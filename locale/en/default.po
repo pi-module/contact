@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pi contact module\n"
-"POT-Creation-Date: 2014-02-07 12:05+0330\n"
+"POT-Creation-Date: 2014-02-12 15:04+0330\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Pi\n"
@@ -19,9 +19,18 @@ msgstr ""
 "X-Poedit-SearchPath-2: /var/www/html/local/pi/pi-develop/usr/module/contact/"
 "config\n"
 
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Api/Breadcrumbs.php:59
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/department_index.phtml:6
+msgid "List of departments"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Api/Breadcrumbs.php:63
+msgid "Finish"
+msgstr ""
+
 #: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/DepartmentForm.php:46
 #: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/DepartmentForm.php:50
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:407
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:415
 #: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/department_index.phtml:10
 msgid "Title"
 msgstr ""
@@ -147,7 +156,8 @@ msgid "To Email"
 msgstr ""
 
 #: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Installer/Action/Install.php:45
-msgid "Default"
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/module.php:16
+msgid "Contact"
 msgstr ""
 
 #: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Installer/Action/Install.php:46
@@ -228,37 +238,31 @@ msgstr ""
 msgid "Please select department"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:45
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:47
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:48
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:150
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:158
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:232
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:236
-msgid "Contact Us"
-msgstr ""
-
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:87
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:189
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:68
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:183
 msgid "Your Contact send and saved successfully"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:90
-msgid "Send information not valid"
-msgstr ""
-
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:94
-msgid "Nothing send"
-msgstr ""
-
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:228
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:230
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:237
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:120
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:122
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:129
 msgid "Select Department Form contact us"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/module.php:16
-msgid "Contact"
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:124
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:128
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:141
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:143
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:144
+msgid "Contact Us"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:186
+msgid "Send information not valid"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:190
+msgid "Nothing send"
 msgstr ""
 
 #: /var/www/html/local/pi/pi-develop/usr/module/contact/config/module.php:17
@@ -298,201 +302,201 @@ msgid "List of Departments"
 msgstr ""
 
 #: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:64
+msgid "Show breadcrumbs"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:72
 msgid "Top text"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:71
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:79
 msgid "Bottom text"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:78
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:86
 msgid "Side text"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:85
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:93
 msgid "Finish text"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:93
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:101
 msgid "Default Department"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:101
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:109
 msgid "show Department"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:109
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:117
 msgid "show Organization"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:117
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:125
 msgid "required Organization"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:125
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:133
 msgid "show Homepage"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:133
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:141
 msgid "required Homepage"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:141
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:149
 msgid "show Location"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:149
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:157
 msgid "required Location"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:157
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:165
 msgid "show Phone"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:165
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:173
 msgid "required Phone"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:173
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:181
 msgid "show Address"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:181
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:189
 msgid "required Address"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:189
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:197
 msgid "Use captcha"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:190
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:198
 msgid "Captcha just use for gust"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:198
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:206
 msgid "Twitter account"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:206
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:214
 msgid "Twitter icon"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:207
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:223
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:239
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:255
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:271
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:287
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:303
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:319
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:335
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:351
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:367
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:215
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:231
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:247
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:263
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:279
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:295
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:311
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:327
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:343
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:359
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:375
 msgid "Set icon url (Uploaded on your host) or leave empty to use default icon"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:214
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:222
 msgid "Facebook account"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:222
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:230
 msgid "Facebook icon"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:230
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:238
 msgid "Google plus account"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:238
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:246
 msgid "Google plus icon"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:246
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:254
 msgid "YouTube account"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:254
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:262
 msgid "YouTube icon"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:262
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:270
 msgid "Pinterest account"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:270
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:278
 msgid "Pinterest icon"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:278
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:286
 msgid "LinkedIn account"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:286
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:294
 msgid "LinkedIn icon"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:294
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:302
 msgid "Github account"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:302
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:310
 msgid "Github icon"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:310
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:318
 msgid "Instagram account"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:318
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:326
 msgid "Instagram icon"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:326
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:334
 msgid "Tumblr account"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:334
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:342
 msgid "Tumblr icon"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:342
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:350
 msgid "Trello account"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:350
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:358
 msgid "Trello icon"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:358
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:366
 msgid "Rss link"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:366
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:374
 msgid "Rss icon"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:375
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:383
 msgid "Show Google Map"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:383
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:391
 msgid "Longitude"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:391
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:399
 msgid "Latitude"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:399
+#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:407
 msgid "Zoon"
 msgstr ""
 
 #: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/department_index.phtml:4
 msgid "Add Department"
-msgstr ""
-
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/department_index.phtml:6
-msgid "List of departments"
 msgstr ""
 
 #: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/department_index.phtml:9
