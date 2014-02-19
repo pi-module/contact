@@ -13,7 +13,7 @@
 namespace Module\Contact\Api;
 
 use Pi;
-use Pi\Application\AbstractBreadcrumbs;
+use Pi\Application\Api\AbstractBreadcrumbs;
 
 class Breadcrumbs extends AbstractBreadcrumbs
 {

@@ -13,7 +13,7 @@
 namespace Module\Contact\Api;
 
 use Pi;
-use Pi\Application\AbstractApi;
+use Pi\Application\Api\AbstractApi;
 
 /*
  * Pi::api('text', 'contact')->keywords($keywords);

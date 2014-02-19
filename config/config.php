@@ -98,7 +98,7 @@ return array(
         ),
         // Form
         'default_department' => array(
-            'title' => __('Default Department'),
+            'title' => __('Default department'),
             'description' => '',
             'value' => 1,
             'edit' => 'Module\Contact\Form\Element\Department',

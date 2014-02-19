@@ -12,7 +12,7 @@
  */
 return array(
     // Module meta
-    'meta' => array(
+    'meta'         => array(
         'title'         => __('Contact'),
         'description'   => __('Manage Contacts'),
         'version'       => '1.2.0',
@@ -20,15 +20,15 @@ return array(
         'logo'          => 'image/logo.png',
         'readme'        => 'docs/readme.txt',
         'demo'          => 'http://demo.xoopsengine.org/contact',
-        'icon'          => 'fa fa-envelope',
+        'icon'          => 'fa-envelope',
         'clonable'      => true,
     ),
-    // uid information
-    'uid' => array(
-        'name'    => 'Hossein Azizabadi',
-        'email'   => 'azizabadi@faragostaresh.com',
-        'website' => 'http://www.xoopsengine.org',
-        'credits' => 'Pi Engine Team'
+    // Author information
+    'author'        => array(
+        'Name'          => 'Hossein Azizabadi',
+        'email'         => 'azizabadi@faragostaresh.com',
+        'website'       => 'http://www.xoopsengine.org',
+        'credits'       => 'Pi Engine Team'
     ),
     // resource
     'resource' => array(

@@ -94,7 +94,7 @@ class IndexController extends ActionController
         $this->view()->headDescription($description, 'set');
         $this->view()->headKeywords($keywords, 'set');
         $this->view()->setTemplate('index_form');
-        $this->view()->assign('title', $title);
+        $this->view()->assign('title', $department['title']);
         $this->view()->assign('form', $form);
         $this->view()->assign('config', $config);
     }
