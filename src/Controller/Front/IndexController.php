@@ -33,8 +33,7 @@ class IndexController extends ActionController
         $department = $this->params('department');
         // Get config
         $config = Pi::service('registry')->config->read($module);
-        // Set form
-        $form = new ContactForm('contact');
+        // Get post
         if ($this->request->isPost()) {
             $data = $this->request->getPost();
             $form = new ContactForm('contact');
@@ -48,9 +47,8 @@ class IndexController extends ActionController
                     }
                 }
                 // Get department
-                $department = $this->getModel('department')->find($department)->toArray();
+                $department = $this->getModel('department')->find($values['department'])->toArray();
                 // Set values
-                $values['department'] = $department['id'];
                 $values['ip'] = Pi::user()->getIp();
                 $values['time_create'] = time();
                 // Save
@@ -70,7 +68,7 @@ class IndexController extends ActionController
             }
         } else {
             // Check
-            if ($config['homepage'] == 'list') {
+            if ($config['homepage'] == 'list' && empty($department)) {
                 return $this->redirect()->toRoute('', array(
                     'action'     => 'list',
                 ));
@@ -83,6 +81,8 @@ class IndexController extends ActionController
             }
             // Set data
             $data['department'] = $department['id'];
+            // Set form
+            $form = new ContactForm('contact');
             $form->setData($data);
         }
         // Set keywords

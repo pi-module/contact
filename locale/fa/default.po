@@ -1,621 +1,619 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pi contact module\n"
-"POT-Creation-Date: 2014-02-19 10:44+0330\n"
+"POT-Creation-Date: 2014-03-12 12:02+0330\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Pi\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-Basepath: /var/www/html/local/pi/pi-develop/usr/module/contact/\n"
+"X-Poedit-Basepath: .\n"
 "X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-SearchPath-0: /var/www/html/local/pi/pi-develop/usr/module/contact/"
-"template\n"
-"X-Poedit-SearchPath-1: /var/www/html/local/pi/pi-develop/usr/module/contact/"
-"src\n"
-"X-Poedit-SearchPath-2: /var/www/html/local/pi/pi-develop/usr/module/contact/"
-"config\n"
+"X-Poedit-SearchPath-0: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/"
+"contact\n"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Api/Breadcrumbs.php:59
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/department_index.phtml:6
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Api/Breadcrumbs.php:59
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/department_index.phtml:6
 msgid "List of departments"
 msgstr "فهرست بخش ها"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Api/Breadcrumbs.php:63
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Api/Breadcrumbs.php:63
 msgid "Finish"
 msgstr "پایان"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/DepartmentForm.php:46
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/DepartmentForm.php:50
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:415
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/department_index.phtml:10
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/DepartmentForm.php:46
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/DepartmentForm.php:50
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:415
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/department_index.phtml:10
 msgid "Title"
 msgstr "عنوان"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/DepartmentForm.php:57
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/DepartmentForm.php:57
 msgid "Slug"
 msgstr "اسلاگ"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/DepartmentForm.php:67
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/DepartmentForm.php:71
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/ContactForm.php:80
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/department_index.phtml:11
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/message_view.phtml:10
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/DepartmentForm.php:67
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/DepartmentForm.php:71
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/ContactForm.php:80
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/department_index.phtml:11
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/message_view.phtml:10
 msgid "Email"
 msgstr "ایمیل"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/DepartmentForm.php:79
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/DepartmentForm.php:79
 msgid "Status"
 msgstr "وضعیت"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/DepartmentForm.php:81
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/DepartmentForm.php:81
 msgid "Published"
 msgstr "منتشر شده"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/DepartmentForm.php:82
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/DepartmentForm.php:82
 msgid "Pending review"
 msgstr "در حال بررسی"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/DepartmentForm.php:83
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/DepartmentForm.php:83
 msgid "Draft"
 msgstr "پیش نویس"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/DepartmentForm.php:84
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/DepartmentForm.php:84
 msgid "Private"
 msgstr "خصوصی"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/DepartmentForm.php:85
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/DepartmentForm.php:85
 msgid "Expired"
 msgstr "باطل شده"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/DepartmentForm.php:94
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/PruneForm.php:73
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/ContactForm.php:192
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/ReplyForm.php:96
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/DepartmentForm.php:94
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/PruneForm.php:73
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/ContactForm.php:192
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/ReplyForm.php:96
 msgid "Submit"
 msgstr "ارسال"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/PruneForm.php:34
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/PruneForm.php:39
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/PruneForm.php:34
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/PruneForm.php:39
 msgid "All contacts Before"
 msgstr "همه تماس های قبل از"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/PruneForm.php:47
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/PruneForm.php:51
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/PruneForm.php:47
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/PruneForm.php:51
 msgid "Only remove Admin answers"
 msgstr "فقط حذف پاسخ های مدیر"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/PruneForm.php:59
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/ContactForm.php:64
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/navigation.php:25
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/message_view.phtml:8
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/message_index.phtml:12
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/PruneForm.php:59
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/ContactForm.php:64
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/navigation.php:25
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/message_view.phtml:8
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/message_index.phtml:12
 msgid "Department"
 msgstr "بخش"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/ContactForm.php:52
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/ReplyForm.php:70
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/ReplyForm.php:74
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/message_view.phtml:14
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/message_index.phtml:11
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/ContactForm.php:52
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/ReplyForm.php:70
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/ReplyForm.php:74
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/message_view.phtml:14
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/message_index.phtml:11
 msgid "Subject"
 msgstr "موضوع"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/ContactForm.php:91
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/ContactForm.php:91
 msgid "Name"
 msgstr "نام"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/ContactForm.php:103
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/message_view.phtml:18
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/ContactForm.php:103
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/message_view.phtml:18
 msgid "Organization"
 msgstr "سازمان"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/ContactForm.php:115
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:48
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/message_view.phtml:19
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/ContactForm.php:115
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:48
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/message_view.phtml:19
 msgid "Homepage"
 msgstr "وب سایت"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/ContactForm.php:127
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/message_view.phtml:20
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/ContactForm.php:127
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/message_view.phtml:20
 msgid "Location"
 msgstr "شهر"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/ContactForm.php:139
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/message_view.phtml:21
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/ContactForm.php:139
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/message_view.phtml:21
 msgid "Phone"
 msgstr "تلفن"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/ContactForm.php:151
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/message_view.phtml:23
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/ContactForm.php:151
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/message_view.phtml:23
 msgid "Address"
 msgstr "آدرس"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/ContactForm.php:164
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/ReplyForm.php:81
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/ReplyForm.php:88
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/navigation.php:16
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/ContactForm.php:164
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/ReplyForm.php:81
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/ReplyForm.php:88
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/navigation.php:16
 msgid "Message"
 msgstr "پیام"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/ContactForm.php:178
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/ContactForm.php:178
 msgid "Please type the word."
 msgstr "لطفا متن رو به رو را تایپ کنید"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/ReplyForm.php:48
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/ReplyForm.php:52
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/ReplyForm.php:48
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/ReplyForm.php:52
 msgid "To Name"
 msgstr "به نام"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/ReplyForm.php:59
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Form/ReplyForm.php:63
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/ReplyForm.php:59
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Form/ReplyForm.php:63
 msgid "To Email"
 msgstr "به ایمیل"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Installer/Action/Install.php:45
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:101
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Installer/Action/Install.php:45
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:101
 msgid "Default department"
 msgstr "فرم پیش فرض"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Installer/Action/Install.php:46
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Installer/Action/Install.php:46
 msgid "default"
 msgstr "پیش فرض"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Installer/Action/Install.php:55
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Installer/Action/Install.php:55
 msgid "Default department added."
 msgstr "بخش پیش فرض اضافه شد"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Admin/ToolsController.php:31
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Admin/ToolsController.php:31
 msgid "You can prune all old message, from selected department."
 msgstr "شما میتوانید تمام پیام های قدیمی را از بخش انتخابی حذف کنید"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Admin/ToolsController.php:49
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Admin/ToolsController.php:49
 #, php-format
 msgid "<strong>%s</strong> old messages removed"
 msgstr "<strong>%s</strong> پیام قدیمی حذف شد"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Admin/ToolsController.php:52
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Admin/ToolsController.php:52
 msgid "Error in pruned messages."
 msgstr "خطا در حذف اطلاعات قدیمی"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Admin/ToolsController.php:57
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/navigation.php:34
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Admin/ToolsController.php:57
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/navigation.php:34
 msgid "Tools"
 msgstr "ابزار"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Admin/MessageController.php:97
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Admin/MessageController.php:139
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Admin/MessageController.php:213
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Admin/MessageController.php:97
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Admin/MessageController.php:139
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Admin/MessageController.php:213
 msgid "Please select message"
 msgstr "لطفا یک پیام انتخاب کنید"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Admin/MessageController.php:172
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Admin/MessageController.php:172
 msgid "Your reply Send and saved successfully"
 msgstr "پاسخ شما با موفقیت ارسال و ذخیره شد"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Admin/MessageController.php:175
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Admin/MessageController.php:175
 msgid "Your reply send successfully but dont saved in DB"
 msgstr "پاسخ شما با موفقیت ارسال شد ولی در پایگاه داده ها ذخیره نشد"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Admin/MessageController.php:178
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Admin/MessageController.php:178
 msgid "Error in send reply as Email"
 msgstr "خطا در ارسال پاسخ به صورت ایمیل"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Admin/MessageController.php:187
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Admin/MessageController.php:187
 #, php-format
 msgid "Re : %s"
 msgstr "پاسخ به : %s"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Admin/MessageController.php:190
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Admin/MessageController.php:190
 msgid "You can answer to this message"
 msgstr "شما میتوانید به این پیام پاسخ بدهید"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Admin/MessageController.php:195
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Admin/MessageController.php:195
 #, php-format
 msgid "Reply to %s"
 msgstr "پاسخ به %s"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Admin/MessageController.php:211
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Admin/MessageController.php:211
 msgid "Your selected message deleted"
 msgstr "پیام انتخابی شما حذف شد"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Admin/DepartmentController.php:71
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Admin/DepartmentController.php:71
 msgid "Department data saved successfully."
 msgstr "اطلاعات بخش با موفقیت ذخیره شد"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Admin/DepartmentController.php:83
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Admin/DepartmentController.php:83
 msgid "Add a Department"
 msgstr "ایجاد بخش"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Admin/DepartmentController.php:97
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Admin/DepartmentController.php:97
 msgid "Your selected department deleted"
 msgstr "بخش انتخاب شده حذف شد"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Admin/DepartmentController.php:99
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Admin/DepartmentController.php:99
 msgid "Please select department"
 msgstr "لطفا یک بخش را انتخاب نمایید"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:68
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:182
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Front/IndexController.php:66
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Front/IndexController.php:182
 msgid "Your Contact send and saved successfully"
 msgstr "پیام شما با موفقیت ارسال و ذخیره شد"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:119
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:121
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:128
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Front/IndexController.php:119
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Front/IndexController.php:121
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Front/IndexController.php:128
 msgid "Select Department Form contact us"
 msgstr "انتخاب یک بخش برای تماس"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:123
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:127
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:140
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:142
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:143
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Front/IndexController.php:123
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Front/IndexController.php:127
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Front/IndexController.php:140
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Front/IndexController.php:142
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Front/IndexController.php:143
 msgid "Contact Us"
 msgstr "تماس با ما"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:185
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Front/IndexController.php:185
 msgid "Send information not valid"
 msgstr "اطلاعات ارسال شده صحیح نیست"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/src/Controller/Front/IndexController.php:189
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/src/Controller/Front/IndexController.php:189
 msgid "Nothing send"
 msgstr "هیچ چیز ارسال نشد"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/module.php:16
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/module.php:16
 msgid "Contact"
 msgstr "پیام"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/module.php:17
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/module.php:17
 msgid "Manage Contacts"
 msgstr "مدیریت پیام ها"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:16
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:16
 msgid "Admin"
 msgstr "مدیریت"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:20
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:20
 msgid "HomePage"
 msgstr "صفحه اصلی"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:24
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:24
 msgid "Form"
 msgstr "فرم"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:28
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:28
 msgid "Google Map"
 msgstr "نقشه گوگل"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:32
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:32
 msgid "Social Network"
 msgstr "شبکه های اجتماعی"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:40
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:40
 msgid "Perpage"
 msgstr "تعداد در هر صفحه"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:54
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:54
 msgid "Default form"
 msgstr "فرم پیش فرض"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:55
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:55
 msgid "List of Departments"
 msgstr "فهرست بخش ها"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:64
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:64
 msgid "Show breadcrumbs"
 msgstr "نمایش ناوبری"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:72
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:72
 msgid "Top text"
 msgstr "متن بالا"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:79
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:79
 msgid "Bottom text"
 msgstr "متن پایین"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:86
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:86
 msgid "Side text"
 msgstr "متن کنار"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:93
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:93
 msgid "Finish text"
 msgstr "متن پایان"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:109
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:109
 msgid "show Department"
 msgstr "نمایش بخش"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:117
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:117
 msgid "show Organization"
 msgstr "نمایش سازمان"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:125
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:125
 msgid "required Organization"
 msgstr "سازمان اجباری باشد"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:133
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:133
 msgid "show Homepage"
 msgstr "نمایش وب سایت"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:141
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:141
 msgid "required Homepage"
 msgstr "وب سایت اجباری باشد"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:149
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:149
 msgid "show Location"
 msgstr "نمایش شهر"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:157
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:157
 msgid "required Location"
 msgstr "شهر اجباری باشد"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:165
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:165
 msgid "show Phone"
 msgstr "نمایش تلفن"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:173
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:173
 msgid "required Phone"
 msgstr "تلفن اجباری باشد"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:181
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:181
 msgid "show Address"
 msgstr "نمایش آدرس"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:189
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:189
 msgid "required Address"
 msgstr "آدرس اجباری باشد"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:197
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:197
 msgid "Use captcha"
 msgstr "استفاده از کپچا"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:198
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:198
 msgid "Captcha just use for gust"
 msgstr "استفاده از کپچا فقط برای کاربران مهمان"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:206
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:206
 msgid "Twitter account"
 msgstr "حساب تویتر"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:214
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:214
 msgid "Twitter icon"
 msgstr "آیکن تویتر"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:215
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:231
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:247
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:263
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:279
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:295
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:311
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:327
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:343
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:359
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:375
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:215
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:231
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:247
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:263
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:279
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:295
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:311
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:327
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:343
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:359
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:375
 msgid "Set icon url (Uploaded on your host) or leave empty to use default icon"
 msgstr ""
 "لینک آیکن را واردکنید ( آیکن را در هاست خود بارگذاری کنید ) یا این گزینه را "
 "خالی بگذارید تا از آیکن پیش فرض استفاده شود"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:222
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:222
 msgid "Facebook account"
 msgstr "حساب فیسبوک"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:230
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:230
 msgid "Facebook icon"
 msgstr "آیکن فیسبوک"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:238
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:238
 msgid "Google plus account"
 msgstr "حساب گوگل پلاس"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:246
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:246
 msgid "Google plus icon"
 msgstr "آیکن گوگل پلاس"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:254
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:254
 msgid "YouTube account"
 msgstr "حساب یوتیوب"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:262
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:262
 msgid "YouTube icon"
 msgstr "آیکن یوتیوب"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:270
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:270
 msgid "Pinterest account"
 msgstr "حساب پینترس"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:278
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:278
 msgid "Pinterest icon"
 msgstr "آیکن پینترس"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:286
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:286
 msgid "LinkedIn account"
 msgstr "حساب لینک این"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:294
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:294
 msgid "LinkedIn icon"
 msgstr "آیکن لینک این"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:302
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:302
 msgid "Github account"
 msgstr "حساب گیت هاب"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:310
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:310
 msgid "Github icon"
 msgstr "آیکن گیت هاب"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:318
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:318
 msgid "Instagram account"
 msgstr "حساب اینستاگرام"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:326
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:326
 msgid "Instagram icon"
 msgstr "آیکن اینستاگرام"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:334
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:334
 msgid "Tumblr account"
 msgstr "حساب تامبلر"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:342
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:342
 msgid "Tumblr icon"
 msgstr "آیکن تامبلر"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:350
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:350
 msgid "Trello account"
 msgstr "حساب ترلو"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:358
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:358
 msgid "Trello icon"
 msgstr "آیکن ترلو"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:366
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:366
 msgid "Rss link"
-msgstr "لین خوراک"
+msgstr "لینک خوراک"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:374
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:374
 msgid "Rss icon"
 msgstr "آیکن خوراک"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:383
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:383
 msgid "Show Google Map"
 msgstr "نمایش نقشه گوگل"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:391
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:391
 msgid "Longitude"
 msgstr "طول جغرافیای (Longitude)"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:399
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:399
 msgid "Latitude"
 msgstr "عرض جغرافیای (Latitude)"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/config/config.php:407
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/config/config.php:407
 msgid "Zoon"
 msgstr "بزرگ نمایی"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/department_index.phtml:4
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/department_index.phtml:4
 msgid "Add Department"
 msgstr "ایجاد بخش"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/department_index.phtml:9
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/message_index.phtml:10
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/department_index.phtml:9
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/message_index.phtml:10
 msgid "ID"
 msgstr "شناسه"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/department_index.phtml:12
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/message_index.phtml:15
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/department_index.phtml:12
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/message_index.phtml:15
 msgid "Action"
 msgstr "عملکرد"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/department_index.phtml:20
-msgid "Edit"
-msgstr "ویرایش"
-
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/department_index.phtml:21
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/message_view.phtml:28
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/message_index.phtml:27
-msgid "Delete"
-msgstr "حذف"
-
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/message_view.phtml:4
-msgid "Main Message is"
-msgstr "پیام اصلی "
-
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/message_view.phtml:9
-msgid "Auther"
-msgstr "ارسال کننده"
-
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/message_view.phtml:11
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/message_index.phtml:14
-msgid "Create"
-msgstr "ایجاد"
-
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/message_view.phtml:22
-msgid "Ip"
-msgstr "آی پی"
-
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/message_view.phtml:26
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/message_index.phtml:5
-msgid "Back"
-msgstr "برگشت"
-
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/message_view.phtml:27
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/message_index.phtml:26
-msgid "Reply"
-msgstr "پاسخ"
-
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/message_index.phtml:13
-msgid "Author"
-msgstr "ارسال کننده"
-
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/message_index.phtml:20
-msgid "Answered"
-msgstr "پاسخ داده شده"
-
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/admin/message_index.phtml:25
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/department_index.phtml:20
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/message_index.phtml:25
 msgid "View"
 msgstr "نمایش"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/front/index_list.phtml:39
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/department_index.phtml:21
+msgid "Edit"
+msgstr "ویرایش"
+
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/department_index.phtml:22
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/message_view.phtml:28
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/message_index.phtml:27
+msgid "Delete"
+msgstr "حذف"
+
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/message_view.phtml:4
+msgid "Main Message is"
+msgstr "پیام اصلی "
+
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/message_view.phtml:9
+msgid "Auther"
+msgstr "ارسال کننده"
+
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/message_view.phtml:11
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/message_index.phtml:14
+msgid "Create"
+msgstr "ایجاد"
+
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/message_view.phtml:22
+msgid "Ip"
+msgstr "آی پی"
+
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/message_view.phtml:26
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/message_index.phtml:5
+msgid "Back"
+msgstr "برگشت"
+
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/message_view.phtml:27
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/message_index.phtml:26
+msgid "Reply"
+msgstr "پاسخ"
+
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/message_index.phtml:13
+msgid "Author"
+msgstr "ارسال کننده"
+
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/admin/message_index.phtml:20
+msgid "Answered"
+msgstr "پاسخ داده شده"
+
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/front/index_list.phtml:39
 msgid "Select department"
 msgstr "انتخاب بخش"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/front/social.phtml:4
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/front/social.phtml:8
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/front/social.phtml:4
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/front/social.phtml:8
 msgid "Twitter"
 msgstr "تویتر"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/front/social.phtml:12
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/front/social.phtml:16
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/front/social.phtml:12
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/front/social.phtml:16
 msgid "Facebook"
 msgstr "فیسبوک"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/front/social.phtml:20
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/front/social.phtml:24
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/front/social.phtml:20
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/front/social.phtml:24
 msgid "Google"
 msgstr "گوگل"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/front/social.phtml:28
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/front/social.phtml:32
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/front/social.phtml:28
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/front/social.phtml:32
 msgid "YouTube"
 msgstr "یوتیوب"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/front/social.phtml:36
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/front/social.phtml:40
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/front/social.phtml:36
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/front/social.phtml:40
 msgid "Pinterest"
 msgstr "وینترست"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/front/social.phtml:44
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/front/social.phtml:48
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/front/social.phtml:44
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/front/social.phtml:48
 msgid "Instagram"
 msgstr "اینستاگرام"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/front/social.phtml:52
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/front/social.phtml:56
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/front/social.phtml:52
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/front/social.phtml:56
 msgid "Tumblr"
 msgstr "تامبلر"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/front/social.phtml:60
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/front/social.phtml:64
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/front/social.phtml:60
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/front/social.phtml:64
 msgid "Trello"
 msgstr "ترلو"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/front/social.phtml:68
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/front/social.phtml:72
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/front/social.phtml:68
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/front/social.phtml:72
 msgid "LinkedIn"
 msgstr "لینک این"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/front/social.phtml:76
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/front/social.phtml:80
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/front/social.phtml:76
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/front/social.phtml:80
 msgid "Github"
 msgstr "گیت هاب"
 
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/front/social.phtml:86
-#: /var/www/html/local/pi/pi-develop/usr/module/contact/template/front/social.phtml:90
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/front/social.phtml:86
+#: /var/www/html/local/pi/pi-release-2.4.0-rc/usr/module/contact/template/front/social.phtml:90
 msgid "Rss"
 msgstr "خوراک"
 
