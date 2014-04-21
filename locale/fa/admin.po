@@ -1,0 +1,500 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Pi contact module\n"
+"POT-Creation-Date: 2014-04-21 20:36+0330\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: Pi\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: _a;_t\n"
+"X-Poedit-SearchPath-0: /var/www/html/local/pi/pi-release-2.4.0/usr/module/"
+"contact\n"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/permission.php:17
+msgid "Global public resource"
+msgstr "دسترسی های سراسری"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/permission.php:27
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/navigation.php:16
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/page.php:17
+msgid "Message"
+msgstr "پیام"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/permission.php:33
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/navigation.php:25
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/page.php:22
+msgid "Department"
+msgstr "بخش"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/permission.php:39
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/navigation.php:34
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/page.php:27
+msgid "Tools"
+msgstr "ابزار"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/page.php:35
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/module.php:16
+msgid "Contact"
+msgstr "پیام"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/module.php:17
+msgid "Manage Contacts"
+msgstr "مدیریت پیام ها"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:16
+msgid "Admin"
+msgstr "مدیریت"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:20
+msgid "HomePage"
+msgstr "صفحه اصلی"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:24
+msgid "Form"
+msgstr "فرم"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:28
+msgid "Google Map"
+msgstr "نقشه گوگل"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:32
+msgid "Social Network"
+msgstr "شبکه های اجتماعی"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:40
+msgid "Perpage"
+msgstr "تعداد در هر صفحه"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:48
+msgid "Homepage"
+msgstr "وب سایت"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:54
+msgid "Default form"
+msgstr "فرم پیش فرض"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:55
+msgid "List of Departments"
+msgstr "فهرست بخش ها"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:64
+msgid "Show breadcrumbs"
+msgstr "نمایش ناوبری"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:72
+msgid "Top text"
+msgstr "متن بالا"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:79
+msgid "Bottom text"
+msgstr "متن پایین"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:86
+msgid "Side text"
+msgstr "متن کنار"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:93
+msgid "Finish text"
+msgstr "متن پایان"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:101
+msgid "Default department"
+msgstr "فرم پیش فرض"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:109
+msgid "show Department"
+msgstr "نمایش بخش"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:117
+msgid "show Organization"
+msgstr "نمایش سازمان"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:125
+msgid "required Organization"
+msgstr "سازمان اجباری باشد"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:133
+msgid "show Homepage"
+msgstr "نمایش وب سایت"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:141
+msgid "required Homepage"
+msgstr "وب سایت اجباری باشد"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:149
+msgid "show Location"
+msgstr "نمایش شهر"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:157
+msgid "required Location"
+msgstr "شهر اجباری باشد"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:165
+msgid "show Phone"
+msgstr "نمایش تلفن"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:173
+msgid "required Phone"
+msgstr "تلفن اجباری باشد"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:181
+msgid "show Address"
+msgstr "نمایش آدرس"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:189
+msgid "required Address"
+msgstr "آدرس اجباری باشد"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:197
+msgid "Use captcha"
+msgstr "استفاده از کپچا"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:198
+msgid "Captcha just use for gust"
+msgstr "استفاده از کپچا فقط برای کاربران مهمان"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:206
+msgid "Twitter account"
+msgstr "حساب تویتر"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:214
+msgid "Twitter icon"
+msgstr "آیکن تویتر"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:215
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:231
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:247
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:263
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:279
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:295
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:311
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:327
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:343
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:359
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:375
+msgid "Set icon url (Uploaded on your host) or leave empty to use default icon"
+msgstr ""
+"لینک آیکن را واردکنید ( آیکن را در هاست خود بارگذاری کنید ) یا این گزینه را "
+"خالی بگذارید تا از آیکن پیش فرض استفاده شود"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:222
+msgid "Facebook account"
+msgstr "حساب فیسبوک"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:230
+msgid "Facebook icon"
+msgstr "آیکن فیسبوک"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:238
+msgid "Google plus account"
+msgstr "حساب گوگل پلاس"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:246
+msgid "Google plus icon"
+msgstr "آیکن گوگل پلاس"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:254
+msgid "YouTube account"
+msgstr "حساب یوتیوب"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:262
+msgid "YouTube icon"
+msgstr "آیکن یوتیوب"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:270
+msgid "Pinterest account"
+msgstr "حساب پینترس"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:278
+msgid "Pinterest icon"
+msgstr "آیکن پینترس"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:286
+msgid "LinkedIn account"
+msgstr "حساب لینک این"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:294
+msgid "LinkedIn icon"
+msgstr "آیکن لینک این"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:302
+msgid "Github account"
+msgstr "حساب گیت هاب"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:310
+msgid "Github icon"
+msgstr "آیکن گیت هاب"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:318
+msgid "Instagram account"
+msgstr "حساب اینستاگرام"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:326
+msgid "Instagram icon"
+msgstr "آیکن اینستاگرام"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:334
+msgid "Tumblr account"
+msgstr "حساب تامبلر"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:342
+msgid "Tumblr icon"
+msgstr "آیکن تامبلر"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:350
+msgid "Trello account"
+msgstr "حساب ترلو"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:358
+msgid "Trello icon"
+msgstr "آیکن ترلو"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:366
+msgid "Rss link"
+msgstr "لینک خوراک"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:374
+msgid "Rss icon"
+msgstr "آیکن خوراک"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:383
+msgid "Show Google Map"
+msgstr "نمایش نقشه گوگل"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:391
+msgid "Longitude"
+msgstr "طول جغرافیای (Longitude)"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:399
+msgid "Latitude"
+msgstr "عرض جغرافیای (Latitude)"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:407
+msgid "Zoon"
+msgstr "بزرگ نمایی"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:415
+msgid "Title"
+msgstr "عنوان"
+
+#~ msgid "List of departments"
+#~ msgstr "فهرست بخش ها"
+
+#~ msgid "Finish"
+#~ msgstr "پایان"
+
+#~ msgid "Slug"
+#~ msgstr "اسلاگ"
+
+#~ msgid "Email"
+#~ msgstr "ایمیل"
+
+#~ msgid "Status"
+#~ msgstr "وضعیت"
+
+#~ msgid "Published"
+#~ msgstr "منتشر شده"
+
+#~ msgid "Pending review"
+#~ msgstr "در حال بررسی"
+
+#~ msgid "Draft"
+#~ msgstr "پیش نویس"
+
+#~ msgid "Private"
+#~ msgstr "خصوصی"
+
+#~ msgid "Expired"
+#~ msgstr "باطل شده"
+
+#~ msgid "Submit"
+#~ msgstr "ارسال"
+
+#~ msgid "All contacts Before"
+#~ msgstr "همه تماس های قبل از"
+
+#~ msgid "Only remove Admin answers"
+#~ msgstr "فقط حذف پاسخ های مدیر"
+
+#~ msgid "Subject"
+#~ msgstr "موضوع"
+
+#~ msgid "Name"
+#~ msgstr "نام"
+
+#~ msgid "Organization"
+#~ msgstr "سازمان"
+
+#~ msgid "Location"
+#~ msgstr "شهر"
+
+#~ msgid "Phone"
+#~ msgstr "تلفن"
+
+#~ msgid "Address"
+#~ msgstr "آدرس"
+
+#~ msgid "Please type the word."
+#~ msgstr "لطفا متن رو به رو را تایپ کنید"
+
+#~ msgid "To Name"
+#~ msgstr "به نام"
+
+#~ msgid "To Email"
+#~ msgstr "به ایمیل"
+
+#~ msgid "default"
+#~ msgstr "پیش فرض"
+
+#~ msgid "Default department added."
+#~ msgstr "بخش پیش فرض اضافه شد"
+
+#~ msgid "You can prune all old message, from selected department."
+#~ msgstr "شما میتوانید تمام پیام های قدیمی را از بخش انتخابی حذف کنید"
+
+#~ msgid "<strong>%s</strong> old messages removed"
+#~ msgstr "<strong>%s</strong> پیام قدیمی حذف شد"
+
+#~ msgid "Error in pruned messages."
+#~ msgstr "خطا در حذف اطلاعات قدیمی"
+
+#~ msgid "Please select message"
+#~ msgstr "لطفا یک پیام انتخاب کنید"
+
+#~ msgid "Your reply Send and saved successfully"
+#~ msgstr "پاسخ شما با موفقیت ارسال و ذخیره شد"
+
+#~ msgid "Your reply send successfully but dont saved in DB"
+#~ msgstr "پاسخ شما با موفقیت ارسال شد ولی در پایگاه داده ها ذخیره نشد"
+
+#~ msgid "Error in send reply as Email"
+#~ msgstr "خطا در ارسال پاسخ به صورت ایمیل"
+
+#~ msgid "Re : %s"
+#~ msgstr "پاسخ به : %s"
+
+#~ msgid "You can answer to this message"
+#~ msgstr "شما میتوانید به این پیام پاسخ بدهید"
+
+#~ msgid "Reply to %s"
+#~ msgstr "پاسخ به %s"
+
+#~ msgid "Your selected message deleted"
+#~ msgstr "پیام انتخابی شما حذف شد"
+
+#~ msgid "Department data saved successfully."
+#~ msgstr "اطلاعات بخش با موفقیت ذخیره شد"
+
+#~ msgid "Add a Department"
+#~ msgstr "ایجاد بخش"
+
+#~ msgid "Your selected department deleted"
+#~ msgstr "بخش انتخاب شده حذف شد"
+
+#~ msgid "Please select department"
+#~ msgstr "لطفا یک بخش را انتخاب نمایید"
+
+#~ msgid "Your Contact send and saved successfully"
+#~ msgstr "پیام شما با موفقیت ارسال و ذخیره شد"
+
+#~ msgid "Select Department Form contact us"
+#~ msgstr "انتخاب یک بخش برای تماس"
+
+#~ msgid "Contact Us"
+#~ msgstr "تماس با ما"
+
+#~ msgid "Send information not valid"
+#~ msgstr "اطلاعات ارسال شده صحیح نیست"
+
+#~ msgid "Nothing send"
+#~ msgstr "هیچ چیز ارسال نشد"
+
+#~ msgid "Add Department"
+#~ msgstr "ایجاد بخش"
+
+#~ msgid "ID"
+#~ msgstr "شناسه"
+
+#~ msgid "Action"
+#~ msgstr "عملکرد"
+
+#~ msgid "View"
+#~ msgstr "نمایش"
+
+#~ msgid "Edit"
+#~ msgstr "ویرایش"
+
+#~ msgid "Delete"
+#~ msgstr "حذف"
+
+#~ msgid "Main Message is"
+#~ msgstr "پیام اصلی "
+
+#~ msgid "Auther"
+#~ msgstr "ارسال کننده"
+
+#~ msgid "Create"
+#~ msgstr "ایجاد"
+
+#~ msgid "Ip"
+#~ msgstr "آی پی"
+
+#~ msgid "Back"
+#~ msgstr "برگشت"
+
+#~ msgid "Reply"
+#~ msgstr "پاسخ"
+
+#~ msgid "Author"
+#~ msgstr "ارسال کننده"
+
+#~ msgid "Answered"
+#~ msgstr "پاسخ داده شده"
+
+#~ msgid "Select department"
+#~ msgstr "انتخاب بخش"
+
+#~ msgid "Twitter"
+#~ msgstr "تویتر"
+
+#~ msgid "Facebook"
+#~ msgstr "فیسبوک"
+
+#~ msgid "Google"
+#~ msgstr "گوگل"
+
+#~ msgid "YouTube"
+#~ msgstr "یوتیوب"
+
+#~ msgid "Pinterest"
+#~ msgstr "وینترست"
+
+#~ msgid "Instagram"
+#~ msgstr "اینستاگرام"
+
+#~ msgid "Tumblr"
+#~ msgstr "تامبلر"
+
+#~ msgid "Trello"
+#~ msgstr "ترلو"
+
+#~ msgid "LinkedIn"
+#~ msgstr "لینک این"
+
+#~ msgid "Github"
+#~ msgstr "گیت هاب"
+
+#~ msgid "Rss"
+#~ msgstr "خوراک"
+
+#~ msgid "Default Department"
+#~ msgstr "بخش پیش فرض"
+
+#~ msgid "Default"
+#~ msgstr "پیش فرض"

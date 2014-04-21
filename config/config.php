@@ -13,23 +13,23 @@
 return array(
     'category' => array(
         array(
-            'title' => __('Admin'),
+            'title' => _a('Admin'),
             'name' => 'admin'
         ),
         array(
-            'title' => __('HomePage'),
+            'title' => _a('HomePage'),
             'name' => 'home'
         ),
         array(
-            'title' => __('Form'),
+            'title' => _a('Form'),
             'name' => 'form'
         ),
         array(
-            'title' => __('Google Map'),
+            'title' => _a('Google Map'),
             'name' => 'gmap'
         ),
         array(
-            'title' => __('Social Network'),
+            'title' => _a('Social Network'),
             'name' => 'social'
         ),
     ),
@@ -37,7 +37,7 @@ return array(
         // Admin
         'admin_perpage' => array(
             'category' => 'admin',
-            'title' => __('Perpage'),
+            'title' => _a('Perpage'),
             'description' => '',
             'edit' => 'text',
             'filter' => 'number_int',
@@ -45,14 +45,14 @@ return array(
         ),
         // Home
         'homepage' => array(
-            'title' => __('Homepage'),
+            'title' => _a('Homepage'),
             'description' => ' ',
             'edit' => array(
                 'type' => 'select',
                 'options' => array(
                     'options' => array(
-                        'from' => __('Default form'),
-                        'list' => __('List of Departments'),
+                        'from' => _a('Default form'),
+                        'list' => _a('List of Departments'),
                     ),
                 ),
             ),
@@ -61,7 +61,7 @@ return array(
             'category' => 'home',
         ),
         'breadcrumbs' => array(
-            'title' => __('Show breadcrumbs'),
+            'title' => _a('Show breadcrumbs'),
             'description' => '',
             'value' => 1,
             'filter' => 'number_int',
@@ -69,28 +69,28 @@ return array(
             'category' => 'home',
         ),
         'toptext' => array(
-            'title' => __('Top text'),
+            'title' => _a('Top text'),
             'description' => '',
             'edit' => 'textarea',
             'value' => '',
             'category' => 'home',
         ),
         'bottomtext' => array(
-            'title' => __('Bottom text'),
+            'title' => _a('Bottom text'),
             'description' => '',
             'edit' => 'textarea',
             'value' => '',
             'category' => 'home',
         ),
         'sidetext' => array(
-            'title' => __('Side text'),
+            'title' => _a('Side text'),
             'description' => '',
             'edit' => 'textarea',
             'value' => '',
             'category' => 'home',
         ),
         'finishtext' => array(
-            'title' => __('Finish text'),
+            'title' => _a('Finish text'),
             'description' => '',
             'edit' => 'textarea',
             'value' => '',
@@ -98,7 +98,7 @@ return array(
         ),
         // Form
         'default_department' => array(
-            'title' => __('Default department'),
+            'title' => _a('Default department'),
             'description' => '',
             'value' => 1,
             'edit' => 'Module\Contact\Form\Element\Department',
@@ -106,7 +106,7 @@ return array(
             'category' => 'form',
         ),
         'show_department' => array(
-            'title' => __('show Department'),
+            'title' => _a('show Department'),
             'description' => '',
             'value' => 0,
             'filter' => 'number_int',
@@ -114,7 +114,7 @@ return array(
             'category' => 'form',
         ),
         'show_organization' => array(
-            'title' => __('show Organization'),
+            'title' => _a('show Organization'),
             'description' => '',
             'value' => 0,
             'filter' => 'number_int',
@@ -122,7 +122,7 @@ return array(
             'category' => 'form',
         ),
         'required_organization' => array(
-            'title' => __('required Organization'),
+            'title' => _a('required Organization'),
             'description' => '',
             'value' => 0,
             'filter' => 'number_int',
@@ -130,7 +130,7 @@ return array(
             'category' => 'form',
         ),
         'show_homepage' => array(
-            'title' => __('show Homepage'),
+            'title' => _a('show Homepage'),
             'description' => '',
             'value' => 0,
             'filter' => 'number_int',
@@ -138,7 +138,7 @@ return array(
             'category' => 'form',
         ),
         'required_homepage' => array(
-            'title' => __('required Homepage'),
+            'title' => _a('required Homepage'),
             'description' => '',
             'value' => 0,
             'filter' => 'number_int',
@@ -146,7 +146,7 @@ return array(
             'category' => 'form',
         ),
         'show_location' => array(
-            'title' => __('show Location'),
+            'title' => _a('show Location'),
             'description' => '',
             'value' => 0,
             'filter' => 'number_int',
@@ -154,7 +154,7 @@ return array(
             'category' => 'form',
         ),
         'required_location' => array(
-            'title' => __('required Location'),
+            'title' => _a('required Location'),
             'description' => '',
             'value' => 0,
             'filter' => 'number_int',
@@ -162,7 +162,7 @@ return array(
             'category' => 'form',
         ),
         'show_phone' => array(
-            'title' => __('show Phone'),
+            'title' => _a('show Phone'),
             'description' => '',
             'value' => 0,
             'filter' => 'number_int',
@@ -170,7 +170,7 @@ return array(
             'category' => 'form',
         ),
         'required_phone' => array(
-            'title' => __('required Phone'),
+            'title' => _a('required Phone'),
             'description' => '',
             'value' => 0,
             'filter' => 'number_int',
@@ -178,7 +178,7 @@ return array(
             'category' => 'form',
         ),
         'show_address' => array(
-            'title' => __('show Address'),
+            'title' => _a('show Address'),
             'description' => '',
             'value' => 0,
             'filter' => 'number_int',
@@ -186,7 +186,7 @@ return array(
             'category' => 'form',
         ),
         'required_address' => array(
-            'title' => __('required Address'),
+            'title' => _a('required Address'),
             'description' => '',
             'value' => 0,
             'filter' => 'number_int',
@@ -194,8 +194,8 @@ return array(
             'category' => 'form',
         ),
         'captcha' => array(
-            'title' => __('Use captcha'),
-            'description' => __('Captcha just use for gust'),
+            'title' => _a('Use captcha'),
+            'description' => _a('Captcha just use for gust'),
             'value' => 1,
             'filter' => 'number_int',
             'edit' => 'checkbox',
@@ -203,7 +203,7 @@ return array(
         ),
         // social
         'social_twitter' => array(
-            'title' => __('Twitter account'),
+            'title' => _a('Twitter account'),
             'description' => '',
             'edit' => 'text',
             'filter' => 'string',
@@ -211,15 +211,15 @@ return array(
             'category' => 'social',
         ),
         'social_twitter_icon' => array(
-            'title' => __('Twitter icon'),
-            'description' => __('Set icon url (Uploaded on your host) or leave empty to use default icon'),
+            'title' => _a('Twitter icon'),
+            'description' => _a('Set icon url (Uploaded on your host) or leave empty to use default icon'),
             'edit' => 'text',
             'filter' => 'string',
             'value' => '',
             'category' => 'social',
         ),
         'social_facebook' => array(
-            'title' => __('Facebook account'),
+            'title' => _a('Facebook account'),
             'description' => '',
             'edit' => 'text',
             'filter' => 'string',
@@ -227,15 +227,15 @@ return array(
             'category' => 'social',
         ),
         'social_facebook_icon' => array(
-            'title' => __('Facebook icon'),
-            'description' => __('Set icon url (Uploaded on your host) or leave empty to use default icon'),
+            'title' => _a('Facebook icon'),
+            'description' => _a('Set icon url (Uploaded on your host) or leave empty to use default icon'),
             'edit' => 'text',
             'filter' => 'string',
             'value' => '',
             'category' => 'social',
         ),
         'social_google' => array(
-            'title' => __('Google plus account'),
+            'title' => _a('Google plus account'),
             'description' => '',
             'edit' => 'text',
             'filter' => 'string',
@@ -243,15 +243,15 @@ return array(
             'category' => 'social',
         ),
         'social_google_icon' => array(
-            'title' => __('Google plus icon'),
-            'description' => __('Set icon url (Uploaded on your host) or leave empty to use default icon'),
+            'title' => _a('Google plus icon'),
+            'description' => _a('Set icon url (Uploaded on your host) or leave empty to use default icon'),
             'edit' => 'text',
             'filter' => 'string',
             'value' => '',
             'category' => 'social',
         ),
         'social_youtube' => array(
-            'title' => __('YouTube account'),
+            'title' => _a('YouTube account'),
             'description' => '',
             'edit' => 'text',
             'filter' => 'string',
@@ -259,15 +259,15 @@ return array(
             'category' => 'social',
         ),
         'social_youtube_icon' => array(
-            'title' => __('YouTube icon'),
-            'description' => __('Set icon url (Uploaded on your host) or leave empty to use default icon'),
+            'title' => _a('YouTube icon'),
+            'description' => _a('Set icon url (Uploaded on your host) or leave empty to use default icon'),
             'edit' => 'text',
             'filter' => 'string',
             'value' => '',
             'category' => 'social',
         ),
         'social_pinterest' => array(
-            'title' => __('Pinterest account'),
+            'title' => _a('Pinterest account'),
             'description' => '',
             'edit' => 'text',
             'filter' => 'string',
@@ -275,15 +275,15 @@ return array(
             'category' => 'social',
         ),
         'social_pinterest_icon' => array(
-            'title' => __('Pinterest icon'),
-            'description' => __('Set icon url (Uploaded on your host) or leave empty to use default icon'),
+            'title' => _a('Pinterest icon'),
+            'description' => _a('Set icon url (Uploaded on your host) or leave empty to use default icon'),
             'edit' => 'text',
             'filter' => 'string',
             'value' => '',
             'category' => 'social',
         ),
         'social_linkedin' => array(
-            'title' => __('LinkedIn account'),
+            'title' => _a('LinkedIn account'),
             'description' => '',
             'edit' => 'text',
             'filter' => 'string',
@@ -291,15 +291,15 @@ return array(
             'category' => 'social',
         ),
         'social_linkedin_icon' => array(
-            'title' => __('LinkedIn icon'),
-            'description' => __('Set icon url (Uploaded on your host) or leave empty to use default icon'),
+            'title' => _a('LinkedIn icon'),
+            'description' => _a('Set icon url (Uploaded on your host) or leave empty to use default icon'),
             'edit' => 'text',
             'filter' => 'string',
             'value' => '',
             'category' => 'social',
         ),
         'social_github' => array(
-            'title' => __('Github account'),
+            'title' => _a('Github account'),
             'description' => '',
             'edit' => 'text',
             'filter' => 'string',
@@ -307,15 +307,15 @@ return array(
             'category' => 'social',
         ),
         'social_github_icon' => array(
-            'title' => __('Github icon'),
-            'description' => __('Set icon url (Uploaded on your host) or leave empty to use default icon'),
+            'title' => _a('Github icon'),
+            'description' => _a('Set icon url (Uploaded on your host) or leave empty to use default icon'),
             'edit' => 'text',
             'filter' => 'string',
             'value' => '',
             'category' => 'social',
         ),
         'social_instagram' => array(
-            'title' => __('Instagram account'),
+            'title' => _a('Instagram account'),
             'description' => '',
             'edit' => 'text',
             'filter' => 'string',
@@ -323,15 +323,15 @@ return array(
             'category' => 'social',
         ),
         'social_instagram_icon' => array(
-            'title' => __('Instagram icon'),
-            'description' => __('Set icon url (Uploaded on your host) or leave empty to use default icon'),
+            'title' => _a('Instagram icon'),
+            'description' => _a('Set icon url (Uploaded on your host) or leave empty to use default icon'),
             'edit' => 'text',
             'filter' => 'string',
             'value' => '',
             'category' => 'social',
         ),
         'social_tumblr' => array(
-            'title' => __('Tumblr account'),
+            'title' => _a('Tumblr account'),
             'description' => '',
             'edit' => 'text',
             'filter' => 'string',
@@ -339,15 +339,15 @@ return array(
             'category' => 'social',
         ),
         'social_tumblr_icon' => array(
-            'title' => __('Tumblr icon'),
-            'description' => __('Set icon url (Uploaded on your host) or leave empty to use default icon'),
+            'title' => _a('Tumblr icon'),
+            'description' => _a('Set icon url (Uploaded on your host) or leave empty to use default icon'),
             'edit' => 'text',
             'filter' => 'string',
             'value' => '',
             'category' => 'social',
         ),
         'social_trello' => array(
-            'title' => __('Trello account'),
+            'title' => _a('Trello account'),
             'description' => '',
             'edit' => 'text',
             'filter' => 'string',
@@ -355,15 +355,15 @@ return array(
             'category' => 'social',
         ),
         'social_trello_icon' => array(
-            'title' => __('Trello icon'),
-            'description' => __('Set icon url (Uploaded on your host) or leave empty to use default icon'),
+            'title' => _a('Trello icon'),
+            'description' => _a('Set icon url (Uploaded on your host) or leave empty to use default icon'),
             'edit' => 'text',
             'filter' => 'string',
             'value' => '',
             'category' => 'social',
         ),
         'social_rss' => array(
-            'title' => __('Rss link'),
+            'title' => _a('Rss link'),
             'description' => '',
             'edit' => 'text',
             'filter' => 'string',
@@ -371,8 +371,8 @@ return array(
             'category' => 'social',
         ),
         'social_rss_icon' => array(
-            'title' => __('Rss icon'),
-            'description' => __('Set icon url (Uploaded on your host) or leave empty to use default icon'),
+            'title' => _a('Rss icon'),
+            'description' => _a('Set icon url (Uploaded on your host) or leave empty to use default icon'),
             'edit' => 'text',
             'filter' => 'string',
             'value' => '',
@@ -380,7 +380,7 @@ return array(
         ),
         // Gmap
         'gmap_show' => array(
-            'title' => __('Show Google Map'),
+            'title' => _a('Show Google Map'),
             'description' => '',
             'value' => 0,
             'filter' => 'number_int',
@@ -388,7 +388,7 @@ return array(
             'category' => 'gmap',
         ),
         'gmap_longitude' => array(
-            'title' => __('Longitude'),
+            'title' => _a('Longitude'),
             'description' => '',
             'edit' => 'text',
             'filter' => 'string',
@@ -396,7 +396,7 @@ return array(
             'category' => 'gmap',
         ),
         'gmap_latitude' => array(
-            'title' => __('Latitude'),
+            'title' => _a('Latitude'),
             'description' => '',
             'edit' => 'text',
             'filter' => 'string',
@@ -404,7 +404,7 @@ return array(
             'category' => 'gmap',
         ),
         'gmap_zoon' => array(
-            'title' => __('Zoon'),
+            'title' => _a('Zoon'),
             'description' => '',
             'edit' => 'text',
             'filter' => 'string',
@@ -412,7 +412,7 @@ return array(
             'category' => 'gmap',
         ),
         'gmap_title' => array(
-            'title' => __('Title'),
+            'title' => _a('Title'),
             'description' => '',
             'edit' => 'text',
             'filter' => 'string',

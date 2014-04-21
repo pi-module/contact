@@ -14,7 +14,7 @@ return array(
     // Front section
     'front' => array(
         'public'    => array(
-            'title'         => _t('Global public resource'),
+            'title'         => _a('Global public resource'),
             'access'        => array(
                 'guest',
                 'member',

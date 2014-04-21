@@ -13,7 +13,7 @@
 return array(
     'admin' => array(
         'message' => array(
-            'label' => __('Message'),
+            'label' => _a('Message'),
             'permission' => array(
                 'resource' => 'message',
             ),
@@ -22,7 +22,7 @@ return array(
             'action' => 'index',
         ),
         'department' => array(
-            'label' => __('Department'),
+            'label' => _a('Department'),
             'permission' => array(
                 'resource' => 'department',
             ),
@@ -31,7 +31,7 @@ return array(
             'action' => 'index',
         ),
         'tools' => array(
-            'label' => __('Tools'),
+            'label' => _a('Tools'),
             'permission' => array(
                 'resource' => 'tools',
             ),

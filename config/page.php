@@ -14,14 +14,17 @@ return array(
     // Admin section
     'admin' => array(
         array(
+            'title'         => _a('Message'),
             'controller'    => 'message',
             'permission'    => 'message',
         ),
         array(
+            'title'         => _a('Department'),
             'controller'    => 'department',
             'permission'    => 'department',
         ),
         array(
+            'title'         => _a('Tools'),
             'controller'    => 'tools',
             'permission'    => 'tools',
         ),
@@ -29,6 +32,7 @@ return array(
     // Front section
     'front' => array(
         array(
+            'title'         => _a('Contact'),
             'controller'    => 'index',
             'permission'    => 'index',
             'block'         => 1,

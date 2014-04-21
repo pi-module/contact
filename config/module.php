@@ -13,9 +13,9 @@
 return array(
     // Module meta
     'meta'         => array(
-        'title'         => __('Contact'),
-        'description'   => __('Manage Contacts'),
-        'version'       => '1.2.0',
+        'title'         => _a('Contact'),
+        'description'   => _a('Manage Contacts'),
+        'version'       => '1.2.1',
         'license'       => 'New BSD',
         'logo'          => 'image/logo.png',
         'readme'        => 'docs/readme.txt',
