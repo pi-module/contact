@@ -44,16 +44,14 @@ class Breadcrumbs extends AbstractBreadcrumbs
         if ($params['action'] == 'index') {
             if (isset($params['department']) && !empty($params['department'])) {
                 $department = Pi::model('department', $this->getModule())->find($params['department'], 'slug')->toArray();
-            } else {
-                $department = Pi::model('department', $this->getModule())->find($config['default_department'])->toArray();
+                $result[] = array(
+                    'label' => $department['title'],
+                    'href'  => Pi::service('url')->assemble('contact', array(
+                        'module'        => $this->getModule(),
+                        'department'    => $department['slug'],
+                    )),
+                );
             }
-            $result[] = array(
-                'label' => $department['title'],
-                'href'  => Pi::service('url')->assemble('contact', array(
-                    'module'        => $this->getModule(),
-                    'department'    => $department['slug'],
-                )),
-            );
         } elseif ($params['action'] == 'list') {
             $result[] = array(
                 'label' => __('List of departments'),

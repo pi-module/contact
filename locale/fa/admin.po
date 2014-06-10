@@ -41,11 +41,11 @@ msgstr "ابزار"
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/page.php:35
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/module.php:16
 msgid "Contact"
-msgstr "پیام"
+msgstr "تماس با ما"
 
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/module.php:17
 msgid "Manage Contacts"
-msgstr "مدیریت پیام ها"
+msgstr "مدیریت بخش تماس با ما"
 
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:16
 msgid "Admin"

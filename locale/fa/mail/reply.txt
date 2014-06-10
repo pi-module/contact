@@ -5,9 +5,11 @@
 [subject]%subject%[/subject]
 
 [body]
-<div style="margin: 5px">%message%</div>
-<div style="margin-top: 10px">
-    <p>بخش : %department_title%</p>
-    <p>تاریخ : %create%</p>
+<div style="direction: rtl;">
+    <div style="margin: 5px;">%message%</div>
+    <div style="margin-top: 10px;">
+        <p>بخش : %department_title%</p>
+        <p>تاریخ : %create%</p>
+    </div>
 </div>
 [/body]

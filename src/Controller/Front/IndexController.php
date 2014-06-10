@@ -79,6 +79,12 @@ class IndexController extends ActionController
             } else {
                 $department = $this->getModel('department')->find($config['default_department'])->toArray();
             }
+            // check department status
+            if ($department['status'] != 1) {
+                $url = array('action' => 'list');
+                $message = __('Your selected department not active');
+                $this->jump($url, $message);
+            }
             // Set data
             $data['department'] = $department['id'];
             // Set form
@@ -94,7 +100,7 @@ class IndexController extends ActionController
         $this->view()->headDescription($description, 'set');
         $this->view()->headKeywords($keywords, 'set');
         $this->view()->setTemplate('index_form');
-        $this->view()->assign('title', $department['title']);
+        $this->view()->assign('department', $department);
         $this->view()->assign('form', $form);
         $this->view()->assign('config', $config);
     }
