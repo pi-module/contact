@@ -126,7 +126,7 @@ msgstr "تلفن"
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/src/Form/ContactForm.php:151
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/template/admin/message_view.phtml:23
 msgid "Address"
-msgstr "آدرس"
+msgstr "نشانی"
 
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/src/Form/ContactForm.php:164
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/src/Form/ReplyForm.php:81

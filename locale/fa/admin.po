@@ -145,11 +145,11 @@ msgstr "تلفن اجباری باشد"
 
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:181
 msgid "show Address"
-msgstr "نمایش آدرس"
+msgstr "نمایش نشانی"
 
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:189
 msgid "required Address"
-msgstr "آدرس اجباری باشد"
+msgstr "نشانی اجباری باشد"
 
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:197
 msgid "Use captcha"
