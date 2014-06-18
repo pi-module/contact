@@ -22,12 +22,12 @@ class ContactFilter extends InputFilter
         // Get configs
         $module = Pi::service('module')->current();
         $config = Pi::service('registry')->config->read($module, 'form');
-        // name
+        // User id
         $this->add(array(
             'name' => 'author',
             'required' => true,
         ));
-        // title
+        // subject
         $this->add(array(
             'name' => 'subject',
             'required' => true,

@@ -53,6 +53,7 @@ class ContactForm extends BaseForm
             ),
             'attributes' => array(
                 'type' => 'text',
+                'required' => true,
             )
         ));
         // department
@@ -82,6 +83,7 @@ class ContactForm extends BaseForm
             'attributes' => array(
                 'type' => 'text',
                 'value' => $user->email,
+                'required' => true,
             )
         ));
         // Name
@@ -93,6 +95,7 @@ class ContactForm extends BaseForm
             'attributes' => array(
                 'type' => 'text',
                 'value' => $user->identity,
+                'required' => true,
             )
         ));
         // Organization
@@ -104,6 +107,7 @@ class ContactForm extends BaseForm
                 ),
                 'attributes' => array(
                     'type' => 'text',
+                    'required' => $config['required_organization'] ? true : false,
                 )
             ));
         }
@@ -116,6 +120,7 @@ class ContactForm extends BaseForm
                 ),
                 'attributes' => array(
                     'type' => 'url',
+                    'required' => $config['required_homepage'] ? true : false,
                 )
             ));
         }
@@ -128,6 +133,7 @@ class ContactForm extends BaseForm
                 ),
                 'attributes' => array(
                     'type' => 'text',
+                    'required' => $config['required_location'] ? true : false,
                 )
             ));
         }
@@ -140,6 +146,7 @@ class ContactForm extends BaseForm
                 ),
                 'attributes' => array(
                     'type' => 'text',
+                    'required' => $config['required_phone'] ? true : false,
                 )
             ));
         }
@@ -151,6 +158,7 @@ class ContactForm extends BaseForm
                     'label' => __('Address'),
                 ),
                 'attributes' => array(
+                    'required' => $config['required_address'] ? true : false,
                     'type' => 'textarea',
                     'rows' => '2',
                     'cols' => '40',
@@ -164,6 +172,7 @@ class ContactForm extends BaseForm
                 'label' => __('Message'),
             ),
             'attributes' => array(
+                'required' => true,
                 'type' => 'textarea',
                 'rows' => '5',
                 'cols' => '40',
@@ -193,4 +202,4 @@ class ContactForm extends BaseForm
             )
         ));
     }
-}   
+}
