@@ -4,7 +4,7 @@ $this->css($this->assetModule('css/front.css'));
 if ($config['gmap_show']) {
     $this->footScript()->prependFile('https://maps.googleapis.com/maps/api/js?sensor=false');
     $this->footScript()->appendScript("
-        var myLatlng = new google.maps.LatLng(" . $config['gmap_longitude'] . ", " . $config['gmap_latitude'] . ");
+        var myLatlng = new google.maps.LatLng(" . $config['gmap_latitude'] . ", " . $config['gmap_longitude'] . ");
         var mapOptions = {
             zoom: " . $config['gmap_zoon'] . ",
             center: myLatlng
@@ -17,9 +17,17 @@ if ($config['gmap_show']) {
             title: '" . $config['gmap_title'] . "'
         });
     ");
+    $this->headStyle()->appendStyle("#map_canvas {width: 100%; height: " . $config['gmap_height'] . "px;}");
 }
 ?>
 <div class="contact">
+    <?php if ($config['gmap_show'] && $config['gmap_position'] == 'top') { ?>
+        <div class="side-gmap">
+            <div class="thumbnail">
+                <div id="map_canvas"></div>
+            </div>
+        </div>
+    <?php } ?>
     <h3><?php echo $this->escape($title); ?></h3>
     <?php if (!empty($config['toptext'])) { ?>
     <div class="top-text">
@@ -51,7 +59,7 @@ if ($config['gmap_show']) {
             <?php echo $config['sidetext']; ?>
             </div>
             <?php } ?>
-            <?php if ($config['gmap_show']) { ?>
+            <?php if ($config['gmap_show'] && $config['gmap_position'] == 'side') { ?>
             <div class="side-gmap">
                 <div class="thumbnail">
                     <div id="map_canvas"></div>
@@ -61,12 +69,16 @@ if ($config['gmap_show']) {
         </div>
         <?php } ?>
     </div>
+    <?php if (empty($config['bottomtext'])) { ?>
     <div class="side-social">
         <?php include $this->template('front/social'); ?>
     </div>
-    <?php if (!empty($config['bottomtext'])) { ?>
+    <?php } else { ?>
     <div class="bottom-text">
         <?php echo $config['bottomtext']; ?>
+        <div class="side-social">
+            <?php include $this->template('front/social'); ?>
+        </div>
     </div>
     <?php } ?>
 </div>

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pi contact module\n"
-"POT-Creation-Date: 2014-04-21 20:38+0330\n"
+"POT-Creation-Date: 2014-07-15 17:09+0330\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Pi\n"
@@ -108,175 +108,195 @@ msgid "Default department"
 msgstr ""
 
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:109
-msgid "show Department"
+msgid "show title"
 msgstr ""
 
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:117
-msgid "show Organization"
+msgid "show Department"
 msgstr ""
 
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:125
-msgid "required Organization"
+msgid "show Organization"
 msgstr ""
 
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:133
-msgid "show Homepage"
+msgid "required Organization"
 msgstr ""
 
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:141
-msgid "required Homepage"
+msgid "show Homepage"
 msgstr ""
 
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:149
-msgid "show Location"
+msgid "required Homepage"
 msgstr ""
 
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:157
-msgid "required Location"
+msgid "show Location"
 msgstr ""
 
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:165
-msgid "show Phone"
+msgid "required Location"
 msgstr ""
 
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:173
-msgid "required Phone"
+msgid "show Phone"
 msgstr ""
 
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:181
-msgid "show Address"
+msgid "required Phone"
 msgstr ""
 
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:189
-msgid "required Address"
+msgid "show Address"
 msgstr ""
 
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:197
+msgid "required Address"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:205
 msgid "Use captcha"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:198
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:206
 msgid "Captcha just use for gust"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:206
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:214
 msgid "Twitter account"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:214
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:222
 msgid "Twitter icon"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:215
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:231
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:247
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:263
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:279
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:295
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:311
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:327
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:343
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:359
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:375
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:223
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:239
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:255
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:271
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:287
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:303
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:319
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:335
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:351
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:367
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:383
 msgid "Set icon url (Uploaded on your host) or leave empty to use default icon"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:222
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:230
 msgid "Facebook account"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:230
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:238
 msgid "Facebook icon"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:238
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:246
 msgid "Google plus account"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:246
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:254
 msgid "Google plus icon"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:254
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:262
 msgid "YouTube account"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:262
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:270
 msgid "YouTube icon"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:270
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:278
 msgid "Pinterest account"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:278
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:286
 msgid "Pinterest icon"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:286
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:294
 msgid "LinkedIn account"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:294
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:302
 msgid "LinkedIn icon"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:302
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:310
 msgid "Github account"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:310
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:318
 msgid "Github icon"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:318
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:326
 msgid "Instagram account"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:326
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:334
 msgid "Instagram icon"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:334
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:342
 msgid "Tumblr account"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:342
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:350
 msgid "Tumblr icon"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:350
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:358
 msgid "Trello account"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:358
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:366
 msgid "Trello icon"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:366
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:374
 msgid "Rss link"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:374
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:382
 msgid "Rss icon"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:383
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:391
 msgid "Show Google Map"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:391
-msgid "Longitude"
-msgstr ""
-
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:399
-msgid "Latitude"
+msgid "Position"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:407
-msgid "Zoon"
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:405
+msgid "Side"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:406
+msgid "Top"
 msgstr ""
 
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:415
+msgid "Latitude"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:423
+msgid "Longitude"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:431
+msgid "Zoon"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:439
 msgid "Title"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/contact/config/config.php:447
+msgid "Height"
 msgstr ""

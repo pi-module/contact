@@ -105,6 +105,14 @@ return array(
             'filter' => 'number_int',
             'category' => 'form',
         ),
+        'show_title' => array(
+            'title' => _a('show title'),
+            'description' => '',
+            'value' => 1,
+            'filter' => 'number_int',
+            'edit' => 'checkbox',
+            'category' => 'form',
+        ),
         'show_department' => array(
             'title' => _a('show Department'),
             'description' => '',
@@ -387,16 +395,32 @@ return array(
             'edit' => 'checkbox',
             'category' => 'gmap',
         ),
-        'gmap_longitude' => array(
-            'title' => _a('Longitude'),
+        'gmap_position' => array(
+            'title' => _a('Position'),
+            'description' => ' ',
+            'edit' => array(
+                'type' => 'select',
+                'options' => array(
+                    'options' => array(
+                        'side' => _a('Side'),
+                        'top' => _a('Top'),
+                    ),
+                ),
+            ),
+            'filter' => 'string',
+            'value' => 'side',
+            'category' => 'gmap',
+        ),
+        'gmap_latitude' => array(
+            'title' => _a('Latitude'),
             'description' => '',
             'edit' => 'text',
             'filter' => 'string',
             'value' => '',
             'category' => 'gmap',
         ),
-        'gmap_latitude' => array(
-            'title' => _a('Latitude'),
+        'gmap_longitude' => array(
+            'title' => _a('Longitude'),
             'description' => '',
             'edit' => 'text',
             'filter' => 'string',
@@ -417,6 +441,14 @@ return array(
             'edit' => 'text',
             'filter' => 'string',
             'value' => '',
+            'category' => 'gmap',
+        ),
+        'gmap_height' => array(
+            'title' => _a('Height'),
+            'description' => '',
+            'edit' => 'text',
+            'filter' => 'string',
+            'value' => '300',
             'category' => 'gmap',
         ),
     ),

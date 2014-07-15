@@ -28,7 +28,7 @@ class Breadcrumbs extends AbstractBreadcrumbs
         $config = Pi::service('registry')->config->read($this->getModule());
         // Check breadcrumbs
         if (!$config['breadcrumbs']) {
-            //return '';
+            return '';
         }
         // Set module link
         $moduleData = Pi::registry('module')->read($this->getModule());
