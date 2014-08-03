@@ -1,0 +1,306 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Pi contact module\n"
+"POT-Creation-Date: 2014-07-29 09:18+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Marc Desrousseaux\n"
+"Language-Team: Marc\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.7\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _a;_t\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SearchPath-0: C:\\Users\\LAPTOP MARC\\Documents\\GitHub\\contact\n"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:16
+msgid "Admin"
+msgstr "Admin"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:20
+#, fuzzy
+msgid "HomePage"
+msgstr "Accueil"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:24
+msgid "Form"
+msgstr "Formulaire"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:28
+msgid "Google Map"
+msgstr "Google Map"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:32
+msgid "Social Network"
+msgstr "Réseau Social"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:40
+msgid "Perpage"
+msgstr "Par page"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:48
+#, fuzzy
+msgid "Homepage"
+msgstr "Homepage"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:54
+msgid "Default form"
+msgstr "Formulaire par défaut"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:55
+msgid "List of Departments"
+msgstr "Liste des départements-sujets"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:64
+msgid "Show breadcrumbs"
+msgstr "Montrer les Breadcrumbs"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:72
+msgid "Top text"
+msgstr "Texte haut de formulaire"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:79
+msgid "Bottom text"
+msgstr "Texte bas de formulaire"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:86
+msgid "Side text"
+msgstr "Texte de bord de formulaire"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:93
+msgid "Finish text"
+msgstr "Texte final soumission"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:101
+msgid "Default department"
+msgstr "Département-sujet par défaut"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:109
+msgid "show title"
+msgstr "Montrer le Titre"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:117
+msgid "show Department"
+msgstr "Exiger département-sujet"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:125
+msgid "show Organization"
+msgstr "Montrer l'organisation"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:133
+msgid "required Organization"
+msgstr "Exiger l'organisation"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:141
+msgid "show Homepage"
+msgstr "Montrer SiteWeb"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:149
+msgid "required Homepage"
+msgstr "Exiger le site web"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:157
+msgid "show Location"
+msgstr "Montrer la localisation"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:165
+msgid "required Location"
+msgstr "Exiger la localisation"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:173
+msgid "show Phone"
+msgstr "Montrer Téléphone"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:181
+msgid "required Phone"
+msgstr "Exiger le téléphone"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:189
+msgid "show Address"
+msgstr "Montrer Adresse"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:197
+msgid "required Address"
+msgstr "Exiger l'adresse"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:205
+msgid "Use captcha"
+msgstr "Utiliser le captcha"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:206
+msgid "Captcha just use for gust"
+msgstr "Captcha seulement pour les invités"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:214
+msgid "Twitter account"
+msgstr "Compte Twitter"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:222
+msgid "Twitter icon"
+msgstr "Icône Twitter"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:223
+#: MARC\Documents\GitHub\contact/config/config.php:239
+#: MARC\Documents\GitHub\contact/config/config.php:255
+#: MARC\Documents\GitHub\contact/config/config.php:271
+#: MARC\Documents\GitHub\contact/config/config.php:287
+#: MARC\Documents\GitHub\contact/config/config.php:303
+#: MARC\Documents\GitHub\contact/config/config.php:319
+#: MARC\Documents\GitHub\contact/config/config.php:335
+#: MARC\Documents\GitHub\contact/config/config.php:351
+#: MARC\Documents\GitHub\contact/config/config.php:367
+#: MARC\Documents\GitHub\contact/config/config.php:383
+msgid "Set icon url (Uploaded on your host) or leave empty to use default icon"
+msgstr ""
+"Définir l'url de l'icône (uploadée sur votre hébergement) ou laisser vider "
+"pour utiliser l'icône par défaut"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:230
+msgid "Facebook account"
+msgstr "Compte Facebook"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:238
+msgid "Facebook icon"
+msgstr "Icône Facebook"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:246
+msgid "Google plus account"
+msgstr "Compte Google Plus"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:254
+msgid "Google plus icon"
+msgstr "Icône Google Plus"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:262
+msgid "YouTube account"
+msgstr "Compte YouTube"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:270
+msgid "YouTube icon"
+msgstr "Icône YouTube"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:278
+msgid "Pinterest account"
+msgstr "Compte Pinterest"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:286
+msgid "Pinterest icon"
+msgstr "Icône Pinterest"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:294
+msgid "LinkedIn account"
+msgstr "Compte LinkedIn"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:302
+msgid "LinkedIn icon"
+msgstr "Icône LinkedIn"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:310
+msgid "Github account"
+msgstr "Compte GitHub"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:318
+msgid "Github icon"
+msgstr "Icône GitHub"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:326
+msgid "Instagram account"
+msgstr "Compte Instagram"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:334
+msgid "Instagram icon"
+msgstr "Icône Instagram"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:342
+msgid "Tumblr account"
+msgstr "Compte Tumblr"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:350
+msgid "Tumblr icon"
+msgstr "Icône Tumblr"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:358
+msgid "Trello account"
+msgstr "Compte Trello"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:366
+msgid "Trello icon"
+msgstr "Icône Trello"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:374
+msgid "Rss link"
+msgstr "Lien  RSS"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:382
+msgid "Rss icon"
+msgstr "Icône RSS"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:391
+msgid "Show Google Map"
+msgstr "Afficher la carte Google Map"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:399
+msgid "Position"
+msgstr "Position"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:405
+msgid "Side"
+msgstr "De côté"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:406
+msgid "Top"
+msgstr "Au dessus"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:415
+msgid "Latitude"
+msgstr "Latitude"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:423
+msgid "Longitude"
+msgstr "Longitude"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:431
+msgid "Zoon"
+msgstr "Zoom"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:439
+msgid "Title"
+msgstr "Titre"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:447
+msgid "Height"
+msgstr "Hauteur"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/module.php:16
+#: MARC\Documents\GitHub\contact/config/page.php:35
+msgid "Contact"
+msgstr "Contact"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/module.php:17
+msgid "Manage Contacts"
+msgstr "Gérer les contacts"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/navigation.php:16
+#: MARC\Documents\GitHub\contact/config/page.php:17
+#: MARC\Documents\GitHub\contact/config/permission.php:27
+msgid "Message"
+msgstr "Message"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/navigation.php:25
+#: MARC\Documents\GitHub\contact/config/page.php:22
+#: MARC\Documents\GitHub\contact/config/permission.php:33
+msgid "Department"
+msgstr "Département-Sujet"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/navigation.php:34
+#: MARC\Documents\GitHub\contact/config/page.php:27
+#: MARC\Documents\GitHub\contact/config/permission.php:39
+msgid "Tools"
+msgstr "Outils"
+
+#: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/permission.php:17
+msgid "Global public resource"
+msgstr "Ressource globale publique"
