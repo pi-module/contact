@@ -211,11 +211,11 @@ class IndexController extends ActionController
         $values['time_create'] = _date($values['time_create']);
         // Set template
         $data = Pi::service('mail')->template('contact', $values);
-        // Set message to admin
+        // Set message
         $message = Pi::service('mail')->message($data['subject'], $data['body'], $data['format']);
         $message->addTo($to);
         $message->setEncoding("UTF-8");
-        // Send mail to admin
+        // Send mail
         Pi::service('mail')->send($message);
     }
 
@@ -229,12 +229,12 @@ class IndexController extends ActionController
         $values['time_create'] = _date($values['time_create']);
         // Set template
         $data = Pi::service('mail')->template('contact', $values);
-        // Set message to admin
+        // Set message
         $message = Pi::service('mail')->message($data['subject'], $data['body'], $data['format']);
         $message->addTo($to);
-        $messageA->setEncoding("UTF-8");
-        // Send mail to admin
-        Pi::service('mail')->send($messageAdmin);
+        $message->setEncoding("UTF-8");
+        // Send mail
+        Pi::service('mail')->send($message);
     }
 
     protected function sendMailToUser($values)
