@@ -1,12 +1,17 @@
 <?php 
 $this->css($this->assetModule('css/front.css')); 
 // Load google map
-if ($config['gmap_show']) {
+if ($config['gmap_show'] && !empty($config['gmap_latitude']) && !empty($config['gmap_longitude'])) {
+    // set parameters     
+    $gmap_zoon = empty($config['gmap_zoon']) ? '17' : $config['gmap_zoon'];
+    $gmap_title = empty($config['gmap_title']) ? '' : $config['gmap_title'];
+    $gmap_height = empty($config['gmap_height']) ? '400' : $config['gmap_height'];
+    // Set foot Script
     $this->footScript()->prependFile('https://maps.googleapis.com/maps/api/js?sensor=false');
     $this->footScript()->appendScript("
         var myLatlng = new google.maps.LatLng(" . $config['gmap_latitude'] . ", " . $config['gmap_longitude'] . ");
         var mapOptions = {
-            zoom: " . $config['gmap_zoon'] . ",
+            zoom: " . $gmap_zoon . ",
             center: myLatlng
         }
         var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
@@ -14,10 +19,10 @@ if ($config['gmap_show']) {
             position: myLatlng,
             map: map,
             draggable:true,
-            title: '" . $config['gmap_title'] . "'
+            title: '" . $gmap_title . "'
         });
     ");
-    $this->headStyle()->appendStyle("#map_canvas {width: 100%; height: " . $config['gmap_height'] . "px;}");
+    $this->headStyle()->appendStyle("#map_canvas {width: 100%; height: " . $gmap_height . "px;}");
 }
 ?>
 <div class="contact">
