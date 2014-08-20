@@ -60,6 +60,7 @@ class IndexController extends ActionController
                 $values['department_email'] = $department['email'];
                 // Send as mail
                 $this->sendMailToAdmin($values);
+                $this->sendMailToDepartment($values);
                 $this->sendMailToUser($values);
                 // Set jump
                 $url = array('action' => 'finish');
@@ -183,6 +184,7 @@ class IndexController extends ActionController
 			    $values['department_email'] = $department['email'];
 			    // Send as mail
 			    $this->sendMailToAdmin($values);
+                $this->sendMailToDepartment($values);
                 $this->sendMailToUser($values);
 			    // return
 			    $return['message'] = __('Your Contact send and saved successfully');
@@ -203,19 +205,36 @@ class IndexController extends ActionController
     {
         // Set to
         $to = array(
-            Pi::config('adminmail', 'mail')  => Pi::config('adminname', 'mail'),
-            $values['department_email']      => $values['department_title'],
+            Pi::config('adminmail') => Pi::config('adminname'),
         );
         // Set template info
         $values['time_create'] = _date($values['time_create']);
         // Set template
         $data = Pi::service('mail')->template('contact', $values);
-        // Set message
+        // Set message to admin
         $message = Pi::service('mail')->message($data['subject'], $data['body'], $data['format']);
         $message->addTo($to);
         $message->setEncoding("UTF-8");
-        // Send mail
+        // Send mail to admin
         Pi::service('mail')->send($message);
+    }
+
+    protected function sendMailToDepartment($values)
+    {
+        // Set to
+        $to = array(
+            $values['department_email'] => $values['department_title'],
+        );
+        // Set template info
+        $values['time_create'] = _date($values['time_create']);
+        // Set template
+        $data = Pi::service('mail')->template('contact', $values);
+        // Set message to admin
+        $message = Pi::service('mail')->message($data['subject'], $data['body'], $data['format']);
+        $message->addTo($to);
+        $messageA->setEncoding("UTF-8");
+        // Send mail to admin
+        Pi::service('mail')->send($messageAdmin);
     }
 
     protected function sendMailToUser($values)
