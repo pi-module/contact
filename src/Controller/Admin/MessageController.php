@@ -31,7 +31,6 @@ class MessageController extends ActionController
         $page = $this->params('page', 1);
         // Set info
         $where = array('mid' => 0);
-        $columns = array('id', 'subject', 'department', 'name', 'uid', 'time_create', 'answered');
         $order = array('id DESC', 'time_create DESC');
         $offset = (int)($page - 1) * $this->config('admin_perpage');
         $limit = intval($this->config('admin_perpage'));
@@ -49,7 +48,7 @@ class MessageController extends ActionController
             $departmentList[$row->id] = $row->toArray();
         }
         // Get info
-        $select = $this->getModel('message')->select()->where($where)->columns($columns)->order($order)->offset($offset)->limit($limit);
+        $select = $this->getModel('message')->select()->where($where)->order($order)->offset($offset)->limit($limit);
         $rowset = $this->getModel('message')->selectWith($select);
         // Make list
         foreach ($rowset as $row) {

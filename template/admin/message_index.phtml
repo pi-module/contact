@@ -19,7 +19,11 @@
 			<td><?php echo $this->escape($message['id']); ?></td>
 			<td><?php if($message['answered']) { ?><span class="label label-success"><?php _e('Answered'); ?></span> <?php } ?><?php echo $this->escape($message['subject']); ?></td>
 			<td><a title="<?php echo $this->escape($message['departmenttitle']); ?>" href="<?php echo $this->url('', array('action' => 'index', 'department' => $this->escape($message['department']))); ?>"><?php echo $this->escape($message['departmenttitle']); ?></a></td>
-			<td><?php echo $this->escape($message['name']); ?> ( <?php echo $this->escape($message['user']['identity']); ?> <?php echo $this->escape($message['user']['name']); ?> )</td>
+			<td>
+                <span class="label label-success"><?php echo $this->escape($message['platform']); ?></span>
+				<?php echo $this->escape($message['name']); ?> 
+				( <?php echo $this->escape($message['user']['identity']); ?> <?php echo $this->escape($message['user']['name']); ?> )
+			</td>
 			<td><?php echo $this->escape($message['time_create']); ?></td>
 			<td>
 				<a class="btn btn-primary" title="<?php _e('View'); ?>" href="<?php echo $this->url('', array('action' => 'view', 'id' => $message['id'])); ?>"><i class="fa fa-eye"></i> <?php _e('View'); ?></a>

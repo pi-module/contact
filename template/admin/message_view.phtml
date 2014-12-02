@@ -3,12 +3,12 @@
 	<?php if($message['mid']) { ?>
 		<div class="main-message well"><?php _e('Main Message is'); ?> : <a title="<?php echo $main['subject']; ?>" href="<?php echo $this->url('', array('action' => 'view', 'id' => $main['id'])); ?>"><?php echo $this->escape($main['subject']); ?></a></div>
 	<?php } ?>
-	
 	<div class="main-info well">
 		<p><?php _e('Department'); ?> : <?php echo $this->escape($department['title']); ?></p>
 		<p><?php _e('Auther'); ?> : <?php echo $this->escape($message['name']); ?> ( <?php echo $this->escape($message['user']['identity']); ?> <?php echo $this->escape($message['user']['name']); ?> )</p>
 		<p><?php _e('Email'); ?> : <?php echo $this->escape($message['email']); ?></p>
 		<p><?php _e('Create'); ?> : <?php echo $this->escape($message['time_create']); ?></p>
+        <p><?php _e('Platform'); ?> : <span class="label label-success"><?php echo $this->escape($message['platform']); ?></span></p>
     </div>
     <div class="message well">
     	<h3><?php _e('Subject'); ?> : <?php echo $this->escape($message['subject']); ?></h3>

@@ -189,12 +189,12 @@ class IndexController extends ActionController
             $list[$row->id] = $row->toArray();
             $list[$row->id]['url'] = $this->url('', array('module' => $module, 'department' => $list[$row->id]['slug']));
         }
-        // Set keywords
+        // Set seo text
+        $seoTitle = Pi::api('text', 'contact')->title(__('List of departments'));
         $seoKeywords = Pi::api('text', 'contact')->keywords(__('Select Department Form contact us'));
-        // Set Description
         $seoDescription = Pi::api('text', 'contact')->description(__('Select Department Form contact us'));
         // Set view
-        $this->view()->headTitle(__('List of departments'));
+        $this->view()->headTitle($seoTitle);
         $this->view()->headDescription($seoDescription, 'set');
         $this->view()->headKeywords($seoKeywords, 'set');
         $this->view()->setTemplate('index_list');
@@ -209,8 +209,14 @@ class IndexController extends ActionController
         $module = $this->params('module');
         // Get config
         $config = Pi::service('registry')->config->read($module);
+        // Set seo text
+        $seoTitle = Pi::api('text', 'contact')->title(__('Finish'));
+        $seoKeywords = Pi::api('text', 'contact')->keywords(__('Submit contact form finished'));
+        $seoDescription = Pi::api('text', 'contact')->description(__('Submit contact form finished'));
         // Set view
-        $this->view()->headTitle(__('Finish'));
+        $this->view()->headTitle($seoTitle);
+        $this->view()->headDescription($seoDescription, 'set');
+        $this->view()->headKeywords($seoKeywords, 'set');
         $this->view()->setTemplate('index_finish');
         $this->view()->assign('title', __('Finish'));
         $this->view()->assign('config', $config);

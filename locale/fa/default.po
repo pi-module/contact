@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pi contact module\n"
-"POT-Creation-Date: 2014-12-02 17:01+0330\n"
+"POT-Creation-Date: 2014-12-02 17:16+0330\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Pi\n"
@@ -17,7 +17,7 @@ msgstr ""
 "contact\n"
 
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Api/Breadcrumbs.php:60
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:197
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:193
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:201
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/template/admin/department_index.phtml:6
 msgid "List of departments"
@@ -25,7 +25,7 @@ msgstr "فهرست بخش ها"
 
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Api/Breadcrumbs.php:66
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:213
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:215
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:221
 msgid "Finish"
 msgstr "پایان"
 
@@ -41,7 +41,7 @@ msgstr "فقط حذف پاسخ های مدیر"
 
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Form/PruneForm.php:59
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Form/ContactForm.php:65
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/template/admin/message_view.phtml:8
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/template/admin/message_view.phtml:7
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/template/admin/message_index.phtml:12
 msgid "Department"
 msgstr "بخش"
@@ -64,7 +64,7 @@ msgstr "موضوع"
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Form/ContactForm.php:81
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Form/DepartmentForm.php:67
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Form/DepartmentForm.php:71
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/template/admin/message_view.phtml:10
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/template/admin/message_view.phtml:9
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/template/admin/department_index.phtml:11
 msgid "Email"
 msgstr "ایمیل"
@@ -154,7 +154,7 @@ msgstr "باطل شده"
 
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:71
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:148
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:254
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:260
 msgid "Your Contact send and saved successfully"
 msgstr "پیام شما با موفقیت ارسال و ذخیره شد"
 
@@ -172,52 +172,57 @@ msgstr "تماس با ما"
 msgid "Your selected department not active"
 msgstr "بخش انتخاب شده فعال نیست"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:193
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:194
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:195
 msgid "Select Department Form contact us"
 msgstr "انتخاب یک بخش برای تماس"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:257
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:214
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:215
+msgid "Submit contact form finished"
+msgstr "ارسال فرم تماس با موفقیت به پایان رسید"
+
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:263
 msgid "Send information not valid"
 msgstr "اطلاعات ارسال شده صحیح نیست"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:261
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:267
 msgid "Nothing send"
 msgstr "هیچ چیز ارسال نشد"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Admin/MessageController.php:97
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Admin/MessageController.php:139
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Admin/MessageController.php:213
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Admin/MessageController.php:96
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Admin/MessageController.php:138
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Admin/MessageController.php:212
 msgid "Please select message"
 msgstr "لطفا یک پیام انتخاب کنید"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Admin/MessageController.php:172
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Admin/MessageController.php:171
 msgid "Your reply Send and saved successfully"
 msgstr "پاسخ شما با موفقیت ارسال و ذخیره شد"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Admin/MessageController.php:175
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Admin/MessageController.php:174
 msgid "Your reply send successfully but dont saved in DB"
 msgstr "پاسخ شما با موفقیت ارسال شد ولی در پایگاه داده ها ذخیره نشد"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Admin/MessageController.php:178
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Admin/MessageController.php:177
 msgid "Error in send reply as Email"
 msgstr "خطا در ارسال پاسخ به صورت ایمیل"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Admin/MessageController.php:187
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Admin/MessageController.php:186
 #, php-format
 msgid "Re : %s"
 msgstr "پاسخ به : %s"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Admin/MessageController.php:190
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Admin/MessageController.php:189
 msgid "You can answer to this message"
 msgstr "شما میتوانید به این پیام پاسخ بدهید"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Admin/MessageController.php:195
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Admin/MessageController.php:194
 #, php-format
 msgid "Reply to %s"
 msgstr "پاسخ به %s"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Admin/MessageController.php:211
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Admin/MessageController.php:210
 msgid "Your selected message deleted"
 msgstr "پیام انتخابی شما حذف شد"
 
@@ -325,14 +330,18 @@ msgstr "خوراک"
 msgid "Main Message is"
 msgstr "پیام اصلی "
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/template/admin/message_view.phtml:9
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/template/admin/message_view.phtml:8
 msgid "Auther"
 msgstr "ارسال کننده"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/template/admin/message_view.phtml:11
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/template/admin/message_view.phtml:10
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/template/admin/message_index.phtml:14
 msgid "Create"
 msgstr "ایجاد"
+
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/template/admin/message_view.phtml:11
+msgid "Platform"
+msgstr "پلت فرم"
 
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/template/admin/message_view.phtml:22
 msgid "Ip"
@@ -344,12 +353,12 @@ msgid "Back"
 msgstr "برگشت"
 
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/template/admin/message_view.phtml:27
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/template/admin/message_index.phtml:26
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/template/admin/message_index.phtml:30
 msgid "Reply"
 msgstr "پاسخ"
 
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/template/admin/message_view.phtml:28
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/template/admin/message_index.phtml:27
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/template/admin/message_index.phtml:31
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/template/admin/department_index.phtml:22
 msgid "Delete"
 msgstr "حذف"
@@ -372,7 +381,7 @@ msgstr "عملکرد"
 msgid "Answered"
 msgstr "پاسخ داده شده"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/template/admin/message_index.phtml:25
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/template/admin/message_index.phtml:29
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/template/admin/department_index.phtml:20
 msgid "View"
 msgstr "نمایش"
@@ -411,9 +420,6 @@ msgstr "ویرایش"
 
 #~ msgid "Perpage"
 #~ msgstr "تعداد در هر صفحه"
-
-#~ msgid "Default form"
-#~ msgstr "فرم پیش فرض"
 
 #~ msgid "List of Departments"
 #~ msgstr "فهرست بخش ها"
