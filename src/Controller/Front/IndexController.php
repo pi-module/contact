@@ -67,7 +67,7 @@ class IndexController extends ActionController
                 $this->sendMailToAdmin($values);
                 $this->sendMailToUser($values);
                 // Set jump
-                $url = array('action' => 'finish');
+                $url = array('action' => 'finish', 'hash' => md5(time()));
                 $message = __('Your Contact send and saved successfully');
                 $this->jump($url, $message);
             }
@@ -91,7 +91,6 @@ class IndexController extends ActionController
         $this->view()->headKeywords($seoKeywords, 'set');
         $this->view()->setTemplate('index_form');
         $this->view()->assign('title', __('Contact Us'));
-        $this->view()->assign('department', $department);
         $this->view()->assign('form', $form);
         $this->view()->assign('config', $config);
     }
@@ -144,7 +143,7 @@ class IndexController extends ActionController
                 $this->sendMailToAdmin($values);
                 $this->sendMailToUser($values);
                 // Set jump
-                $url = array('action' => 'finish');
+                $url = array('action' => 'finish', 'hash' => md5(time()));
                 $message = __('Your Contact send and saved successfully');
                 $this->jump($url, $message);
             }
@@ -207,6 +206,13 @@ class IndexController extends ActionController
     {
         // Set info
         $module = $this->params('module');
+        $hash = $this->params('hash');
+        // Check hash
+        if (empty($hash)) {
+            $url = array('action' => 'index');
+            $message = __('Please submit contact form');
+            $this->jump($url, $message);
+        }
         // Get config
         $config = Pi::service('registry')->config->read($module);
         // Set seo text
