@@ -1,20 +1,28 @@
-.top-text {
-    text-align: justify;
+.contact-title {}
+
+.contact-topmap {
+    margin-bottom: 10px;
 }
 
-.side-text {
-    text-align: justify;
-    padding: 5px 0;
-    margin: 10px 0;
+.contact-sidemap {
+    margin-bottom: 10px;
 }
 
-.bottom-text {
-    text-align: justify;
+.contact-toptext {
+    margin-bottom: 10px;
 }
 
-.department-list {
-    padding: 5px 0;
-    margin: 5px 0;
+.contact-bottomtext {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.contact-sidetext {
+    margin-bottom: 10px;
+}
+
+.contact-sidetext .thumbnail {
+    padding: 10px;
 }
 
 .contact-form {
@@ -22,19 +30,16 @@
     margin: 5px 0;
 }
 
-.submit-button {
-    margin-top: 10px;
+.contact-department-list {
+    padding: 5px 0;
+    margin: 5px 0;
 }
 
-#social-items {
+#contact-social-items {
     font-size: 2.5em;
     text-align: center;
 }
 
-#social-items a:hover {
+#contact-social-items a:hover {
     text-decoration: none;
-}
-
-.side-gmap .thumbnail {
-    padding: 10px;
 }

@@ -1,11 +1,13 @@
-<div id="social-items">
+<div id="contact-social-items">
 <?php if (!empty($config['social_twitter'])) { ?>
     <?php if(!empty($config['social_twitter_icon'])) {
         $icon = sprintf('<img src="%s" alt="%s" />', $config['social_twitter_icon'], __('Twitter'));
     } else {
         $icon = '<i class="fa fa-twitter-square"></i>';
     } ?>
-    <span id="social-twitter"><a rel="nofollow" title="<?php _e('Twitter') ?>" href="<?php echo $config['social_twitter']; ?>"><?php echo $icon; ?></a></span>
+    <span id="contact-social-twitter">
+        <a rel="nofollow" title="<?php _e('Twitter') ?>" href="<?php echo $config['social_twitter']; ?>"><?php echo $icon; ?></a>
+    </span>
 <?php } ?>
 <?php if (!empty($config['social_facebook'])) { ?>
     <?php if(!empty($config['social_facebook_icon'])) {
@@ -13,7 +15,9 @@
     } else {
         $icon = '<i class="fa fa-facebook-square"></i>';
     } ?>
-    <span id="social-facebook"><a rel="nofollow" title="<?php _e('Facebook') ?>" href="<?php echo $config['social_facebook']; ?>"><?php echo $icon; ?></a></span>
+    <span id="contact-social-facebook">
+        <a rel="nofollow" title="<?php _e('Facebook') ?>" href="<?php echo $config['social_facebook']; ?>"><?php echo $icon; ?></a>
+    </span>
 <?php } ?>
 <?php if (!empty($config['social_google'])) { ?>
     <?php if(!empty($config['social_google_icon'])) {
@@ -21,7 +25,9 @@
     } else {
         $icon = '<i class="fa fa-google-plus-square"></i>';
     } ?>
-    <span id="social-google"><a rel="nofollow" title="<?php _e('Google') ?>" href="<?php echo $config['social_google']; ?>"><?php echo $icon; ?></a></span>
+    <span id="contact-social-google">
+        <a rel="nofollow" title="<?php _e('Google') ?>" href="<?php echo $config['social_google']; ?>"><?php echo $icon; ?></a>
+    </span>
 <?php } ?>
 <?php if (!empty($config['social_youtube'])) { ?>
     <?php if(!empty($config['social_youtube_icon'])) {
@@ -29,7 +35,9 @@
     } else {
         $icon = '<i class="fa fa-youtube-square"></i>';
     } ?>
-    <span id="social-youtube"><a rel="nofollow" title="<?php _e('YouTube') ?>" href="<?php echo $config['social_youtube']; ?>"><?php echo $icon; ?></a></span>
+    <span id="contact-social-youtube">
+        <a rel="nofollow" title="<?php _e('YouTube') ?>" href="<?php echo $config['social_youtube']; ?>"><?php echo $icon; ?></a>
+    </span>
 <?php } ?>
 <?php if (!empty($config['social_pinterest'])) { ?>
     <?php if(!empty($config['social_pinterest_icon'])) {
@@ -37,7 +45,9 @@
     } else {
         $icon = '<i class="fa fa-pinterest-square"></i>';
     } ?>
-    <span id="social-pinterest"><a rel="nofollow" title="<?php _e('Pinterest') ?>" href="<?php echo $config['social_pinterest']; ?>"><?php echo $icon; ?></a></span>
+    <span id="contact-social-pinterest">
+        <a rel="nofollow" title="<?php _e('Pinterest') ?>" href="<?php echo $config['social_pinterest']; ?>"><?php echo $icon; ?></a>
+    </span>
 <?php } ?>
 <?php if (!empty($config['social_instagram'])) { ?>
     <?php if(!empty($config['social_instagram_icon'])) {
@@ -45,7 +55,9 @@
     } else {
         $icon = '<i class="fa fa-instagram"></i>';
     } ?>
-    <span id="social-instagram"><a rel="nofollow" title="<?php _e('Instagram') ?>" href="<?php echo $config['social_instagram']; ?>"><?php echo $icon; ?></a></span>
+    <span id="contact-social-instagram">
+        <a rel="nofollow" title="<?php _e('Instagram') ?>" href="<?php echo $config['social_instagram']; ?>"><?php echo $icon; ?></a>
+    </span>
 <?php } ?>
 <?php if (!empty($config['social_tumblr'])) { ?>
     <?php if(!empty($config['social_tumblr_icon'])) {
@@ -53,7 +65,9 @@
     } else {
         $icon = '<i class="fa fa-tumblr-square"></i>';
     } ?>
-    <span id="social-tumblr"><a rel="nofollow" title="<?php _e('Tumblr') ?>" href="<?php echo $config['social_tumblr']; ?>"><?php echo $icon; ?></a></span>
+    <span id="contact-social-tumblr">
+        <a rel="nofollow" title="<?php _e('Tumblr') ?>" href="<?php echo $config['social_tumblr']; ?>"><?php echo $icon; ?></a>
+    </span>
 <?php } ?>
 <?php if (!empty($config['social_trello'])) { ?>
     <?php if(!empty($config['social_trello_icon'])) {
@@ -61,7 +75,9 @@
     } else {
         $icon = '<i class="fa fa-trello"></i>';
     } ?>
-    <span id="social-trello"><a rel="nofollow" title="<?php _e('Trello') ?>" href="<?php echo $config['social_trello']; ?>"><?php echo $icon; ?></a></span>
+    <span id="contact-social-trello">
+        <a rel="nofollow" title="<?php _e('Trello') ?>" href="<?php echo $config['social_trello']; ?>"><?php echo $icon; ?></a>
+    </span>
 <?php } ?>
 <?php if (!empty($config['social_linkedin'])) { ?>
     <?php if(!empty($config['social_linkedin_icon'])) {
@@ -69,7 +85,9 @@
     } else {
         $icon = '<i class="fa fa-linkedin-square"></i>';
     } ?>
-    <span id="social-linkedin"><a rel="nofollow" title="<?php _e('LinkedIn') ?>" href="<?php echo $config['social_linkedin']; ?>"><?php echo $icon; ?></a></span>
+    <span id="contact-social-linkedin">
+        <a rel="nofollow" title="<?php _e('LinkedIn') ?>" href="<?php echo $config['social_linkedin']; ?>"><?php echo $icon; ?></a>
+    </span>
 <?php } ?>
 <?php if (!empty($config['social_github'])) { ?>
     <?php if(!empty($config['social_github_icon'])) {
@@ -77,7 +95,9 @@
     } else {
         $icon = '<i class="fa fa-github-alt"></i>';
     } ?>
-    <span id="social-github"><a rel="nofollow" title="<?php _e('Github') ?>" href="<?php echo $config['social_github']; ?>"><?php echo $icon; ?></a></span>
+    <span id="contact-social-github">
+        <a rel="nofollow" title="<?php _e('Github') ?>" href="<?php echo $config['social_github']; ?>"><?php echo $icon; ?></a>
+    </span>
 <?php } ?>
 
 
@@ -87,7 +107,9 @@
     } else {
         $icon = '<i class="fa fa-rss"></i>';
     } ?>
-    <span id="social-rss"><a rel="nofollow" title="<?php _e('Rss') ?>" href="<?php echo $config['social_rss']; ?>"><?php echo $icon; ?></a></span>
+    <span id="contact-social-rss">
+        <a rel="nofollow" title="<?php _e('Rss') ?>" href="<?php echo $config['social_rss']; ?>"><?php echo $icon; ?></a>
+    </span>
 <?php } ?>
 
 

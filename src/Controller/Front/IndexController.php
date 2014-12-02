@@ -30,9 +30,14 @@ class IndexController extends ActionController
     {
         // Set info
         $module = $this->params('module');
-        $department = $this->params('department');
         // Get config
         $config = Pi::service('registry')->config->read($module);
+        // Check
+        if ($config['homepage'] == 'list') {
+            return $this->redirect()->toRoute('', array(
+                'action'     => 'list',
+            ));
+        }
         // Get post
         if ($this->request->isPost()) {
             $data = $this->request->getPost();
@@ -60,7 +65,6 @@ class IndexController extends ActionController
                 $values['department_email'] = $department['email'];
                 // Send as mail
                 $this->sendMailToAdmin($values);
-                $this->sendMailToDepartment($values);
                 $this->sendMailToUser($values);
                 // Set jump
                 $url = array('action' => 'finish');
@@ -68,39 +72,102 @@ class IndexController extends ActionController
                 $this->jump($url, $message);
             }
         } else {
-            // Check
-            if ($config['homepage'] == 'list' && empty($department)) {
-                return $this->redirect()->toRoute('', array(
-                    'action'     => 'list',
-                ));
-            }
-            // Get department
-            if (!empty($department)) {
-                $department = $this->getModel('department')->find($department, 'slug')->toArray();
-            } else {
-                $department = $this->getModel('department')->find($config['default_department'])->toArray();
-            }
-            // check department status
-            if ($department['status'] != 1) {
-                $url = array('action' => 'list');
-                $message = __('Your selected department not active');
-                $this->jump($url, $message);
-            }
-            // Set data
-            $data['department'] = $department['id'];
             // Set form
             $form = new ContactForm('contact');
-            $form->setData($data);
+            // Set data
+            $data = array(
+                'department' => $config['default_department']
+            );
         }
-        // Set keywords
-        $keywords = Pi::api('text', 'contact')->keywords($department['title']);
-        // Set Description
-        $description = Pi::api('text', 'contact')->description($department['title']);
+        // Set data
+        $form->setData($data);
+        // Set seo text
+        $seoTitle = Pi::api('text', 'contact')->title(__('Contact us form'));
+        $seoKeywords = Pi::api('text', 'contact')->keywords(__('Contact us form'));
+        $seoDescription = Pi::api('text', 'contact')->description(__('Contact us form'));
         // Set view
-        $this->view()->headTitle($department['title']);
-        $this->view()->headDescription($description, 'set');
-        $this->view()->headKeywords($keywords, 'set');
+        $this->view()->headTitle($seoTitle);
+        $this->view()->headDescription($seoDescription, 'set');
+        $this->view()->headKeywords($seoKeywords, 'set');
         $this->view()->setTemplate('index_form');
+        $this->view()->assign('title', __('Contact Us'));
+        $this->view()->assign('department', $department);
+        $this->view()->assign('form', $form);
+        $this->view()->assign('config', $config);
+    }
+
+    public function departmentAction()
+    {
+        // Set info
+        $module = $this->params('module');
+        $department = $this->params('department');
+        // Get config
+        $config = Pi::service('registry')->config->read($module);
+        // Check
+        if ($config['homepage'] == 'list' && empty($department)) {
+            return $this->redirect()->toRoute('', array(
+                'action'     => 'list',
+            ));
+        }
+        // Get department
+        $department = $this->getModel('department')->find($department, 'slug')->toArray();
+        // check department status
+        if ($department['status'] != 1) {
+            $url = array('action' => 'list');
+            $message = __('Your selected department not active');
+            $this->jump($url, $message);
+        }
+        // Get post
+        if ($this->request->isPost()) {
+            $data = $this->request->getPost();
+            $form = new ContactForm('contact');
+            $form->setInputFilter(new ContactFilter);
+            $form->setData($data);
+            if ($form->isValid()) {
+                $values = $form->getData();
+                foreach (array_keys($values) as $key) {
+                    if (!in_array($key, $this->messageColumns)) {
+                        unset($values[$key]);
+                    }
+                }
+                // Set values
+                $values['ip'] = Pi::user()->getIp();
+                $values['time_create'] = time();
+                // Save
+                $row = $this->getModel('message')->createRow();
+                $row->assign($values);
+                $row->save();
+                // Set department
+                $values['department_title'] = $department['title'];
+                $values['department_email'] = $department['email'];
+                // Send as mail
+                $this->sendMailToAdmin($values);
+                $this->sendMailToUser($values);
+                // Set jump
+                $url = array('action' => 'finish');
+                $message = __('Your Contact send and saved successfully');
+                $this->jump($url, $message);
+            }
+        } else {
+            // Set form
+            $form = new ContactForm('contact');
+            // Set data
+            $data = array(
+                'department' => $department['id']
+            );
+        }
+        // Set data
+        $form->setData($data);
+        // Set seo text
+        $seoTitle = Pi::api('text', 'contact')->title($department['title']);
+        $seoKeywords = Pi::api('text', 'contact')->keywords($department['title']);
+        $seoDescription = Pi::api('text', 'contact')->description($department['title']);
+        // Set view
+        $this->view()->headTitle($seoTitle);
+        $this->view()->headDescription($seoDescription, 'set');
+        $this->view()->headKeywords($seoKeywords, 'set');
+        $this->view()->setTemplate('index_form');
+        $this->view()->assign('title', $department['title']);
         $this->view()->assign('department', $department);
         $this->view()->assign('form', $form);
         $this->view()->assign('config', $config);
@@ -123,16 +190,15 @@ class IndexController extends ActionController
             $list[$row->id]['url'] = $this->url('', array('module' => $module, 'department' => $list[$row->id]['slug']));
         }
         // Set keywords
-        $keywords = Pi::api('text', 'contact')->keywords(__('Select Department Form contact us'));
+        $seoKeywords = Pi::api('text', 'contact')->keywords(__('Select Department Form contact us'));
         // Set Description
-        $description = Pi::api('text', 'contact')->description(__('Select Department Form contact us'));
+        $seoDescription = Pi::api('text', 'contact')->description(__('Select Department Form contact us'));
         // Set view
-        $this->view()->headTitle(__('Contact Us'));
-        $this->view()->headDescription($description, 'set');
-        $this->view()->headKeywords($keywords, 'set');
+        $this->view()->headTitle(__('List of departments'));
+        $this->view()->headDescription($seoDescription, 'set');
+        $this->view()->headKeywords($seoKeywords, 'set');
         $this->view()->setTemplate('index_list');
-        $this->view()->assign('title', __('Contact Us'));
-        $this->view()->assign('message', __('Select Department Form contact us'));
+        $this->view()->assign('title', __('List of departments'));
         $this->view()->assign('lists', $list);
         $this->view()->assign('config', $config);
     }
@@ -144,10 +210,9 @@ class IndexController extends ActionController
         // Get config
         $config = Pi::service('registry')->config->read($module);
         // Set view
-        $this->view()->headTitle(__('Contact Us'));
+        $this->view()->headTitle(__('Finish'));
         $this->view()->setTemplate('index_finish');
-        $this->view()->assign('title', __('Contact Us'));
-        $this->view()->assign('message', __('Contact Us'));
+        $this->view()->assign('title', __('Finish'));
         $this->view()->assign('config', $config);
     }
     
@@ -184,7 +249,6 @@ class IndexController extends ActionController
 			    $values['department_email'] = $department['email'];
 			    // Send as mail
 			    $this->sendMailToAdmin($values);
-                $this->sendMailToDepartment($values);
                 $this->sendMailToUser($values);
 			    // return
 			    $return['message'] = __('Your Contact send and saved successfully');
@@ -205,25 +269,8 @@ class IndexController extends ActionController
     {
         // Set to
         $to = array(
-            Pi::config('adminmail') => Pi::config('adminname'),
-        );
-        // Set template info
-        $values['time_create'] = _date($values['time_create']);
-        // Set template
-        $data = Pi::service('mail')->template('contact', $values);
-        // Set message
-        $message = Pi::service('mail')->message($data['subject'], $data['body'], $data['format']);
-        $message->addTo($to);
-        $message->setEncoding("UTF-8");
-        // Send mail
-        Pi::service('mail')->send($message);
-    }
-
-    protected function sendMailToDepartment($values)
-    {
-        // Set to
-        $to = array(
-            $values['department_email'] => $values['department_title'],
+            Pi::config('adminmail', 'mail')  => Pi::config('adminname', 'mail'),
+            $values['department_email']      => $values['department_title'],
         );
         // Set template info
         $values['time_create'] = _date($values['time_create']);

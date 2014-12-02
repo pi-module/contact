@@ -1,85 +1,66 @@
 <?php 
 $this->css($this->assetModule('css/front.css')); 
 // Load google map
-if ($config['gmap_show'] && !empty($config['gmap_latitude']) && !empty($config['gmap_longitude'])) {
-    // set parameters     
-    $gmap_zoon = empty($config['gmap_zoon']) ? '17' : $config['gmap_zoon'];
-    $gmap_title = empty($config['gmap_title']) ? '' : $config['gmap_title'];
-    $gmap_height = empty($config['gmap_height']) ? '400' : $config['gmap_height'];
-    // Set foot Script
+if ($config['gmap_show']) {
+    // Add css codes
+    $css = "#map_canvas {width: 100%; height: " . $config['gmap_height'] . "px;}";
+    $this->headStyle()->appendStyle($css);
+    // Add js codes
+    $js =<<<'EOT'
+var myLatlng = new google.maps.LatLng(%s, %s);
+var mapOptions = {zoom: %s, center: myLatlng}
+var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+var marker = new google.maps.Marker({position: myLatlng, map: map, draggable:true, title: '%s'});
+EOT;
+    $js = sprintf($js, $config['gmap_latitude'], $config['gmap_longitude'], $config['gmap_zoon'], $config['gmap_title']);
     $this->footScript()->prependFile('https://maps.googleapis.com/maps/api/js?sensor=false');
-    $this->footScript()->appendScript("
-        var myLatlng = new google.maps.LatLng(" . $config['gmap_latitude'] . ", " . $config['gmap_longitude'] . ");
-        var mapOptions = {
-            zoom: " . $gmap_zoon . ",
-            center: myLatlng
-        }
-        var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
-        var marker = new google.maps.Marker({
-            position: myLatlng,
-            map: map,
-            draggable:true,
-            title: '" . $gmap_title . "'
-        });
-    ");
-    $this->headStyle()->appendStyle("#map_canvas {width: 100%; height: " . $gmap_height . "px;}");
+    $this->footScript()->appendScript($js);
 }
 ?>
-<div class="contact">
+<div class="clearfix">
     <?php if ($config['gmap_show'] && $config['gmap_position'] == 'top') { ?>
-        <div class="side-gmap">
-            <div class="thumbnail">
-                <div id="map_canvas"></div>
-            </div>
-        </div>
-    <?php } ?>
-    <?php if (!empty($config['toptext'])) { ?>
-    <div class="top-text">
-        <?php echo $config['toptext']; ?>
+    <div class="thumbnail contact-topmap">
+        <div id="map_canvas"></div>
     </div>
     <?php } ?>
-    <div class="row">
-        <?php if (!empty($config['sidetext']) || $config['gmap_show']) {
-            $class = 'col-md-6';
-            $side = true;
-        } else {
-            $class = 'col-md-12';
-            $side = false;
-        } ?>
-        <div class="<?php echo $class ?>">
-        <?php if (!empty($config['finishtext'])) { ?>
-            <div class="side-text">
+    <?php if ($config['show_title']) { ?>
+    <div class="page-header contact-title">
+        <h1><?php echo $this->escape($title); ?></h1>
+    </div>
+    <?php } ?>
+    <?php if (!empty($config['sidetext']) || ($config['gmap_show'] && $config['gmap_position'] == 'side')) {
+        $class = 'col-md-7';
+    } else {
+        $class = 'col-md-12';
+    } ?>
+    <div class="<?php echo $class; ?>">
+        <?php if (!empty($config['toptext'])) { ?>
+        <div class="clearfix contact-toptext">
+            <?php echo $config['toptext']; ?>
+        </div>
+        <?php } ?>
+        <div class="alert alert-success">
             <?php echo $config['finishtext']; ?>
-            </div>
-        <?php } ?>
         </div>
-        <?php if ($side) { ?>
-        <div class="col-md-6">
-            <?php if (!empty($config['sidetext'])) { ?>
-            <div class="side-text">
+    </div>
+    <?php if (!empty($config['sidetext']) || ($config['gmap_show'] && $config['gmap_position'] == 'side')) { ?>
+    <div class="col-md-5">
+        <?php if (!empty($config['sidetext'])) { ?>
+        <div class="clearfix contact-sidetext">
             <?php echo $config['sidetext']; ?>
-            </div>
-            <?php } ?>
-            <?php if ($config['gmap_show'] && $config['gmap_position'] == 'side') { ?>
-            <div class="side-gmap">
-                <div class="thumbnail">
-                    <div id="map_canvas"></div>
-                </div>
-            </div>
-            <?php } ?>
         </div>
         <?php } ?>
-    </div>
-    <?php if (empty($config['bottomtext'])) { ?>
-    <div class="side-social">
-        <?php include $this->template('front/social'); ?>
-    </div>
-    <?php } else { ?>
-    <div class="bottom-text">
-        <?php echo $config['bottomtext']; ?>
-        <div class="side-social">
-            <?php include $this->template('front/social'); ?>
+        <?php if ($config['gmap_show'] && $config['gmap_position'] == 'side') { ?>
+        <div class="thumbnail contact-sidemap">
+            <div id="map_canvas"></div>
         </div>
+        <?php } ?>
     </div>
     <?php } ?>
+    <?php if (!empty($config['bottomtext'])) { ?>
+    <div class="clearfix contact-bottomtext">
+        <?php echo $config['bottomtext']; ?>
+    </div>
+    <?php } ?>
+    <?php include $this->template('front/social'); ?>
 </div>

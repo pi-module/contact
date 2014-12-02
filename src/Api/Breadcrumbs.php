@@ -32,34 +32,40 @@ class Breadcrumbs extends AbstractBreadcrumbs
         }
         // Set module link
         $moduleData = Pi::registry('module')->read($this->getModule());
-        $result = array(
-            array(
-                'label' => $moduleData['title'],
-                'href'  => Pi::service('url')->assemble('default', array(
-                    'module' => $this->getModule(),
-                )),
-            ),
+        // Set index link
+        if ($params['action'] == 'index') {
+            $href = '';
+        } else {
+            $href = Pi::service('url')->assemble('default', array(
+                'module' => $this->getModule(),
+            ));
+        }
+        // Set result
+        $result = array();
+        $result[] = array(
+            'label' => $moduleData['title'],
+            'href'  => $href,
         );
         // Set module internal links
-        if ($params['action'] == 'index') {
-            if (isset($params['department']) && !empty($params['department'])) {
+        switch ($params['action']) {
+            case 'department':
                 $department = Pi::model('department', $this->getModule())->find($params['department'], 'slug')->toArray();
                 $result[] = array(
                     'label' => $department['title'],
-                    'href'  => Pi::service('url')->assemble('contact', array(
-                        'module'        => $this->getModule(),
-                        'department'    => $department['slug'],
-                    )),
                 );
-            }
-        } elseif ($params['action'] == 'list') {
-            $result[] = array(
-                'label' => __('List of departments'),
-            );
-        } elseif ($params['action'] == 'finish') {    
-            $result[] = array(
-                'label' => __('Finish'),
-            );
+                break;
+
+            case 'list':
+                $result[] = array(
+                    'label' => __('List of departments'),
+                );
+                break;
+
+            case 'finish':
+                $result[] = array(
+                    'label' => __('Finish'),
+                );
+                break;
         }
         return $result;
     }

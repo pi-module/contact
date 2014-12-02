@@ -44,6 +44,7 @@ class Department extends Standard
         // Set controller
         $matches = array_merge($this->defaults, $matches);
         if (isset($parts[0]) && $parts[0] == 'department') {
+            $matches['action'] = 'department';
             $matches['department'] = $this->decode($parts[1]);
         } else {
             $matches['action'] = isset($parts[0]) ? $this->decode($parts[0]) : 'index';
