@@ -186,7 +186,7 @@ class IndexController extends ActionController
         // Make list
         foreach ($rowset as $row) {
             $list[$row->id] = $row->toArray();
-            $list[$row->id]['url'] = $this->url('', array('module' => $module, 'department' => $list[$row->id]['slug']));
+            $list[$row->id]['url'] = Pi::url($this->url('', array('module' => $module, 'department' => $list[$row->id]['slug'])));
         }
         // Set seo text
         $seoTitle = Pi::api('text', 'contact')->title(__('List of departments'));
