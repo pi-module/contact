@@ -1,5 +1,5 @@
 <?php $this->css($this->assetModule('css/admin.css')); ?>
-<div class="contact">
+<div class="clearfix">
 	<?php if($message['mid']) { ?>
 		<div class="main-message well"><?php _e('Main Message is'); ?> : <a title="<?php echo $main['subject']; ?>" href="<?php echo $this->url('', array('action' => 'view', 'id' => $main['id'])); ?>"><?php echo $this->escape($main['subject']); ?></a></div>
 	<?php } ?>
