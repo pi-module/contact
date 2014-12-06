@@ -47,7 +47,11 @@ class DepartmentController extends ActionController
             $data = $this->request->getPost();
             // Set slug
             $slug = ($data['slug']) ? $data['slug'] : $data['title'];
-            $data['slug'] = Pi::api('text', 'news')->slug($slug);
+            $slug = _strip($slug);
+            $slug = strtolower(trim($slug));
+            $slug = array_filter(explode(' ', $slug));
+            $slug = implode('-', $slug);
+            $data['slug'] = $slug;
             // Form filter
             $form->setInputFilter(new DepartmentFilter);
             $form->setData($data);

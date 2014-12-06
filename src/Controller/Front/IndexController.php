@@ -81,14 +81,9 @@ class IndexController extends ActionController
         }
         // Set data
         $form->setData($data);
-        // Set seo text
-        $seoTitle = Pi::api('text', 'contact')->title(__('Contact us form'));
-        $seoKeywords = Pi::api('text', 'contact')->keywords(__('Contact us form'));
-        $seoDescription = Pi::api('text', 'contact')->description(__('Contact us form'));
         // Set view
-        $this->view()->headTitle($seoTitle);
-        $this->view()->headDescription($seoDescription, 'set');
-        $this->view()->headKeywords($seoKeywords, 'set');
+        $this->view()->headDescription(__('Contact us form'), 'set');
+        $this->view()->headKeywords(explode(' ', __('Contact us form')), 'set');
         $this->view()->setTemplate('index_form');
         $this->view()->assign('title', __('Contact Us'));
         $this->view()->assign('form', $form);
@@ -157,14 +152,10 @@ class IndexController extends ActionController
         }
         // Set data
         $form->setData($data);
-        // Set seo text
-        $seoTitle = Pi::api('text', 'contact')->title($department['title']);
-        $seoKeywords = Pi::api('text', 'contact')->keywords($department['title']);
-        $seoDescription = Pi::api('text', 'contact')->description($department['title']);
         // Set view
-        $this->view()->headTitle($seoTitle);
-        $this->view()->headDescription($seoDescription, 'set');
-        $this->view()->headKeywords($seoKeywords, 'set');
+        $this->view()->headTitle($department['title']);
+        $this->view()->headDescription($department['title'], 'set');
+        $this->view()->headKeywords(explode(' ', $department['title']), 'set');
         $this->view()->setTemplate('index_form');
         $this->view()->assign('title', $department['title']);
         $this->view()->assign('department', $department);
@@ -188,14 +179,10 @@ class IndexController extends ActionController
             $list[$row->id] = $row->toArray();
             $list[$row->id]['url'] = Pi::url($this->url('', array('module' => $module, 'department' => $list[$row->id]['slug'])));
         }
-        // Set seo text
-        $seoTitle = Pi::api('text', 'contact')->title(__('List of departments'));
-        $seoKeywords = Pi::api('text', 'contact')->keywords(__('Select Department Form contact us'));
-        $seoDescription = Pi::api('text', 'contact')->description(__('Select Department Form contact us'));
         // Set view
-        $this->view()->headTitle($seoTitle);
-        $this->view()->headDescription($seoDescription, 'set');
-        $this->view()->headKeywords($seoKeywords, 'set');
+        $this->view()->headTitle(__('List of departments'));
+        $this->view()->headDescription(__('Select Department Form contact us'), 'set');
+        $this->view()->headKeywords(explode(' ', __('Select Department Form contact us')), 'set');
         $this->view()->setTemplate('index_list');
         $this->view()->assign('title', __('List of departments'));
         $this->view()->assign('lists', $list);
@@ -215,14 +202,10 @@ class IndexController extends ActionController
         }
         // Get config
         $config = Pi::service('registry')->config->read($module);
-        // Set seo text
-        $seoTitle = Pi::api('text', 'contact')->title(__('Finish'));
-        $seoKeywords = Pi::api('text', 'contact')->keywords(__('Submit contact form finished'));
-        $seoDescription = Pi::api('text', 'contact')->description(__('Submit contact form finished'));
         // Set view
-        $this->view()->headTitle($seoTitle);
-        $this->view()->headDescription($seoDescription, 'set');
-        $this->view()->headKeywords($seoKeywords, 'set');
+        $this->view()->headTitle(__('Finish'));
+        $this->view()->headDescription(__('Submit contact form finished'), 'set');
+        $this->view()->headKeywords(explode(' ', __('Submit contact form finished')), 'set');
         $this->view()->setTemplate('index_finish');
         $this->view()->assign('title', __('Finish'));
         $this->view()->assign('config', $config);

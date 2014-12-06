@@ -34,7 +34,7 @@ class Text extends AbstractApi
      * @param  number
      * @return string
      */
-	public function keywords($keywords, $number = '6') 
+	/* public function keywords($keywords, $number = '6') 
 	{
 		$keywords = _strip($keywords);
 		$keywords = strtolower(trim($keywords));
@@ -42,7 +42,7 @@ class Text extends AbstractApi
 		$keywords = array_slice($keywords, 0, $number);
 		$keywords = implode(',', $keywords);
 		return $keywords;
-	}	
+	} */
 	 
     /**
      * Invoke as a functor
@@ -52,13 +52,13 @@ class Text extends AbstractApi
      * @param  string $description
      * @return string
      */
-    public function description($description) 
+    /* public function description($description) 
     {
         $description = _strip($description); 
         $description = strtolower(trim($description));
         $description = preg_replace('/[\s]+/', ' ', $description);
         return $description;
-    }   
+    } */
 
     /**
      * Invoke as a functor
@@ -68,25 +68,25 @@ class Text extends AbstractApi
      * @param  string $title
      * @return string
      */
-    public function title($title) 
+    /* public function title($title) 
     {
         $title = _strip($title); 
         $title = strtolower(trim($title));
         $title = preg_replace('/[\s]+/', ' ', $title);
         return $title;
-    }   
+    } */
 	
 	/**
      * Returns the slug
      *
      * @return boolean
      */
-	public function slug($slug)
+	/* public function slug($slug)
 	{
 		$slug = _strip($slug);
         $slug = strtolower(trim($slug));
         $slug = array_filter(explode(' ', $slug));
         $slug = implode('-', $slug);
 		return $slug;
-	}              
+	} */
 }
