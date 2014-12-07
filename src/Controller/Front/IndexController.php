@@ -211,11 +211,14 @@ class IndexController extends ActionController
         $this->view()->assign('config', $config);
     }
     
-    public function ajaxAction() {
-        // Set info
-        $module = $this->params('module');
+    public function ajaxAction()
+    {
         // Set template
         $this->view()->setTemplate(false)->setLayout('layout-content');
+        // Set info
+        $module = $this->params('module');
+        // Get config
+        $config = Pi::service('registry')->config->read($module);
         // Set return array
         $return = array();
         // Check post
@@ -232,6 +235,9 @@ class IndexController extends ActionController
 			            unset($values[$key]);
 			        }
 			    }
+                // Set values
+                $values['author'] = isset($values['author']) ? $values['author'] : 0;
+                $values['department'] = isset($values['department']) ? $values['department'] : $config['default_department'];
 			    $values['ip'] = Pi::user()->getIp();
 			    $values['time_create'] = time();
 			    // Save
