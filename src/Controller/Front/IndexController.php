@@ -263,10 +263,17 @@ class IndexController extends ActionController
     protected function sendMailToAdmin($values)
     {
         // Set to
-        $to = array(
-            Pi::config('adminmail', 'mail')  => Pi::config('adminname', 'mail'),
-            $values['department_email']      => $values['department_title'],
-        );
+        $adminmail = Pi::config('adminmail', 'mail');
+        if ($adminmail == $values['department_email']) {
+            $to = array(
+                $values['department_email']  => $values['department_title'],
+            );
+        } else {
+            $to = array(
+                $adminmail                   => $values['department_title'],
+                $values['department_email']  => $values['department_title'],
+            );
+        }
         // Set template info
         $values['time_create'] = _date($values['time_create']);
         // Set template
