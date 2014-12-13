@@ -40,7 +40,6 @@ EOT;
         </div>
         <?php } ?>
         <div class="contact-department-list">
-            <h2><?php _e('Select department'); ?></h2>
             <div class="list-group">
                 <?php foreach ($lists as $list) { ?>
                 <a class="list-group-item" title="<?php echo $this->escape($list['title']); ?>" href="<?php echo $this->escape($list['url']);  ?>">
@@ -69,5 +68,4 @@ EOT;
         <?php echo $config['bottomtext']; ?>
     </div>
     <?php } ?>
-    <?php include $this->template('front/social'); ?>
 </div>

@@ -13,31 +13,31 @@
 return array(
     'admin' => array(
         'message' => array(
-            'label' => _a('Message'),
-            'permission' => array(
-                'resource' => 'message',
+            'label'       => _a('Message'),
+            'permission'  => array(
+                'resource'  => 'message',
             ),
-            'route' => 'admin',
-            'controller' => 'message',
-            'action' => 'index',
+            'route'       => 'admin',
+            'controller'  => 'message',
+            'action'      => 'index',
         ),
         'department' => array(
-            'label' => _a('Department'),
-            'permission' => array(
-                'resource' => 'department',
+            'label'       => _a('Department'),
+            'permission'  => array(
+                'resource'  => 'department',
             ),
-            'route' => 'admin',
-            'controller' => 'department',
-            'action' => 'index',
+            'route'       => 'admin',
+            'controller'  => 'department',
+            'action'      => 'index',
         ),
         'tools' => array(
-            'label' => _a('Tools'),
-            'permission' => array(
-                'resource' => 'tools',
+            'label'       => _a('Tools'),
+            'permission'  => array(
+                'resource'  => 'tools',
             ),
-            'route' => 'admin',
-            'controller' => 'tools',
-            'action' => 'index',
+            'route'       => 'admin',
+            'controller'  => 'tools',
+            'action'      => 'index',
         ),
     ),
 );

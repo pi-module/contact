@@ -13,14 +13,14 @@
 return array(
     // route name
     'department' => array(
-        'name' => 'contact',
-        'type' => 'Module\Contact\Route\Department',
-        'options' => array(
-            'route' => '/contact',
-            'defaults' => array(
-                'module' => 'contact',
-                'controller' => 'index',
-                'action' => 'index'
+        'name'     => 'contact',
+        'type'     => 'Module\Contact\Route\Department',
+        'options'  => array(
+            'route'     => '/contact',
+            'defaults'  => array(
+                'module'     => 'contact',
+                'controller'  => 'index',
+                'action'      => 'index'
             )
         ),
     )

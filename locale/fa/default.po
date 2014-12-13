@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pi contact module\n"
-"POT-Creation-Date: 2014-12-13 16:49+0330\n"
+"POT-Creation-Date: 2014-12-13 17:25+0330\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Pi\n"
@@ -17,15 +17,13 @@ msgstr ""
 "contact\n"
 
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Api/Breadcrumbs.php:60
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:183
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:187
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:188
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/template/admin/department_index.phtml:6
 msgid "List of departments"
 msgstr "فهرست بخش ها"
 
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Api/Breadcrumbs.php:66
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:206
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:210
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:211
 msgid "Finish"
 msgstr "پایان"
 
@@ -153,43 +151,28 @@ msgid "Expired"
 msgstr "باطل شده"
 
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:71
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:142
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:255
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:143
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:256
 msgid "Your Contact send and saved successfully"
 msgstr "پیام شما با موفقیت ارسال و ذخیره شد"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:85
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:86
-msgid "Contact us form"
-msgstr "فرم تماس با ما"
-
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:88
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:89
 msgid "Contact Us"
 msgstr "تماس با ما"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:111
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:112
 msgid "Your selected department not active"
 msgstr "بخش انتخاب شده فعال نیست"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:184
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:185
-msgid "Select Department Form contact us"
-msgstr "انتخاب یک بخش برای تماس"
-
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:200
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:201
 msgid "Please submit contact form"
 msgstr "لطفا فرم تماس را تکمیل و ارسال فرمایید"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:207
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:208
-msgid "Submit contact form finished"
-msgstr "ارسال فرم تماس با موفقیت به پایان رسید"
-
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:258
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:259
 msgid "Send information not valid"
 msgstr "اطلاعات ارسال شده صحیح نیست"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:262
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:263
 msgid "Nothing send"
 msgstr "هیچ چیز ارسال نشد"
 
@@ -396,6 +379,15 @@ msgstr "ایجاد بخش"
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/template/admin/department_index.phtml:21
 msgid "Edit"
 msgstr "ویرایش"
+
+#~ msgid "Contact us form"
+#~ msgstr "فرم تماس با ما"
+
+#~ msgid "Select Department Form contact us"
+#~ msgstr "انتخاب یک بخش برای تماس"
+
+#~ msgid "Submit contact form finished"
+#~ msgstr "ارسال فرم تماس با موفقیت به پایان رسید"
 
 #~ msgid "Select department"
 #~ msgstr "انتخاب بخش"

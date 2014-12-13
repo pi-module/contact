@@ -82,8 +82,9 @@ class IndexController extends ActionController
         // Set data
         $form->setData($data);
         // Set view
-        $this->view()->headDescription(__('Contact us form'), 'set');
-        $this->view()->headKeywords(explode(' ', __('Contact us form')), 'set');
+        $this->view()->headTitle(_escape($config['index_seo_title']));
+        $this->view()->headDescription(_escape($config['index_seo_description']), 'set');
+        $this->view()->headKeywords(_escape($config['index_seo_keywords']), 'set');
         $this->view()->setTemplate('index_form');
         $this->view()->assign('title', __('Contact Us'));
         $this->view()->assign('form', $form);
@@ -180,9 +181,9 @@ class IndexController extends ActionController
             $list[$row->id]['url'] = Pi::url($this->url('', array('module' => $module, 'department' => $list[$row->id]['slug'])));
         }
         // Set view
-        $this->view()->headTitle(__('List of departments'));
-        $this->view()->headDescription(__('Select Department Form contact us'), 'set');
-        $this->view()->headKeywords(explode(' ', __('Select Department Form contact us')), 'set');
+        $this->view()->headTitle(_escape($config['list_seo_title']));
+        $this->view()->headDescription(_escape($config['list_seo_description']), 'set');
+        $this->view()->headKeywords(_escape($config['list_seo_keywords']), 'set');
         $this->view()->setTemplate('index_list');
         $this->view()->assign('title', __('List of departments'));
         $this->view()->assign('lists', $list);
@@ -203,9 +204,9 @@ class IndexController extends ActionController
         // Get config
         $config = Pi::service('registry')->config->read($module);
         // Set view
-        $this->view()->headTitle(__('Finish'));
-        $this->view()->headDescription(__('Submit contact form finished'), 'set');
-        $this->view()->headKeywords(explode(' ', __('Submit contact form finished')), 'set');
+        $this->view()->headTitle(_escape($config['finish_seo_title']));
+        $this->view()->headDescription(_escape($config['finish_seo_description']), 'set');
+        $this->view()->headKeywords(_escape($config['finish_seo_keywords']), 'set');
         $this->view()->setTemplate('index_finish');
         $this->view()->assign('title', __('Finish'));
         $this->view()->assign('config', $config);

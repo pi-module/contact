@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pi contact module\n"
-"POT-Creation-Date: 2014-12-13 16:49+0330\n"
+"POT-Creation-Date: 2014-12-13 17:29+0330\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Pi\n"
@@ -17,15 +17,13 @@ msgstr ""
 "contact\n"
 
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Api/Breadcrumbs.php:60
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:183
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:187
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:188
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/template/admin/department_index.phtml:6
 msgid "List of departments"
 msgstr ""
 
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Api/Breadcrumbs.php:66
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:206
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:210
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:211
 msgid "Finish"
 msgstr ""
 
@@ -153,43 +151,28 @@ msgid "Expired"
 msgstr ""
 
 #: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:71
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:142
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:255
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:143
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:256
 msgid "Your Contact send and saved successfully"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:85
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:86
-msgid "Contact us form"
-msgstr ""
-
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:88
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:89
 msgid "Contact Us"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:111
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:112
 msgid "Your selected department not active"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:184
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:185
-msgid "Select Department Form contact us"
-msgstr ""
-
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:200
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:201
 msgid "Please submit contact form"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:207
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:208
-msgid "Submit contact form finished"
-msgstr ""
-
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:258
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:259
 msgid "Send information not valid"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:262
+#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/src/Controller/Front/IndexController.php:263
 msgid "Nothing send"
 msgstr ""
 
