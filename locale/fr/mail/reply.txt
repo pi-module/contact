@@ -1,4 +1,4 @@
-[comment]Reply HTML template[/comment]
+﻿[comment]Reply HTML template[/comment]
 
 [format]html[/format]
 

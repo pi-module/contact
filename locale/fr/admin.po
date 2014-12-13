@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pi contact module\n"
-"POT-Creation-Date: 2014-12-13 17:02+0100\n"
+"POT-Creation-Date: 2014-12-13 17:23+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Marc Desrousseaux\n"
 "Language-Team: Marc\n"
@@ -26,7 +26,7 @@ msgstr "Accueil"
 
 #: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:24
 msgid "SEO texts"
-msgstr ""
+msgstr "Textes SEO"
 
 #: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:28
 msgid "Form"
@@ -74,71 +74,71 @@ msgstr "Texte final soumission"
 
 #: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:105
 msgid "SEO title for index page"
-msgstr ""
+msgstr "SEO Title pour la page Index"
 
 #: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:112
 msgid "SEO description for index page"
-msgstr ""
+msgstr "SEO Description pour la page Index"
 
 #: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:115
 msgid "Contact us form"
-msgstr ""
+msgstr "Formulaire de Contact"
 
 #: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:119
 msgid "SEO keywords for index page"
-msgstr ""
+msgstr "SEO keywords pour la page Index"
 
 #: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:122
 msgid "contact,us,form"
-msgstr ""
+msgstr "contactez-nous, formulaire"
 
 #: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:126
 msgid "SEO title for list page"
-msgstr ""
+msgstr "SEO Title pour la page Liste"
 
 #: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:129
 msgid "List of departments"
-msgstr ""
+msgstr "Liste des Départements-Sujets"
 
 #: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:133
 msgid "SEO description for list page"
-msgstr ""
+msgstr "Description SEO pour la page Liste"
 
 #: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:136
 msgid "Select Department Form contact us"
-msgstr ""
+msgstr "Sélectionnez le Sujet objet de votre prise de contact"
 
 #: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:140
 msgid "SEO keywords for list page"
-msgstr ""
+msgstr "SEO Keywords pour la page Liste"
 
 #: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:143
 msgid "select,department,form,contact,us"
-msgstr ""
+msgstr "sélectionner, département, formulaire, contactez-nous"
 
 #: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:147
 msgid "SEO title for finish page"
-msgstr ""
+msgstr "SEO Title pour la page Terminé"
 
 #: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:150
 msgid "Finish"
-msgstr ""
+msgstr "Terminé"
 
 #: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:154
 msgid "SEO description for finish page"
-msgstr ""
+msgstr "SEO Description pour la page Terminé"
 
 #: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:157
 msgid "Submit contact form finished"
-msgstr ""
+msgstr "La soumission est terminée"
 
 #: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:161
 msgid "SEO keywords for finish page"
-msgstr ""
+msgstr "SEO Keywords pour la page Terminé"
 
 #: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:164
 msgid "submit,contact,form,finish"
-msgstr ""
+msgstr "soumettre, contact, formulaire, terminé"
 
 #: C:\Users\LAPTOP MARC\Documents\GitHub\contact/config/config.php:169
 msgid "Default department"

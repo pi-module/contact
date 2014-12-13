@@ -1,4 +1,4 @@
-[comment]User mail HTML template[/comment]
+ï»¿[comment]User mail HTML template[/comment]
 
 [format]html[/format]
 
@@ -8,10 +8,10 @@
 <div style="direction: ltr;">
     <p>Bonjour %name%,
     <p>Nous venons de recevoir votre message dont vous trouverez une copie ci-dessous.</p>
-    <p>Nous vous répondrons dans les meilleurs délais</p>
+    <p>Nous vous rÃ©pondrons dans les meilleurs dÃ©lais</p>
     <p>Cordialement,</p>
     <div style="margin: 5px; padding: 5px; background: #f7f7f7;">
-        <div style="margin-bottom: 5px;"><strong>Object : </strong>%subject%</div>
+        <div style="margin-bottom: 5px;"><strong>Objet : </strong>%subject%</div>
         <div style="margin: 5px;">%message%</div>
         <div style="margin-top: 10px;">
             <p>Sujet : %department_title%</p>

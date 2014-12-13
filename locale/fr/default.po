@@ -130,7 +130,7 @@ msgstr "Contactez-nous"
 #: C:\Users\LAPTOP
 #: MARC\Documents\GitHub\contact/src/Controller/Front/IndexController.php:112
 msgid "Your selected department not active"
-msgstr "Le sujet sélectionné n'est pas accès"
+msgstr "Le sujet sélectionné n'est pas actif"
 
 #: C:\Users\LAPTOP
 #: MARC\Documents\GitHub\contact/src/Controller/Front/IndexController.php:201
