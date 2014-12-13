@@ -13,6 +13,7 @@
 namespace Module\Contact\Controller\Admin;
 
 use Pi;
+use Pi\Filter;
 use Pi\Mvc\Controller\ActionController;
 use Module\Contact\Form\DepartmentForm;
 use Module\Contact\Form\DepartmentFilter;
@@ -47,11 +48,8 @@ class DepartmentController extends ActionController
             $data = $this->request->getPost();
             // Set slug
             $slug = ($data['slug']) ? $data['slug'] : $data['title'];
-            $slug = _strip($slug);
-            $slug = strtolower(trim($slug));
-            $slug = array_filter(explode(' ', $slug));
-            $slug = implode('-', $slug);
-            $data['slug'] = $slug;
+            $filter = new Filter\Slug;
+            $data['slug'] = $filter($slug);
             // Form filter
             $form->setInputFilter(new DepartmentFilter);
             $form->setData($data);
