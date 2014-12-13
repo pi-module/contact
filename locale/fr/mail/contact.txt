@@ -2,22 +2,22 @@
 
 [format]html[/format]
 
-[subject]%site_name% - New contact message received - %subject%[/subject]
+[subject]%site_name% - Nouveau message reçu - %subject%[/subject]
 
 [body]
 <div style="direction: ltr;">
-    <div style="margin: 5px;">Dear admin,</div>
-    <div style="margin: 5px;">You've just received a message posted on your contact form on your %site_name%. <br />Please find below the message send by your visitor or member :</div>
+    <div style="margin: 5px;">Cher admin,</div>
+    <div style="margin: 5px;">Vous venez de recevoir un message posté via le formulaire de contact de votre site %site_name%. <br />Veuillez trouver ci-dessous le message envoyé par votre visiteur ou membre :</div>
     <div style="margin: 5px; padding: 5px; background: #f7f7f7;">
-        <div style="margin-bottom: 5px;"><strong>Subject : </strong>%subject%</div>
+        <div style="margin-bottom: 5px;"><strong>Objet : </strong>%subject%</div>
         <div style="margin: 5px;">%message%</div>
         <div style="margin-top: 10px;">
-            <p>Department : %department_title%</p>
+            <p>Sujet : %department_title%</p>
             <p>Email : %email%</p>
-            <p>Name : %name%</p>
+            <p>Nom : %name%</p>
         </div>
     </div>
-    <p>Please connect to your website %site_name% to have more informations</p>
+    <p>Merci de vous connecter à votre site %site_name% pour plus d'informations</p>
     <p style="margin-top: 10px;">
         <a href="%site_url%" title="%site_name%">%site_name%</a>
     </p>

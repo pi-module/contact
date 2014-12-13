@@ -2,21 +2,21 @@
 
 [format]html[/format]
 
-[subject]Your message on %site_name% - %subject%[/subject]
+[subject]Votre message sur %site_name% - %subject%[/subject]
 
 [body]
 <div style="direction: ltr;">
-    <p>Dear %name%,
-    <p>We have just received your message you can find a copy below</p>
-    <p>and we will respond to you as soon as possible</p>
-    <p>Regards,</p>
+    <p>Bonjour %name%,
+    <p>Nous venons de recevoir votre message dont vous trouverez une copie ci-dessous.</p>
+    <p>Nous vous répondrons dans les meilleurs délais</p>
+    <p>Cordialement,</p>
     <div style="margin: 5px; padding: 5px; background: #f7f7f7;">
-        <div style="margin-bottom: 5px;"><strong>Subject : </strong>%subject%</div>
+        <div style="margin-bottom: 5px;"><strong>Object : </strong>%subject%</div>
         <div style="margin: 5px;">%message%</div>
         <div style="margin-top: 10px;">
-            <p>Department : %department_title%</p>
+            <p>Sujet : %department_title%</p>
             <p>Email : %email%</p>
-            <p>Name : %name%</p>
+            <p>Nom : %name%</p>
         </div>
     </div>
     <p style="margin-top: 10px;">

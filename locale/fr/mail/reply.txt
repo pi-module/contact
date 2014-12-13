@@ -2,13 +2,13 @@
 
 [format]html[/format]
 
-[subject]Re : You message on %site_name% - %subject%[/subject]
+[subject]Re : votre message sur %site_name% - %subject%[/subject]
 
 [body]
 <div style="direction: ltr;">
     <div style="margin: 5px;">%message%</div>
     <div style="margin-top: 10px;">
-        <p>Department : %department_title%</p>
+        <p>Sujet : %department_title%</p>
     </div>
     <p style="margin-top: 10px;">
         <a href="%site_url%" title="%site_name%">%site_name%</a>
