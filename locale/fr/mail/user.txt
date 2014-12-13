@@ -1,4 +1,4 @@
-﻿[comment]User mail HTML template[/comment]
+[comment]User mail HTML template[/comment]
 
 [format]html[/format]
 
