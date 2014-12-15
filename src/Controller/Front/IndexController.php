@@ -38,10 +38,11 @@ class IndexController extends ActionController
                 'action'     => 'list',
             ));
         }
+        // Set form
+        $form = new ContactForm('contact');
         // Get post
         if ($this->request->isPost()) {
             $data = $this->request->getPost();
-            $form = new ContactForm('contact');
             $form->setInputFilter(new ContactFilter);
             $form->setData($data);
             if ($form->isValid()) {
@@ -66,14 +67,14 @@ class IndexController extends ActionController
                 // Send as mail
                 $this->sendMailToAdmin($values);
                 $this->sendMailToUser($values);
-                // Set jump
-                $url = array('action' => 'finish', 'hash' => md5(time()));
-                $message = __('Your Contact send and saved successfully');
-                $this->jump($url, $message);
+                // Set finish
+                $finishText = (!empty($config['finishtext'])) 
+                    ? $config['finishtext'] 
+                    : __('Message correctly Send, a confirmation has just been sent to you by email');
+                $this->view()->assign('finish', 1);
+                $this->view()->assign('finishText', $finishText);
             }
         } else {
-            // Set form
-            $form = new ContactForm('contact');
             // Set data
             $data = array(
                 'department' => $config['default_department']
@@ -112,10 +113,11 @@ class IndexController extends ActionController
             $message = __('Your selected department not active');
             $this->jump($url, $message);
         }
+        // Set form
+        $form = new ContactForm('contact');
         // Get post
         if ($this->request->isPost()) {
             $data = $this->request->getPost();
-            $form = new ContactForm('contact');
             $form->setInputFilter(new ContactFilter);
             $form->setData($data);
             if ($form->isValid()) {
@@ -138,14 +140,14 @@ class IndexController extends ActionController
                 // Send as mail
                 $this->sendMailToAdmin($values);
                 $this->sendMailToUser($values);
-                // Set jump
-                $url = array('action' => 'finish', 'hash' => md5(time()));
-                $message = __('Your Contact send and saved successfully');
-                $this->jump($url, $message);
+                // Set finish
+                $finishText = (!empty($config['finishtext'])) 
+                    ? $config['finishtext'] 
+                    : __('Message correctly Send, a confirmation has just been sent to you by email');
+                $this->view()->assign('finish', 1);
+                $this->view()->assign('finishText', $finishText);
             }
         } else {
-            // Set form
-            $form = new ContactForm('contact');
             // Set data
             $data = array(
                 'department' => $department['id']
@@ -187,28 +189,6 @@ class IndexController extends ActionController
         $this->view()->setTemplate('index_list');
         $this->view()->assign('title', __('List of departments'));
         $this->view()->assign('lists', $list);
-        $this->view()->assign('config', $config);
-    }
-
-    public function finishAction()
-    {
-        // Set info
-        $module = $this->params('module');
-        $hash = $this->params('hash');
-        // Check hash
-        if (empty($hash)) {
-            $url = array('action' => 'index');
-            $message = __('Please submit contact form');
-            $this->jump($url, $message);
-        }
-        // Get config
-        $config = Pi::service('registry')->config->read($module);
-        // Set view
-        $this->view()->headTitle(_escape($config['finish_seo_title']));
-        $this->view()->headDescription(_escape($config['finish_seo_description']), 'set');
-        $this->view()->headKeywords(_escape($config['finish_seo_keywords']), 'set');
-        $this->view()->setTemplate('index_finish');
-        $this->view()->assign('title', __('Finish'));
         $this->view()->assign('config', $config);
     }
     

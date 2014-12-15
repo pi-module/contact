@@ -60,12 +60,6 @@ class Breadcrumbs extends AbstractBreadcrumbs
                     'label' => __('List of departments'),
                 );
                 break;
-
-            case 'finish':
-                $result[] = array(
-                    'label' => __('Finish'),
-                );
-                break;
         }
         return $result;
     }

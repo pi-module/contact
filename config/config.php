@@ -97,7 +97,7 @@ return array(
             'title'        => _a('Finish text'),
             'description'  => '',
             'edit'         => 'textarea',
-            'value'        => '',
+            'value'        => _a('Message correctly Send, a confirmation has just been sent to you by email'),
             'category'     => 'home',
         ),
         // SEO
@@ -141,27 +141,6 @@ return array(
             'description'  => '',
             'edit'         => 'textarea',
             'value'        => _a('select,department,form,contact,us'),
-            'category'     => 'seo',
-        ),
-        'finish_seo_title' => array(
-            'title'        => _a('SEO title for finish page'),
-            'description'  => '',
-            'edit'         => 'text',
-            'value'        => _a('Finish'),
-            'category'     => 'seo',
-        ),
-        'finish_seo_description' => array(
-            'title'        => _a('SEO description for finish page'),
-            'description'  => '',
-            'edit'         => 'textarea',
-            'value'        => _a('Submit contact form finished'),
-            'category'     => 'seo',
-        ),
-        'finish_seo_keywords' => array(
-            'title'        => _a('SEO keywords for finish page'),
-            'description'  => '',
-            'edit'         => 'textarea',
-            'value'        => _a('submit,contact,form,finish'),
             'category'     => 'seo',
         ),
         // Form
