@@ -19,7 +19,7 @@ return array(
         'license'       => 'New BSD',
         'logo'          => 'image/logo.png',
         'readme'        => 'docs/readme.txt',
-        'demo'          => 'http://demo.xoopsengine.org/contact',
+        'demo'          => 'http://pialog.org',
         'icon'          => 'fa-envelope',
         'clonable'      => true,
     ),
@@ -27,7 +27,7 @@ return array(
     'author'        => array(
         'Name'          => 'Hossein Azizabadi',
         'email'         => 'azizabadi@faragostaresh.com',
-        'website'       => 'http://www.xoopsengine.org',
+        'website'       => 'http://pialog.org',
         'credits'       => 'Pi Engine Team'
     ),
     // resource
