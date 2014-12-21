@@ -83,9 +83,9 @@ class IndexController extends ActionController
         // Set data
         $form->setData($data);
         // Set view
-        $this->view()->headTitle(_escape($config['index_seo_title']));
-        $this->view()->headDescription(_escape($config['index_seo_description']), 'set');
-        $this->view()->headKeywords(_escape($config['index_seo_keywords']), 'set');
+        $this->view()->headTitle($config['index_seo_title']);
+        $this->view()->headDescription($config['index_seo_description'], 'set');
+        $this->view()->headKeywords($config['index_seo_keywords'], 'set');
         $this->view()->setTemplate('index_form');
         $this->view()->assign('title', __('Contact Us'));
         $this->view()->assign('form', $form);
@@ -183,9 +183,9 @@ class IndexController extends ActionController
             $list[$row->id]['url'] = Pi::url($this->url('', array('module' => $module, 'department' => $list[$row->id]['slug'])));
         }
         // Set view
-        $this->view()->headTitle(_escape($config['list_seo_title']));
-        $this->view()->headDescription(_escape($config['list_seo_description']), 'set');
-        $this->view()->headKeywords(_escape($config['list_seo_keywords']), 'set');
+        $this->view()->headTitle($config['list_seo_title']);
+        $this->view()->headDescription($config['list_seo_description'], 'set');
+        $this->view()->headKeywords($config['list_seo_keywords'], 'set');
         $this->view()->setTemplate('index_list');
         $this->view()->assign('title', __('List of departments'));
         $this->view()->assign('lists', $list);
