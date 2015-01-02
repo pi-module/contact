@@ -41,7 +41,8 @@ class MessageController extends ActionController
             $this->view()->assign('department', 1);
         }
         // Get department list
-        $select = $this->getModel('department')->select()->columns(array('id', 'title'))->order(array('id DESC'));
+        $columns = array('id', 'title');
+        $select = $this->getModel('department')->select()->columns($columns);
         $rowset = $this->getModel('department')->selectWith($select);
         // Make department list
         foreach ($rowset as $row) {
@@ -166,34 +167,28 @@ class MessageController extends ActionController
                 $values['department_title'] = $department['title'];
                 $values['department_email'] = $department['email'];
                 // Send as mail
-                $this->sendMail($values);
-                if ($row->id) {
-                    $alert = __('Your reply Send and saved successfully');
-                    $this->jump(array('action' => 'index'), $alert);
-                } else {
-                    $alert = __('Your reply send successfully but dont saved in DB');
-                }
-            } else {
-                $alert = __('Error in send reply as Email');
+                Pi::api('mail', 'contact')->toReply($values);
+                // Jump
+                $this->jump(array('action' => 'index'), __('Your reply Send and saved successfully'));
             }
         } else {
             // Set values
             $values = array(
-                'author' => Pi::user()->getId(),
-                'mid' => $message->id,
-                'name' => $message->name,
-                'email' => $message->email,
-                'subject' => sprintf(__('Re : %s'), $message->subject),
+                'author'   => Pi::user()->getId(),
+                'mid'      => $message->id,
+                'name'     => $message->name,
+                'email'    => $message->email,
+                'subject'  => sprintf(__('Re : %s'), $message->subject),
             );
             $form->setData($values);
-            $alert = __('You can answer to this message');
         }
+        // Set title
+        $title = sprintf(__('Reply to %s'), $message->subject);
         // Set view
         $this->view()->setTemplate('message_reply');
         $this->view()->assign('form', $form);
-        $this->view()->assign('title', sprintf(__('Reply to %s'), $message->subject));
+        $this->view()->assign('title', $title);
         $this->view()->assign('message', $message);
-        $this->view()->assign('alert', $alert);
     }
 
     public function deleteAction()
@@ -210,25 +205,5 @@ class MessageController extends ActionController
             $this->jump(array('action' => 'index'), __('Your selected message deleted'));
         }
         $this->jump(array('action' => 'index'), __('Please select message'));
-    }
-    
-    protected function sendMail($values)
-    {
-        // Set to
-        $to = array(
-            $values['email'] => $values['name'],
-        );
-        // Set template info
-        $values['time_create'] = _date($values['time_create']);
-        // Set template
-        $data = Pi::service('mail')->template('reply', $values);
-        // Set message
-        $message = Pi::service('mail')->message($data['subject'], $data['body'], $data['format']);
-        $message->addTo($to);
-        $message->setEncoding("UTF-8");
-        // Send mail
-        $result = Pi::service('mail')->send($message);
-        // Return
-        return $result;     
     }
 }

@@ -13,8 +13,8 @@
 namespace Module\Contact\Controller\Front;
 
 use Pi;
+use Pi\Filter;
 use Pi\Mvc\Controller\ActionController;
-use Pi\Db\RowGateway\RowGateway;
 use Module\Contact\Form\ContactForm;
 use Module\Contact\Form\ContactFilter;
 use Zend\Json\Json;
@@ -65,8 +65,8 @@ class IndexController extends ActionController
                 $values['department_title'] = $department['title'];
                 $values['department_email'] = $department['email'];
                 // Send as mail
-                $this->sendMailToAdmin($values);
-                $this->sendMailToUser($values);
+                Pi::api('mail', 'contact')->toAdmin($values);
+                Pi::api('mail', 'contact')->toUser($values);
                 // Set finish
                 $finishText = (!empty($config['finishtext'])) 
                     ? $config['finishtext'] 
@@ -138,8 +138,8 @@ class IndexController extends ActionController
                 $values['department_title'] = $department['title'];
                 $values['department_email'] = $department['email'];
                 // Send as mail
-                $this->sendMailToAdmin($values);
-                $this->sendMailToUser($values);
+                Pi::api('mail', 'contact')->toAdmin($values);
+                Pi::api('mail', 'contact')->toUser($values);
                 // Set finish
                 $finishText = (!empty($config['finishtext'])) 
                     ? $config['finishtext'] 
@@ -155,10 +155,16 @@ class IndexController extends ActionController
         }
         // Set data
         $form->setData($data);
+        // Set seo_keywords
+        $filter = new Filter\HeadKeywords;
+        $filter->setOptions(array(
+            'force_replace_space' => true
+        ));
+        $seoKeywords = $filter($department['title']);
         // Set view
         $this->view()->headTitle($department['title']);
         $this->view()->headDescription($department['title'], 'set');
-        $this->view()->headKeywords(explode(' ', $department['title']), 'set');
+        $this->view()->headKeywords($seoKeywords, 'set');
         $this->view()->setTemplate('index_form');
         $this->view()->assign('title', $department['title']);
         $this->view()->assign('department', $department);
@@ -230,8 +236,8 @@ class IndexController extends ActionController
 			    $values['department_title'] = $department['title'];
 			    $values['department_email'] = $department['email'];
 			    // Send as mail
-			    $this->sendMailToAdmin($values);
-                $this->sendMailToUser($values);
+			    Pi::api('mail', 'contact')->toAdmin($values);
+                Pi::api('mail', 'contact')->toUser($values);
 			    // return
 			    $return['message'] = __('Your Contact send and saved successfully');
 			    $return['submit'] = 1;
@@ -246,48 +252,4 @@ class IndexController extends ActionController
         // Return
         return Json::encode($return);
     }	
-
-    protected function sendMailToAdmin($values)
-    {
-        // Set to
-        $adminmail = Pi::config('adminmail', 'mail');
-        if ($adminmail == $values['department_email']) {
-            $to = array(
-                $values['department_email']  => $values['department_title'],
-            );
-        } else {
-            $to = array(
-                $adminmail                   => $values['department_title'],
-                $values['department_email']  => $values['department_title'],
-            );
-        }
-        // Set template info
-        $values['time_create'] = _date($values['time_create']);
-        // Set template
-        $data = Pi::service('mail')->template('contact', $values);
-        // Set message
-        $message = Pi::service('mail')->message($data['subject'], $data['body'], $data['format']);
-        $message->addTo($to);
-        $message->setEncoding("UTF-8");
-        // Send mail
-        Pi::service('mail')->send($message);
-    }
-
-    protected function sendMailToUser($values)
-    {
-        // Set to
-        $to = array(
-            $values['email']      => $values['name'],
-        );
-        // Set template info
-        $values['time_create'] = _date($values['time_create']);
-        // Set template
-        $data = Pi::service('mail')->template('user', $values);
-        // Set message
-        $message = Pi::service('mail')->message($data['subject'], $data['body'], $data['format']);
-        $message->addTo($to);
-        $message->setEncoding("UTF-8");
-        // Send mail
-        Pi::service('mail')->send($message);
-    } 
 }
