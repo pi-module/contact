@@ -223,8 +223,8 @@ class IndexController extends ActionController
 			        }
 			    }
                 // Set values
-                $values['author'] = isset($values['author']) ? $values['author'] : 0;
-                $values['department'] = isset($values['department']) ? $values['department'] : $config['default_department'];
+                $values['author'] = Pi::user()->getId();
+                $values['department'] = $config['default_department'];
 			    $values['ip'] = Pi::user()->getIp();
 			    $values['time_create'] = time();
 			    // Save
