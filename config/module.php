@@ -15,7 +15,7 @@ return array(
     'meta'         => array(
         'title'         => _a('Contact'),
         'description'   => _a('Manage Contacts'),
-        'version'       => '1.2.6',
+        'version'       => '1.2.7',
         'license'       => 'New BSD',
         'logo'          => 'image/logo.png',
         'readme'        => 'docs/readme.txt',

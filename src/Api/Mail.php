@@ -26,17 +26,18 @@ class Mail extends AbstractApi
 	public function toAdmin($values)
     {
         // Get admin main
-        $adminmail = Pi::config('adminmail', 'mail');
+        $adminmail = Pi::config('adminmail');
+        $adminname = Pi::config('adminname');
         // Set to
         $to = array(
             $values['department_email']  => $values['department_title'],
         );
         // Set to admin
-        if ($adminmail != $values['department_email']) {
-            $toAdmin = array(
-                $adminmail                   => $values['department_title'],
+        if (!empty($adminmail) && $adminmail != $values['department_email']) {
+            $to = array(
+                $values['department_email'] => $values['department_title'],
+                $adminmail                  => $adminname,
             );
-            $to = array_merge($to, $adminmail);
         }
         // Set template info
         $values['time_create'] = _date($values['time_create']);

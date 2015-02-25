@@ -21,10 +21,6 @@ return array(
             'name'   => 'home'
         ),
         array(
-            'title'  => _a('SEO texts'),
-            'name'   => 'seo'
-        ),
-        array(
             'title'  => _a('Form'),
             'name'   => 'form'
         ),
@@ -96,48 +92,27 @@ return array(
             'value'        => _a('Message correctly Send, a confirmation has just been sent to you by email'),
             'category'     => 'home',
         ),
-        // SEO
-        'index_seo_title' => array(
-            'title'        => _a('SEO title for index page'),
-            'description'  => '',
-            'edit'         => 'text',
-            'value'        => '',
-            'category'     => 'seo',
-        ),
-        'index_seo_description' => array(
-            'title'        => _a('SEO description for index page'),
-            'description'  => '',
-            'edit'         => 'textarea',
-            'value'        => _a('Contact us form'),
-            'category'     => 'seo',
-        ),
-        'index_seo_keywords' => array(
-            'title'        => _a('SEO keywords for index page'),
-            'description'  => '',
-            'edit'         => 'textarea',
-            'value'        => _a('contact,us,form'),
-            'category'     => 'seo',
-        ),
+        // Texts
         'list_seo_title' => array(
             'title'        => _a('SEO title for list page'),
             'description'  => '',
             'edit'         => 'text',
             'value'        => _a('List of departments'),
-            'category'     => 'seo',
+            'category'     => 'head_meta',
         ),
         'list_seo_description' => array(
             'title'        => _a('SEO description for list page'),
             'description'  => '',
             'edit'         => 'textarea',
             'value'        => _a('Select Department Form contact us'),
-            'category'     => 'seo',
+            'category'     => 'head_meta',
         ),
         'list_seo_keywords' => array(
             'title'        => _a('SEO keywords for list page'),
             'description'  => '',
             'edit'         => 'textarea',
             'value'        => _a('select,department,form,contact,us'),
-            'category'     => 'seo',
+            'category'     => 'head_meta',
         ),
         // Form
         'default_department' => array(

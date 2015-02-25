@@ -43,6 +43,7 @@ EOT;
         <div class="alert alert-success">
             <?php echo $finishText; ?>
         </div>
+        <p><a class="btn btn-success" title="<?php _e('Back'); ?>" href="<?php Pi::url($this->url('' , array('action' => 'index'))); ?>"><?php _e('Back'); ?></a></p>
         <?php } else { ?>
         <div class="contact-form">
             <?php echo $this->form($form, 'vertical'); ?>

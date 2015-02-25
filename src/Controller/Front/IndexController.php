@@ -83,9 +83,6 @@ class IndexController extends ActionController
         // Set data
         $form->setData($data);
         // Set view
-        $this->view()->headTitle($config['index_seo_title']);
-        $this->view()->headDescription($config['index_seo_description'], 'set');
-        $this->view()->headKeywords($config['index_seo_keywords'], 'set');
         $this->view()->setTemplate('index_form');
         $this->view()->assign('title', __('Contact Us'));
         $this->view()->assign('form', $form);
@@ -227,6 +224,7 @@ class IndexController extends ActionController
                 $values['department'] = $config['default_department'];
 			    $values['ip'] = Pi::user()->getIp();
 			    $values['time_create'] = time();
+                $values['platform'] = 'mobile';
 			    // Save
 			    $row = $this->getModel('message')->createRow();
 			    $row->assign($values);
