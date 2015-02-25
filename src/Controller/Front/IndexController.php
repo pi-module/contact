@@ -55,6 +55,7 @@ class IndexController extends ActionController
                 // Get department
                 $department = $this->getModel('department')->find($values['department'])->toArray();
                 // Set values
+                $values['uid'] = Pi::user()->getId();
                 $values['ip'] = Pi::user()->getIp();
                 $values['time_create'] = time();
                 // Save
@@ -125,6 +126,7 @@ class IndexController extends ActionController
                     }
                 }
                 // Set values
+                $values['uid'] = Pi::user()->getId();
                 $values['ip'] = Pi::user()->getIp();
                 $values['time_create'] = time();
                 // Save
@@ -220,10 +222,10 @@ class IndexController extends ActionController
 			        }
 			    }
                 // Set values
-                $values['author'] = Pi::user()->getId();
+                $values['uid'] = Pi::user()->getId();
+                $values['ip'] = Pi::user()->getIp();
+                $values['time_create'] = time();
                 $values['department'] = $config['default_department'];
-			    $values['ip'] = Pi::user()->getIp();
-			    $values['time_create'] = time();
                 $values['platform'] = 'mobile';
 			    // Save
 			    $row = $this->getModel('message')->createRow();
