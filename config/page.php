@@ -34,7 +34,7 @@ return array(
         array(
             'title'         => _a('Contact'),
             'controller'    => 'index',
-            'permission'    => 'index',
+            'permission'    => 'public',
             'block'         => 1,
         ),
     ),

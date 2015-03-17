@@ -13,7 +13,7 @@
 return array(
     // Front section
     'front' => array(
-        'public'    => array(
+        'public'         => array(
             'title'         => _a('Global public resource'),
             'access'        => array(
                 'guest',
