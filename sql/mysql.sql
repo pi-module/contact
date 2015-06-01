@@ -10,7 +10,7 @@ CREATE TABLE `{message}` (
     `phone` varchar(50) NOT NULL default '',
     `ip` char(15) NOT NULL default '',
     `address` tinytext,
-    `message` tinytext,
+    `message` text,
     `mid` int(10) unsigned NOT NULL default '0',
     `answered` tinyint(1) unsigned NOT NULL default '0',
     `uid` int(10) unsigned NOT NULL default '0',
