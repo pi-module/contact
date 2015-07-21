@@ -1,27 +1,22 @@
-<?php 
-$this->css($this->assetModule('css/front.css')); 
+<?php
+$this->css($this->assetModule('css/front.css'));
 // Load google map
 if ($config['gmap_show']) {
-    // Add css codes
-    $css = "#map_canvas {width: 100%; height: " . $config['gmap_height'] . "px;}";
-    $this->headStyle()->appendStyle($css);
-    // Add js codes
-    $js =<<<'EOT'
-var myLatlng = new google.maps.LatLng(%s, %s);
-var mapOptions = {zoom: %s, center: myLatlng}
-var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
-var marker = new google.maps.Marker({position: myLatlng, map: map, draggable:true, title: '%s'});
-EOT;
-    $js = sprintf($js, $config['gmap_latitude'], $config['gmap_longitude'], $config['gmap_zoon'], $config['gmap_title']);
-    $this->footScript()->prependFile('https://maps.googleapis.com/maps/api/js?sensor=false');
-    $this->footScript()->appendScript($js);
+    $locations = array(
+        'latitude'  => $config['gmap_latitude'],
+        'longitude' => $config['gmap_longitude'],
+        'zoom'      => $config['gmap_zoon'],
+        'title'     => $config['gmap_title'],
+    );
+
+    $option = array(
+        'mapTypeId' => $config['gmap_type'],
+    );
 }
 ?>
 <div class="clearfix">
     <?php if ($config['gmap_show'] && $config['gmap_position'] == 'top') { ?>
-    <div class="thumbnail contact-topmap">
-        <div id="map_canvas"></div>
-    </div>
+        <?php echo $this->googleMap($locations, $config['gmap_api_key'], 'point', $option); ?>
     <?php } ?>
     <?php if ($config['show_title']) { ?>
     <div class="page-header contact-title">
@@ -57,9 +52,7 @@ EOT;
         </div>
         <?php } ?>
         <?php if ($config['gmap_show'] && $config['gmap_position'] == 'side') { ?>
-        <div class="thumbnail contact-sidemap">
-            <div id="map_canvas"></div>
-        </div>
+            <?php echo $this->googleMap($locations, $config['gmap_api_key'], 'point', $option); ?>
         <?php } ?>
     </div>
     <?php } ?>

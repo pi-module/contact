@@ -284,13 +284,31 @@ return array(
             'value'        => '',
             'category'     => 'gmap',
         ),
-        'gmap_height' => array(
-            'title'        => _a('Height'),
-            'description'  => '',
-            'edit'         => 'text',
-            'filter'       => 'string',
-            'value'        => '300',
-            'category'     => 'gmap',
+        'gmap_api_key' => array(
+            'category' => 'gmap',
+            'title' => _a('Set Google map API KEY'),
+            'description' => _a('For obtaining an API Key please read this document : https://developers.google.com/maps/documentation/javascript/tutorial#api_key'),
+            'edit' => 'text',
+            'filter' => 'string',
+            'value' => ''
+        ),
+        'gmap_type' => array(
+            'title' => _a('Map type'),
+            'description' => '',
+            'edit' => array(
+                'type' => 'select',
+                'options' => array(
+                    'options' => array(
+                        'ROADMAP' => _a('ROADMAP'),
+                        'SATELLITE' => _a('SATELLITE'),
+                        'HYBRID' => _a('HYBRID'),
+                        'TERRAIN' => _a('TERRAIN'),
+                    ),
+                ),
+            ),
+            'filter' => 'text',
+            'value' => 'ROADMAP',
+            'category' => 'gmap',
         ),
     ),
 );
