@@ -14,6 +14,7 @@ namespace Module\Contact\Form;
 
 use Pi;
 use Zend\InputFilter\InputFilter;
+use Module\System\Validator\UserEmail as UserEmailValidator;
 
 class ReplyFilter extends InputFilter
 {
@@ -43,18 +44,18 @@ class ReplyFilter extends InputFilter
                     'name' => 'StringTrim',
                 ),
             ),
-            'validators' => array(
+            'validators'    => array(
                 array(
-                    'name' => 'EmailAddress',
-                    'options' => array(
-                        'useMxCheck' => false,
-                        'useDeepMxCheck' => false,
-                        'useDomainCheck' => false,
+                    'name'      => 'EmailAddress',
+                    'options'   => array(
+                        'useMxCheck'        => false,
+                        'useDeepMxCheck'    => false,
+                        'useDomainCheck'    => false,
                     ),
                 ),
-                new \Module\System\Validator\UserEmail(array(
-                    'backlist' => false,
-                    'checkDuplication' => false,
+                new UserEmailValidator(array(
+                    'blacklist'         => false,
+                    'check_duplication' => false,
                 )),
             ),
         ));
