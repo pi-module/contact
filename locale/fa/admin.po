@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pi contact module\n"
-"POT-Creation-Date: 2015-03-17 11:34+0330\n"
+"POT-Creation-Date: 2015-09-08 13:04+0430\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Pi\n"
@@ -9,221 +9,245 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.3\n"
+"X-Generator: Poedit 1.8.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-Basepath: .\n"
+"X-Poedit-Basepath: ../..\n"
 "X-Poedit-KeywordsList: _a;_t\n"
-"X-Poedit-SearchPath-0: /var/www/html/local/pi/pi-2.5.0/usr/module/contact\n"
+"X-Poedit-SearchPath-0: .\n"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:16
+#: config/config.php:16
 msgid "Admin"
 msgstr "مدیریت"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:20
+#: config/config.php:20
 msgid "HomePage"
 msgstr "صفحه اصلی"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:24
+#: config/config.php:24
 msgid "Form"
 msgstr "فرم"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:28
+#: config/config.php:28
 msgid "Google Map"
 msgstr "نقشه گوگل"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:36
+#: config/config.php:36
 msgid "Perpage"
 msgstr "تعداد در هر صفحه"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:44
+#: config/config.php:44
 msgid "Homepage"
 msgstr "وب سایت"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:50
+#: config/config.php:50
 msgid "Default form"
 msgstr "فرم پیش فرض"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:51
+#: config/config.php:51
 msgid "List of Departments"
 msgstr "فهرست بخش ها"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:60
+#: config/config.php:60
 msgid "Show breadcrumbs"
 msgstr "نمایش ناوبری"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:68
+#: config/config.php:68
 msgid "Top text"
 msgstr "متن بالا"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:75
+#: config/config.php:75
 msgid "Bottom text"
 msgstr "متن پایین"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:82
+#: config/config.php:82
 msgid "Side text"
 msgstr "متن کنار"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:89
+#: config/config.php:89
 msgid "Finish text"
 msgstr "متن پایان"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:92
+#: config/config.php:92
 msgid ""
 "Message correctly Send, a confirmation has just been sent to you by email"
 msgstr ""
 "پیام شما با موفقیت ارسال شد ، یک ایمیل تایید فقط جهت اطلاع ، برای شما ارسال "
 "شد"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:97
+#: config/config.php:97
 msgid "SEO title for list page"
 msgstr "عنوان سئو برای فهرست بخش ها"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:100
+#: config/config.php:100
 msgid "List of departments"
 msgstr "فهرست بخش ها"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:104
+#: config/config.php:104
 msgid "SEO description for list page"
 msgstr "توضیحات سئو برای فهرست بخش ها"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:107
+#: config/config.php:107
 msgid "Select Department Form contact us"
 msgstr "انتخاب یک بخش برای تماس"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:111
+#: config/config.php:111
 msgid "SEO keywords for list page"
 msgstr "کلمات کلیدی سئو برای فهرست بخش ها"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:114
+#: config/config.php:114
 msgid "select,department,form,contact,us"
 msgstr "انتخاب,بخش,تماس"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:119
+#: config/config.php:119
 msgid "Default department"
 msgstr "فرم پیش فرض"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:127
+#: config/config.php:127
 msgid "show title"
 msgstr "نمایش عنوان"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:135
+#: config/config.php:135
 msgid "show Department"
 msgstr "نمایش بخش"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:143
+#: config/config.php:143
 msgid "show Organization"
 msgstr "نمایش سازمان"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:151
+#: config/config.php:151
 msgid "required Organization"
 msgstr "سازمان اجباری باشد"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:159
+#: config/config.php:159
 msgid "show Homepage"
 msgstr "نمایش وب سایت"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:167
+#: config/config.php:167
 msgid "required Homepage"
 msgstr "وب سایت اجباری باشد"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:175
+#: config/config.php:175
 msgid "show Location"
 msgstr "نمایش شهر"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:183
+#: config/config.php:183
 msgid "required Location"
 msgstr "شهر اجباری باشد"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:191
+#: config/config.php:191
 msgid "show Phone"
 msgstr "نمایش تلفن"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:199
+#: config/config.php:199
 msgid "required Phone"
 msgstr "تلفن اجباری باشد"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:207
+#: config/config.php:207
 msgid "show Address"
 msgstr "نمایش نشانی"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:215
+#: config/config.php:215
 msgid "required Address"
 msgstr "نشانی اجباری باشد"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:223
+#: config/config.php:223
 msgid "Use captcha"
 msgstr "استفاده از کپچا"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:224
+#: config/config.php:224
 msgid "Captcha just use for gust"
 msgstr "استفاده از کپچا فقط برای کاربران مهمان"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:232
+#: config/config.php:232
 msgid "Show Google Map"
 msgstr "نمایش نقشه گوگل"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:240
+#: config/config.php:240
 msgid "Position"
 msgstr "موقعیت"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:246
+#: config/config.php:246
 msgid "Side"
 msgstr "کنار"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:247
+#: config/config.php:247
 msgid "Top"
 msgstr "بالا"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:256
+#: config/config.php:256
 msgid "Latitude"
 msgstr "عرض جغرافیای (Latitude)"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:264
+#: config/config.php:264
 msgid "Longitude"
 msgstr "طول جغرافیای (Longitude)"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:272
+#: config/config.php:272
 msgid "Zoon"
 msgstr "بزرگ نمایی"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:280
+#: config/config.php:280
 msgid "Title"
 msgstr "عنوان"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/config.php:288
-msgid "Height"
-msgstr "ارتفاع"
+#: config/config.php:289
+msgid "Set Google map API KEY"
+msgstr "تنظیم API KEY برای نقشه گوگل"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/module.php:16
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/page.php:35
+#: config/config.php:290
+msgid ""
+"For obtaining an API Key please read this document : https://developers."
+"google.com/maps/documentation/javascript/tutorial#api_key"
+msgstr ""
+"برای ایجاد کلید لطفا این راهنما را مطالعه فرمایید : https://developers."
+"google.com/maps/documentation/javascript/tutorial#api_key"
+
+#: config/config.php:296
+msgid "Map type"
+msgstr "نوع نقشه"
+
+#: config/config.php:302
+msgid "ROADMAP"
+msgstr "ROADMAP"
+
+#: config/config.php:303
+msgid "SATELLITE"
+msgstr "SATELLITE"
+
+#: config/config.php:304
+msgid "HYBRID"
+msgstr "HYBRID"
+
+#: config/config.php:305
+msgid "TERRAIN"
+msgstr "TERRAIN"
+
+#: config/module.php:16 config/page.php:35
 msgid "Contact"
 msgstr "تماس با ما"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/module.php:17
+#: config/module.php:17
 msgid "Manage Contacts"
 msgstr "مدیریت بخش تماس با ما"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/navigation.php:16
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/page.php:17
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/permission.php:27
+#: config/navigation.php:16 config/page.php:17 config/permission.php:27
 msgid "Message"
 msgstr "پیام"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/navigation.php:25
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/page.php:22
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/permission.php:33
+#: config/navigation.php:25 config/page.php:22 config/permission.php:33
 msgid "Department"
 msgstr "بخش"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/navigation.php:34
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/page.php:27
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/permission.php:39
+#: config/navigation.php:34 config/page.php:27 config/permission.php:39
 msgid "Tools"
 msgstr "ابزار"
 
-#: /var/www/html/local/pi/pi-2.5.0/usr/module/contact/config/permission.php:17
+#: config/permission.php:17
 msgid "Global public resource"
 msgstr "دسترسی های سراسری"
+
+#~ msgid "Height"
+#~ msgstr "ارتفاع"
 
 #~ msgid "SEO texts"
 #~ msgstr "متن های SEO"
