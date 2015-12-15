@@ -17,7 +17,6 @@ use Pi\Filter;
 use Pi\Mvc\Controller\ActionController;
 use Module\Contact\Form\ContactForm;
 use Module\Contact\Form\ContactFilter;
-use Zend\Json\Json;
 
 class IndexController extends ActionController
 {
@@ -199,8 +198,13 @@ class IndexController extends ActionController
     
     public function ajaxAction()
     {
-        // Set template
-        $this->view()->setTemplate(false)->setLayout('layout-content');
+        // Check password
+        if (!$this->checkPassword()) {
+            $this->getResponse()->setStatusCode(401);
+            $this->terminate(__('Password not set or wrong'), '', 'error-denied');
+            $this->view()->setLayout('layout-simple');
+            return;
+        }
         // Set info
         $module = $this->params('module');
         // Get config
@@ -250,6 +254,24 @@ class IndexController extends ActionController
             $return['submit'] = 0;
         }
         // Return
-        return Json::encode($return);
-    }	
+        return $return;
+    }
+
+    public function checkPassword() {
+        // Get info from url
+        $module = $this->params('module');
+        $password = $this->params('password');
+        // Get config
+        $config = Pi::service('registry')->config->read($module);
+        // Check password
+        if ($config['json_check_password']) {
+            if ($config['json_password'] == $password) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return true;
+        }
+    }
 }

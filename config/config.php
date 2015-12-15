@@ -17,6 +17,10 @@ return array(
             'name'   => 'admin'
         ),
         array(
+            'title' => _a('Mobile device'),
+            'name' => 'json'
+        ),
+        array(
             'title'  => _a('HomePage'),
             'name'   => 'home'
         ),
@@ -38,6 +42,23 @@ return array(
             'edit'         => 'text',
             'filter'       => 'number_int',
             'value'        => 50
+        ),
+        // Json
+        'json_check_password' => array(
+            'category' => 'json',
+            'title' => _a('Check password for mobile device'),
+            'description' => '',
+            'edit' => 'checkbox',
+            'filter' => 'number_int',
+            'value' => 0
+        ),
+        'json_password' => array(
+            'category' => 'json',
+            'title' => _a('Password for mobile device'),
+            'description' => _a('After use on mobile device , do not change it'),
+            'edit' => 'text',
+            'filter' => 'string',
+            'value' => md5(rand(1,99999)),
         ),
         // Home
         'homepage' => array(

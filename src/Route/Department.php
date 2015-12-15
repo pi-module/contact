@@ -48,7 +48,18 @@ class Department extends Standard
             $matches['department'] = $this->decode($parts[1]);
         } else {
             $matches['action'] = isset($parts[0]) ? $this->decode($parts[0]) : 'index';
+
+            if (isset($parts[1]) && $parts[1] == 'password') {
+                $matches['password'] = $this->decode($parts[2]);
+            }
+
         }
+
+        /* echo '<pre>';
+        print_r($matches);
+        print_r($parts);
+        echo '</pre>'; */
+
         return $matches;
     }
 
@@ -79,6 +90,11 @@ class Department extends Standard
 
         if (!empty($mergedParams['department'])) {
             $url['department'] = 'department' . $this->paramDelimiter . $mergedParams['department'];
+        }
+
+        // Set password
+        if (!empty($mergedParams['password'])) {
+            $url['password'] = 'password' . $this->paramDelimiter . $mergedParams['password'];
         }
 
         $url = implode($this->paramDelimiter, $url);
