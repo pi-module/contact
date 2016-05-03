@@ -57,10 +57,12 @@ class MessageController extends ActionController
             $message[$row->id]['departmenttitle'] = $departmentList[$row->department]['title'];
             $message[$row->id]['time_create'] = _date($message[$row->id]['time_create']);
             // Get user info
-            $user = Pi::user()->bind($row->uid);
-            $message[$row->id]['user']['identity'] = $user->identity;
-            $message[$row->id]['user']['name'] = $user->name;
-            $message[$row->id]['user']['email'] = $user->email;
+            $message[$row->id]['user'] = array();
+            if ($row->uid > 0) {
+                $message[$row->id]['user'] = Pi::user()->get($row->uid, array(
+                    'id', 'identity', 'name', 'email'
+                ));
+            }
         }
         // Set paginator
         $count = array('count' => new \Zend\Db\Sql\Predicate\Expression('count(*)'));
