@@ -39,6 +39,7 @@ class IndexController extends ActionController
         }
         // Set form
         $form = new ContactForm('contact');
+        $form->setAttribute('action', '#');
         // Get post
         if ($this->request->isPost()) {
             $data = $this->request->getPost();
@@ -112,6 +113,7 @@ class IndexController extends ActionController
         }
         // Set form
         $form = new ContactForm('contact');
+        $form->setAttribute('action', '#');
         // Get post
         if ($this->request->isPost()) {
             $data = $this->request->getPost();
@@ -215,6 +217,7 @@ class IndexController extends ActionController
         if ($this->request->isPost()) {
             $data = $this->request->getPost();
             $form = new ContactForm('contact');
+            $form->setAttribute('action', '#');
             $form->setInputFilter(new ContactFilter);
             $form->setData($data);
             if ($form->isValid()) {
