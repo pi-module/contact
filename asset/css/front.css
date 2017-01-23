@@ -43,3 +43,12 @@
 #contact-social-items a:hover {
     text-decoration: none;
 }
+
+.wide-header-content .pi-map .thumbnail{
+    padding:0;
+    border:0;
+}
+
+#pi-contact .wide-header-content .pi-map-canvas {
+    height: 350px;
+}

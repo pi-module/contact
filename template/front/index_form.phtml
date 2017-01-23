@@ -16,7 +16,13 @@ if ($config['gmap_show']) {
 ?>
 <div class="clearfix">
     <?php if ($config['gmap_show'] && $config['gmap_position'] == 'top') { ?>
-        <?php echo $this->googleMap($locations, $config['gmap_api_key'], 'point', $option); ?>
+
+        <?php
+        ob_start();
+        include('partial/contact-wide-header.phtml');
+        $wideContent = ob_get_clean();
+        echo $this->wideContent($wideContent, $module);
+        ?>
     <?php } ?>
     <?php if ($config['show_title']) { ?>
         <div class="page-header contact-title">

@@ -136,6 +136,7 @@ return array(
             'category'     => 'head_meta',
         ),
         // Form
+
         'default_department' => array(
             'title'        => _a('Default department'),
             'description'  => '',
@@ -249,6 +250,15 @@ return array(
             'category'     => 'form',
         ),
         // Gmap
+        'wide_content' => array(
+            'category' => 'gmap',
+            'title' => _a('Active wide front image for this module'),
+            'description' => '',
+            'edit' => 'checkbox',
+            'filter' => 'number_int',
+            'value' => 0
+        ),
+
         'gmap_show' => array(
             'title'        => _a('Show Google Map'),
             'description'  => '',
