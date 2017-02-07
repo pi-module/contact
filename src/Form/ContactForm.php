@@ -23,18 +23,52 @@ class ContactForm extends BaseForm
         parent::__construct($name);
     }
 
-    public function getInputFilter()
-    {
-        if (!$this->filter) {
-            $this->filter = new ContactFilter();
-        }
-        return $this->filter;
-    }
+//    public function getInputFilter()
+//    {
+//        if (!$this->filter) {
+//            $this->filter = new ContactFilter();
+//        }
+//        return $this->filter;
+//    }
 
     public function init()
     {
         // Get configs
         $config = Pi::service('registry')->config->read($this->module, 'form');
+
+        $captchaMode = $config['captcha'];
+        $captchaPublicKey = Pi::config('captcha_public_key');
+        $captchaPrivateKey = Pi::config('captcha_private_key');
+
+        $captchaElement = false;
+
+        if($captchaMode == 1){
+            $captchaElement = array(
+                'name'          => 'captcha',
+                'type'          => 'captcha',
+                'options'       => array(
+                    'label'     => _a('Please type the word.'),
+                    'separator'         => '<br />',
+                    'captcha_position'  => 'append',
+                ),
+                'attributes'    => array(
+                    'required' => true,
+                ),
+            );
+        } elseif($captchaMode == 2 && $captchaPublicKey && $captchaPrivateKey){
+            $captchaElement = array(
+                'name'          => 'captcha',
+                'type'          => 'captcha',
+                'options'       => array(
+                    'captcha' => new \LosReCaptcha\Captcha\ReCaptcha(array(
+                            'site_key' => $captchaPublicKey,
+                            'secret_key' => $captchaPrivateKey,
+                        )
+                    ),
+                ),
+            );
+        }
+
         // Get user
         $user = Pi::user()->bind();
         // User id
@@ -179,14 +213,8 @@ class ContactForm extends BaseForm
             )
         ));
         // captcha
-        if ($config['captcha'] && ($user->id == 0)) {
-            $this->add(array(
-                'name' => 'captcha',
-                'type' => 'captcha',
-                'options' => array(
-                    'label' => __('Please type the word.'),
-                )
-            ));
+        if ($captchaElement && ($user->id == 0)) {
+            $this->add($captchaElement);
         }
         // security
         $this->add(array(

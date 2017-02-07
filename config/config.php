@@ -241,14 +241,25 @@ return array(
             'edit'         => 'checkbox',
             'category'     => 'form',
         ),
-        'captcha' => array(
-            'title'        => _a('Use captcha'),
-            'description'  => _a('Captcha just use for gust'),
-            'value'        => 1,
-            'filter'       => 'number_int',
-            'edit'         => 'checkbox',
-            'category'     => 'form',
+
+        'captcha'  => array(
+            'title'         => _t('Use CAPTCHA'),
+            'description'   => _t('Captcha just use for guest'),
+            'edit'          => array(
+                'type'      => 'select',
+                'options'   => array(
+                    'options'       => array(
+                        0       => _t('No captcha'),
+                        1       => _t('Standard captcha'),
+                        2       => _t('New re-captcha'),
+                    ),
+                ),
+            ),
+            'value'         => 0,
+            'filter'        => 'int',
+            'category'      => 'form',
         ),
+
         // Gmap
         'wide_content' => array(
             'category' => 'gmap',
