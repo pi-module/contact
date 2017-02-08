@@ -51,4 +51,21 @@ if ($config['gmap_show']) {
             </div>
         <?php } ?>
     </div>
+    <?php if (!empty($config['sidetext']) || ($config['gmap_show'] && $config['gmap_position'] == 'side')) { ?>
+        <div class="col-md-5">
+            <?php if (!empty($config['sidetext'])) { ?>
+                <div class="clearfix contact-sidetext">
+                    <?php echo $config['sidetext']; ?>
+                </div>
+            <?php } ?>
+            <?php if ($config['gmap_show'] && $config['gmap_position'] == 'side') { ?>
+                <?php echo $this->googleMap($locations, $config['gmap_api_key'], 'point', $option); ?>
+            <?php } ?>
+        </div>
+    <?php } ?>
+    <?php if (!empty($config['bottomtext'])) { ?>
+        <div class="clearfix contact-bottomtext col-md-12">
+            <?php echo $config['bottomtext']; ?>
+        </div>
+    <?php } ?>
 </div>
