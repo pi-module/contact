@@ -46,6 +46,7 @@ class IndexController extends ActionController
             $form->setInputFilter(new ContactFilter);
             $form->setData($data);
             if ($form->isValid()) {
+
                 $values = $form->getData();
                 foreach (array_keys($values) as $key) {
                     if (!in_array($key, $this->messageColumns)) {
