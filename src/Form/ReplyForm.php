@@ -29,7 +29,7 @@ class ReplyForm extends BaseForm
     {
         // Author
         $this->add(array(
-            'name' => 'author',
+            'name' => 'uid',
             'attributes' => array(
                 'type' => 'hidden',
             ),

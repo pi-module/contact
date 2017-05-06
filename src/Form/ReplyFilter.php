@@ -22,7 +22,7 @@ class ReplyFilter extends InputFilter
     {
         // department
         $this->add(array(
-            'name' => 'author',
+            'name' => 'uid',
             'required' => true,
         ));
         // department

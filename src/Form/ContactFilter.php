@@ -25,7 +25,7 @@ class ContactFilter extends InputFilter
         $config = Pi::service('registry')->config->read($module, 'form');
         // User id
         $this->add(array(
-            'name' => 'author',
+            'name' => 'uid',
             'required' => true,
         ));
         // subject

@@ -32,7 +32,7 @@ class ContactForm extends BaseForm
         $user = Pi::user()->bind();
         // User id
         $this->add(array(
-            'name' => 'author',
+            'name' => 'uid',
             'attributes' => array(
                 'type' => 'hidden',
                 'value' => $user->id,

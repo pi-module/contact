@@ -176,7 +176,7 @@ class MessageController extends ActionController
         } else {
             // Set values
             $values = array(
-                'author'   => Pi::user()->getId(),
+                'uid'   => Pi::user()->getId(),
                 'mid'      => $message->id,
                 'name'     => $message->name,
                 'email'    => $message->email,
