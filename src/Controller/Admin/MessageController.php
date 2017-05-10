@@ -20,11 +20,6 @@ use Module\Contact\Form\ReplyFilter;
 
 class MessageController extends ActionController
 {
-    protected $messageColumns = array(
-        'id', 'subject', 'department', 'email', 'name', 'organization', 'homepage', 'location',
-        'phone', 'ip', 'address', 'message', 'mid', 'answered', 'uid', 'time_create', 'platform'
-    );
-
     public function indexAction()
     {
         // Get page
@@ -82,15 +77,13 @@ class MessageController extends ActionController
             )),
         ));
         // Set view
-        $this->view()->setTemplate('message_index');
+        $this->view()->setTemplate('message-index');
         $this->view()->assign('messages', $message);
         $this->view()->assign('paginator', $paginator);
     }
 
     public function viewAction()
     {
-        // Set template
-        $this->view()->setTemplate('message_view');
         //  Get message
         $id = $this->params('id');
         $message = $this->getModel('message')->find($id);
@@ -127,6 +120,7 @@ class MessageController extends ActionController
             $this->view()->assign('answers', $answer);
         }
         // Set view
+        $this->view()->setTemplate('message-view');
         $this->view()->assign('department', $department);
         $this->view()->assign('message', $message);
     }
@@ -149,11 +143,6 @@ class MessageController extends ActionController
             if ($form->isValid()) {
                 // Set values
                 $values = $form->getData();
-                foreach (array_keys($values) as $key) {
-                    if (!in_array($key, $this->messageColumns)) {
-                        unset($values[$key]);
-                    }
-                }
                 $values['ip'] = Pi::user()->getIp();
                 $values['time_create'] = time();
                 $values['department'] = $message->department;
@@ -187,7 +176,7 @@ class MessageController extends ActionController
         // Set title
         $title = sprintf(__('Reply to %s'), $message->subject);
         // Set view
-        $this->view()->setTemplate('message_reply');
+        $this->view()->setTemplate('message-reply');
         $this->view()->assign('form', $form);
         $this->view()->assign('title', $title);
         $this->view()->assign('message', $message);

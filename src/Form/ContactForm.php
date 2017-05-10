@@ -17,27 +17,37 @@ use Pi\Form\Form as BaseForm;
 
 class ContactForm extends BaseForm
 {
-    public function __construct($name = null)
+    public function __construct($name = null, $option = array())
     {
-        $this->module = Pi::service('module')->current();
+        $module = Pi::service('module')->current();
+        $uid = Pi::user()->getId();
+        $field = array(
+            'id', 'identity', 'name', 'email'
+        );
+        $this->option = $option;
+        $this->option['module'] = $module;
+        $this->option['user'] = Pi::user()->get($uid, $field);
         parent::__construct($name);
     }
 
+    public function getInputFilter()
+    {
+        if (!$this->filter) {
+            $this->filter = new ContactFilter($this->option);
+        }
+        return $this->filter;
+    }
+    
     public function init()
     {
-        // Get configs
-        $config = Pi::service('registry')->config->read($this->module, 'form');
-
-        // Get user
-        $user = Pi::user()->bind();
         // User id
-        $this->add(array(
+        /* $this->add(array(
             'name' => 'uid',
             'attributes' => array(
                 'type' => 'hidden',
-                'value' => $user->id,
+                'value' => $this->option['user']['id'],
             ),
-        ));
+        )); */
         // Subject
         $this->add(array(
             'name' => 'subject',
@@ -50,13 +60,13 @@ class ContactForm extends BaseForm
             )
         ));
         // department
-        if ($config['show_department']) {
+        if ($this->option['config']['show_department']) {
             $this->add(array(
                 'name' => 'department',
                 'type' => 'Module\Contact\Form\Element\Department',
                 'options' => array(
                     'label' => __('Department'),
-                    'module' => $this->module,
+                    'module' => $this->option['module'],
                 ),
             ));
         } else {
@@ -75,7 +85,7 @@ class ContactForm extends BaseForm
             ),
             'attributes' => array(
                 'type' => 'text',
-                'value' => $user->email,
+                'value' => $this->option['user']['email'],
                 'required' => true,
             )
         ));
@@ -87,12 +97,12 @@ class ContactForm extends BaseForm
             ),
             'attributes' => array(
                 'type' => 'text',
-                'value' => $user->identity,
+                'value' => $this->option['user']['identity'],
                 'required' => true,
             )
         ));
         // Organization
-        if ($config['show_organization']) {
+        if ($this->option['config']['show_organization']) {
             $this->add(array(
                 'name' => 'organization',
                 'options' => array(
@@ -100,12 +110,12 @@ class ContactForm extends BaseForm
                 ),
                 'attributes' => array(
                     'type' => 'text',
-                    'required' => $config['required_organization'] ? true : false,
+                    'required' => $this->option['config']['required_organization'] ? true : false,
                 )
             ));
         }
         // Homepage
-        if ($config['show_homepage']) {
+        if ($this->option['config']['show_homepage']) {
             $this->add(array(
                 'name' => 'homepage',
                 'options' => array(
@@ -113,12 +123,12 @@ class ContactForm extends BaseForm
                 ),
                 'attributes' => array(
                     'type' => 'url',
-                    'required' => $config['required_homepage'] ? true : false,
+                    'required' => $this->option['config']['required_homepage'] ? true : false,
                 )
             ));
         }
         // Location
-        if ($config['show_location']) {
+        if ($this->option['config']['show_location']) {
             $this->add(array(
                 'name' => 'location',
                 'options' => array(
@@ -126,12 +136,12 @@ class ContactForm extends BaseForm
                 ),
                 'attributes' => array(
                     'type' => 'text',
-                    'required' => $config['required_location'] ? true : false,
+                    'required' => $this->option['config']['required_location'] ? true : false,
                 )
             ));
         }
         // Phone
-        if ($config['show_phone']) {
+        if ($this->option['config']['show_phone']) {
             $this->add(array(
                 'name' => 'phone',
                 'options' => array(
@@ -139,19 +149,19 @@ class ContactForm extends BaseForm
                 ),
                 'attributes' => array(
                     'type' => 'text',
-                    'required' => $config['required_phone'] ? true : false,
+                    'required' => $this->option['config']['required_phone'] ? true : false,
                 )
             ));
         }
         // Address
-        if ($config['show_address']) {
+        if ($this->option['config']['show_address']) {
             $this->add(array(
                 'name' => 'address',
                 'options' => array(
                     'label' => __('Address'),
                 ),
                 'attributes' => array(
-                    'required' => $config['required_address'] ? true : false,
+                    'required' => $this->option['config']['required_address'] ? true : false,
                     'type' => 'textarea',
                     'rows' => '2',
                     'cols' => '40',
@@ -171,20 +181,19 @@ class ContactForm extends BaseForm
                 'cols' => '40',
             )
         ));
-
         // captcha
-        if ($user->id == 0) {
-            $captchaMode = $config['captcha'];
+        if ($this->option['user']['id'] == 0 && $this->option['captcha'] == 1) {
+            $captchaMode = $this->option['config']['captcha'];
             if($captchaElement = Pi::service('form')->getReCaptcha($captchaMode)){
                 $this->add($captchaElement);
             }
         }
-
         // security
-        $this->add(array(
+        /* $this->add(array(
             'name' => 'security',
             'type' => 'csrf',
-        ));
+        )); */
+
         // Save
         $this->add(array(
             'name' => 'submit',

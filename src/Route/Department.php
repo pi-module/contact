@@ -26,7 +26,7 @@ class Department extends Standard
         'action'        => 'index'
     );
 
-    protected $prefix = '/contact';
+    //protected $prefix = '/contact';
 
     /**
      * {@inheritDoc}
@@ -43,16 +43,19 @@ class Department extends Standard
 
         // Set controller
         $matches = array_merge($this->defaults, $matches);
-        if (isset($parts[0]) && $parts[0] == 'department') {
+        /* if (isset($parts[0]) && $parts[0] == 'department') {
             $matches['action'] = 'department';
             $matches['department'] = $this->decode($parts[1]);
         } else {
             $matches['action'] = isset($parts[0]) ? $this->decode($parts[0]) : 'index';
-
             if (isset($parts[1]) && $parts[1] == 'password') {
                 $matches['password'] = $this->decode($parts[2]);
             }
+        } */
 
+        $matches['action'] = isset($parts[0]) ? $this->decode($parts[0]) : 'index';
+        if (isset($parts[1]) && $parts[1] == 'password') {
+            $matches['password'] = $this->decode($parts[2]);
         }
 
         /* echo '<pre>';
@@ -88,9 +91,9 @@ class Department extends Standard
             $url['action'] = $mergedParams['action'];
         }
 
-        if (!empty($mergedParams['department'])) {
+        /* if (!empty($mergedParams['department'])) {
             $url['department'] = 'department' . $this->paramDelimiter . $mergedParams['department'];
-        }
+        } */
 
         // Set password
         if (!empty($mergedParams['password'])) {

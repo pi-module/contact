@@ -20,39 +20,26 @@ use Module\Contact\Form\ContactFilter;
 
 class IndexController extends ActionController
 {
-    protected $messageColumns = array(
-        'id', 'subject', 'department', 'email', 'name', 'organization', 'homepage', 'location',
-        'phone', 'ip', 'address', 'message', 'mid', 'answered', 'uid', 'time_create', 'platform'
-    );
-
     public function indexAction()
     {
         // Set info
         $module = $this->params('module');
         // Get config
         $config = Pi::service('registry')->config->read($module);
-        // Check
-        if ($config['homepage'] == 'list') {
-            return $this->redirect()->toRoute('', array(
-                'action'     => 'list',
-            ));
-        }
+        // Set option
+        $option = array(
+            'captcha' => 1,
+            'config' => $config,
+        );
         // Set form
-        $form = new ContactForm('contact');
-        $form->setAttribute('action', '#');
+        $form = new ContactForm('contact', $option);
         // Get post
         if ($this->request->isPost()) {
             $data = $this->request->getPost();
-            $form->setInputFilter(new ContactFilter);
+            $form->setInputFilter(new ContactFilter($option));
             $form->setData($data);
             if ($form->isValid()) {
-
                 $values = $form->getData();
-                foreach (array_keys($values) as $key) {
-                    if (!in_array($key, $this->messageColumns)) {
-                        unset($values[$key]);
-                    }
-                }
                 // Get department
                 $department = $this->getModel('department')->find($values['department'])->toArray();
                 // Set values
@@ -85,13 +72,13 @@ class IndexController extends ActionController
         // Set data
         $form->setData($data);
         // Set view
-        $this->view()->setTemplate('index_form');
+        $this->view()->setTemplate('contact-form');
         $this->view()->assign('title', __('Contact Us'));
         $this->view()->assign('form', $form);
         $this->view()->assign('config', $config);
     }
 
-    public function departmentAction()
+    /* public function departmentAction()
     {
         // Set info
         $module = $this->params('module');
@@ -122,11 +109,6 @@ class IndexController extends ActionController
             $form->setData($data);
             if ($form->isValid()) {
                 $values = $form->getData();
-                foreach (array_keys($values) as $key) {
-                    if (!in_array($key, $this->messageColumns)) {
-                        unset($values[$key]);
-                    }
-                }
                 // Set values
                 $values['uid'] = Pi::user()->getId();
                 $values['ip'] = Pi::user()->getIp();
@@ -166,14 +148,14 @@ class IndexController extends ActionController
         $this->view()->headTitle($department['title']);
         $this->view()->headDescription($department['title'], 'set');
         $this->view()->headKeywords($seoKeywords, 'set');
-        $this->view()->setTemplate('index_form');
+        $this->view()->setTemplate('contact-form');
         $this->view()->assign('title', $department['title']);
         $this->view()->assign('department', $department);
         $this->view()->assign('form', $form);
         $this->view()->assign('config', $config);
-    }
+    } */
 
-    public function listAction()
+    /* public function listAction()
     {
         // Set info
         $module = $this->params('module');
@@ -193,11 +175,11 @@ class IndexController extends ActionController
         $this->view()->headTitle($config['list_seo_title']);
         $this->view()->headDescription($config['list_seo_description'], 'set');
         $this->view()->headKeywords($config['list_seo_keywords'], 'set');
-        $this->view()->setTemplate('index_list');
+        $this->view()->setTemplate('index-list');
         $this->view()->assign('title', __('List of departments'));
         $this->view()->assign('lists', $list);
         $this->view()->assign('config', $config);
-    }
+    } */
     
     public function ajaxAction()
     {
@@ -214,21 +196,20 @@ class IndexController extends ActionController
         $config = Pi::service('registry')->config->read($module);
         // Set return array
         $return = array();
+        // Set option
+        $option = array(
+            'captcha' => 0,
+            'config' => $config,
+        );
         // Check post
         if ($this->request->isPost()) {
             $data = $this->request->getPost();
-            $form = new ContactForm('contact');
-            $form->setAttribute('action', '#');
-            $form->setInputFilter(new ContactFilter);
+            $form = new ContactForm('contact', $option);
+            $form->setInputFilter(new ContactFilter($option));
             $form->setData($data);
             if ($form->isValid()) {
 			    // Set values
 			    $values = $form->getData();
-			    foreach (array_keys($values) as $key) {
-			        if (!in_array($key, $this->messageColumns)) {
-			            unset($values[$key]);
-			        }
-			    }
                 // Set values
                 $values['uid'] = Pi::user()->getId();
                 $values['ip'] = Pi::user()->getIp();
@@ -249,13 +230,16 @@ class IndexController extends ActionController
 			    // return
 			    $return['message'] = __('Your Contact send and saved successfully');
 			    $return['submit'] = 1;
+                $return['status'] = 1;
             } else {
 			    $return['message'] = __('Send information not valid');
-			    $return['submit'] = 0;
+                $return['submit'] = 0;
+                $return['status'] = 0;
             }	
         } else {
             $return['message'] = __('Nothing send');
             $return['submit'] = 0;
+            $return['status'] = 0;
         }
         // Return
         return $return;

@@ -18,11 +18,17 @@ use Module\Contact\Form\PruneForm;
 
 class ToolsController extends ActionController
 {
-    public function indexAction()
+    public function settingAction()
+    {
+        // Set view
+        $this->view()->setTemplate('tools-setting');
+    }
+
+    public function pruneAction()
     {
         // Get department list row
-        $select = Pi::model('department', $this->params('module'))->select()->columns(array('id', 'title'));
-        $rowset = Pi::model('department', $this->params('module'))->selectWith($select);
+        $select = $this->getModel('department')->select()->columns(array('id', 'title'));
+        $rowset = $this->getModel('department')->selectWith($select);
         foreach ($rowset as $row) {
             $list[$row->id] = $row->toArray();
             $options[$row->id] = $list[$row->id]['title'];
@@ -43,7 +49,7 @@ class ToolsController extends ActionController
                 $where[] = 'answered = 1 OR mid != 0';
             }
             // Delete storys
-            $number = Pi::model('message', $this->params('module'))->delete($where);
+            $number = $this->getModel('message')->delete($where);
             if ($number) {
                 // Set class
                 $message = sprintf(__('<strong>%s</strong> old messages removed'), $number);
@@ -52,9 +58,29 @@ class ToolsController extends ActionController
                 $message = __('Error in pruned messages.');
             }
         }
-        $this->view()->setTemplate('tools_index');
+        // Set view
+        $this->view()->setTemplate('tools-prune');
         $this->view()->assign('form', $form);
         $this->view()->assign('title', __('Tools'));
         $this->view()->assign('message', $message);
+    }
+
+    public function jsonAction()
+    {
+        // Get info from url
+        $module = $this->params('module');
+        // Get config
+        $config = Pi::service('registry')->config->read($module);
+        // Get config
+        $links = array();
+        $links['postContact'] = Pi::url($this->url('guide', array(
+            'module' => $module,
+            'controller' => 'index',
+            'action' => 'ajax',
+            'password' => (!empty($config['json_password'])) ? $config['json_password'] : '',
+        )));
+        // Set template
+        $this->view()->setTemplate('tools-json');
+        $this->view()->assign('links', $links);
     }
 }

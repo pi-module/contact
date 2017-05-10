@@ -20,14 +20,8 @@ use Module\Contact\Form\DepartmentFilter;
 
 class DepartmentController extends ActionController
 {
-    protected $departmentColumns = array(
-        'id', 'title', 'slug', 'email', 'status'
-    );
-
     public function indexAction()
     {
-        // Set template
-        $this->view()->setTemplate('department_index');
         // Get info
         $select = $this->getModel('department')->select()->order(array('id DESC'));
         $rowset = $this->getModel('department')->selectWith($select);
@@ -36,6 +30,7 @@ class DepartmentController extends ActionController
             $list[$row->id] = $row->toArray();
         }
         // Set view
+        $this->view()->setTemplate('department-index');
         $this->view()->assign('departments', $list);
 
     }
@@ -55,11 +50,6 @@ class DepartmentController extends ActionController
             $form->setData($data);
             if ($form->isValid()) {
                 $values = $form->getData();
-                foreach (array_keys($values) as $key) {
-                    if (!in_array($key, $this->departmentColumns)) {
-                        unset($values[$key]);
-                    }
-                }
                 // Save values
                 if (!empty($values['id'])) {
                     $row = $this->getModel('department')->find($values['id']);
@@ -80,7 +70,8 @@ class DepartmentController extends ActionController
                 $form->setData($values);
             }
         }
-        $this->view()->setTemplate('department_update');
+        // Set view
+        $this->view()->setTemplate('department-update');
         $this->view()->assign('form', $form);
         $this->view()->assign('title', __('Add a Department'));
     }

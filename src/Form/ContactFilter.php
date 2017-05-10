@@ -18,16 +18,13 @@ use Module\System\Validator\UserEmail as UserEmailValidator;
 
 class ContactFilter extends InputFilter
 {
-    public function __construct()
+    public function __construct($option = array())
     {
-        // Get configs
-        $module = Pi::service('module')->current();
-        $config = Pi::service('registry')->config->read($module, 'form');
         // User id
-        $this->add(array(
+        /* $this->add(array(
             'name' => 'uid',
             'required' => true,
-        ));
+        )); */
         // subject
         $this->add(array(
             'name' => 'subject',
@@ -73,38 +70,38 @@ class ContactFilter extends InputFilter
             'required' => true,
         ));
         // Organization
-        if ($config['show_organization']) {
+        if ($option['config']['show_organization']) {
             $this->add(array(
                 'name' => 'organization',
-                'required' => $config['required_organization'] ? true : false,
+                'required' => $option['config']['required_organization'] ? true : false,
             ));
         }
         // Homepage
-        if ($config['show_homepage']) {
+        if ($option['config']['show_homepage']) {
             $this->add(array(
                 'name' => 'homepage',
-                'required' => $config['required_homepage'] ? true : false,
+                'required' => $option['config']['required_homepage'] ? true : false,
             ));
         }
         // Location
-        if ($config['show_location']) {
+        if ($option['config']['show_location']) {
             $this->add(array(
                 'name' => 'location',
-                'required' => $config['required_location'] ? true : false,
+                'required' => $option['config']['required_location'] ? true : false,
             ));
         }
         // Phone
-        if ($config['show_phone']) {
+        if ($option['config']['show_phone']) {
             $this->add(array(
                 'name' => 'phone',
-                'required' => $config['required_phone'] ? true : false,
+                'required' => $option['config']['required_phone'] ? true : false,
             ));
         }
         // Address
-        if ($config['show_address']) {
+        if ($option['config']['show_address']) {
             $this->add(array(
                 'name' => 'address',
-                'required' => $config['required_address'] ? true : false,
+                'required' => $option['config']['required_address'] ? true : false,
             ));
         }
         // Message

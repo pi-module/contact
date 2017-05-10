@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pi contact module\n"
-"POT-Creation-Date: 2015-09-08 13:06+0430\n"
+"POT-Creation-Date: 2017-05-10 11:09+0430\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Pi\n"
@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 1.8.12\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _a;_t\n"
 "X-Poedit-Basepath: ../..\n"
@@ -20,201 +20,197 @@ msgid "Admin"
 msgstr ""
 
 #: config/config.php:20
-msgid "HomePage"
+msgid "Mobile device"
 msgstr ""
 
 #: config/config.php:24
-msgid "Form"
+msgid "HomePage"
 msgstr ""
 
 #: config/config.php:28
+msgid "Form"
+msgstr ""
+
+#: config/config.php:32
 msgid "Google Map"
 msgstr ""
 
-#: config/config.php:36
+#: config/config.php:40
 msgid "Perpage"
 msgstr ""
 
-#: config/config.php:44
-msgid "Homepage"
+#: config/config.php:49
+msgid "Check password for mobile device"
 msgstr ""
 
-#: config/config.php:50
-msgid "Default form"
+#: config/config.php:57
+msgid "Password for mobile device"
 msgstr ""
 
-#: config/config.php:51
-msgid "List of Departments"
+#: config/config.php:58
+msgid "After use on mobile device , do not change it"
 msgstr ""
 
-#: config/config.php:60
+#: config/config.php:65
 msgid "Show breadcrumbs"
 msgstr ""
 
-#: config/config.php:68
+#: config/config.php:73
 msgid "Top text"
 msgstr ""
 
-#: config/config.php:75
+#: config/config.php:80
 msgid "Bottom text"
 msgstr ""
 
-#: config/config.php:82
+#: config/config.php:87
 msgid "Side text"
 msgstr ""
 
-#: config/config.php:89
+#: config/config.php:94
 msgid "Finish text"
 msgstr ""
 
-#: config/config.php:92
+#: config/config.php:97
 msgid ""
 "Message correctly Send, a confirmation has just been sent to you by email"
 msgstr ""
 
-#: config/config.php:97
-msgid "SEO title for list page"
-msgstr ""
-
-#: config/config.php:100
-msgid "List of departments"
-msgstr ""
-
-#: config/config.php:104
-msgid "SEO description for list page"
-msgstr ""
-
-#: config/config.php:107
-msgid "Select Department Form contact us"
-msgstr ""
-
-#: config/config.php:111
-msgid "SEO keywords for list page"
-msgstr ""
-
-#: config/config.php:114
-msgid "select,department,form,contact,us"
-msgstr ""
-
-#: config/config.php:119
+#: config/config.php:102
 msgid "Default department"
 msgstr ""
 
-#: config/config.php:127
+#: config/config.php:110
 msgid "show title"
 msgstr ""
 
-#: config/config.php:135
+#: config/config.php:118
 msgid "show Department"
 msgstr ""
 
-#: config/config.php:143
+#: config/config.php:126
 msgid "show Organization"
 msgstr ""
 
-#: config/config.php:151
+#: config/config.php:134
 msgid "required Organization"
 msgstr ""
 
-#: config/config.php:159
+#: config/config.php:142
 msgid "show Homepage"
 msgstr ""
 
-#: config/config.php:167
+#: config/config.php:150
 msgid "required Homepage"
 msgstr ""
 
-#: config/config.php:175
+#: config/config.php:158
 msgid "show Location"
 msgstr ""
 
-#: config/config.php:183
+#: config/config.php:166
 msgid "required Location"
 msgstr ""
 
-#: config/config.php:191
+#: config/config.php:174
 msgid "show Phone"
 msgstr ""
 
-#: config/config.php:199
+#: config/config.php:182
 msgid "required Phone"
 msgstr ""
 
-#: config/config.php:207
+#: config/config.php:190
 msgid "show Address"
 msgstr ""
 
-#: config/config.php:215
+#: config/config.php:198
 msgid "required Address"
 msgstr ""
 
-#: config/config.php:223
-msgid "Use captcha"
+#: config/config.php:206
+msgid "Use CAPTCHA"
 msgstr ""
 
-#: config/config.php:224
-msgid "Captcha just use for gust"
+#: config/config.php:207
+msgid "Captcha just use for guest"
 msgstr ""
 
-#: config/config.php:232
+#: config/config.php:212
+msgid "No captcha"
+msgstr ""
+
+#: config/config.php:213
+msgid "Standard captcha"
+msgstr ""
+
+#: config/config.php:214
+msgid "New re-captcha"
+msgstr ""
+
+#: config/config.php:225
+msgid "Active wide front image for this module"
+msgstr ""
+
+#: config/config.php:233
 msgid "Show Google Map"
 msgstr ""
 
-#: config/config.php:240
+#: config/config.php:241
 msgid "Position"
 msgstr ""
 
-#: config/config.php:246
+#: config/config.php:247
 msgid "Side"
 msgstr ""
 
-#: config/config.php:247
+#: config/config.php:248
 msgid "Top"
 msgstr ""
 
-#: config/config.php:256
+#: config/config.php:257
 msgid "Latitude"
 msgstr ""
 
-#: config/config.php:264
+#: config/config.php:265
 msgid "Longitude"
 msgstr ""
 
-#: config/config.php:272
+#: config/config.php:273
 msgid "Zoon"
 msgstr ""
 
-#: config/config.php:280
+#: config/config.php:281
 msgid "Title"
 msgstr ""
 
-#: config/config.php:289
+#: config/config.php:290
 msgid "Set Google map API KEY"
 msgstr ""
 
-#: config/config.php:290
+#: config/config.php:291
 msgid ""
 "For obtaining an API Key please read this document : https://developers."
 "google.com/maps/documentation/javascript/tutorial#api_key"
 msgstr ""
 
-#: config/config.php:296
+#: config/config.php:297
 msgid "Map type"
 msgstr ""
 
-#: config/config.php:302
+#: config/config.php:303
 msgid "ROADMAP"
 msgstr ""
 
-#: config/config.php:303
+#: config/config.php:304
 msgid "SATELLITE"
 msgstr ""
 
-#: config/config.php:304
+#: config/config.php:305
 msgid "HYBRID"
 msgstr ""
 
-#: config/config.php:305
+#: config/config.php:306
 msgid "TERRAIN"
 msgstr ""
 
@@ -230,12 +226,29 @@ msgstr ""
 msgid "Message"
 msgstr ""
 
-#: config/navigation.php:25 config/page.php:22 config/permission.php:33
+#: config/navigation.php:25 config/navigation.php:34 config/page.php:22
+#: config/permission.php:33
 msgid "Department"
 msgstr ""
 
-#: config/navigation.php:34 config/page.php:27 config/permission.php:39
+#: config/navigation.php:43
+msgid "Manage department"
+msgstr ""
+
+#: config/navigation.php:54 config/page.php:27 config/permission.php:39
 msgid "Tools"
+msgstr ""
+
+#: config/navigation.php:63
+msgid "Setting"
+msgstr ""
+
+#: config/navigation.php:72
+msgid "Prune"
+msgstr ""
+
+#: config/navigation.php:81
+msgid "Json"
 msgstr ""
 
 #: config/permission.php:17

@@ -48,6 +48,7 @@ class DepartmentForm extends BaseForm
             'attributes' => array(
                 'type' => 'text',
                 'label' => __('Title'),
+                'required' => true,
             )
         ));
 		// slug
@@ -69,6 +70,7 @@ class DepartmentForm extends BaseForm
             'attributes' => array(
                 'type' => 'text',
                 'label' => __('Email'),
+                'required' => true,
             )
         ));
         // status
@@ -85,6 +87,9 @@ class DepartmentForm extends BaseForm
                     5 => __('Expired'),
                 ),
             ),
+            'attributes' => array(
+                'required' => true,
+            )
         ));
         // Save
         $this->add(array(

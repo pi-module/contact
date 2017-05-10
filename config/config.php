@@ -61,22 +61,6 @@ return array(
             'value' => md5(rand(1,99999)),
         ),
         // Home
-        'homepage' => array(
-            'title'        => _a('Homepage'),
-            'description'  => ' ',
-            'edit'         => array(
-                'type' => 'select',
-                'options' => array(
-                    'options' => array(
-                        'from' => _a('Default form'),
-                        'list' => _a('List of Departments'),
-                    ),
-                ),
-            ),
-            'filter'       => 'string',
-            'value'        => 'from',
-            'category'     => 'home',
-        ),
         'breadcrumbs' => array(
             'title'        => _a('Show breadcrumbs'),
             'description'  => '',
@@ -113,30 +97,7 @@ return array(
             'value'        => _a('Message correctly Send, a confirmation has just been sent to you by email'),
             'category'     => 'home',
         ),
-        // Texts
-        'list_seo_title' => array(
-            'title'        => _a('SEO title for list page'),
-            'description'  => '',
-            'edit'         => 'text',
-            'value'        => _a('List of departments'),
-            'category'     => 'head_meta',
-        ),
-        'list_seo_description' => array(
-            'title'        => _a('SEO description for list page'),
-            'description'  => '',
-            'edit'         => 'textarea',
-            'value'        => _a('Select Department Form contact us'),
-            'category'     => 'head_meta',
-        ),
-        'list_seo_keywords' => array(
-            'title'        => _a('SEO keywords for list page'),
-            'description'  => '',
-            'edit'         => 'textarea',
-            'value'        => _a('select,department,form,contact,us'),
-            'category'     => 'head_meta',
-        ),
         // Form
-
         'default_department' => array(
             'title'        => _a('Default department'),
             'description'  => '',
@@ -241,7 +202,6 @@ return array(
             'edit'         => 'checkbox',
             'category'     => 'form',
         ),
-
         'captcha'  => array(
             'title'         => _t('Use CAPTCHA'),
             'description'   => _t('Captcha just use for guest'),
@@ -259,7 +219,6 @@ return array(
             'filter'        => 'int',
             'category'      => 'form',
         ),
-
         // Gmap
         'wide_content' => array(
             'category' => 'gmap',

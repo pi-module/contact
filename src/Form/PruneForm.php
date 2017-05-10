@@ -37,6 +37,7 @@ class PruneForm extends BaseForm
                 'type' => 'text',
                 'value' => date('Y-m-d'),
                 'label' => __('All contacts Before'),
+                'required' => true,
             )
         ));
         // answer
@@ -63,6 +64,7 @@ class PruneForm extends BaseForm
                 'description' => '',
                 'size' => 5,
                 'multiple' => 1,
+                'required' => true,
             ),
         ));
         // Submit
