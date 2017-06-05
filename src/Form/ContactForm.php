@@ -97,7 +97,7 @@ class ContactForm extends BaseForm
             ),
             'attributes' => array(
                 'type' => 'text',
-                'value' => $this->option['user']['identity'],
+                'value' => $this->option['user']['name'],
                 'required' => true,
             )
         ));
