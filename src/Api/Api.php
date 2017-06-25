@@ -14,9 +14,12 @@ namespace Module\Contact\Api;
 
 use Pi;
 use Pi\Application\Api\AbstractApi;
+use Module\Contact\Form\ContactForm;
+use Module\Contact\Form\ContactFilter;
 
 /*
  * Pi::api('api', 'contact')->send($values);
+ * Pi::api('api', 'contact')->contact($data);
  */
 
 class Api extends AbstractApi
@@ -26,7 +29,7 @@ class Api extends AbstractApi
         // Get config
         $config = Pi::service('registry')->config->read($this->getModule());
         // Set values
-        $values['uid'] = Pi::user()->getId();
+        $values['uid'] = isset($values['uid']) ? $values['uid'] : Pi::user()->getId();
         $values['ip'] = Pi::user()->getIp();
         $values['time_create'] = time();
         $values['department'] = $config['default_department'];
@@ -41,5 +44,40 @@ class Api extends AbstractApi
         // Send as mail
         Pi::api('mail', 'contact')->toAdmin($values);
         Pi::api('mail', 'contact')->toUser($values);
+
+        return true;
+    }
+
+    public function contact($data)
+    {
+        $result = array();
+
+        // Get config
+        $config = Pi::service('registry')->config->read($this->getModule());
+        // Set option
+        $option = array(
+            'captcha' => 0,
+            'config' => $config,
+        );
+        // Set form
+        $form = new ContactForm('contact', $option);
+        $form->setInputFilter(new ContactFilter($option));
+        $form->setData($data);
+        if ($form->isValid()) {
+            // Set values
+            $values = $form->getData();
+            // Save
+            $this->send($values);
+            // return
+            $result['message'] = __('Your Contact send and saved successfully');
+            $result['submit'] = 1;
+            $result['status'] = 1;
+        } else {
+            $result['message'] = __('Send information not valid');
+            $result['submit'] = 0;
+            $result['status'] = 0;
+        }
+
+        return $result;
     }
 }
