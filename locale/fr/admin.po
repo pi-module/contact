@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pi contact module\n"
-"POT-Creation-Date: 2015-01-02 10:10+0330\n"
+"POT-Creation-Date: 2017-07-25 18:43+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Marc\n"
@@ -9,245 +9,304 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 2.0.3\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _a;_t\n"
-"X-Poedit-Basepath: .\n"
+"X-Poedit-Basepath: ../..\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Poedit-SearchPath-0: /var/www/html/local/pi/pi-release-2.5.0/usr/module/"
-"contact\n"
+"X-Poedit-SearchPath-0: .\n"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/permission.php:17
-msgid "Global public resource"
-msgstr "Ressource globale publique"
-
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/permission.php:27
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/navigation.php:16
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/page.php:17
-msgid "Message"
-msgstr "Message"
-
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/permission.php:33
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/navigation.php:25
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/page.php:22
-msgid "Department"
-msgstr "Département-Sujet"
-
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/permission.php:39
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/navigation.php:34
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/page.php:27
-msgid "Tools"
-msgstr "Outils"
-
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/module.php:16
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/page.php:35
-msgid "Contact"
-msgstr "Contact"
-
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/module.php:17
-msgid "Manage Contacts"
-msgstr "Gérer les contacts"
-
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:16
+#: config/config.php:16
 msgid "Admin"
 msgstr "Admin"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:20
+#: config/config.php:20
+msgid "Mobile device"
+msgstr "Device Mobile"
+
+#: config/config.php:24
 msgid "HomePage"
 msgstr "Accueil"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:24
-msgid "SEO texts"
-msgstr "Textes SEO"
-
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:28
+#: config/config.php:28
 msgid "Form"
 msgstr "Formulaire"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:32
+#: config/config.php:32
 msgid "Google Map"
 msgstr "Google Map"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:40
+#: config/config.php:40
 msgid "Perpage"
 msgstr "Par page"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:48
-msgid "Homepage"
-msgstr "Accueil"
+#: config/config.php:49
+msgid "Check password for mobile device"
+msgstr "Contrôler le mot de passe pour les devices mobiles"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:54
-msgid "Default form"
-msgstr "Formulaire par défaut"
+#: config/config.php:57
+msgid "Password for mobile device"
+msgstr "Mot de passe pour les devices mobiles"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:55
-msgid "List of Departments"
-msgstr "Liste des départements-sujets"
+#: config/config.php:58
+msgid "After use on mobile device , do not change it"
+msgstr "Après utilisation sur device mobile, ne pas modifier"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:64
+#: config/config.php:65
 msgid "Show breadcrumbs"
 msgstr "Montrer les Breadcrumbs"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:72
+#: config/config.php:73
 msgid "Top text"
 msgstr "Texte haut de formulaire"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:79
+#: config/config.php:80
 msgid "Bottom text"
 msgstr "Texte bas de formulaire"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:86
+#: config/config.php:87
 msgid "Side text"
 msgstr "Texte de bord de formulaire"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:93
+#: config/config.php:94
 msgid "Finish text"
 msgstr "Texte final soumission"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:96
+#: config/config.php:97
 msgid ""
 "Message correctly Send, a confirmation has just been sent to you by email"
 msgstr ""
+"Le message a été correctement Envoyé ! Une confirmation vient de vous être "
+"envoyée par email."
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:101
-msgid "SEO title for index page"
-msgstr "SEO Title pour la page Index"
-
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:108
-msgid "SEO description for index page"
-msgstr "SEO Description pour la page Index"
-
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:111
-msgid "Contact us form"
-msgstr "Formulaire de Contact"
-
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:115
-msgid "SEO keywords for index page"
-msgstr "SEO keywords pour la page Index"
-
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:118
-msgid "contact,us,form"
-msgstr "contactez-nous, formulaire"
-
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:122
-msgid "SEO title for list page"
-msgstr "SEO Title pour la page Liste"
-
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:125
-msgid "List of departments"
-msgstr "Liste des Départements-Sujets"
-
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:129
-msgid "SEO description for list page"
-msgstr "Description SEO pour la page Liste"
-
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:132
-msgid "Select Department Form contact us"
-msgstr "Sélectionnez le Sujet objet de votre prise de contact"
-
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:136
-msgid "SEO keywords for list page"
-msgstr "SEO Keywords pour la page Liste"
-
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:139
-msgid "select,department,form,contact,us"
-msgstr "sélectionner, département, formulaire, contactez-nous"
-
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:144
+#: config/config.php:102
 msgid "Default department"
 msgstr "Département-sujet par défaut"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:152
+#: config/config.php:110
 msgid "show title"
 msgstr "Montrer le Titre"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:160
+#: config/config.php:118
 msgid "show Department"
 msgstr "Exiger département-sujet"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:168
+#: config/config.php:126
 msgid "show Organization"
 msgstr "Montrer l'organisation"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:176
+#: config/config.php:134
 msgid "required Organization"
 msgstr "Exiger l'organisation"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:184
+#: config/config.php:142
 msgid "show Homepage"
 msgstr "Montrer SiteWeb"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:192
+#: config/config.php:150
 msgid "required Homepage"
 msgstr "Exiger le site web"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:200
+#: config/config.php:158
 msgid "show Location"
 msgstr "Montrer la localisation"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:208
+#: config/config.php:166
 msgid "required Location"
 msgstr "Exiger la localisation"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:216
+#: config/config.php:174
 msgid "show Phone"
 msgstr "Montrer Téléphone"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:224
+#: config/config.php:182
 msgid "required Phone"
 msgstr "Exiger le téléphone"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:232
+#: config/config.php:190
 msgid "show Address"
 msgstr "Montrer Adresse"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:240
+#: config/config.php:198
 msgid "required Address"
 msgstr "Exiger l'adresse"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:248
-msgid "Use captcha"
-msgstr "Utiliser le captcha"
+#: config/config.php:206
+msgid "Use CAPTCHA"
+msgstr "Utiliser le Captcha"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:249
-msgid "Captcha just use for gust"
-msgstr "Captcha seulement pour les invités"
+#: config/config.php:207
+msgid "Captcha just use for guest"
+msgstr "Captcha utilisé uniquement pour les invités"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:257
+#: config/config.php:212
+msgid "No captcha"
+msgstr "Pas de captcha"
+
+#: config/config.php:213
+msgid "Standard captcha"
+msgstr "Captcha Standard"
+
+#: config/config.php:214
+msgid "New re-captcha"
+msgstr "Utiliser le new Re-captcha"
+
+#: config/config.php:225
+msgid "Active wide front image for this module"
+msgstr "Activer l'image large pour ce module"
+
+#: config/config.php:233
 msgid "Show Google Map"
 msgstr "Afficher la carte Google Map"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:265
+#: config/config.php:241
 msgid "Position"
 msgstr "Position"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:271
+#: config/config.php:247
 msgid "Side"
 msgstr "De côté"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:272
+#: config/config.php:248
 msgid "Top"
 msgstr "Au dessus"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:281
+#: config/config.php:257
 msgid "Latitude"
 msgstr "Latitude"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:289
+#: config/config.php:265
 msgid "Longitude"
 msgstr "Longitude"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:297
+#: config/config.php:273
 msgid "Zoon"
 msgstr "Zoom"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:305
+#: config/config.php:281
 msgid "Title"
 msgstr "Titre"
 
-#: /var/www/html/local/pi/pi-release-2.5.0/usr/module/contact/config/config.php:313
-msgid "Height"
-msgstr "Hauteur"
+#: config/config.php:290
+msgid "Set Google map API KEY"
+msgstr "Définir la Google Map API KEY"
+
+#: config/config.php:291
+msgid ""
+"For obtaining an API Key please read this document : https://developers."
+"google.com/maps/documentation/javascript/tutorial#api_key"
+msgstr ""
+"Pour obtenir une API Key, se référer à ce document : https://developers."
+"google.com/maps/documentation/javascript/tutorial#api_key"
+
+#: config/config.php:297
+msgid "Map type"
+msgstr "Type de carte"
+
+#: config/config.php:303
+msgid "ROADMAP"
+msgstr "ROADMAP"
+
+#: config/config.php:304
+msgid "SATELLITE"
+msgstr "SATELLITE"
+
+#: config/config.php:305
+msgid "HYBRID"
+msgstr "HYBRID"
+
+#: config/config.php:306
+msgid "TERRAIN"
+msgstr "TERRAIN"
+
+#: config/module.php:16 config/page.php:35
+msgid "Contact"
+msgstr "Contact"
+
+#: config/module.php:17
+msgid "Manage Contacts"
+msgstr "Gérer les contacts"
+
+#: config/navigation.php:16 config/page.php:17 config/permission.php:27
+msgid "Message"
+msgstr "Message"
+
+#: config/navigation.php:25 config/navigation.php:34 config/page.php:22
+#: config/permission.php:33
+msgid "Department"
+msgstr "Département-Sujet"
+
+#: config/navigation.php:43
+msgid "Manage department"
+msgstr "Gérer le Département-sujet"
+
+#: config/navigation.php:54 config/page.php:27 config/permission.php:39
+msgid "Tools"
+msgstr "Outils"
+
+#: config/navigation.php:63
+msgid "Setting"
+msgstr "Paramètres"
+
+#: config/navigation.php:72
+msgid "Prune"
+msgstr "Purger"
+
+#: config/navigation.php:81
+msgid "Json"
+msgstr "Json"
+
+#: config/permission.php:17
+msgid "Global public resource"
+msgstr "Ressource globale publique"
+
+#~ msgid "SEO texts"
+#~ msgstr "Textes SEO"
+
+#~ msgid "Homepage"
+#~ msgstr "Accueil"
+
+#~ msgid "Default form"
+#~ msgstr "Formulaire par défaut"
+
+#~ msgid "List of Departments"
+#~ msgstr "Liste des départements-sujets"
+
+#~ msgid "SEO title for index page"
+#~ msgstr "SEO Title pour la page Index"
+
+#~ msgid "SEO description for index page"
+#~ msgstr "SEO Description pour la page Index"
+
+#~ msgid "Contact us form"
+#~ msgstr "Formulaire de Contact"
+
+#~ msgid "SEO keywords for index page"
+#~ msgstr "SEO keywords pour la page Index"
+
+#~ msgid "contact,us,form"
+#~ msgstr "contactez-nous, formulaire"
+
+#~ msgid "SEO title for list page"
+#~ msgstr "SEO Title pour la page Liste"
+
+#~ msgid "List of departments"
+#~ msgstr "Liste des Départements-Sujets"
+
+#~ msgid "SEO description for list page"
+#~ msgstr "Description SEO pour la page Liste"
+
+#~ msgid "Select Department Form contact us"
+#~ msgstr "Sélectionnez le Sujet objet de votre prise de contact"
+
+#~ msgid "SEO keywords for list page"
+#~ msgstr "SEO Keywords pour la page Liste"
+
+#~ msgid "select,department,form,contact,us"
+#~ msgstr "sélectionner, département, formulaire, contactez-nous"
+
+#~ msgid "Height"
+#~ msgstr "Hauteur"
 
 #~ msgid "SEO title for finish page"
 #~ msgstr "SEO Title pour la page Terminé"
