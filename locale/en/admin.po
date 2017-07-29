@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pi contact module\n"
-"POT-Creation-Date: 2017-05-10 11:09+0430\n"
+"POT-Creation-Date: 2017-07-29 17:47+0430\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Pi\n"
@@ -15,12 +15,12 @@ msgstr ""
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: config/config.php:16
-msgid "Admin"
+#: config/block.php:16 config/module.php:16 config/page.php:35
+msgid "Contact"
 msgstr ""
 
-#: config/config.php:20
-msgid "Mobile device"
+#: config/config.php:16
+msgid "Admin"
 msgstr ""
 
 #: config/config.php:24
@@ -37,18 +37,6 @@ msgstr ""
 
 #: config/config.php:40
 msgid "Perpage"
-msgstr ""
-
-#: config/config.php:49
-msgid "Check password for mobile device"
-msgstr ""
-
-#: config/config.php:57
-msgid "Password for mobile device"
-msgstr ""
-
-#: config/config.php:58
-msgid "After use on mobile device , do not change it"
 msgstr ""
 
 #: config/config.php:65
@@ -152,70 +140,66 @@ msgstr ""
 msgid "Active wide front image for this module"
 msgstr ""
 
-#: config/config.php:233
+#: config/config.php:232
 msgid "Show Google Map"
 msgstr ""
 
-#: config/config.php:241
+#: config/config.php:240
 msgid "Position"
 msgstr ""
 
-#: config/config.php:247
+#: config/config.php:246
 msgid "Side"
 msgstr ""
 
-#: config/config.php:248
+#: config/config.php:247
 msgid "Top"
 msgstr ""
 
-#: config/config.php:257
+#: config/config.php:256
 msgid "Latitude"
 msgstr ""
 
-#: config/config.php:265
+#: config/config.php:264
 msgid "Longitude"
 msgstr ""
 
-#: config/config.php:273
+#: config/config.php:272
 msgid "Zoon"
 msgstr ""
 
-#: config/config.php:281
+#: config/config.php:280
 msgid "Title"
 msgstr ""
 
-#: config/config.php:290
+#: config/config.php:289
 msgid "Set Google map API KEY"
 msgstr ""
 
-#: config/config.php:291
+#: config/config.php:290
 msgid ""
 "For obtaining an API Key please read this document : https://developers."
 "google.com/maps/documentation/javascript/tutorial#api_key"
 msgstr ""
 
-#: config/config.php:297
+#: config/config.php:296
 msgid "Map type"
 msgstr ""
 
-#: config/config.php:303
+#: config/config.php:302
 msgid "ROADMAP"
 msgstr ""
 
-#: config/config.php:304
+#: config/config.php:303
 msgid "SATELLITE"
 msgstr ""
 
-#: config/config.php:305
+#: config/config.php:304
 msgid "HYBRID"
 msgstr ""
 
-#: config/config.php:306
+#: config/config.php:305
 msgid "TERRAIN"
-msgstr ""
-
-#: config/module.php:16 config/page.php:35
-msgid "Contact"
 msgstr ""
 
 #: config/module.php:17

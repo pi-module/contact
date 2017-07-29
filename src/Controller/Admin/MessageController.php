@@ -146,6 +146,7 @@ class MessageController extends ActionController
                 $values['ip'] = Pi::user()->getIp();
                 $values['time_create'] = time();
                 $values['department'] = $message->department;
+                $values['message'] = _strip($values['message']);
                 // Save date
                 $row = $this->getModel('message')->createRow();
                 $row->assign($values);

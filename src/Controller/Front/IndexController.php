@@ -13,7 +13,7 @@
 namespace Module\Contact\Controller\Front;
 
 use Pi;
-use Pi\Filter;
+//use Pi\Filter;
 use Pi\Mvc\Controller\ActionController;
 use Module\Contact\Form\ContactForm;
 use Module\Contact\Form\ContactFilter;
@@ -46,6 +46,9 @@ class IndexController extends ActionController
                 $values['uid'] = Pi::user()->getId();
                 $values['ip'] = Pi::user()->getIp();
                 $values['time_create'] = time();
+                $values['name'] = _strip($values['name']);
+                $values['subject'] = _strip($values['subject']);
+                $values['message'] = _strip($values['message']);
                 // Save
                 $row = $this->getModel('message')->createRow();
                 $row->assign($values);
@@ -66,7 +69,7 @@ class IndexController extends ActionController
         } else {
             // Set data
             $data = array(
-                'department' => $config['default_department']
+                'department' => $config['default_department'],
             );
         }
         // Set data
@@ -113,6 +116,7 @@ class IndexController extends ActionController
                 $values['uid'] = Pi::user()->getId();
                 $values['ip'] = Pi::user()->getIp();
                 $values['time_create'] = time();
+                $values['message'] = _strip($values['message']);
                 // Save
                 $row = $this->getModel('message')->createRow();
                 $row->assign($values);
@@ -181,7 +185,7 @@ class IndexController extends ActionController
         $this->view()->assign('config', $config);
     } */
     
-    public function ajaxAction()
+    /* public function ajaxAction()
     {
         // Check password
         if (!$this->checkPassword()) {
@@ -216,6 +220,7 @@ class IndexController extends ActionController
                 $values['time_create'] = time();
                 $values['department'] = $config['default_department'];
                 $values['platform'] = 'mobile';
+                $values['message'] = _strip($values['message']);
 			    // Save
 			    $row = $this->getModel('message')->createRow();
 			    $row->assign($values);
@@ -243,9 +248,9 @@ class IndexController extends ActionController
         }
         // Return
         return $return;
-    }
+    } */
 
-    public function checkPassword() {
+    /* public function checkPassword() {
         // Get info from url
         $module = $this->params('module');
         $password = $this->params('password');
@@ -261,5 +266,5 @@ class IndexController extends ActionController
         } else {
             return true;
         }
-    }
+    } */
 }

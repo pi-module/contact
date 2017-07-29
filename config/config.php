@@ -16,10 +16,10 @@ return array(
             'title'  => _a('Admin'),
             'name'   => 'admin'
         ),
-        array(
+        /* array(
             'title' => _a('Mobile device'),
             'name' => 'json'
-        ),
+        ), */
         array(
             'title'  => _a('HomePage'),
             'name'   => 'home'
@@ -44,7 +44,7 @@ return array(
             'value'        => 50
         ),
         // Json
-        'json_check_password' => array(
+        /* 'json_check_password' => array(
             'category' => 'json',
             'title' => _a('Check password for mobile device'),
             'description' => '',
@@ -59,7 +59,7 @@ return array(
             'edit' => 'text',
             'filter' => 'string',
             'value' => md5(rand(1,99999)),
-        ),
+        ), */
         // Home
         'breadcrumbs' => array(
             'title'        => _a('Show breadcrumbs'),
@@ -228,7 +228,6 @@ return array(
             'filter' => 'number_int',
             'value' => 0
         ),
-
         'gmap_show' => array(
             'title'        => _a('Show Google Map'),
             'description'  => '',

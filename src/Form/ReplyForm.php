@@ -17,6 +17,11 @@ use Pi\Form\Form as BaseForm;
 
 class ReplyForm extends BaseForm
 {
+    public function __construct($name = null, $options = array())
+    {
+        parent::__construct($name);
+    }
+
     public function getInputFilter()
     {
         if (!$this->filter) {

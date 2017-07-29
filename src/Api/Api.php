@@ -33,6 +33,9 @@ class Api extends AbstractApi
         $values['ip'] = Pi::user()->getIp();
         $values['time_create'] = time();
         $values['department'] = $config['default_department'];
+        $values['name'] = _strip($values['name']);
+        $values['subject'] = _strip($values['subject']);
+        $values['message'] = _strip($values['message']);
         // Save
         $row = Pi::model('message', $this->getModule())->createRow();
         $row->assign($values);

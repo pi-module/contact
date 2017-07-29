@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pi contact module\n"
-"POT-Creation-Date: 2017-05-10 11:09+0430\n"
+"POT-Creation-Date: 2017-07-29 17:47+0430\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Pi\n"
@@ -15,13 +15,13 @@ msgstr ""
 "X-Poedit-KeywordsList: _a;_t\n"
 "X-Poedit-SearchPath-0: .\n"
 
+#: config/block.php:16 config/module.php:16 config/page.php:35
+msgid "Contact"
+msgstr "تماس با ما"
+
 #: config/config.php:16
 msgid "Admin"
 msgstr "مدیریت"
-
-#: config/config.php:20
-msgid "Mobile device"
-msgstr "اپلیکشن موبایل"
 
 #: config/config.php:24
 msgid "HomePage"
@@ -38,18 +38,6 @@ msgstr "نقشه گوگل"
 #: config/config.php:40
 msgid "Perpage"
 msgstr "تعداد در هر صفحه"
-
-#: config/config.php:49
-msgid "Check password for mobile device"
-msgstr "بررسی پسورد برای اپلیکشن موبایل"
-
-#: config/config.php:57
-msgid "Password for mobile device"
-msgstr "پسورد برای اپلیکشن موبایل"
-
-#: config/config.php:58
-msgid "After use on mobile device , do not change it"
-msgstr "بعد از استفاده از این پسورد در اپلیکشن موبایل آن را تغییر ندهید"
 
 #: config/config.php:65
 msgid "Show breadcrumbs"
@@ -154,43 +142,43 @@ msgstr "ریکپچا گوگل"
 msgid "Active wide front image for this module"
 msgstr "فعال کردن تصویر عریض برای ماژول"
 
-#: config/config.php:233
+#: config/config.php:232
 msgid "Show Google Map"
 msgstr "نمایش نقشه گوگل"
 
-#: config/config.php:241
+#: config/config.php:240
 msgid "Position"
 msgstr "موقعیت"
 
-#: config/config.php:247
+#: config/config.php:246
 msgid "Side"
 msgstr "کنار"
 
-#: config/config.php:248
+#: config/config.php:247
 msgid "Top"
 msgstr "بالا"
 
-#: config/config.php:257
+#: config/config.php:256
 msgid "Latitude"
 msgstr "عرض جغرافیای (Latitude)"
 
-#: config/config.php:265
+#: config/config.php:264
 msgid "Longitude"
 msgstr "طول جغرافیای (Longitude)"
 
-#: config/config.php:273
+#: config/config.php:272
 msgid "Zoon"
 msgstr "بزرگ نمایی"
 
-#: config/config.php:281
+#: config/config.php:280
 msgid "Title"
 msgstr "عنوان"
 
-#: config/config.php:290
+#: config/config.php:289
 msgid "Set Google map API KEY"
 msgstr "تنظیم API KEY برای نقشه گوگل"
 
-#: config/config.php:291
+#: config/config.php:290
 msgid ""
 "For obtaining an API Key please read this document : https://developers."
 "google.com/maps/documentation/javascript/tutorial#api_key"
@@ -198,29 +186,25 @@ msgstr ""
 "برای ایجاد کلید لطفا این راهنما را مطالعه فرمایید : https://developers."
 "google.com/maps/documentation/javascript/tutorial#api_key"
 
-#: config/config.php:297
+#: config/config.php:296
 msgid "Map type"
 msgstr "نوع نقشه"
 
-#: config/config.php:303
+#: config/config.php:302
 msgid "ROADMAP"
 msgstr "ROADMAP"
 
-#: config/config.php:304
+#: config/config.php:303
 msgid "SATELLITE"
 msgstr "SATELLITE"
 
-#: config/config.php:305
+#: config/config.php:304
 msgid "HYBRID"
 msgstr "HYBRID"
 
-#: config/config.php:306
+#: config/config.php:305
 msgid "TERRAIN"
 msgstr "TERRAIN"
-
-#: config/module.php:16 config/page.php:35
-msgid "Contact"
-msgstr "تماس با ما"
 
 #: config/module.php:17
 msgid "Manage Contacts"
@@ -258,6 +242,18 @@ msgstr "جیسون"
 #: config/permission.php:17
 msgid "Global public resource"
 msgstr "دسترسی های سراسری"
+
+#~ msgid "Mobile device"
+#~ msgstr "اپلیکشن موبایل"
+
+#~ msgid "Check password for mobile device"
+#~ msgstr "بررسی پسورد برای اپلیکشن موبایل"
+
+#~ msgid "Password for mobile device"
+#~ msgstr "پسورد برای اپلیکشن موبایل"
+
+#~ msgid "After use on mobile device , do not change it"
+#~ msgstr "بعد از استفاده از این پسورد در اپلیکشن موبایل آن را تغییر ندهید"
 
 #~ msgid "Homepage"
 #~ msgstr "وب سایت"

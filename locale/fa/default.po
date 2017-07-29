@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pi contact module\n"
-"POT-Creation-Date: 2017-05-10 11:12+0430\n"
+"POT-Creation-Date: 2017-07-29 17:47+0430\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Pi\n"
@@ -14,6 +14,14 @@ msgstr ""
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#: src/Api/Api.php:73
+msgid "Your Contact send and saved successfully"
+msgstr "پیام شما با موفقیت ارسال و ذخیره شد"
+
+#: src/Api/Api.php:77
+msgid "Send information not valid"
+msgstr "اطلاعات ارسال شده صحیح نیست"
 
 #: src/Api/Breadcrumbs.php:60 template/admin/department-index.phtml:3
 msgid "List of departments"
@@ -37,25 +45,25 @@ msgstr "لطفا یک بخش را انتخاب نمایید"
 
 #: src/Controller/Admin/MessageController.php:92
 #: src/Controller/Admin/MessageController.php:135
-#: src/Controller/Admin/MessageController.php:198
+#: src/Controller/Admin/MessageController.php:199
 msgid "Please select message"
 msgstr "لطفا یک پیام انتخاب کنید"
 
-#: src/Controller/Admin/MessageController.php:163
+#: src/Controller/Admin/MessageController.php:164
 msgid "Your reply Send and saved successfully"
 msgstr "پاسخ شما با موفقیت ارسال و ذخیره شد"
 
-#: src/Controller/Admin/MessageController.php:172
+#: src/Controller/Admin/MessageController.php:173
 #, php-format
 msgid "Re : %s"
 msgstr "پاسخ به : %s"
 
-#: src/Controller/Admin/MessageController.php:177
+#: src/Controller/Admin/MessageController.php:178
 #, php-format
 msgid "Reply to %s"
 msgstr "پاسخ به %s"
 
-#: src/Controller/Admin/MessageController.php:196
+#: src/Controller/Admin/MessageController.php:197
 msgid "Your selected message deleted"
 msgstr "پیام انتخابی شما حذف شد"
 
@@ -76,81 +84,65 @@ msgstr "خطا در حذف اطلاعات قدیمی"
 msgid "Tools"
 msgstr "ابزار"
 
-#: src/Controller/Front/IndexController.php:62
+#: src/Controller/Front/IndexController.php:63
 msgid ""
 "Message correctly Send, a confirmation has just been sent to you by email"
 msgstr ""
 "پیام شما با موفقیت ارسال شد ، یک ایمیل تایید فقط جهت اطلاع ، برای شما ارسال "
 "شد"
 
-#: src/Controller/Front/IndexController.php:76
+#: src/Controller/Front/IndexController.php:77
 msgid "Contact Us"
 msgstr "تماس با ما"
 
-#: src/Controller/Front/IndexController.php:189
-msgid "Password not set or wrong"
-msgstr "واژه رمز تنظیم نشده یا اشتباه است"
-
-#: src/Controller/Front/IndexController.php:231
-msgid "Your Contact send and saved successfully"
-msgstr "پیام شما با موفقیت ارسال و ذخیره شد"
-
-#: src/Controller/Front/IndexController.php:235
-msgid "Send information not valid"
-msgstr "اطلاعات ارسال شده صحیح نیست"
-
-#: src/Controller/Front/IndexController.php:240
-msgid "Nothing send"
-msgstr "هیچ چیز ارسال نشد"
-
-#: src/Form/ContactForm.php:55 src/Form/ReplyForm.php:70
-#: src/Form/ReplyForm.php:74 template/admin/message-index.phtml:7
+#: src/Form/ContactForm.php:54 src/Form/ReplyForm.php:75
+#: src/Form/ReplyForm.php:79 template/admin/message-index.phtml:7
 #: template/admin/message-view.phtml:14
 msgid "Subject"
 msgstr "موضوع"
 
-#: src/Form/ContactForm.php:68 src/Form/PruneForm.php:60
+#: src/Form/ContactForm.php:67 src/Form/PruneForm.php:60
 #: template/admin/message-index.phtml:8 template/admin/message-view.phtml:7
 msgid "Department"
 msgstr "بخش"
 
-#: src/Form/ContactForm.php:84 src/Form/DepartmentForm.php:68
+#: src/Form/ContactForm.php:83 src/Form/DepartmentForm.php:68
 #: src/Form/DepartmentForm.php:72 template/admin/department-index.phtml:8
 #: template/admin/message-view.phtml:9
 msgid "Email"
 msgstr "ایمیل"
 
-#: src/Form/ContactForm.php:96
+#: src/Form/ContactForm.php:95
 msgid "Name"
 msgstr "نام"
 
-#: src/Form/ContactForm.php:109 template/admin/message-view.phtml:18
+#: src/Form/ContactForm.php:108 template/admin/message-view.phtml:18
 msgid "Organization"
 msgstr "سازمان"
 
-#: src/Form/ContactForm.php:122 template/admin/message-view.phtml:19
+#: src/Form/ContactForm.php:121 template/admin/message-view.phtml:19
 msgid "Homepage"
 msgstr "وب سایت"
 
-#: src/Form/ContactForm.php:135 template/admin/message-view.phtml:20
+#: src/Form/ContactForm.php:134 template/admin/message-view.phtml:20
 msgid "Location"
 msgstr "شهر"
 
-#: src/Form/ContactForm.php:148 template/admin/message-view.phtml:21
+#: src/Form/ContactForm.php:147 template/admin/message-view.phtml:21
 msgid "Phone"
 msgstr "تلفن"
 
-#: src/Form/ContactForm.php:161 template/admin/message-view.phtml:23
+#: src/Form/ContactForm.php:160 template/admin/message-view.phtml:23
 msgid "Address"
 msgstr "نشانی"
 
-#: src/Form/ContactForm.php:175 src/Form/ReplyForm.php:81
-#: src/Form/ReplyForm.php:88
+#: src/Form/ContactForm.php:174 src/Form/ReplyForm.php:86
+#: src/Form/ReplyForm.php:93
 msgid "Message"
 msgstr "پیام"
 
-#: src/Form/ContactForm.php:202 src/Form/DepartmentForm.php:99
-#: src/Form/PruneForm.php:75 src/Form/ReplyForm.php:96
+#: src/Form/ContactForm.php:201 src/Form/DepartmentForm.php:99
+#: src/Form/PruneForm.php:75 src/Form/ReplyForm.php:101
 msgid "Submit"
 msgstr "ارسال"
 
@@ -195,11 +187,11 @@ msgstr "همه تماس های قبل از"
 msgid "Only remove Admin answers"
 msgstr "فقط حذف پاسخ های مدیر"
 
-#: src/Form/ReplyForm.php:48 src/Form/ReplyForm.php:52
+#: src/Form/ReplyForm.php:53 src/Form/ReplyForm.php:57
 msgid "To Name"
 msgstr "به نام"
 
-#: src/Form/ReplyForm.php:59 src/Form/ReplyForm.php:63
+#: src/Form/ReplyForm.php:64 src/Form/ReplyForm.php:68
 msgid "To Email"
 msgstr "به ایمیل"
 
@@ -288,6 +280,12 @@ msgstr "فهرست لینک های خروجی جیسون"
 #: template/admin/tools-setting.phtml:2
 msgid "ToDo, you can use config option !"
 msgstr "در حال اجرا، فعلا از بخش پیکربندی استفاده کنید"
+
+#~ msgid "Password not set or wrong"
+#~ msgstr "واژه رمز تنظیم نشده یا اشتباه است"
+
+#~ msgid "Nothing send"
+#~ msgstr "هیچ چیز ارسال نشد"
 
 #~ msgid "Your selected department not active"
 #~ msgstr "بخش انتخاب شده فعال نیست"

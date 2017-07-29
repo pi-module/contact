@@ -23,7 +23,9 @@ class Department extends Select
     public function getValueOptions()
     {
         if (empty($this->valueOptions)) {
-            $select = Pi::model('department', $this->options['module'])->select()->columns(array('id', 'title'))->where(array('status' => 1));
+            $columns = array('id', 'title');
+            $where = array('status' => 1);
+            $select = Pi::model('department', $this->options['module'])->select()->columns($columns)->where($where);
             $rowset = Pi::model('department', $this->options['module'])->selectWith($select);
             foreach ($rowset as $row) {
                 $list[$row->id] = $row->toArray();

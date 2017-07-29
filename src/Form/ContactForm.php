@@ -19,13 +19,12 @@ class ContactForm extends BaseForm
 {
     public function __construct($name = null, $option = array())
     {
-        $module = Pi::service('module')->current();
         $uid = Pi::user()->getId();
         $field = array(
             'id', 'identity', 'name', 'email'
         );
         $this->option = $option;
-        $this->option['module'] = $module;
+        $this->option['module'] = Pi::service('module')->current();
         $this->option['user'] = Pi::user()->get($uid, $field);
         parent::__construct($name);
     }
