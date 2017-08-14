@@ -18,7 +18,7 @@ use Module\System\Validator\UserEmail as UserEmailValidator;
 
 class ReplyFilter extends InputFilter
 {
-    public function __construct($options = array())
+    public function __construct($option = array())
     {
         // department
         $this->add(array(
@@ -36,7 +36,7 @@ class ReplyFilter extends InputFilter
             'required' => true,
         ));
         // Check
-        if ($options['sms_replay']) {
+        if ($option['sms_replay']) {
             // mobile
             $this->add(array(
                 'name' => 'mobile',

@@ -174,9 +174,7 @@ class MessageController extends ActionController
         } else {
             // Set mobile
             $mobile = '';
-            if (empty($message->phone)) {
-                $mobile = $message->phone;
-            } elseif ($message->uid > 0) {
+            if ($this->config('sms_replay') && $message->uid > 0) {
                 $user = Pi::user()->get($message->uid, array(
                     'id', 'identity', 'name', 'email', 'mobile'
                 ));

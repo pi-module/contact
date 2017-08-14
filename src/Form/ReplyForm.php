@@ -17,16 +17,16 @@ use Pi\Form\Form as BaseForm;
 
 class ReplyForm extends BaseForm
 {
-    public function __construct($name = null, $options = array())
+    public function __construct($name = null, $option = array())
     {
-        $this->options = $options;
+        $this->option = $option;
         parent::__construct($name);
     }
 
     public function getInputFilter()
     {
         if (!$this->filter) {
-            $this->filter = new ReplyFilter($options);
+            $this->filter = new ReplyFilter($this->option);
         }
         return $this->filter;
     }
@@ -59,7 +59,7 @@ class ReplyForm extends BaseForm
             )
         ));
         // Check
-        if ($this->options['sms_replay']) {
+        if ($this->option['sms_replay']) {
             // mobile
             $this->add(array(
                 'name' => 'mobile',
