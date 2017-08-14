@@ -19,13 +19,14 @@ class ReplyForm extends BaseForm
 {
     public function __construct($name = null, $options = array())
     {
+        $this->options = $options;
         parent::__construct($name);
     }
 
     public function getInputFilter()
     {
         if (!$this->filter) {
-            $this->filter = new ReplyFilter;
+            $this->filter = new ReplyFilter($options);
         }
         return $this->filter;
     }
@@ -57,17 +58,31 @@ class ReplyForm extends BaseForm
                 'label' => __('To Name'),
             )
         ));
-        // To Email
-        $this->add(array(
-            'name' => 'email',
-            'options' => array(
-                'label' => __('To Email'),
-            ),
-            'attributes' => array(
-                'type' => 'text',
-                'label' => __('To Email'),
-            )
-        ));
+        // Check
+        if ($this->options['sms_replay']) {
+            // mobile
+            $this->add(array(
+                'name' => 'mobile',
+                'options' => array(
+                    'label' => __('Mobile'),
+                ),
+                'attributes' => array(
+                    'type' => 'text',
+                )
+            ));
+        } else {
+            // To Email
+            $this->add(array(
+                'name' => 'email',
+                'options' => array(
+                    'label' => __('To Email'),
+                ),
+                'attributes' => array(
+                    'type' => 'text',
+                    'label' => __('To Email'),
+                )
+            ));
+        }
         // To Subject
         $this->add(array(
             'name' => 'subject',

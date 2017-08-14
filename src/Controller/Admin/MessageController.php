@@ -134,11 +134,15 @@ class MessageController extends ActionController
         if (!$message->id) {
             $this->jump(array('action' => 'index'), __('Please select message'));
         }
+        // Set options
+        $options = array(
+            'sms_replay' => $this->config('sms_replay'),
+        );
         // Set form
-        $form = new ReplyForm('reply');
+        $form = new ReplyForm('reply', $options);
         if ($this->request->isPost()) {
             $data = $this->request->getPost();
-            $form->setInputFilter(new ReplyFilter);
+            $form->setInputFilter(new ReplyFilter($options));
             $form->setData($data);
             if ($form->isValid()) {
                 // Set values
@@ -159,17 +163,32 @@ class MessageController extends ActionController
                 $values['department_title'] = $department['title'];
                 $values['department_email'] = $department['email'];
                 // Send as mail
-                Pi::api('mail', 'contact')->toReply($values);
+                if ($this->config('sms_replay')) {
+                    Pi::service('notification')->smsToUser($values['message'], $values['mobile']);
+                } else {
+                    Pi::api('mail', 'contact')->toReply($values);
+                }
                 // Jump
                 $this->jump(array('action' => 'index'), __('Your reply Send and saved successfully'));
             }
         } else {
+            // Set mobile
+            $mobile = '';
+            if (empty($message->phone)) {
+                $mobile = $message->phone;
+            } elseif ($message->uid > 0) {
+                $user = Pi::user()->get($message->uid, array(
+                    'id', 'identity', 'name', 'email', 'mobile'
+                ));
+                $mobile = $user['mobile'];
+            }
             // Set values
             $values = array(
-                'uid'   => Pi::user()->getId(),
+                'uid'      => Pi::user()->getId(),
                 'mid'      => $message->id,
                 'name'     => $message->name,
                 'email'    => $message->email,
+                'mobile'   => $mobile,
                 'subject'  => sprintf(__('Re : %s'), $message->subject),
             );
             $form->setData($values);

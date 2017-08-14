@@ -16,10 +16,6 @@ return array(
             'title'  => _a('Admin'),
             'name'   => 'admin'
         ),
-        /* array(
-            'title' => _a('Mobile device'),
-            'name' => 'json'
-        ), */
         array(
             'title'  => _a('HomePage'),
             'name'   => 'home'
@@ -43,23 +39,14 @@ return array(
             'filter'       => 'number_int',
             'value'        => 50
         ),
-        // Json
-        /* 'json_check_password' => array(
-            'category' => 'json',
-            'title' => _a('Check password for mobile device'),
-            'description' => '',
-            'edit' => 'checkbox',
-            'filter' => 'number_int',
-            'value' => 0
+        'sms_replay' => array(
+            'category'     => 'admin',
+            'title'        => _a('Reply by SMS'),
+            'description'  => '',
+            'value'        => 0,
+            'filter'       => 'number_int',
+            'edit'         => 'checkbox',
         ),
-        'json_password' => array(
-            'category' => 'json',
-            'title' => _a('Password for mobile device'),
-            'description' => _a('After use on mobile device , do not change it'),
-            'edit' => 'text',
-            'filter' => 'string',
-            'value' => md5(rand(1,99999)),
-        ), */
         // Home
         'breadcrumbs' => array(
             'title'        => _a('Show breadcrumbs'),

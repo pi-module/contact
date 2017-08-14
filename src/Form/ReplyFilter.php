@@ -18,7 +18,7 @@ use Module\System\Validator\UserEmail as UserEmailValidator;
 
 class ReplyFilter extends InputFilter
 {
-    public function __construct()
+    public function __construct($options = array())
     {
         // department
         $this->add(array(
@@ -35,30 +35,39 @@ class ReplyFilter extends InputFilter
             'name' => 'name',
             'required' => true,
         ));
-        // email
-        $this->add(array(
-            'name' => 'email',
-            'required' => true,
-            'filters' => array(
-                array(
-                    'name' => 'StringTrim',
-                ),
-            ),
-            'validators'    => array(
-                array(
-                    'name'      => 'EmailAddress',
-                    'options'   => array(
-                        'useMxCheck'        => false,
-                        'useDeepMxCheck'    => false,
-                        'useDomainCheck'    => false,
+        // Check
+        if ($options['sms_replay']) {
+            // mobile
+            $this->add(array(
+                'name' => 'mobile',
+                'required' => true,
+            ));
+        } else {
+            // email
+            $this->add(array(
+                'name' => 'email',
+                'required' => true,
+                'filters' => array(
+                    array(
+                        'name' => 'StringTrim',
                     ),
                 ),
-                new UserEmailValidator(array(
-                    'blacklist'         => false,
-                    'check_duplication' => false,
-                )),
-            ),
-        ));
+                'validators'    => array(
+                    array(
+                        'name'      => 'EmailAddress',
+                        'options'   => array(
+                            'useMxCheck'        => false,
+                            'useDeepMxCheck'    => false,
+                            'useDomainCheck'    => false,
+                        ),
+                    ),
+                    new UserEmailValidator(array(
+                        'blacklist'         => false,
+                        'check_duplication' => false,
+                    )),
+                ),
+            ));
+        }
         // title
         $this->add(array(
             'name' => 'subject',
