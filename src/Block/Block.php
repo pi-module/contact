@@ -19,6 +19,9 @@ class Block
 {
     public static function contact($options = array(), $module = null)
     {
+        // Load language
+        Pi::service('i18n')->load(array('module/contact', 'default'));
+
         // Set options
         $block = array();
         $block = array_merge($block, $options);
@@ -45,9 +48,6 @@ class Block
         ))));
         $form->setData($data);
         $block['form'] = $form;
-
-        // Load language
-        Pi::service('i18n')->load(array('module/contact', 'default'));
 
         return $block;
     }
