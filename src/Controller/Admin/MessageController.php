@@ -110,8 +110,8 @@ class MessageController extends ActionController
         // Get all answeres to this message
         if ($message['answered']) {
             $where = array('mid' => $message['id']);
-            $columns = array('id', 'subject', 'time_create');
-            $order = array('time_create DESC', 'id DESC');
+            $columns = array('id', 'subject', 'message', 'time_create');
+            $order = array('time_create ASC', 'id ASC');
             $select = $this->getModel('message')->select()->where($where)->columns($columns)->order($order);
             $rowset = $this->getModel('message')->selectWith($select);
             foreach ($rowset as $row) {
