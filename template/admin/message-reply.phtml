@@ -1,5 +1,11 @@
 <?php $this->css($this->assetModule('css/admin.css')); ?>
 <div class="clearfix">
 	<h3><?php echo $this->escape($title); ?></h3>
+
+    <div class="message well">
+        <h3><?php _e('Subject'); ?> : <?php echo $this->escape($message['subject']); ?></h3>
+        <p><?php echo $message['message']; ?></p>
+    </div>
+
 	<?php echo $this->form($form); ?>
 </div> 
