@@ -37,9 +37,7 @@
                     <p><?php _e('Create'); ?> : <?php echo _date($answer['time_create']); ?></p>
                     <p><?php _e('IP'); ?> : <?php echo $answer['ip']; ?></p>
                     <p><?php echo $answer['message']; ?></p>
-                    <a title="<?php echo $this->escape($answer['subject']); ?>" href="<?php echo $this->url('', array('action' => 'view', 'id' => $answer['id'])); ?>">
-                        <?php _e('More info'); ?>
-                    </a>
+
                     <p>
                         <a class="btn btn-danger btn-xs" title="<?php _e('Delete'); ?>" href="<?php echo $this->url('', array('action' => 'delete', 'id' => $answer['id'], 'returnId' => $message['id'])); ?>"><i class="fa fa-trash-o"></i> <?php _e('Delete'); ?></a>
                     </p>
