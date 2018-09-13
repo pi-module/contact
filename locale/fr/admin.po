@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pi contact module\n"
-"POT-Creation-Date: 2017-07-25 18:43+0200\n"
+"POT-Creation-Date: 2018-09-13 17:14+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Marc\n"
@@ -9,189 +9,185 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _a;_t\n"
 "X-Poedit-Basepath: ../..\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
+#: config/block.php:16 config/module.php:16 config/page.php:35
+msgid "Contact"
+msgstr "Contact"
+
 #: config/config.php:16
 msgid "Admin"
 msgstr "Admin"
 
 #: config/config.php:20
-msgid "Mobile device"
-msgstr "Device Mobile"
-
-#: config/config.php:24
 msgid "HomePage"
 msgstr "Accueil"
 
-#: config/config.php:28
+#: config/config.php:24
 msgid "Form"
 msgstr "Formulaire"
 
-#: config/config.php:32
+#: config/config.php:28
 msgid "Google Map"
 msgstr "Google Map"
 
-#: config/config.php:40
+#: config/config.php:36
 msgid "Perpage"
 msgstr "Par page"
 
-#: config/config.php:49
-msgid "Check password for mobile device"
-msgstr "Contrôler le mot de passe pour les devices mobiles"
+#: config/config.php:44
+msgid "Reply by SMS"
+msgstr "Réponse par SMS"
 
-#: config/config.php:57
-msgid "Password for mobile device"
-msgstr "Mot de passe pour les devices mobiles"
-
-#: config/config.php:58
-msgid "After use on mobile device , do not change it"
-msgstr "Après utilisation sur device mobile, ne pas modifier"
-
-#: config/config.php:65
+#: config/config.php:52
 msgid "Show breadcrumbs"
 msgstr "Montrer les Breadcrumbs"
 
-#: config/config.php:73
+#: config/config.php:60
 msgid "Top text"
 msgstr "Texte haut de formulaire"
 
-#: config/config.php:80
+#: config/config.php:67
 msgid "Bottom text"
 msgstr "Texte bas de formulaire"
 
-#: config/config.php:87
+#: config/config.php:74
 msgid "Side text"
 msgstr "Texte de bord de formulaire"
 
-#: config/config.php:94
+#: config/config.php:81
 msgid "Finish text"
 msgstr "Texte final soumission"
 
-#: config/config.php:97
+#: config/config.php:84
 msgid ""
 "Message correctly Send, a confirmation has just been sent to you by email"
 msgstr ""
 "Le message a été correctement Envoyé ! Une confirmation vient de vous être "
 "envoyée par email."
 
-#: config/config.php:102
+#: config/config.php:89
 msgid "Default department"
 msgstr "Département-sujet par défaut"
 
-#: config/config.php:110
+#: config/config.php:97
 msgid "show title"
 msgstr "Montrer le Titre"
 
-#: config/config.php:118
+#: config/config.php:105
 msgid "show Department"
 msgstr "Exiger département-sujet"
 
-#: config/config.php:126
+#: config/config.php:113
 msgid "show Organization"
 msgstr "Montrer l'organisation"
 
-#: config/config.php:134
+#: config/config.php:121
 msgid "required Organization"
 msgstr "Exiger l'organisation"
 
-#: config/config.php:142
+#: config/config.php:129
 msgid "show Homepage"
 msgstr "Montrer SiteWeb"
 
-#: config/config.php:150
+#: config/config.php:137
 msgid "required Homepage"
 msgstr "Exiger le site web"
 
-#: config/config.php:158
+#: config/config.php:145
 msgid "show Location"
 msgstr "Montrer la localisation"
 
-#: config/config.php:166
+#: config/config.php:153
 msgid "required Location"
 msgstr "Exiger la localisation"
 
-#: config/config.php:174
+#: config/config.php:161
 msgid "show Phone"
 msgstr "Montrer Téléphone"
 
-#: config/config.php:182
+#: config/config.php:169
 msgid "required Phone"
 msgstr "Exiger le téléphone"
 
-#: config/config.php:190
+#: config/config.php:177
 msgid "show Address"
 msgstr "Montrer Adresse"
 
-#: config/config.php:198
+#: config/config.php:185
 msgid "required Address"
 msgstr "Exiger l'adresse"
 
-#: config/config.php:206
+#: config/config.php:193
 msgid "Use CAPTCHA"
 msgstr "Utiliser le Captcha"
 
-#: config/config.php:207
+#: config/config.php:194
 msgid "Captcha just use for guest"
 msgstr "Captcha utilisé uniquement pour les invités"
 
-#: config/config.php:212
+#: config/config.php:199
 msgid "No captcha"
 msgstr "Pas de captcha"
 
-#: config/config.php:213
+#: config/config.php:200
 msgid "Standard captcha"
 msgstr "Captcha Standard"
 
-#: config/config.php:214
+#: config/config.php:201
 msgid "New re-captcha"
 msgstr "Utiliser le new Re-captcha"
 
-#: config/config.php:225
+#: config/config.php:202
+msgid "Invisible captcha"
+msgstr "Invisible captcha"
+
+#: config/config.php:213
 msgid "Active wide front image for this module"
 msgstr "Activer l'image large pour ce module"
 
-#: config/config.php:233
+#: config/config.php:220
 msgid "Show Google Map"
 msgstr "Afficher la carte Google Map"
 
-#: config/config.php:241
+#: config/config.php:228
 msgid "Position"
 msgstr "Position"
 
-#: config/config.php:247
+#: config/config.php:234
 msgid "Side"
 msgstr "De côté"
 
-#: config/config.php:248
+#: config/config.php:235
 msgid "Top"
 msgstr "Au dessus"
 
-#: config/config.php:257
+#: config/config.php:244
 msgid "Latitude"
 msgstr "Latitude"
 
-#: config/config.php:265
+#: config/config.php:252
 msgid "Longitude"
 msgstr "Longitude"
 
-#: config/config.php:273
+#: config/config.php:260
 msgid "Zoon"
 msgstr "Zoom"
 
-#: config/config.php:281
+#: config/config.php:268
 msgid "Title"
 msgstr "Titre"
 
-#: config/config.php:290
+#: config/config.php:277
 msgid "Set Google map API KEY"
 msgstr "Définir la Google Map API KEY"
 
-#: config/config.php:291
+#: config/config.php:278
 msgid ""
 "For obtaining an API Key please read this document : https://developers."
 "google.com/maps/documentation/javascript/tutorial#api_key"
@@ -199,29 +195,25 @@ msgstr ""
 "Pour obtenir une API Key, se référer à ce document : https://developers."
 "google.com/maps/documentation/javascript/tutorial#api_key"
 
-#: config/config.php:297
+#: config/config.php:284
 msgid "Map type"
 msgstr "Type de carte"
 
-#: config/config.php:303
+#: config/config.php:290
 msgid "ROADMAP"
 msgstr "ROADMAP"
 
-#: config/config.php:304
+#: config/config.php:291
 msgid "SATELLITE"
 msgstr "SATELLITE"
 
-#: config/config.php:305
+#: config/config.php:292
 msgid "HYBRID"
 msgstr "HYBRID"
 
-#: config/config.php:306
+#: config/config.php:293
 msgid "TERRAIN"
 msgstr "TERRAIN"
-
-#: config/module.php:16 config/page.php:35
-msgid "Contact"
-msgstr "Contact"
 
 #: config/module.php:17
 msgid "Manage Contacts"
@@ -259,6 +251,18 @@ msgstr "Json"
 #: config/permission.php:17
 msgid "Global public resource"
 msgstr "Ressource globale publique"
+
+#~ msgid "Mobile device"
+#~ msgstr "Device Mobile"
+
+#~ msgid "Check password for mobile device"
+#~ msgstr "Contrôler le mot de passe pour les devices mobiles"
+
+#~ msgid "Password for mobile device"
+#~ msgstr "Mot de passe pour les devices mobiles"
+
+#~ msgid "After use on mobile device , do not change it"
+#~ msgstr "Après utilisation sur device mobile, ne pas modifier"
 
 #~ msgid "SEO texts"
 #~ msgstr "Textes SEO"
