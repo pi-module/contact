@@ -110,8 +110,8 @@ class MessageController extends ActionController
         // Get all answeres to this message
         if ($message['answered']) {
             $where = array('mid' => $message['id']);
-            $columns = array('id', 'subject', 'time_create');
-            $order = array('time_create DESC', 'id DESC');
+            $columns = array('id', 'subject', 'message', 'time_create', 'ip');
+            $order = array('time_create ASC', 'id ASC');
             $select = $this->getModel('message')->select()->where($where)->columns($columns)->order($order);
             $rowset = $this->getModel('message')->selectWith($select);
             foreach ($rowset as $row) {
@@ -205,13 +205,20 @@ class MessageController extends ActionController
         // Get information
         $this->view()->setTemplate(false);
         $id = $this->params('id');
+        $returnId = $this->params('returnId');
         $row = $this->getModel('message')->find($id);
         if ($row) {
             // Remove answeres
             $this->getModel('message')->delete(array('mid' => $row->id));
             // Remove message
             $row->delete();
-            $this->jump(array('action' => 'index'), __('Your selected message deleted'));
+
+            if($returnId){
+                $this->jump(array('action' => 'view', 'id' => $returnId), __('Your selected message deleted'));
+            } else {
+                $this->jump(array('action' => 'index'), __('Your selected message deleted'));
+            }
+
         }
         $this->jump(array('action' => 'index'), __('Please select message'));
     }

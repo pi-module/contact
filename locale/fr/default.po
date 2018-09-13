@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pi contact module\n"
-"POT-Creation-Date: 2017-07-25 18:44+0200\n"
+"POT-Creation-Date: 2018-09-13 17:14+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Marc\n"
@@ -9,18 +9,18 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ../..\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: src/Api/Api.php:72 src/Controller/Front/IndexController.php:231
+#: src/Api/Api.php:75
 msgid "Your Contact send and saved successfully"
 msgstr "L'envoi à votre correspondant a été effectué et enregistré avec succès"
 
-#: src/Api/Api.php:76 src/Controller/Front/IndexController.php:235
+#: src/Api/Api.php:79
 msgid "Send information not valid"
 msgstr "L'information envoyée n'est pas valide"
 
@@ -46,25 +46,26 @@ msgstr "Merci de sélectionner le sujet"
 
 #: src/Controller/Admin/MessageController.php:92
 #: src/Controller/Admin/MessageController.php:135
-#: src/Controller/Admin/MessageController.php:198
+#: src/Controller/Admin/MessageController.php:223
 msgid "Please select message"
 msgstr "Merci de sélectionner le message"
 
-#: src/Controller/Admin/MessageController.php:163
+#: src/Controller/Admin/MessageController.php:172
 msgid "Your reply Send and saved successfully"
 msgstr "Votre réponse a été envoyée et enregistrée avec succès"
 
-#: src/Controller/Admin/MessageController.php:172
+#: src/Controller/Admin/MessageController.php:190
 #, php-format
 msgid "Re : %s"
 msgstr "Re : %s"
 
-#: src/Controller/Admin/MessageController.php:177
+#: src/Controller/Admin/MessageController.php:195
 #, php-format
 msgid "Reply to %s"
 msgstr "Répondre à %s"
 
-#: src/Controller/Admin/MessageController.php:196
+#: src/Controller/Admin/MessageController.php:217
+#: src/Controller/Admin/MessageController.php:219
 msgid "Your selected message deleted"
 msgstr "Votre message sélectionné a été supprimé"
 
@@ -86,73 +87,65 @@ msgstr "Erreur dans les messages supprimés."
 msgid "Tools"
 msgstr "Outils"
 
-#: src/Controller/Front/IndexController.php:62
+#: src/Controller/Front/IndexController.php:65
 msgid ""
 "Message correctly Send, a confirmation has just been sent to you by email"
 msgstr ""
 "Le message a été correctement Envoyé, une confirmation vient de vous être "
 "envoyée par email"
 
-#: src/Controller/Front/IndexController.php:76
+#: src/Controller/Front/IndexController.php:79
 msgid "Contact Us"
 msgstr "Contactez-nous"
 
-#: src/Controller/Front/IndexController.php:189
-msgid "Password not set or wrong"
-msgstr "Mot de passe non défini ou erroné"
-
-#: src/Controller/Front/IndexController.php:240
-msgid "Nothing send"
-msgstr "Rien n'a été envoyé"
-
-#: src/Form/ContactForm.php:55 src/Form/ReplyForm.php:70
-#: src/Form/ReplyForm.php:74 template/admin/message-index.phtml:7
-#: template/admin/message-view.phtml:14
+#: src/Form/ContactForm.php:53 src/Form/ReplyForm.php:90
+#: src/Form/ReplyForm.php:94 template/admin/message-index.phtml:7
+#: template/admin/message-reply.phtml:6 template/admin/message-view.phtml:14
 msgid "Subject"
 msgstr "Titre"
 
-#: src/Form/ContactForm.php:68 src/Form/PruneForm.php:60
+#: src/Form/ContactForm.php:66 src/Form/PruneForm.php:60
 #: template/admin/message-index.phtml:8 template/admin/message-view.phtml:7
 msgid "Department"
 msgstr "Sujet"
 
-#: src/Form/ContactForm.php:84 src/Form/DepartmentForm.php:68
+#: src/Form/ContactForm.php:82 src/Form/DepartmentForm.php:68
 #: src/Form/DepartmentForm.php:72 template/admin/department-index.phtml:8
 #: template/admin/message-view.phtml:9
 msgid "Email"
 msgstr "Email"
 
-#: src/Form/ContactForm.php:96
+#: src/Form/ContactForm.php:94
 msgid "Name"
 msgstr "Nom"
 
-#: src/Form/ContactForm.php:109 template/admin/message-view.phtml:18
+#: src/Form/ContactForm.php:107 template/admin/message-view.phtml:18
 msgid "Organization"
 msgstr "Organisation"
 
-#: src/Form/ContactForm.php:122 template/admin/message-view.phtml:19
+#: src/Form/ContactForm.php:120 template/admin/message-view.phtml:19
 msgid "Homepage"
 msgstr "Accueil"
 
-#: src/Form/ContactForm.php:135 template/admin/message-view.phtml:20
+#: src/Form/ContactForm.php:133 template/admin/message-view.phtml:20
 msgid "Location"
 msgstr "Ville-Village"
 
-#: src/Form/ContactForm.php:148 template/admin/message-view.phtml:21
+#: src/Form/ContactForm.php:146 template/admin/message-view.phtml:21
 msgid "Phone"
 msgstr "Téléphone"
 
-#: src/Form/ContactForm.php:161 template/admin/message-view.phtml:23
+#: src/Form/ContactForm.php:159 template/admin/message-view.phtml:23
 msgid "Address"
 msgstr "Adresse"
 
-#: src/Form/ContactForm.php:175 src/Form/ReplyForm.php:81
-#: src/Form/ReplyForm.php:88
+#: src/Form/ContactForm.php:173 src/Form/ReplyForm.php:101
+#: src/Form/ReplyForm.php:108
 msgid "Message"
 msgstr "Message"
 
-#: src/Form/ContactForm.php:202 src/Form/DepartmentForm.php:99
-#: src/Form/PruneForm.php:75 src/Form/ReplyForm.php:96
+#: src/Form/ContactForm.php:200 src/Form/DepartmentForm.php:99
+#: src/Form/PruneForm.php:75 src/Form/ReplyForm.php:116
 msgid "Submit"
 msgstr "Soumettre"
 
@@ -197,11 +190,15 @@ msgstr "Tous les contacts avant"
 msgid "Only remove Admin answers"
 msgstr "Supprimer uniquement les réponses Admin"
 
-#: src/Form/ReplyForm.php:48 src/Form/ReplyForm.php:52
+#: src/Form/ReplyForm.php:54 src/Form/ReplyForm.php:58
 msgid "To Name"
 msgstr "A Nom"
 
-#: src/Form/ReplyForm.php:59 src/Form/ReplyForm.php:63
+#: src/Form/ReplyForm.php:67
+msgid "Mobile"
+msgstr "Mobile"
+
+#: src/Form/ReplyForm.php:78 src/Form/ReplyForm.php:82
 msgid "To Email"
 msgstr "A Email"
 
@@ -231,7 +228,8 @@ msgid "Edit"
 msgstr "Editer"
 
 #: template/admin/department-index.phtml:18
-#: template/admin/message-index.phtml:29 template/admin/message-view.phtml:28
+#: template/admin/message-index.phtml:29 template/admin/message-view.phtml:30
+#: template/admin/message-view.phtml:42
 msgid "Delete"
 msgstr "Supprimer"
 
@@ -240,6 +238,7 @@ msgid "Author"
 msgstr "Auteur"
 
 #: template/admin/message-index.phtml:10 template/admin/message-view.phtml:10
+#: template/admin/message-view.phtml:37
 msgid "Create"
 msgstr "Créer"
 
@@ -251,7 +250,7 @@ msgstr "Répondu"
 msgid "View"
 msgstr "Voir"
 
-#: template/admin/message-index.phtml:28 template/admin/message-view.phtml:27
+#: template/admin/message-index.phtml:28 template/admin/message-view.phtml:29
 msgid "Reply"
 msgstr "Répondre"
 
@@ -279,9 +278,13 @@ msgstr "Plateforme"
 msgid "Ip"
 msgstr "IP"
 
-#: template/admin/message-view.phtml:26 template/front/contact-form.phtml:47
+#: template/admin/message-view.phtml:28 template/front/contact-form.phtml:47
 msgid "Back"
 msgstr "Retour"
+
+#: template/admin/message-view.phtml:38
+msgid "IP"
+msgstr "IP"
 
 #: template/admin/tools-json.phtml:3
 msgid "List of json output links"
@@ -290,6 +293,12 @@ msgstr "Liste des liens de sortie json"
 #: template/admin/tools-setting.phtml:2
 msgid "ToDo, you can use config option !"
 msgstr "Todo, vous pouvez utiliser les options de config !"
+
+#~ msgid "Password not set or wrong"
+#~ msgstr "Mot de passe non défini ou erroné"
+
+#~ msgid "Nothing send"
+#~ msgstr "Rien n'a été envoyé"
 
 #~ msgid "Please type the word."
 #~ msgstr "Merci de saisir le mot."

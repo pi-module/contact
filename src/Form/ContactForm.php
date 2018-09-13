@@ -26,15 +26,14 @@ class ContactForm extends BaseForm
         $this->option = $option;
         $this->option['module'] = Pi::service('module')->current();
         $this->option['user'] = Pi::user()->get($uid, $field);
-        parent::__construct($name);
-    }
 
-    public function getInputFilter()
-    {
-        if (!$this->filter) {
-            $this->filter = new ContactFilter($this->option);
-        }
-        return $this->filter;
+        /**
+         * SetInputFilter here, for keeping auto-injected captcha validator
+         */
+        $this->setInputFilter(new ContactFilter($this->option));
+
+        parent::__construct($name);
+
     }
     
     public function init()
@@ -195,10 +194,14 @@ class ContactForm extends BaseForm
 
         // Save
         $this->add(array(
-            'name' => 'submit',
+            'name' => 'submit-button',
             'type' => 'submit',
+            'options'=> array(
+                'label' => __('Submit'),
+
+            ),
             'attributes' => array(
-                'value' => __('Submit'),
+                'class' => 'btn btn-default'
             )
         ));
     }
