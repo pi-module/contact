@@ -196,7 +196,7 @@ class ContactForm extends BaseForm
         // Save
         $this->add(array(
             'name' => 'submit-button',
-            'type' => 'button',
+            'type' => 'submit',
             'options'=> array(
                 'label' => __('Submit'),
 
