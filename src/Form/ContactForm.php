@@ -203,7 +203,6 @@ class ContactForm extends BaseForm
             ),
             'attributes' => array(
                 'class' => 'btn btn-default'
-//                'value' => __('Submit'),
             )
         ));
     }
