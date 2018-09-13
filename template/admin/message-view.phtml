@@ -22,22 +22,29 @@
         <?php if($message['ip']) { ?><p><?php _e('Ip'); ?> : <?php echo $this->escape($message['ip']); ?></p><?php } ?>
         <?php if($message['address']) { ?><p><?php _e('Address'); ?> : <?php echo $this->escape($message['address']); ?></p><?php } ?>
     </div>
-    <?php if($message['answered']) { ?>
-        <div>
-            <?php foreach($answers as $answer) { ?>
-                <div class="message well">
-                    <p><?php _e('Create'); ?> : <?php echo _date($answer['time_create']); ?></p>
-                    <p><?php echo $answer['message']; ?></p>
-                    <a title="<?php echo $this->escape($answer['subject']); ?>" href="<?php echo $this->url('', array('action' => 'view', 'id' => $answer['id'])); ?>">
-                        <?php _e('More info'); ?>
-                    </a>
-                </div>
-            <?php } ?>
-        </div>
-    <?php } ?>
+
+
     <p>
         <a class="btn btn-primary btn-xs" title="<?php _e('Back'); ?>" href="<?php echo $this->url('', array('action' => 'index')); ?>"><i class="fa fa-arrow-left"></i> <?php _e('Back'); ?></a>
         <a class="btn btn-primary btn-xs" title="<?php _e('Reply'); ?>" href="<?php echo $this->url('', array('action' => 'reply', 'id' => $message['id'])); ?>"><i class="fa fa-reply"></i> <?php _e('Reply'); ?></a>
         <a class="btn btn-danger btn-xs" title="<?php _e('Delete'); ?>" href="<?php echo $this->url('', array('action' => 'delete', 'id' => $message['id'])); ?>"><i class="fa fa-trash-o"></i> <?php _e('Delete'); ?></a>
     </p>
+
+    <?php if($message['answered']) { ?>
+        <div>
+            <?php foreach($answers as $answer) { ?>
+                <div class="message well">
+                    <p><?php _e('Create'); ?> : <?php echo _date($answer['time_create']); ?></p>
+                    <p><?php _e('IP'); ?> : <?php echo $answer['ip']; ?></p>
+                    <p><?php echo $answer['message']; ?></p>
+                    <a title="<?php echo $this->escape($answer['subject']); ?>" href="<?php echo $this->url('', array('action' => 'view', 'id' => $answer['id'])); ?>">
+                        <?php _e('More info'); ?>
+                    </a>
+                    <p>
+                        <a class="btn btn-danger btn-xs" title="<?php _e('Delete'); ?>" href="<?php echo $this->url('', array('action' => 'delete', 'id' => $answer['id'], 'returnId' => $message['id'])); ?>"><i class="fa fa-trash-o"></i> <?php _e('Delete'); ?></a>
+                    </p>
+                </div>
+            <?php } ?>
+        </div>
+    <?php } ?>
 </div>
