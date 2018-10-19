@@ -1,16 +1,16 @@
 <?php $this->css($this->assetModule('css/admin.css')); ?>
 <div class="clearfix">
 	<?php if($message['mid']) { ?>
-		<div class="main-message well"><?php _e('Main Message is'); ?> : <a title="<?php echo $main['subject']; ?>" href="<?php echo $this->url('', array('action' => 'view', 'id' => $main['id'])); ?>"><?php echo $this->escape($main['subject']); ?></a></div>
+		<div class="main-message card card-body bg-light mb-3"><?php _e('Main Message is'); ?> : <a title="<?php echo $main['subject']; ?>" href="<?php echo $this->url('', array('action' => 'view', 'id' => $main['id'])); ?>"><?php echo $this->escape($main['subject']); ?></a></div>
 	<?php } ?>
-	<div class="main-info well">
+	<div class="main-info card card-body bg-light mb-3">
 		<p><?php _e('Department'); ?> : <?php echo $this->escape($department['title']); ?></p>
 		<p><?php _e('Auther'); ?> : <?php echo $this->escape($message['name']); ?> ( <?php echo $this->escape($message['user']['identity']); ?> <?php echo $this->escape($message['user']['name']); ?> )</p>
 		<p><?php _e('Email'); ?> : <?php echo $this->escape($message['email']); ?></p>
 		<p><?php _e('Create'); ?> : <?php echo $this->escape($message['time_create']); ?></p>
-        <p><?php _e('Platform'); ?> : <span class="label label-success"><?php echo $this->escape($message['platform']); ?></span></p>
+        <p><?php _e('Platform'); ?> : <span class="badge badge-success"><?php echo $this->escape($message['platform']); ?></span></p>
     </div>
-    <div class="message well">
+    <div class="message card card-body bg-light mb-3">
     	<h3><?php _e('Subject'); ?> : <?php echo $this->escape($message['subject']); ?></h3>
     	<p><?php echo $message['message']; ?></p>
     </div>
@@ -25,9 +25,9 @@
 
 
     <p>
-        <a class="btn btn-primary btn-xs" title="<?php _e('Back'); ?>" href="<?php echo $this->url('', array('action' => 'index')); ?>"><i class="fa fa-arrow-left"></i> <?php _e('Back'); ?></a>
-        <a class="btn btn-primary btn-xs" title="<?php _e('Reply'); ?>" href="<?php echo $this->url('', array('action' => 'reply', 'id' => $message['id'])); ?>"><i class="fa fa-reply"></i> <?php _e('Reply'); ?></a>
-        <a class="btn btn-danger btn-xs" title="<?php _e('Delete'); ?>" href="<?php echo $this->url('', array('action' => 'delete', 'id' => $message['id'])); ?>"><i class="fa fa-trash-o"></i> <?php _e('Delete'); ?></a>
+        <a class="btn btn-primary btn-sm" title="<?php _e('Back'); ?>" href="<?php echo $this->url('', array('action' => 'index')); ?>"><i class="fa fa-arrow-left"></i> <?php _e('Back'); ?></a>
+        <a class="btn btn-primary btn-sm" title="<?php _e('Reply'); ?>" href="<?php echo $this->url('', array('action' => 'reply', 'id' => $message['id'])); ?>"><i class="fa fa-reply"></i> <?php _e('Reply'); ?></a>
+        <a class="btn btn-danger btn-sm" title="<?php _e('Delete'); ?>" href="<?php echo $this->url('', array('action' => 'delete', 'id' => $message['id'])); ?>"><i class="fa fa-trash-o"></i> <?php _e('Delete'); ?></a>
     </p>
 
     <?php if($message['answered']) { ?>
