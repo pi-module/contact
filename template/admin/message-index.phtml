@@ -24,9 +24,9 @@
                     </td>
                     <td><?php echo $this->escape($message['time_create']); ?></td>
                     <td>
-                        <a class="btn btn-primary btn-sm" title="<?php _e('View'); ?>" href="<?php echo $this->url('', array('action' => 'view', 'id' => $message['id'])); ?>"><i class="fa fa-eye"></i> <?php _e('View'); ?></a>
-                        <a class="btn btn-primary btn-sm" title="<?php _e('Reply'); ?>" href="<?php echo $this->url('', array('action' => 'reply', 'id' => $message['id'])); ?>"><i class="fa fa-reply"></i> <?php _e('Reply'); ?></a>
-                        <a class="btn btn-danger btn-sm" title="<?php _e('Delete'); ?>" href="<?php echo $this->url('', array('action' => 'delete', 'id' => $message['id'])); ?>"><i class="fa fa-trash-o"></i> <?php _e('Delete'); ?></a>
+                        <a class="btn btn-primary btn-sm" title="<?php _e('View'); ?>" href="<?php echo $this->url('', array('action' => 'view', 'id' => $message['id'])); ?>"><i class="far fa-eye"></i> <?php _e('View'); ?></a>
+                        <a class="btn btn-primary btn-sm" title="<?php _e('Reply'); ?>" href="<?php echo $this->url('', array('action' => 'reply', 'id' => $message['id'])); ?>"><i class="fas fa-reply"></i> <?php _e('Reply'); ?></a>
+                        <a class="btn btn-danger btn-sm" title="<?php _e('Delete'); ?>" href="<?php echo $this->url('', array('action' => 'delete', 'id' => $message['id'])); ?>"><i class="fas fa-trash-alt"></i> <?php _e('Delete'); ?></a>
                     </td>
                 </tr>
             <?php } ?>
