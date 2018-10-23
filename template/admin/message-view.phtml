@@ -39,7 +39,7 @@
                     <p><?php echo $answer['message']; ?></p>
 
                     <p>
-                        <a class="btn btn-danger btn-xs" title="<?php _e('Delete'); ?>" href="<?php echo $this->url('', array('action' => 'delete', 'id' => $answer['id'], 'returnId' => $message['id'])); ?>"><i class="far fa-trash"></i> <?php _e('Delete'); ?></a>
+                        <a class="btn btn-danger btn-sm" title="<?php _e('Delete'); ?>" href="<?php echo $this->url('', array('action' => 'delete', 'id' => $answer['id'], 'returnId' => $message['id'])); ?>"><i class="far fa-trash"></i> <?php _e('Delete'); ?></a>
                     </p>
                 </div>
             <?php } ?>
