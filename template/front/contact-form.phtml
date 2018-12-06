@@ -14,7 +14,7 @@ if ($config['gmap_show']) {
     );
 }
 ?>
-<div class="clearfix">
+<div class="clearfix row">
     <?php if ($config['gmap_show'] && $config['gmap_position'] == 'top') { ?>
 
         <?php
@@ -36,7 +36,7 @@ if ($config['gmap_show']) {
     } ?>
     <div class="<?php echo $class; ?>">
         <?php if (!empty($config['toptext'])) { ?>
-            <div class="clearfix contact-toptext">
+            <div class="clearfix contact-toptext row">
                 <?php echo $config['toptext']; ?>
             </div>
         <?php } ?>
