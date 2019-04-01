@@ -10,11 +10,12 @@
 /**
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
  */
+
 namespace Module\Contact\Controller\Admin;
 
+use Module\Contact\Form\PruneForm;
 use Pi;
 use Pi\Mvc\Controller\ActionController;
-use Module\Contact\Form\PruneForm;
 
 class ToolsController extends ActionController
 {
@@ -27,19 +28,19 @@ class ToolsController extends ActionController
     public function pruneAction()
     {
         // Get department list row
-        $select = $this->getModel('department')->select()->columns(array('id', 'title'));
+        $select = $this->getModel('department')->select()->columns(['id', 'title']);
         $rowset = $this->getModel('department')->selectWith($select);
         foreach ($rowset as $row) {
-            $list[$row->id] = $row->toArray();
+            $list[$row->id]    = $row->toArray();
             $options[$row->id] = $list[$row->id]['title'];
         }
-        $form = new PruneForm('prune', $options);
+        $form    = new PruneForm('prune', $options);
         $message = __('You can prune all old message, from selected department.');
         if ($this->request->isPost()) {
             // Set form date
             $values = $this->request->getPost();
             // Set prune create
-            $where = array('`time_create` < ?' => strtotime($values['date']));
+            $where = ['`time_create` < ?' => strtotime($values['date'])];
             // Set topics if select
             if ($values['department'] && is_array($values['department'])) {
                 $where[] = 'department IN (' . implode(',', $values['department']) . ')';
@@ -72,13 +73,17 @@ class ToolsController extends ActionController
         // Get config
         $config = Pi::service('registry')->config->read($module);
         // Get config
-        $links = array();
-        $links['postContact'] = Pi::url($this->url('contact', array(
-            'module' => $module,
-            'controller' => 'index',
-            'action' => 'ajax',
-            'password' => (!empty($config['json_password'])) ? $config['json_password'] : '',
-        )));
+        $links                = [];
+        $links['postContact'] = Pi::url(
+            $this->url(
+                'contact', [
+                'module'     => $module,
+                'controller' => 'index',
+                'action'     => 'ajax',
+                'password'   => (!empty($config['json_password'])) ? $config['json_password'] : '',
+            ]
+            )
+        );
         // Set template
         $this->view()->setTemplate('tools-json');
         $this->view()->assign('links', $links);

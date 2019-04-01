@@ -10,13 +10,15 @@
 /**
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
  */
+
 namespace Module\Contact\Controller\Front;
 
-use Pi;
-//use Pi\Filter;
-use Pi\Mvc\Controller\ActionController;
-use Module\Contact\Form\ContactForm;
 use Module\Contact\Form\ContactFilter;
+use Module\Contact\Form\ContactForm;
+use Pi;
+use Pi\Mvc\Controller\ActionController;
+
+//use Pi\Filter;
 
 class IndexController extends ActionController
 {
@@ -27,10 +29,10 @@ class IndexController extends ActionController
         // Get config
         $config = Pi::service('registry')->config->read($module);
         // Set option
-        $option = array(
+        $option = [
             'captcha' => 1,
-            'config' => $config,
-        );
+            'config'  => $config,
+        ];
         // Set form
         $form = new ContactForm('contact', $option);
         // Get post
@@ -43,12 +45,12 @@ class IndexController extends ActionController
                 // Get department
                 $department = $this->getModel('department')->find($values['department'])->toArray();
                 // Set values
-                $values['uid'] = Pi::user()->getId();
-                $values['ip'] = Pi::user()->getIp();
+                $values['uid']         = Pi::user()->getId();
+                $values['ip']          = Pi::user()->getIp();
                 $values['time_create'] = time();
-                $values['name'] = _strip($values['name']);
-                $values['subject'] = _strip($values['subject']);
-                $values['message'] = _strip($values['message']);
+                $values['name']        = _strip($values['name']);
+                $values['subject']     = _strip($values['subject']);
+                $values['message']     = _strip($values['message']);
                 // Save
                 $row = $this->getModel('message')->createRow();
                 $row->assign($values);
@@ -60,17 +62,17 @@ class IndexController extends ActionController
                 Pi::api('mail', 'contact')->toAdmin($values);
                 Pi::api('mail', 'contact')->toUser($values);
                 // Set finish
-                $finishText = (!empty($config['finishtext'])) 
-                    ? $config['finishtext'] 
+                $finishText = (!empty($config['finishtext']))
+                    ? $config['finishtext']
                     : __('Message correctly Send, a confirmation has just been sent to you by email');
                 $this->view()->assign('finish', 1);
                 $this->view()->assign('finishText', $finishText);
             }
         } else {
             // Set data
-            $data = array(
+            $data = [
                 'department' => $config['default_department'],
-            );
+            ];
         }
         // Set data
         $form->setData($data);
@@ -184,7 +186,7 @@ class IndexController extends ActionController
         $this->view()->assign('lists', $list);
         $this->view()->assign('config', $config);
     } */
-    
+
     /* public function ajaxAction()
     {
         // Check password

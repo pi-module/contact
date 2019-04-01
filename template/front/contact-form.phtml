@@ -2,16 +2,16 @@
 $this->css($this->assetModule('css/front.css'));
 // Load google map
 if ($config['gmap_show']) {
-    $locations = array(
+    $locations = [
         'latitude'  => $config['gmap_latitude'],
         'longitude' => $config['gmap_longitude'],
         'zoom'      => $config['gmap_zoon'],
         'title'     => $config['gmap_title'],
-    );
+    ];
 
-    $option = array(
+    $option = [
         'mapTypeId' => $config['gmap_type'],
-    );
+    ];
 }
 ?>
 <div class="clearfix">
@@ -44,7 +44,8 @@ if ($config['gmap_show']) {
             <div class="alert alert-success">
                 <?php echo $finishText; ?>
             </div>
-            <p><a class="btn btn-success" title="<?php _e('Back'); ?>" href="<?php Pi::url($this->url('' , array('action' => 'index'))); ?>"><?php _e('Back'); ?></a></p>
+            <p><a class="btn btn-success" title="<?php _e('Back'); ?>" href="<?php Pi::url($this->url('', ['action' => 'index'])); ?>"><?php _e('Back'); ?></a>
+            </p>
         <?php } else { ?>
             <div class="contact-form">
                 <?php echo $this->form($form, 'vertical'); ?>

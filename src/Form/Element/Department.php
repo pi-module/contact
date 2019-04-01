@@ -10,6 +10,7 @@
 /**
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
  */
+
 namespace Module\Contact\Form\Element;
 
 use Pi;
@@ -23,12 +24,12 @@ class Department extends Select
     public function getValueOptions()
     {
         if (empty($this->valueOptions)) {
-            $columns = array('id', 'title');
-            $where = array('status' => 1);
-            $select = Pi::model('department', $this->options['module'])->select()->columns($columns)->where($where);
-            $rowset = Pi::model('department', $this->options['module'])->selectWith($select);
+            $columns = ['id', 'title'];
+            $where   = ['status' => 1];
+            $select  = Pi::model('department', $this->options['module'])->select()->columns($columns)->where($where);
+            $rowset  = Pi::model('department', $this->options['module'])->selectWith($select);
             foreach ($rowset as $row) {
-                $list[$row->id] = $row->toArray();
+                $list[$row->id]    = $row->toArray();
                 $options[$row->id] = $list[$row->id]['title'];
             }
             $this->valueOptions = $options;
