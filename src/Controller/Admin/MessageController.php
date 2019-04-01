@@ -57,8 +57,8 @@ class MessageController extends ActionController
             if ($row->uid > 0) {
                 $message[$row->id]['user'] = Pi::user()->get(
                     $row->uid, [
-                    'id', 'identity', 'name', 'email',
-                ]
+                        'id', 'identity', 'name', 'email',
+                    ]
                 );
             }
         }
@@ -184,8 +184,8 @@ class MessageController extends ActionController
             if ($this->config('sms_replay') && $message->uid > 0) {
                 $user   = Pi::user()->get(
                     $message->uid, [
-                    'id', 'identity', 'name', 'email', 'mobile',
-                ]
+                        'id', 'identity', 'name', 'email', 'mobile',
+                    ]
                 );
                 $mobile = $user['mobile'];
             }

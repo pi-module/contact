@@ -119,27 +119,27 @@ class IndexController extends ActionController
         $mapSetting = [];
         if ($config['map_show']) {
             if (Pi::config('map_type') == 'osm') {
-                $mapSetting= [
-                    'type' => 'osm',
+                $mapSetting = [
+                    'type'   => 'osm',
                     'params' => [
                         'type'      => 'point',
                         'latitude'  => round(!empty($config['map_latitude']) ? $config['map_latitude'] : Pi::config('geo_latitude'), 6),
                         'longitude' => round(!empty($config['map_longitude']) ? $config['map_longitude'] : Pi::config('geo_longitude'), 6),
                         'zoom'      => $config['map_zoom'],
-                        'title'     => !empty($config['map_title']) ? : Pi::config('geo_placename')
+                        'title'     => !empty($config['map_title']) ?: Pi::config('geo_placename'),
                     ],
                 ];
             } else {
                 $mapSetting = [
-                    'type' => 'google',
-                    'key'  => Pi::config('google_map_key'),
-                    'location' =>  [
+                    'type'     => 'google',
+                    'key'      => Pi::config('google_map_key'),
+                    'location' => [
                         'latitude'  => round(!empty($config['map_latitude']) ? $config['map_latitude'] : Pi::config('geo_latitude'), 6),
                         'longitude' => round(!empty($config['map_longitude']) ? $config['map_longitude'] : Pi::config('geo_longitude'), 6),
                         'zoom'      => $config['map_zoom'],
-                        'title'     => !empty($config['map_title']) ? : Pi::config('geo_placename'),
+                        'title'     => !empty($config['map_title']) ?: Pi::config('geo_placename'),
                     ],
-                    'option' => [
+                    'option'   => [
                         'mapTypeId' => $config['map_type'],
                     ],
                 ];

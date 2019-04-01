@@ -39,8 +39,8 @@ class Breadcrumbs extends AbstractBreadcrumbs
         } else {
             $href = Pi::service('url')->assemble(
                 'default', [
-                'module' => $this->getModule(),
-            ]
+                    'module' => $this->getModule(),
+                ]
             );
         }
         // Set result

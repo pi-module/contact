@@ -77,11 +77,11 @@ class ToolsController extends ActionController
         $links['postContact'] = Pi::url(
             $this->url(
                 'contact', [
-                'module'     => $module,
-                'controller' => 'index',
-                'action'     => 'ajax',
-                'password'   => (!empty($config['json_password'])) ? $config['json_password'] : '',
-            ]
+                    'module'     => $module,
+                    'controller' => 'index',
+                    'action'     => 'ajax',
+                    'password'   => (!empty($config['json_password'])) ? $config['json_password'] : '',
+                ]
             )
         );
         // Set template

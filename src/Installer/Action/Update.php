@@ -56,10 +56,10 @@ class Update extends BasicUpdate
             } catch (\Exception $exception) {
                 $this->setResult(
                     'db', [
-                    'status'  => false,
-                    'message' => 'Table alter query failed: '
-                        . $exception->getMessage(),
-                ]
+                        'status'  => false,
+                        'message' => 'Table alter query failed: '
+                            . $exception->getMessage(),
+                    ]
                 );
                 return false;
             }

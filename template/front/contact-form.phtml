@@ -36,8 +36,8 @@ if (!empty($config['sidetext']) || ($config['map_show'] && $config['map_position
         <?php } else { ?>
             <div class="alert alert-danger">
                 <?php echo sprintf(
-                        __('You allowed to send next contact request after %s min than your last submitted time'),
-                        $config['block_time']
+                    __('You allowed to send next contact request after %s min than your last submitted time'),
+                    $config['block_time']
                 ); ?>
             </div>
         <?php } ?>

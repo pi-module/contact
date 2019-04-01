@@ -207,10 +207,12 @@ class ContactForm extends BaseForm
         }
 
         // security
-        $this->add(array(
-            'name' => 'security',
-            'type' => 'csrf',
-        ));
+        $this->add(
+            [
+                'name' => 'security',
+                'type' => 'csrf',
+            ]
+        );
 
         // Save
         $this->add(

@@ -48,8 +48,8 @@ class Block
             'action', Pi::url(
             Pi::service('url')->assemble(
                 'default', [
-                'module' => $module,
-            ]
+                    'module' => $module,
+                ]
             )
         )
         );

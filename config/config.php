@@ -233,7 +233,7 @@ return [
             'filter'      => 'number_int',
             'value'       => 0,
         ],
-        'map_show'             => [
+        'map_show'              => [
             'title'       => _a('Show Map on contact page'),
             'description' => '',
             'value'       => 0,
@@ -241,7 +241,7 @@ return [
             'edit'        => 'checkbox',
             'category'    => 'map',
         ],
-        'map_position'         => [
+        'map_position'          => [
             'title'       => _a('Position'),
             'description' => ' ',
             'edit'        => [
@@ -257,7 +257,7 @@ return [
             'value'       => 'side',
             'category'    => 'map',
         ],
-        'map_latitude'         => [
+        'map_latitude'          => [
             'title'       => _a('Latitude'),
             'description' => '',
             'edit'        => 'text',
@@ -265,7 +265,7 @@ return [
             'value'       => '',
             'category'    => 'map',
         ],
-        'map_longitude'        => [
+        'map_longitude'         => [
             'title'       => _a('Longitude'),
             'description' => '',
             'edit'        => 'text',
@@ -273,7 +273,7 @@ return [
             'value'       => '',
             'category'    => 'map',
         ],
-        'map_zoom'             => [
+        'map_zoom'              => [
             'title'       => _a('Zoom'),
             'description' => '',
             'edit'        => 'text',
@@ -281,7 +281,7 @@ return [
             'value'       => 15,
             'category'    => 'map',
         ],
-        'map_title'            => [
+        'map_title'             => [
             'title'       => _a('Title'),
             'description' => '',
             'edit'        => 'text',
@@ -289,7 +289,7 @@ return [
             'value'       => '',
             'category'    => 'map',
         ],
-        'map_type'             => [
+        'map_type'              => [
             'title'       => _a('Map type'),
             'description' => '',
             'edit'        => [
