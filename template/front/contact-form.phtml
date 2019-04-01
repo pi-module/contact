@@ -42,9 +42,18 @@ if (!empty($config['sidetext']) || ($config['gmap_show'] && $config['gmap_positi
                 <?php echo $config['toptext']; ?>
             </div>
         <?php } ?>
-        <div class="contact-form">
-            <?php echo $this->form($form, 'vertical'); ?>
-        </div>
+        <?php if ($allowSubmit) { ?>
+            <div class="contact-form">
+                <?php echo $this->form($form, 'vertical'); ?>
+            </div>
+        <?php } else { ?>
+            <div class="alert alert-danger">
+                <?php echo sprintf(
+                        __('You allowed to send next contact request after %s min than your last submitted time'),
+                        $config['block_time']
+                ); ?>
+            </div>
+        <?php } ?>
     </div>
     <?php if (!empty($config['sidetext']) || ($config['gmap_show'] && $config['gmap_position'] == 'side')) { ?>
         <div class="col-md-5">

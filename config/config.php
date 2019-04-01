@@ -17,6 +17,10 @@ return [
             'name'  => 'admin',
         ],
         [
+            'title' => _a('Security'),
+            'name'  => 'security',
+        ],
+        [
             'title' => _a('HomePage'),
             'name'  => 'home',
         ],
@@ -47,6 +51,17 @@ return [
             'filter'      => 'number_int',
             'edit'        => 'checkbox',
         ],
+
+        // Security
+        'block_time'            => [
+            'category'    => 'security',
+            'title'       => _a('Next submit block time'),
+            'description' => _a('Set block time for next submit form by min,'),
+            'value'       => 60,
+            'filter'      => 'number_int',
+            'edit'        => 'checkbox',
+        ],
+
         // Home
         'breadcrumbs'           => [
             'title'       => _a('Show breadcrumbs'),
@@ -84,6 +99,7 @@ return [
             'value'       => _a('Message correctly Send, a confirmation has just been sent to you by email'),
             'category'    => 'home',
         ],
+
         // Form
         'default_department'    => [
             'title'       => _a('Default department'),
@@ -207,6 +223,7 @@ return [
             'filter'      => 'int',
             'category'    => 'form',
         ],
+
         // Gmap
         'wide_content'          => [
             'category'    => 'gmap',
