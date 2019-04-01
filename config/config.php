@@ -29,8 +29,8 @@ return [
             'name'  => 'form',
         ],
         [
-            'title' => _a('Google Map'),
-            'name'  => 'gmap',
+            'title' => _a('Map'),
+            'name'  => 'map',
         ],
     ],
     'item'     => [
@@ -224,24 +224,24 @@ return [
             'category'    => 'form',
         ],
 
-        // Gmap
+        // Map
         'wide_content'          => [
-            'category'    => 'gmap',
-            'title'       => _a('Active wide front image for this module'),
+            'category'    => 'map',
+            'title'       => _a('Active wide front map for this module'),
             'description' => '',
             'edit'        => 'checkbox',
             'filter'      => 'number_int',
             'value'       => 0,
         ],
-        'gmap_show'             => [
-            'title'       => _a('Show Google Map'),
+        'map_show'             => [
+            'title'       => _a('Show Map on contact page'),
             'description' => '',
             'value'       => 0,
             'filter'      => 'number_int',
             'edit'        => 'checkbox',
-            'category'    => 'gmap',
+            'category'    => 'map',
         ],
-        'gmap_position'         => [
+        'map_position'         => [
             'title'       => _a('Position'),
             'description' => ' ',
             'edit'        => [
@@ -255,51 +255,41 @@ return [
             ],
             'filter'      => 'string',
             'value'       => 'side',
-            'category'    => 'gmap',
+            'category'    => 'map',
         ],
-        'gmap_latitude'         => [
+        'map_latitude'         => [
             'title'       => _a('Latitude'),
             'description' => '',
             'edit'        => 'text',
             'filter'      => 'string',
             'value'       => '',
-            'category'    => 'gmap',
+            'category'    => 'map',
         ],
-        'gmap_longitude'        => [
+        'map_longitude'        => [
             'title'       => _a('Longitude'),
             'description' => '',
             'edit'        => 'text',
             'filter'      => 'string',
             'value'       => '',
-            'category'    => 'gmap',
+            'category'    => 'map',
         ],
-        'gmap_zoon'             => [
-            'title'       => _a('Zoon'),
+        'map_zoom'             => [
+            'title'       => _a('Zoom'),
             'description' => '',
             'edit'        => 'text',
-            'filter'      => 'string',
-            'value'       => '16',
-            'category'    => 'gmap',
+            'filter'      => 'number_int',
+            'value'       => 15,
+            'category'    => 'map',
         ],
-        'gmap_title'            => [
+        'map_title'            => [
             'title'       => _a('Title'),
             'description' => '',
             'edit'        => 'text',
             'filter'      => 'string',
             'value'       => '',
-            'category'    => 'gmap',
+            'category'    => 'map',
         ],
-        'gmap_api_key'          => [
-            'category'    => 'gmap',
-            'title'       => _a('Set Google map API KEY'),
-            'description' => _a(
-                'For obtaining an API Key please read this document : https://developers.google.com/maps/documentation/javascript/tutorial#api_key'
-            ),
-            'edit'        => 'text',
-            'filter'      => 'string',
-            'value'       => '',
-        ],
-        'gmap_type'             => [
+        'map_type'             => [
             'title'       => _a('Map type'),
             'description' => '',
             'edit'        => [
@@ -315,7 +305,7 @@ return [
             ],
             'filter'      => 'text',
             'value'       => 'ROADMAP',
-            'category'    => 'gmap',
+            'category'    => 'map',
         ],
     ],
 ];

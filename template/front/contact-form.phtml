@@ -1,29 +1,16 @@
 <?php
+// Set header css and scripts
 $this->css($this->assetModule('css/front.css'));
 
-// Load google map
-if ($config['gmap_show']) {
-    $locations = [
-        'latitude'  => $config['gmap_latitude'],
-        'longitude' => $config['gmap_longitude'],
-        'zoom'      => $config['gmap_zoon'],
-        'title'     => $config['gmap_title'],
-    ];
-
-    $option = [
-        'mapTypeId' => $config['gmap_type'],
-    ];
-}
-
 // Set html class
-if (!empty($config['sidetext']) || ($config['gmap_show'] && $config['gmap_position'] == 'side')) {
+if (!empty($config['sidetext']) || ($config['map_show'] && $config['map_position'] == 'side')) {
     $class = 'col-md-7';
 } else {
     $class = 'col-md-12';
 }
 ?>
 <div class="clearfix">
-    <?php if ($config['gmap_show'] && $config['gmap_position'] == 'top') { ?>
+    <?php if ($config['map_show'] && $config['map_position'] == 'top') { ?>
         <?php
         ob_start();
         include('partial/contact-wide-header.phtml');
@@ -55,15 +42,19 @@ if (!empty($config['sidetext']) || ($config['gmap_show'] && $config['gmap_positi
             </div>
         <?php } ?>
     </div>
-    <?php if (!empty($config['sidetext']) || ($config['gmap_show'] && $config['gmap_position'] == 'side')) { ?>
+    <?php if (!empty($config['sidetext']) || ($config['map_show'] && $config['map_position'] == 'side')) { ?>
         <div class="col-md-5">
             <?php if (!empty($config['sidetext'])) { ?>
                 <div class="clearfix contact-sidetext">
                     <?php echo $config['sidetext']; ?>
                 </div>
             <?php } ?>
-            <?php if ($config['gmap_show'] && $config['gmap_position'] == 'side') { ?>
-                <?php echo $this->googleMap($locations, $config['gmap_api_key'], 'point', $option); ?>
+            <?php if ($config['map_show'] && $config['map_position'] == 'side') { ?>
+                <?php if ($mapSetting['type'] == 'google') {
+                    echo $this->googleMap($mapSetting['location'], $mapSetting['key'], 'point', $mapSetting['option']);
+                } elseif ($mapSetting['type'] == 'osm') {
+                    echo $this->leaflet($mapSetting['params']);
+                } ?>
             <?php } ?>
         </div>
     <?php } ?>

@@ -1,1 +1,6 @@
-<?php echo $this->googleMap($locations, $config['gmap_api_key'], 'point', $option); ?>
+<?php
+if ($mapSetting['type'] == 'google') {
+    echo $this->googleMap($mapSetting['location'], $mapSetting['key'], 'point', $mapSetting['option']);
+} elseif ($mapSetting['type'] == 'osm') {
+    echo $this->leaflet($mapSetting['params']);
+}

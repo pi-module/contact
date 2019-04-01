@@ -37,7 +37,7 @@ class IndexController extends ActionController
             }
         }
 
-        // Set option
+        // Check use contact form allowed or not
         if ($allowSubmit) {
 
             // Set form option
@@ -111,9 +111,39 @@ class IndexController extends ActionController
                 $form->setData($data);
             }
 
-
             // Set view
             $this->view()->assign('form', $form);
+        }
+
+        // Set map setting
+        $mapSetting = [];
+        if ($config['map_show']) {
+            if (Pi::config('map_type') == 'osm') {
+                $mapSetting= [
+                    'type' => 'osm',
+                    'params' => [
+                        'type'      => 'point',
+                        'latitude'  => round(!empty($config['map_latitude']) ? $config['map_latitude'] : Pi::config('geo_latitude'), 6),
+                        'longitude' => round(!empty($config['map_longitude']) ? $config['map_longitude'] : Pi::config('geo_longitude'), 6),
+                        'zoom'      => $config['map_zoom'],
+                        'title'     => !empty($config['map_title']) ? : Pi::config('geo_placename')
+                    ],
+                ];
+            } else {
+                $mapSetting = [
+                    'type' => 'google',
+                    'key'  => Pi::config('google_map_key'),
+                    'location' =>  [
+                        'latitude'  => round(!empty($config['map_latitude']) ? $config['map_latitude'] : Pi::config('geo_latitude'), 6),
+                        'longitude' => round(!empty($config['map_longitude']) ? $config['map_longitude'] : Pi::config('geo_longitude'), 6),
+                        'zoom'      => $config['map_zoom'],
+                        'title'     => !empty($config['map_title']) ? : Pi::config('geo_placename'),
+                    ],
+                    'option' => [
+                        'mapTypeId' => $config['map_type'],
+                    ],
+                ];
+            }
         }
 
         // Set view
@@ -121,5 +151,6 @@ class IndexController extends ActionController
         $this->view()->assign('title', __('Contact Us'));
         $this->view()->assign('config', $config);
         $this->view()->assign('allowSubmit', $allowSubmit);
+        $this->view()->assign('mapSetting', $mapSetting);
     }
 }
