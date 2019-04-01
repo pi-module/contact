@@ -21,11 +21,6 @@ class ContactFilter extends InputFilter
 {
     public function __construct($option = [])
     {
-        // User id
-        /* $this->add(array(
-            'name' => 'uid',
-            'required' => true,
-        )); */
         // subject
         $this->add(
             [
@@ -38,6 +33,7 @@ class ContactFilter extends InputFilter
                 ],
             ]
         );
+
         // department
         $this->add(
             [
@@ -45,6 +41,7 @@ class ContactFilter extends InputFilter
                 'required' => true,
             ]
         );
+
         // email
         $this->add(
             [
@@ -73,6 +70,7 @@ class ContactFilter extends InputFilter
                 ],
             ]
         );
+
         // name
         $this->add(
             [
@@ -80,6 +78,7 @@ class ContactFilter extends InputFilter
                 'required' => true,
             ]
         );
+
         // Organization
         if ($option['config']['show_organization']) {
             $this->add(
@@ -89,6 +88,7 @@ class ContactFilter extends InputFilter
                 ]
             );
         }
+
         // Homepage
         if ($option['config']['show_homepage']) {
             $this->add(
@@ -98,6 +98,7 @@ class ContactFilter extends InputFilter
                 ]
             );
         }
+
         // Location
         if ($option['config']['show_location']) {
             $this->add(
@@ -107,6 +108,7 @@ class ContactFilter extends InputFilter
                 ]
             );
         }
+
         // Phone
         if ($option['config']['show_phone']) {
             $this->add(
@@ -116,6 +118,7 @@ class ContactFilter extends InputFilter
                 ]
             );
         }
+
         // Address
         if ($option['config']['show_address']) {
             $this->add(
@@ -125,6 +128,7 @@ class ContactFilter extends InputFilter
                 ]
             );
         }
+
         // Message
         $this->add(
             [

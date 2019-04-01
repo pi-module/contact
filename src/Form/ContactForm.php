@@ -18,35 +18,23 @@ use Pi\Form\Form as BaseForm;
 
 class ContactForm extends BaseForm
 {
-    public function __construct($name = null, $option = [])
+    public function __construct($name = null, $option)
     {
-        $uid                    = Pi::user()->getId();
-        $field                  = [
-            'id', 'identity', 'name', 'email',
-        ];
         $this->option           = $option;
         $this->option['module'] = Pi::service('module')->current();
-        $this->option['user']   = Pi::user()->get($uid, $field);
-
-        /**
-         * SetInputFilter here, for keeping auto-injected captcha validator
-         */
-        $this->setInputFilter(new ContactFilter($this->option));
-
         parent::__construct($name);
+    }
 
+    public function getInputFilter()
+    {
+        if (!$this->filter) {
+            $this->filter = new ContactFilter($this->option);
+        }
+        return $this->filter;
     }
 
     public function init()
     {
-        // User id
-        /* $this->add(array(
-            'name' => 'uid',
-            'attributes' => array(
-                'type' => 'hidden',
-                'value' => $this->option['user']['id'],
-            ),
-        )); */
         // Subject
         $this->add(
             [
@@ -60,6 +48,7 @@ class ContactForm extends BaseForm
                 ],
             ]
         );
+
         // department
         if ($this->option['config']['show_department']) {
             $this->add(
@@ -82,6 +71,7 @@ class ContactForm extends BaseForm
                 ]
             );
         }
+
         // Email
         $this->add(
             [
@@ -91,11 +81,11 @@ class ContactForm extends BaseForm
                 ],
                 'attributes' => [
                     'type'     => 'text',
-                    'value'    => $this->option['user']['email'],
                     'required' => true,
                 ],
             ]
         );
+
         // Name
         $this->add(
             [
@@ -105,11 +95,11 @@ class ContactForm extends BaseForm
                 ],
                 'attributes' => [
                     'type'     => 'text',
-                    'value'    => $this->option['user']['name'],
                     'required' => true,
                 ],
             ]
         );
+
         // Organization
         if ($this->option['config']['show_organization']) {
             $this->add(
@@ -125,6 +115,7 @@ class ContactForm extends BaseForm
                 ]
             );
         }
+
         // Homepage
         if ($this->option['config']['show_homepage']) {
             $this->add(
@@ -140,6 +131,7 @@ class ContactForm extends BaseForm
                 ]
             );
         }
+
         // Location
         if ($this->option['config']['show_location']) {
             $this->add(
@@ -155,6 +147,7 @@ class ContactForm extends BaseForm
                 ]
             );
         }
+
         // Phone
         if ($this->option['config']['show_phone']) {
             $this->add(
@@ -170,6 +163,7 @@ class ContactForm extends BaseForm
                 ]
             );
         }
+
         // Address
         if ($this->option['config']['show_address']) {
             $this->add(
@@ -187,6 +181,7 @@ class ContactForm extends BaseForm
                 ]
             );
         }
+
         // Message		  
         $this->add(
             [
@@ -202,18 +197,20 @@ class ContactForm extends BaseForm
                 ],
             ]
         );
+
         // captcha
-        if ($this->option['user']['id'] == 0 && $this->option['captcha'] == 1) {
+        if (!Pi::service('authentication')->hasIdentity() && $this->option['captcha'] == 1) {
             $captchaMode = $this->option['config']['captcha'];
             if ($captchaElement = Pi::service('form')->getReCaptcha($captchaMode)) {
                 $this->add($captchaElement);
             }
         }
+
         // security
-        /* $this->add(array(
+        $this->add(array(
             'name' => 'security',
             'type' => 'csrf',
-        )); */
+        ));
 
         // Save
         $this->add(
