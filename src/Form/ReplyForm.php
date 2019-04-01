@@ -10,6 +10,7 @@
 /**
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
  */
+
 namespace Module\Contact\Form;
 
 use Pi;
@@ -17,7 +18,7 @@ use Pi\Form\Form as BaseForm;
 
 class ReplyForm extends BaseForm
 {
-    public function __construct($name = null, $option = array())
+    public function __construct($name = null, $option = [])
     {
         $this->option = $option;
         parent::__construct($name);
@@ -34,87 +35,103 @@ class ReplyForm extends BaseForm
     public function init()
     {
         // Author
-        $this->add(array(
-            'name' => 'uid',
-            'attributes' => array(
-                'type' => 'hidden',
-            ),
-        ));
+        $this->add(
+            [
+                'name'       => 'uid',
+                'attributes' => [
+                    'type' => 'hidden',
+                ],
+            ]
+        );
         // Message id
-        $this->add(array(
-            'name' => 'mid',
-            'attributes' => array(
-                'type' => 'hidden',
-            ),
-        ));
+        $this->add(
+            [
+                'name'       => 'mid',
+                'attributes' => [
+                    'type' => 'hidden',
+                ],
+            ]
+        );
         // To Name
-        $this->add(array(
-            'name' => 'name',
-            'options' => array(
-                'label' => __('To Name'),
-            ),
-            'attributes' => array(
-                'type' => 'text',
-                'label' => __('To Name'),
-            )
-        ));
+        $this->add(
+            [
+                'name'       => 'name',
+                'options'    => [
+                    'label' => __('To Name'),
+                ],
+                'attributes' => [
+                    'type'  => 'text',
+                    'label' => __('To Name'),
+                ],
+            ]
+        );
         // Check
         if ($this->option['sms_replay']) {
             // mobile
-            $this->add(array(
-                'name' => 'mobile',
-                'options' => array(
-                    'label' => __('Mobile'),
-                ),
-                'attributes' => array(
-                    'type' => 'text',
-                )
-            ));
+            $this->add(
+                [
+                    'name'       => 'mobile',
+                    'options'    => [
+                        'label' => __('Mobile'),
+                    ],
+                    'attributes' => [
+                        'type' => 'text',
+                    ],
+                ]
+            );
         } else {
             // To Email
-            $this->add(array(
-                'name' => 'email',
-                'options' => array(
-                    'label' => __('To Email'),
-                ),
-                'attributes' => array(
-                    'type' => 'text',
-                    'label' => __('To Email'),
-                )
-            ));
+            $this->add(
+                [
+                    'name'       => 'email',
+                    'options'    => [
+                        'label' => __('To Email'),
+                    ],
+                    'attributes' => [
+                        'type'  => 'text',
+                        'label' => __('To Email'),
+                    ],
+                ]
+            );
         }
         // To Subject
-        $this->add(array(
-            'name' => 'subject',
-            'options' => array(
-                'label' => __('Subject'),
-            ),
-            'attributes' => array(
-                'type' => 'text',
-                'label' => __('Subject'),
-            )
-        ));
+        $this->add(
+            [
+                'name'       => 'subject',
+                'options'    => [
+                    'label' => __('Subject'),
+                ],
+                'attributes' => [
+                    'type'  => 'text',
+                    'label' => __('Subject'),
+                ],
+            ]
+        );
         // Message		  
-        $this->add(array(
-            'name' => 'message',
-            'options' => array(
-                'label' => __('Message'),
-            ),
-            'attributes' => array(
-                'type' => 'textarea',
-                'value' => '',
-                'rows' => '5',
-                'cols' => '40',
-                'label' => __('Message'),
-            )
-        ));
+        $this->add(
+            [
+                'name'       => 'message',
+                'options'    => [
+                    'label' => __('Message'),
+                ],
+                'attributes' => [
+                    'type'  => 'textarea',
+                    'value' => '',
+                    'rows'  => '5',
+                    'cols'  => '40',
+                    'label' => __('Message'),
+                ],
+            ]
+        );
         // Save
-        $this->add(array(
-            'name' => 'submit',
-            'type' => 'submit',
-            'attributes' => array(
-                'value' => __('Submit'),
-            )
-        ));
+        $this->add(
+            [
+                'name'       => 'submit',
+                'type'       => 'submit',
+                'attributes' => [
+                    'value' => __('Submit'),
+                ],
+            ]
+        );
     }
 }	   

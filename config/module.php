@@ -10,34 +10,34 @@
 /**
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
  */
-return array(
+return [
     // Module meta
-    'meta'         => array(
-        'title'         => _a('Contact'),
-        'description'   => _a('Manage Contacts'),
-        'version'       => '1.5.0',
-        'license'       => 'New BSD',
-        'logo'          => 'image/logo.png',
-        'readme'        => 'docs/readme.txt',
-        'demo'          => 'http://piengine.org',
-        'icon'          => 'fa-envelope',
-        'clonable'      => true,
-    ),
+    'meta'     => [
+        'title'       => _a('Contact'),
+        'description' => _a('Manage Contacts'),
+        'version'     => '1.5.2',
+        'license'     => 'New BSD',
+        'logo'        => 'image/logo.png',
+        'readme'      => 'docs/readme.txt',
+        'demo'        => 'http://piengine.org',
+        'icon'        => 'fa-envelope',
+        'clonable'    => true,
+    ],
     // Author information
-    'author'        => array(
-        'Name'          => 'Hossein Azizabadi',
-        'email'         => 'azizabadi@faragostaresh.com',
-        'website'       => 'http://piengine.org',
-        'credits'       => 'Pi Engine Team'
-    ),
+    'author'   => [
+        'Name'    => 'Hossein Azizabadi',
+        'email'   => 'azizabadi@faragostaresh.com',
+        'website' => 'http://piengine.org',
+        'credits' => 'Pi Engine Team',
+    ],
     // resource
-    'resource' => array(
-        'database'      => 'database.php',
-        'config'        => 'config.php',
-        'permission'    => 'permission.php',
-        'page'          => 'page.php',
-        'navigation'    => 'navigation.php',
-        'route'         => 'route.php',
-        'block'         => 'block.php',
-    )
-);
+    'resource' => [
+        'database'   => 'database.php',
+        'config'     => 'config.php',
+        'permission' => 'permission.php',
+        'page'       => 'page.php',
+        'navigation' => 'navigation.php',
+        'route'      => 'route.php',
+        'block'      => 'block.php',
+    ],
+];

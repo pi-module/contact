@@ -10,6 +10,7 @@
 /**
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
  */
+
 namespace Module\Contact\Form;
 
 use Pi;
@@ -19,7 +20,7 @@ class PruneForm extends BaseForm
 {
     protected $options;
 
-    public function __construct($name = null, $options = array())
+    public function __construct($name = null, $options = [])
     {
         $this->options = $options;
         parent::__construct($name);
@@ -28,52 +29,60 @@ class PruneForm extends BaseForm
     public function init()
     {
         // date
-        $this->add(array(
-            'name' => 'date',
-            'options' => array(
-                'label' => __('All contacts Before'),
-            ),
-            'attributes' => array(
-                'type' => 'text',
-                'value' => date('Y-m-d'),
-                'label' => __('All contacts Before'),
-                'required' => true,
-            )
-        ));
+        $this->add(
+            [
+                'name'       => 'date',
+                'options'    => [
+                    'label' => __('All contacts Before'),
+                ],
+                'attributes' => [
+                    'type'     => 'text',
+                    'value'    => date('Y-m-d'),
+                    'label'    => __('All contacts Before'),
+                    'required' => true,
+                ],
+            ]
+        );
         // answer
-        $this->add(array(
-            'name' => 'answer',
-            'type' => 'checkbox',
-            'options' => array(
-                'label' => __('Only remove Admin answers'),
-            ),
-            'attributes' => array(
-                'value' => 0,
-                'label' => __('Only remove Admin answers'),
-            )
-        ));
+        $this->add(
+            [
+                'name'       => 'answer',
+                'type'       => 'checkbox',
+                'options'    => [
+                    'label' => __('Only remove Admin answers'),
+                ],
+                'attributes' => [
+                    'value' => 0,
+                    'label' => __('Only remove Admin answers'),
+                ],
+            ]
+        );
         // department
-        $this->add(array(
-            'name' => 'department',
-            'type' => 'select',
-            'options' => array(
-                'label' => __('Department'),
-                'value_options' => $this->options,
-            ),
-            'attributes' => array(
-                'description' => '',
-                'size' => 5,
-                'multiple' => 1,
-                'required' => true,
-            ),
-        ));
+        $this->add(
+            [
+                'name'       => 'department',
+                'type'       => 'select',
+                'options'    => [
+                    'label'         => __('Department'),
+                    'value_options' => $this->options,
+                ],
+                'attributes' => [
+                    'description' => '',
+                    'size'        => 5,
+                    'multiple'    => 1,
+                    'required'    => true,
+                ],
+            ]
+        );
         // Submit
-        $this->add(array(
-            'name' => 'submit',
-            'type' => 'submit',
-            'attributes' => array(
-                'value' => __('Submit'),
-            )
-        ));
+        $this->add(
+            [
+                'name'       => 'submit',
+                'type'       => 'submit',
+                'attributes' => [
+                    'value' => __('Submit'),
+                ],
+            ]
+        );
     }
 }	

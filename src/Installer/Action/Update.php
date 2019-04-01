@@ -10,6 +10,7 @@
 /**
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
  */
+
 namespace Module\Contact\Installer\Action;
 
 use Pi;
@@ -25,9 +26,9 @@ class Update extends BasicUpdate
     protected function attachDefaultListeners()
     {
         $events = $this->events;
-        $events->attach('update.pre', array($this, 'updateSchema'));
+        $events->attach('update.pre', [$this, 'updateSchema']);
         parent::attachDefaultListeners();
-        
+
         return $this;
     }
 
@@ -36,26 +37,30 @@ class Update extends BasicUpdate
      */
     public function updateSchema(Event $e)
     {
-        $moduleVersion    = $e->getParam('version');
-        
+        $moduleVersion = $e->getParam('version');
+
         // Set message model
-        $messageModel        = Pi::model('message', $this->module);
-        $messageTable        = $messageModel->getTable();
-        $messageAdapter      = $messageModel->getAdapter();
+        $messageModel   = Pi::model('message', $this->module);
+        $messageTable   = $messageModel->getTable();
+        $messageAdapter = $messageModel->getAdapter();
 
         // Update to version 1.2.9
         if (version_compare($moduleVersion, '1.2.9', '<')) {
             // Alter table : CHANGE message
-            $sql = sprintf("ALTER TABLE %s CHANGE `message` `message` text", 
-                $messageTable);
+            $sql = sprintf(
+                "ALTER TABLE %s CHANGE `message` `message` text",
+                $messageTable
+            );
             try {
                 $messageAdapter->query($sql, 'execute');
             } catch (\Exception $exception) {
-                $this->setResult('db', array(
-                    'status'    => false,
-                    'message'   => 'Table alter query failed: '
-                                   . $exception->getMessage(),
-                ));
+                $this->setResult(
+                    'db', [
+                        'status'  => false,
+                        'message' => 'Table alter query failed: '
+                            . $exception->getMessage(),
+                    ]
+                );
                 return false;
             }
         }

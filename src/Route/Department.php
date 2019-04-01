@@ -10,6 +10,7 @@
 /**
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
  */
+
 namespace Module\Contact\Route;
 
 use Pi\Mvc\Router\Http\Standard;
@@ -18,13 +19,15 @@ class Department extends Standard
 {
     /**
      * Default values.
+     *
      * @var array
      */
-    protected $defaults = array(
-        'module'        => 'contact',
-        'controller'    => 'index',
-        'action'        => 'index'
-    );
+    protected $defaults
+        = [
+            'module'     => 'contact',
+            'controller' => 'index',
+            'action'     => 'index',
+        ];
 
     //protected $prefix = '/contact';
 
@@ -38,8 +41,8 @@ class Department extends Standard
      */
     protected function parse($path)
     {
-        $matches = array();
-        $parts = array_filter(explode($this->structureDelimiter, $path));
+        $matches = [];
+        $parts   = array_filter(explode($this->structureDelimiter, $path));
 
         // Set controller
         $matches = array_merge($this->defaults, $matches);
@@ -70,13 +73,15 @@ class Department extends Standard
      * assemble(): Defined by Route interface.
      *
      * @see    Route::assemble()
+     *
      * @param  array $params
      * @param  array $options
+     *
      * @return string
      */
     public function assemble(
-        array $params = array(),
-        array $options = array()
+        array $params = [],
+        array $options = []
     ) {
         $mergedParams = array_merge($this->defaults, $params);
         if (!$mergedParams) {

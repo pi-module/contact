@@ -10,18 +10,18 @@
 /**
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
  */
-return array(
+return [
     // route name
-    'department' => array(
-        'name'     => 'contact',
-        'type'     => 'Module\Contact\Route\Department',
-        'options'  => array(
-            'route'     => '/contact',
-            'defaults'  => array(
+    'department' => [
+        'name'    => 'contact',
+        'type'    => 'Module\Contact\Route\Department',
+        'options' => [
+            'route'    => '/contact',
+            'defaults' => [
                 'module'     => 'contact',
-                'controller'  => 'index',
-                'action'      => 'index'
-            )
-        ),
-    )
-);
+                'controller' => 'index',
+                'action'     => 'index',
+            ],
+        ],
+    ],
+];

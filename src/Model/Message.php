@@ -20,23 +20,24 @@ class Message extends Model
     /**
      * {@inheritDoc}
      */
-    protected $columns = array(
-        'id',
-        'subject',
-        'department',
-        'email',
-        'name',
-        'organization',
-        'homepage',
-        'location',
-        'phone',
-        'ip',
-        'address',
-        'message',
-        'mid',
-        'answered',
-        'uid',
-        'time_create',
-        'platform',
-    );
+    protected $columns
+        = [
+            'id',
+            'subject',
+            'department',
+            'email',
+            'name',
+            'organization',
+            'homepage',
+            'location',
+            'phone',
+            'ip',
+            'address',
+            'message',
+            'mid',
+            'answered',
+            'uid',
+            'time_create',
+            'platform',
+        ];
 }

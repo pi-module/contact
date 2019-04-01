@@ -1,22 +1,16 @@
 <?php
+// Set header css and scripts
 $this->css($this->assetModule('css/front.css'));
-// Load google map
-if ($config['gmap_show']) {
-    $locations = array(
-        'latitude'  => $config['gmap_latitude'],
-        'longitude' => $config['gmap_longitude'],
-        'zoom'      => $config['gmap_zoon'],
-        'title'     => $config['gmap_title'],
-    );
 
-    $option = array(
-        'mapTypeId' => $config['gmap_type'],
-    );
+// Set html class
+if (!empty($config['sidetext']) || ($config['map_show'] && $config['map_position'] == 'side')) {
+    $class = 'col-md-7';
+} else {
+    $class = 'col-md-12';
 }
 ?>
 <div class="clearfix">
-    <?php if ($config['gmap_show'] && $config['gmap_position'] == 'top') { ?>
-
+    <?php if ($config['map_show'] && $config['map_position'] == 'top') { ?>
         <?php
         ob_start();
         include('partial/contact-wide-header.phtml');
@@ -29,37 +23,38 @@ if ($config['gmap_show']) {
             <h1><?php echo $this->escape($title); ?></h1>
         </div>
     <?php } ?>
-    <?php if (!empty($config['sidetext']) || ($config['gmap_show'] && $config['gmap_position'] == 'side')) {
-        $class = 'col-md-7';
-    } else {
-        $class = 'col-md-12';
-    } ?>
     <div class="<?php echo $class; ?>">
         <?php if (!empty($config['toptext'])) { ?>
             <div class="clearfix contact-toptext">
                 <?php echo $config['toptext']; ?>
             </div>
         <?php } ?>
-        <?php if (isset($finish) && $finish == 1) { ?>
-            <div class="alert alert-success">
-                <?php echo $finishText; ?>
-            </div>
-            <p><a class="btn btn-success" title="<?php _e('Back'); ?>" href="<?php Pi::url($this->url('' , array('action' => 'index'))); ?>"><?php _e('Back'); ?></a></p>
-        <?php } else { ?>
+        <?php if ($allowSubmit) { ?>
             <div class="contact-form">
                 <?php echo $this->form($form, 'vertical'); ?>
             </div>
+        <?php } else { ?>
+            <div class="alert alert-danger">
+                <?php echo sprintf(
+                    __('You allowed to send next contact request after %s min than your last submitted time'),
+                    $config['block_time']
+                ); ?>
+            </div>
         <?php } ?>
     </div>
-    <?php if (!empty($config['sidetext']) || ($config['gmap_show'] && $config['gmap_position'] == 'side')) { ?>
+    <?php if (!empty($config['sidetext']) || ($config['map_show'] && $config['map_position'] == 'side')) { ?>
         <div class="col-md-5">
             <?php if (!empty($config['sidetext'])) { ?>
                 <div class="clearfix contact-sidetext">
                     <?php echo $config['sidetext']; ?>
                 </div>
             <?php } ?>
-            <?php if ($config['gmap_show'] && $config['gmap_position'] == 'side') { ?>
-                <?php echo $this->googleMap($locations, $config['gmap_api_key'], 'point', $option); ?>
+            <?php if ($config['map_show'] && $config['map_position'] == 'side') { ?>
+                <?php if ($mapSetting['type'] == 'google') {
+                    echo $this->googleMap($mapSetting['location'], $mapSetting['key'], 'point', $mapSetting['option']);
+                } elseif ($mapSetting['type'] == 'osm') {
+                    echo $this->leaflet($mapSetting['params']);
+                } ?>
             <?php } ?>
         </div>
     <?php } ?>

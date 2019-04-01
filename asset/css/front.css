@@ -1,4 +1,5 @@
-.contact-title {}
+.contact-title {
+}
 
 .contact-topmap {
     margin-bottom: 10px;
@@ -44,9 +45,9 @@
     text-decoration: none;
 }
 
-.wide-header-content .pi-map .thumbnail{
-    padding:0;
-    border:0;
+.wide-header-content .pi-map .thumbnail {
+    padding: 0;
+    border: 0;
 }
 
 #pi-contact .wide-header-content .pi-map-canvas {

@@ -10,12 +10,13 @@
 /**
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
  */
+
 namespace Module\Contact\Api;
 
+use Module\Contact\Form\ContactFilter;
+use Module\Contact\Form\ContactForm;
 use Pi;
 use Pi\Application\Api\AbstractApi;
-use Module\Contact\Form\ContactForm;
-use Module\Contact\Form\ContactFilter;
 
 /*
  * Pi::api('api', 'contact')->send($values);
@@ -29,19 +30,19 @@ class Api extends AbstractApi
         // Get config
         $config = Pi::service('registry')->config->read($this->getModule());
         // Set values
-        $values['uid'] = isset($values['uid']) ? $values['uid'] : Pi::user()->getId();
-        $values['ip'] = Pi::user()->getIp();
+        $values['uid']         = isset($values['uid']) ? $values['uid'] : Pi::user()->getId();
+        $values['ip']          = Pi::user()->getIp();
         $values['time_create'] = time();
-        $values['department'] = $config['default_department'];
-        $values['name'] = _strip($values['name']);
-        $values['subject'] = _strip($values['subject']);
-        $values['message'] = _strip($values['message']);
+        $values['department']  = $config['default_department'];
+        $values['name']        = _strip($values['name']);
+        $values['subject']     = _strip($values['subject']);
+        $values['message']     = _strip($values['message']);
         // Save
         $row = Pi::model('message', $this->getModule())->createRow();
         $row->assign($values);
         $row->save();
         // Set department
-        $department = Pi::model('department', $this->getModule())->find($values['department'])->toArray();
+        $department                 = Pi::model('department', $this->getModule())->find($values['department'])->toArray();
         $values['department_title'] = $department['title'];
         $values['department_email'] = $department['email'];
         // Send as mail
@@ -53,15 +54,15 @@ class Api extends AbstractApi
 
     public function contact($data)
     {
-        $result = array();
+        $result = [];
 
         // Get config
         $config = Pi::service('registry')->config->read($this->getModule());
         // Set option
-        $option = array(
+        $option = [
             'captcha' => 0,
-            'config' => $config,
-        );
+            'config'  => $config,
+        ];
         // Set form
         $form = new ContactForm('contact', $option);
         $form->setInputFilter(new ContactFilter($option));
@@ -73,12 +74,12 @@ class Api extends AbstractApi
             $this->send($values);
             // return
             $result['message'] = __('Your Contact send and saved successfully');
-            $result['submit'] = 1;
-            $result['status'] = 1;
+            $result['submit']  = 1;
+            $result['status']  = 1;
         } else {
             $result['message'] = __('Send information not valid');
-            $result['submit'] = 0;
-            $result['status'] = 0;
+            $result['submit']  = 0;
+            $result['status']  = 0;
         }
 
         return $result;
