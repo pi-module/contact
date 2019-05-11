@@ -1,7 +1,7 @@
 <?php $this->css($this->assetModule('css/admin.css')); ?>
 <div class="clearfix">
     <?php if (!empty($messages)) { ?>
-        <table class="table table-striped table-bordered table-condensed">
+        <table class="table table-striped table-bordered table-sm">
             <tr>
                 <th><?php _e('ID'); ?></th>
                 <th><?php _e('Subject'); ?></th>
@@ -13,10 +13,10 @@
             <?php foreach($messages as $message) { ?>
                 <tr>
                     <td><?php echo $this->escape($message['id']); ?></td>
-                    <td><?php if($message['answered']) { ?><span class="label label-success"><?php _e('Answered'); ?></span> <?php } ?><?php echo $this->escape($message['subject']); ?></td>
+                    <td><?php if($message['answered']) { ?><span class="badge badge-success"><?php _e('Answered'); ?></span> <?php } ?><?php echo $this->escape($message['subject']); ?></td>
                     <td><a title="<?php echo $this->escape($message['departmenttitle']); ?>" href="<?php echo $this->url('', array('action' => 'index', 'department' => $this->escape($message['department']))); ?>"><?php echo $this->escape($message['departmenttitle']); ?></a></td>
                     <td>
-                        <span class="label label-success"><?php echo $this->escape($message['platform']); ?></span>
+                        <span class="badge badge-success"><?php echo $this->escape($message['platform']); ?></span>
                         <?php echo $this->escape($message['name']); ?>
                         <?php if (!empty($message['user'])) { ?>
                             ( <?php echo $this->escape($message['user']['identity']); ?> <?php echo $this->escape($message['user']['name']); ?> )
@@ -24,9 +24,9 @@
                     </td>
                     <td><?php echo $this->escape($message['time_create']); ?></td>
                     <td>
-                        <a class="btn btn-primary btn-xs" title="<?php _e('View'); ?>" href="<?php echo $this->url('', array('action' => 'view', 'id' => $message['id'])); ?>"><i class="fa fa-eye"></i> <?php _e('View'); ?></a>
-                        <a class="btn btn-primary btn-xs" title="<?php _e('Reply'); ?>" href="<?php echo $this->url('', array('action' => 'reply', 'id' => $message['id'])); ?>"><i class="fa fa-reply"></i> <?php _e('Reply'); ?></a>
-                        <a class="btn btn-danger btn-xs" title="<?php _e('Delete'); ?>" href="<?php echo $this->url('', array('action' => 'delete', 'id' => $message['id'])); ?>"><i class="fa fa-trash-o"></i> <?php _e('Delete'); ?></a>
+                        <a class="btn btn-primary btn-sm" title="<?php _e('View'); ?>" href="<?php echo $this->url('', array('action' => 'view', 'id' => $message['id'])); ?>"><i class="far fa-eye"></i> <?php _e('View'); ?></a>
+                        <a class="btn btn-primary btn-sm" title="<?php _e('Reply'); ?>" href="<?php echo $this->url('', array('action' => 'reply', 'id' => $message['id'])); ?>"><i class="fas fa-reply"></i> <?php _e('Reply'); ?></a>
+                        <a class="btn btn-danger btn-sm" title="<?php _e('Delete'); ?>" href="<?php echo $this->url('', array('action' => 'delete', 'id' => $message['id'])); ?>"><i class="fas fa-trash-alt"></i> <?php _e('Delete'); ?></a>
                     </td>
                 </tr>
             <?php } ?>
