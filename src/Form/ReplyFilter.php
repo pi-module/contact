@@ -10,78 +10,95 @@
 /**
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
  */
+
 namespace Module\Contact\Form;
 
+use Module\System\Validator\UserEmail as UserEmailValidator;
 use Pi;
 use Zend\InputFilter\InputFilter;
-use Module\System\Validator\UserEmail as UserEmailValidator;
 
 class ReplyFilter extends InputFilter
 {
-    public function __construct($option = array())
+    public function __construct($option = [])
     {
         // department
-        $this->add(array(
-            'name' => 'uid',
-            'required' => true,
-        ));
+        $this->add(
+            [
+                'name'     => 'uid',
+                'required' => true,
+            ]
+        );
         // department
-        $this->add(array(
-            'name' => 'mid',
-            'required' => true,
-        ));
+        $this->add(
+            [
+                'name'     => 'mid',
+                'required' => true,
+            ]
+        );
         // name
-        $this->add(array(
-            'name' => 'name',
-            'required' => true,
-        ));
+        $this->add(
+            [
+                'name'     => 'name',
+                'required' => true,
+            ]
+        );
         // Check
         if ($option['sms_replay']) {
             // mobile
-            $this->add(array(
-                'name' => 'mobile',
-                'required' => true,
-            ));
+            $this->add(
+                [
+                    'name'     => 'mobile',
+                    'required' => true,
+                ]
+            );
         } else {
             // email
-            $this->add(array(
-                'name' => 'email',
-                'required' => true,
-                'filters' => array(
-                    array(
-                        'name' => 'StringTrim',
-                    ),
-                ),
-                'validators'    => array(
-                    array(
-                        'name'      => 'EmailAddress',
-                        'options'   => array(
-                            'useMxCheck'        => false,
-                            'useDeepMxCheck'    => false,
-                            'useDomainCheck'    => false,
+            $this->add(
+                [
+                    'name'       => 'email',
+                    'required'   => true,
+                    'filters'    => [
+                        [
+                            'name' => 'StringTrim',
+                        ],
+                    ],
+                    'validators' => [
+                        [
+                            'name'    => 'EmailAddress',
+                            'options' => [
+                                'useMxCheck'     => false,
+                                'useDeepMxCheck' => false,
+                                'useDomainCheck' => false,
+                            ],
+                        ],
+                        new UserEmailValidator(
+                            [
+                                'blacklist'         => false,
+                                'check_duplication' => false,
+                            ]
                         ),
-                    ),
-                    new UserEmailValidator(array(
-                        'blacklist'         => false,
-                        'check_duplication' => false,
-                    )),
-                ),
-            ));
+                    ],
+                ]
+            );
         }
         // title
-        $this->add(array(
-            'name' => 'subject',
-            'required' => true,
-            'filters' => array(
-                array(
-                    'name' => 'StringTrim',
-                ),
-            ),
-        ));
+        $this->add(
+            [
+                'name'     => 'subject',
+                'required' => true,
+                'filters'  => [
+                    [
+                        'name' => 'StringTrim',
+                    ],
+                ],
+            ]
+        );
         // Message
-        $this->add(array(
-            'name' => 'message',
-            'required' => true,
-        ));
+        $this->add(
+            [
+                'name'     => 'message',
+                'required' => true,
+            ]
+        );
     }
 }	    	

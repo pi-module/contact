@@ -20,11 +20,12 @@ class Department extends Model
     /**
      * {@inheritDoc}
      */
-    protected $columns = array(
-        'id',
-        'title',
-        'slug',
-        'email',
-        'status',
-    );
+    protected $columns
+        = [
+            'id',
+            'title',
+            'slug',
+            'email',
+            'status',
+        ];
 }

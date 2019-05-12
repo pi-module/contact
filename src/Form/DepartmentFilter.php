@@ -10,85 +10,100 @@
 /**
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
  */
+
 namespace Module\Contact\Form;
 
+use Module\System\Validator\UserEmail as UserEmailValidator;
 use Pi;
 use Zend\InputFilter\InputFilter;
-use Module\System\Validator\UserEmail as UserEmailValidator;
 
 class DepartmentFilter extends InputFilter
 {
     public function __construct()
     {
         // id
-        $this->add(array(
-            'name' => 'id',
-            'required' => false,
-            'filters' => array(
-                array(
-                    'name' => 'StringTrim',
-                ),
-            ),
-        ));
+        $this->add(
+            [
+                'name'     => 'id',
+                'required' => false,
+                'filters'  => [
+                    [
+                        'name' => 'StringTrim',
+                    ],
+                ],
+            ]
+        );
         // title
-        $this->add(array(
-            'name' => 'title',
-            'required' => true,
-            'filters' => array(
-                array(
-                    'name' => 'StringTrim',
-                ),
-            ),
-        ));
+        $this->add(
+            [
+                'name'     => 'title',
+                'required' => true,
+                'filters'  => [
+                    [
+                        'name' => 'StringTrim',
+                    ],
+                ],
+            ]
+        );
         // slug
-        $this->add(array(
-            'name'          => 'slug',
-            'required'      => false,
-            'filters'       => array(
-                array(
-                    'name'  => 'StringTrim',
-                ),
-            ),
-            'validators'    => array(
-                new \Module\Contact\Validator\SlugDuplicate(array(
-                    'module'            => Pi::service('module')->current(),
-                    'table'             => 'department',
-                )),
-            ),
-        ));
-        // email
-        $this->add(array(
-            'name' => 'email',
-            'required' => true,
-            'filters' => array(
-                array(
-                    'name' => 'StringTrim',
-                ),
-            ),
-            'validators'    => array(
-                array(
-                    'name'      => 'EmailAddress',
-                    'options'   => array(
-                        'useMxCheck'        => false,
-                        'useDeepMxCheck'    => false,
-                        'useDomainCheck'    => false,
+        $this->add(
+            [
+                'name'       => 'slug',
+                'required'   => false,
+                'filters'    => [
+                    [
+                        'name' => 'StringTrim',
+                    ],
+                ],
+                'validators' => [
+                    new \Module\Contact\Validator\SlugDuplicate(
+                        [
+                            'module' => Pi::service('module')->current(),
+                            'table'  => 'department',
+                        ]
                     ),
-                ),
-                new UserEmailValidator(array(
-                    'blacklist'         => false,
-                    'check_duplication' => false,
-                )),
-            ),
-        ));
+                ],
+            ]
+        );
+        // email
+        $this->add(
+            [
+                'name'       => 'email',
+                'required'   => true,
+                'filters'    => [
+                    [
+                        'name' => 'StringTrim',
+                    ],
+                ],
+                'validators' => [
+                    [
+                        'name'    => 'EmailAddress',
+                        'options' => [
+                            'useMxCheck'     => false,
+                            'useDeepMxCheck' => false,
+                            'useDomainCheck' => false,
+                        ],
+                    ],
+                    new UserEmailValidator(
+                        [
+                            'blacklist'         => false,
+                            'check_duplication' => false,
+                        ]
+                    ),
+                ],
+            ]
+        );
         // status
-        $this->add(array(
-            'name' => 'status',
-            'required' => true,
-            'filters' => array(
-                array(
-                    'name' => 'StringTrim',
-                ),
-            ),
-        ));
+        $this->add(
+            [
+                'name'     => 'status',
+                'required' => true,
+                'filters'  => [
+                    [
+                        'name' => 'StringTrim',
+                    ],
+                ],
+            ]
+        );
     }
 }

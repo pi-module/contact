@@ -10,6 +10,7 @@
 /**
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
  */
+
 namespace Module\Contact\Controller\Admin;
 
 use Pi;
@@ -19,9 +20,11 @@ class IndexController extends ActionController
 {
     public function indexAction()
     {
-        return $this->redirect()->toRoute('', array(
-            'controller' => 'message',
-            'action'     => 'index',
-        ));
+        return $this->redirect()->toRoute(
+            '', [
+                'controller' => 'message',
+                'action'     => 'index',
+            ]
+        );
     }
 }

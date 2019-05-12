@@ -10,12 +10,12 @@
 /**
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
  */
-return array(
-    'contact' => array(
-        'name'         => 'contact',
-        'title'        => _a('Contact'),
-        'description'  => '',
-        'render'       => array('block', 'contact'),
-        'template'     => 'contact',
-    ),
-);
+return [
+    'contact' => [
+        'name'        => 'contact',
+        'title'       => _a('Contact'),
+        'description' => '',
+        'render'      => ['block', 'contact'],
+        'template'    => 'contact',
+    ],
+];
