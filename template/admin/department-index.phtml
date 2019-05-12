@@ -1,28 +1,23 @@
 <?php $this->css($this->assetModule('css/admin.css')); ?>
 <div class="clearfix">
-    <h3><?php _e('List of departments'); ?></h3>
-    <table class="table table-striped table-bordered table-sm">
-        <tr>
-            <th><?php _e('ID'); ?></th>
-            <th><?php _e('Title'); ?></th>
-            <th><?php _e('Email'); ?></th>
-            <th><?php _e('Action'); ?></th>
-        </tr>
-        <?php foreach ($departments as $department) { ?>
-            <tr>
-                <td><?php echo $this->escape($department['id']); ?></td>
-                <td><?php echo $this->escape($department['title']); ?></td>
-                <td><?php echo $this->escape($department['email']); ?></td>
-                <td>
-                    <a class="btn btn-primary btn-sm" title="<?php _e('Edit'); ?>"
-                       href="<?php echo $this->url('', ['action' => 'update', 'id' => $department['id']]); ?>"><i class="fa fa-edit"></i> <?php _e('Edit'); ?>
-                    </a>
-                    <a class="btn btn-danger btn-sm" title="<?php _e('Delete'); ?>"
-                       href="<?php echo $this->url('', ['action' => 'delete', 'id' => $department['id']]); ?>"><i class="fa fa-trash-o"></i> <?php _e(
-                            'Delete'
-                        ); ?></a>
-                </td>
-            </tr>
-        <?php } ?>
-    </table>
+	<h3><?php _e('List of departments'); ?></h3>
+	<table class="table table-striped table-bordered table-sm">
+		<tr>
+			<th><?php _e('ID'); ?></th>
+			<th><?php _e('Title'); ?></th>
+			<th><?php _e('Email'); ?></th>
+			<th><?php _e('Action'); ?></th>
+		</tr>
+		<?php foreach($departments as $department) { ?>
+		<tr>
+			<td><?php echo $this->escape($department['id']); ?></td>
+			<td><?php echo $this->escape($department['title']); ?></td>
+			<td><?php echo $this->escape($department['email']); ?></td>
+			<td>
+                <a class="btn btn-primary btn-sm" title="<?php _e('Edit'); ?>" href="<?php echo $this->url('', array('action' => 'update', 'id' => $department['id'])); ?>"><i class="fas fa-edit"></i> <?php _e('Edit'); ?></a>
+				<a class="btn btn-danger btn-sm" title="<?php _e('Delete'); ?>" href="<?php echo $this->url('', array('action' => 'delete', 'id' => $department['id'])); ?>"><i class="fas fa-trash-alt"></i> <?php _e('Delete'); ?></a>
+			</td>
+		</tr>
+		<?php } ?>
+	</table>
 </div>
