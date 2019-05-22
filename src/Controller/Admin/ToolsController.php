@@ -15,6 +15,7 @@ namespace Module\Contact\Controller\Admin;
 use Pi;
 use Pi\Mvc\Controller\ActionController;
 use Module\Contact\Form\PruneForm;
+use Module\Contact\Form\SitemapForm;
 
 class ToolsController extends ActionController
 {
@@ -82,5 +83,22 @@ class ToolsController extends ActionController
         // Set template
         $this->view()->setTemplate('tools-json');
         $this->view()->assign('links', $links);
+    }
+
+    public function sitemapAction()
+    {
+        $form = new SitemapForm('sitemap');
+
+        $message = __('Rebuild the module links in sitemap module tables');
+        if ($this->request->isPost()) {
+            Pi::api('sitemap', 'contact')->sitemap();
+            $message = __('Sitemap rebuild finished');
+        }
+
+        $this->view()->assign('title', __('Rebuild sitemap links'));
+        $this->view()->assign('form', $form);
+        $this->view()->assign('message', $message);
+        $this->view()->setTemplate('tools-sitemap');
+
     }
 }

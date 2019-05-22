@@ -86,6 +86,16 @@ return array(
                     'controller'    => 'tools',
                     'action'        => 'json',
                 ),
+                'sitemap' => array(
+                    'label' => _a('Sitemap'),
+                    'permission' => array(
+                        'resource' => 'tools',
+                    ),
+                    'route' => 'admin',
+                    'module' => 'contact',
+                    'controller' => 'tools',
+                    'action' => 'sitemap',
+                ),
             ),
         ),
     ),
