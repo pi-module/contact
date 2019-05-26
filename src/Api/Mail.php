@@ -10,6 +10,7 @@
 /**
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
  */
+
 namespace Module\Contact\Api;
 
 use Pi;
@@ -23,21 +24,21 @@ use Pi\Application\Api\AbstractApi;
 
 class Mail extends AbstractApi
 {
-	public function toAdmin($values)
+    public function toAdmin($values)
     {
         // Get admin main
         $adminmail = Pi::config('adminmail');
         $adminname = Pi::config('adminname');
         // Set to
-        $to = array(
-            $values['department_email']  => $values['department_title'],
-        );
+        $to = [
+            $values['department_email'] => $values['department_title'],
+        ];
         // Set to admin
         if (!empty($adminmail) && $adminmail != $values['department_email']) {
-            $to = array(
+            $to = [
                 $values['department_email'] => $values['department_title'],
                 $adminmail                  => $adminname,
-            );
+            ];
         }
         // Set template info
         $values['time_create'] = _date($values['time_create']);
@@ -48,9 +49,9 @@ class Mail extends AbstractApi
     public function toUser($values)
     {
         // Set to
-        $to = array(
+        $to = [
             $values['email'] => $values['name'],
-        );
+        ];
         // Set template info
         $values['time_create'] = _date($values['time_create']);
         // Send mail
@@ -60,9 +61,9 @@ class Mail extends AbstractApi
     public function toReply($values)
     {
         // Set to
-        $to = array(
+        $to = [
             $values['email'] => $values['name'],
-        );
+        ];
         // Set template info
         $values['time_create'] = _date($values['time_create']);
         // Send mail
@@ -79,7 +80,7 @@ class Mail extends AbstractApi
         $message->addTo($to);
         $message->setEncoding("UTF-8");
 
-        if(!empty($values['email'])){
+        if (!empty($values['email'])) {
             $message->setFrom($values['email']);
             $message->setReplyTo($values['email']);
             $message->setSender($values['email']);

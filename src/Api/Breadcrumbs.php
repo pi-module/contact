@@ -10,6 +10,7 @@
 /**
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
  */
+
 namespace Module\Contact\Api;
 
 use Pi;
@@ -36,29 +37,31 @@ class Breadcrumbs extends AbstractBreadcrumbs
         if ($params['action'] == 'index') {
             $href = '';
         } else {
-            $href = Pi::service('url')->assemble('default', array(
-                'module' => $this->getModule(),
-            ));
+            $href = Pi::service('url')->assemble(
+                'default', [
+                    'module' => $this->getModule(),
+                ]
+            );
         }
         // Set result
-        $result = array();
-        $result[] = array(
+        $result   = [];
+        $result[] = [
             'label' => $moduleData['title'],
             'href'  => $href,
-        );
+        ];
         // Set module internal links
         switch ($params['action']) {
             case 'department':
                 $department = Pi::model('department', $this->getModule())->find($params['department'], 'slug')->toArray();
-                $result[] = array(
+                $result[]   = [
                     'label' => $department['title'],
-                );
+                ];
                 break;
 
             case 'list':
-                $result[] = array(
+                $result[] = [
                     'label' => __('List of departments'),
-                );
+                ];
                 break;
         }
         return $result;
