@@ -10,83 +10,93 @@
 /**
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
  */
-return [
-    'admin' => [
-        'message'    => [
-            'label'      => _a('Message'),
-            'permission' => [
-                'resource' => 'message',
-            ],
-            'route'      => 'admin',
-            'controller' => 'message',
-            'action'     => 'index',
-        ],
-        'department' => [
-            'label'      => _a('Department'),
-            'permission' => [
-                'resource' => 'department',
-            ],
-            'route'      => 'admin',
-            'controller' => 'department',
-            'action'     => 'index',
-            'pages'      => [
-                'department' => [
-                    'label'      => _a('Department'),
-                    'permission' => [
-                        'resource' => 'department',
-                    ],
-                    'route'      => 'admin',
-                    'controller' => 'department',
-                    'action'     => 'index',
-                ],
-                'update'     => [
-                    'label'      => _a('Manage department'),
-                    'permission' => [
-                        'resource' => 'department',
-                    ],
-                    'route'      => 'admin',
-                    'controller' => 'department',
-                    'action'     => 'update',
-                ],
-            ],
-        ],
-        'tools'      => [
-            'label'      => _a('Tools'),
-            'permission' => [
-                'resource' => 'tools',
-            ],
-            'route'      => 'admin',
-            'controller' => 'tools',
-            'action'     => 'setting',
-            'pages'      => [
-                'setting' => [
-                    'label'      => _a('Setting'),
-                    'permission' => [
+return array(
+    'admin' => array(
+        'message' => array(
+            'label'         => _a('Message'),
+            'permission'    => array(
+                'resource'  => 'message',
+            ),
+            'route'         => 'admin',
+            'controller'    => 'message',
+            'action'        => 'index',
+        ),
+        'department' => array(
+            'label'         => _a('Department'),
+            'permission'    => array(
+                'resource'  => 'department',
+            ),
+            'route'         => 'admin',
+            'controller'    => 'department',
+            'action'        => 'index',
+            'pages' => array(
+                'department' => array(
+                    'label'         => _a('Department'),
+                    'permission'    => array(
+                        'resource'  => 'department',
+                    ),
+                    'route'         => 'admin',
+                    'controller'    => 'department',
+                    'action'        => 'index',
+                ),
+                'update' => array(
+                    'label'         => _a('Manage department'),
+                    'permission'    => array(
+                        'resource'  => 'department',
+                    ),
+                    'route'         => 'admin',
+                    'controller'    => 'department',
+                    'action'        => 'update',
+                ),
+            ),
+        ),
+        'tools' => array(
+            'label'         => _a('Tools'),
+            'permission'    => array(
+                'resource'  => 'tools',
+            ),
+            'route'         => 'admin',
+            'controller'    => 'tools',
+            'action'        => 'setting',
+            'pages' => array(
+                'setting' => array(
+                    'label'         => _a('Setting'),
+                    'permission'    => array(
+                        'resource'  => 'tools',
+                    ),
+                    'route'         => 'admin',
+                    'controller'    => 'tools',
+                    'action'        => 'setting',
+                ),
+                'prune' => array(
+                    'label'         => _a('Prune'),
+                    'permission'    => array(
+                        'resource'  => 'tools',
+                    ),
+                    'route'         => 'admin',
+                    'controller'    => 'tools',
+                    'action'        => 'prune',
+                ),
+                'json' => array(
+                    'label'         => _a('Json'),
+                    'permission'    => array(
+                        'resource'  => 'tools',
+                    ),
+                    'route'         => 'admin',
+                    'controller'    => 'tools',
+                    'action'        => 'json',
+                ),
+                'sitemap' => array(
+                    'label' => _a('Sitemap'),
+                    'permission' => array(
                         'resource' => 'tools',
-                    ],
-                    'route'      => 'admin',
+                    ),
+                    'route' => 'admin',
+                    'module' => 'contact',
                     'controller' => 'tools',
-                    'action'     => 'setting',
-                ],
-                'prune'   => [
-                    'label'      => _a('Prune'),
-                    'permission' => [
-                        'resource' => 'tools',
-                    ],
-                    'route'      => 'admin',
-                    'controller' => 'tools',
-                    'action'     => 'prune',
-                ],
-                'json'    => [
-                    'label'      => _a('Json'),
-                    'permission' => [
-                        'resource' => 'tools',
-                    ],
-                    'route'      => 'admin',
-                    'controller' => 'tools',
-                    'action'     => 'json',
-                ],
-            ],
-        ],
-    ],
-];
+                    'action' => 'sitemap',
+                ),
+            ),
+        ),
+    ),
+);
