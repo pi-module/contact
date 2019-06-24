@@ -48,6 +48,7 @@ class IndexController extends ActionController
 
             // Set form
             $form = new ContactForm('contact', $option);
+            $form->setAttribute('action', $this->url(''));
 
             // Get post
             if ($this->request->isPost()) {
