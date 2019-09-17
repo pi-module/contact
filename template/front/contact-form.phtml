@@ -16,7 +16,7 @@ if (!empty($config['sidetext']) || ($config['map_show'] && $config['map_position
 <?php } ?>
 
 <div class="clearfix row">
-    <?php if ($config['gmap_show'] && $config['gmap_position'] == 'top') { ?>
+    <?php if (isset($config['gmap_show']) && $config['gmap_show'] && $config['gmap_position'] == 'top') { ?>
         <?php
         ob_start();
         include('partial/contact-wide-header.phtml');
