@@ -66,6 +66,10 @@ class IndexController extends ActionController
                     $values['subject']     = _strip($values['subject']);
                     $values['message']     = _strip($values['message']);
 
+                    if (!isset($values['department']) || !empty($values['department'])) {
+                        $values['department'] = $config['default_department'];
+                    }
+
                     // Save
                     $row = $this->getModel('message')->createRow();
                     $row->assign($values);
