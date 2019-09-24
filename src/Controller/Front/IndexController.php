@@ -32,7 +32,7 @@ class IndexController extends ActionController
         $allowSubmit = true;
         if (isset($_SESSION['CONTACT'])) {
             $diffTime = floor((time() - $_SESSION['CONTACT']['TIME']) / 60);
-            if ($config['block_time'] > $diffTime) {
+            if ($diffTime < $config['block_time']) {
                 $allowSubmit = false;
             }
         }
@@ -48,6 +48,7 @@ class IndexController extends ActionController
 
             // Set form
             $form = new ContactForm('contact', $option);
+            $form->setAttribute('action', $this->url(''));
 
             // Get post
             if ($this->request->isPost()) {

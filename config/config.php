@@ -59,7 +59,7 @@ return [
             'description' => _a('Set block time for next submit form by min,'),
             'value'       => 60,
             'filter'      => 'number_int',
-            'edit'        => 'checkbox',
+            'edit'        => 'text',
         ],
 
         // Home
