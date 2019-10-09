@@ -14,7 +14,6 @@ if (!empty($config['sidetext']) || ($config['map_show'] && $config['map_position
         <h1><?php echo $this->escape($title); ?></h1>
     </div>
 <?php } ?>
-
 <div class="clearfix row">
     <?php if (isset($config['gmap_show']) && $config['gmap_show'] && $config['gmap_position'] == 'top') { ?>
         <?php
@@ -50,40 +49,19 @@ if (!empty($config['sidetext']) || ($config['map_show'] && $config['map_position
                     <?php echo $config['sidetext']; ?>
                 </div>
             <?php } ?>
-            <?php if ($allowSubmit) { ?>
-                <div class="contact-form clearfix">
-                    <?php echo $this->form($form, 'vertical'); ?>
-                </div>
-            <?php } else { ?>
-                <div class="alert alert-danger">
-                    <?php echo sprintf(
-                        __('You allowed to send next contact request after %s min than your last submitted time'),
-                        $config['block_time']
-                    ); ?>
-                </div>
+            <?php if ($config['map_show'] && $config['map_position'] == 'side') { ?>
+                <?php if ($mapSetting['type'] == 'google') {
+                    echo $this->googleMap($mapSetting['location'], $mapSetting['key'], 'point', $mapSetting['option']);
+                } elseif ($mapSetting['type'] == 'osm') {
+                    echo $this->leaflet($mapSetting['params']);
+                } ?>
             <?php } ?>
         </div>
-        <?php if (!empty($config['sidetext']) || ($config['map_show'] && $config['map_position'] == 'side')) { ?>
-            <div class="col-md-5">
-                <?php if (!empty($config['sidetext'])) { ?>
-                    <div class="clearfix contact-sidetext">
-                        <?php echo $config['sidetext']; ?>
-                    </div>
-                <?php } ?>
-                <?php if ($config['map_show'] && $config['map_position'] == 'side') { ?>
-                    <?php if ($mapSetting['type'] == 'google') {
-                        echo $this->googleMap($mapSetting['location'], $mapSetting['key'], 'point', $mapSetting['option']);
-                    } elseif ($mapSetting['type'] == 'osm') {
-                        echo $this->leaflet($mapSetting['params']);
-                    } ?>
-                <?php } ?>
-            </div>
-        <?php } ?>
-    </div>
-
-    <?php if (!empty($config['bottomtext'])) { ?>
-        <div class="clearfix contact-bottomtext">
-            <?php echo $config['bottomtext']; ?>
-        </div>
     <?php } ?>
+</div>
+<?php if (!empty($config['bottomtext'])) { ?>
+    <div class="clearfix contact-bottomtext">
+        <?php echo $config['bottomtext']; ?>
+    </div>
+<?php } ?>
 </div>
