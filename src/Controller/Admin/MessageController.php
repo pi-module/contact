@@ -18,6 +18,7 @@ use Module\Contact\Form\ReplyForm;
 use Pi;
 use Pi\Mvc\Controller\ActionController;
 use Pi\Paginator\Paginator;
+use Zend\Db\Sql\Predicate\Expression;
 
 class MessageController extends ActionController
 {
@@ -25,33 +26,39 @@ class MessageController extends ActionController
     {
         // Get page
         $page = $this->params('page', 1);
+
         // Set info
-        $where  = ['mid' => 0];
-        $order  = ['id DESC', 'time_create DESC'];
-        $offset = (int)($page - 1) * $this->config('admin_perpage');
-        $limit  = intval($this->config('admin_perpage'));
+        $message = [];
+        $where   = ['mid' => 0];
+        $order   = ['id DESC', 'time_create DESC'];
+        $offset  = (int)($page - 1) * $this->config('admin_perpage');
+        $limit   = intval($this->config('admin_perpage'));
+
         //  Get department
         $department = $this->params('department');
         if (!empty($department)) {
             $where['department'] = $department;
             $this->view()->assign('department', 1);
         }
+
         // Get department list
         $columns = ['id', 'title'];
         $select  = $this->getModel('department')->select()->columns($columns);
         $rowset  = $this->getModel('department')->selectWith($select);
-        // Make department list
         foreach ($rowset as $row) {
             $departmentList[$row->id] = $row->toArray();
         }
+
         // Get info
         $select = $this->getModel('message')->select()->where($where)->order($order)->offset($offset)->limit($limit);
         $rowset = $this->getModel('message')->selectWith($select);
+
         // Make list
         foreach ($rowset as $row) {
             $message[$row->id]                    = $row->toArray();
             $message[$row->id]['departmenttitle'] = $departmentList[$row->department]['title'];
             $message[$row->id]['time_create']     = _date($message[$row->id]['time_create']);
+
             // Get user info
             $message[$row->id]['user'] = [];
             if ($row->uid > 0) {
@@ -62,10 +69,13 @@ class MessageController extends ActionController
                 );
             }
         }
+
+        // Set count
+        $count  = ['count' => new Expression('count(*)')];
+        $select = $this->getModel('message')->select()->columns($count)->where($where);
+        $count  = $this->getModel('message')->selectWith($select)->current()->count;
+
         // Set paginator
-        $count     = ['count' => new \Zend\Db\Sql\Predicate\Expression('count(*)')];
-        $select    = $this->getModel('message')->select()->columns($count)->where($where);
-        $count     = $this->getModel('message')->selectWith($select)->current()->count;
         $paginator = Paginator::factory(intval($count));
         $paginator->setItemCountPerPage($this->config('admin_perpage'));
         $paginator->setCurrentPageNumber($page);
@@ -83,6 +93,7 @@ class MessageController extends ActionController
                 ),
             ]
         );
+
         // Set view
         $this->view()->setTemplate('message-index');
         $this->view()->assign('messages', $message);
@@ -94,27 +105,34 @@ class MessageController extends ActionController
         //  Get message
         $id      = $this->params('id');
         $message = $this->getModel('message')->find($id);
+
         // Check message
         if (!$message->id) {
             $this->jump(['action' => 'index'], __('Please select message'));
         }
+
         // to array
         $message = $message->toArray();
+
         // Set user info
         $user                        = Pi::user()->bind($message['uid']);
         $message['user']['identity'] = $user->identity;
         $message['user']['name']     = $user->name;
         $message['user']['email']    = $user->email;
+
         // Set date
         $message['time_create'] = _date($message['time_create']);
+
         // Get department
         $department = $this->getModel('department')->find($message['department']);
+
         // Get Main message if this message is answer
         if ($message['mid']) {
             $main = $this->getModel('message')->find($message['mid']);
             $this->view()->assign('main', $main);
         }
-        // Get all answeres to this message
+
+        // Get all answer's to this message
         if ($message['answered']) {
             $where   = ['mid' => $message['id']];
             $columns = ['id', 'subject', 'message', 'time_create', 'ip'];
@@ -126,6 +144,7 @@ class MessageController extends ActionController
             }
             $this->view()->assign('answers', $answer);
         }
+
         // Set view
         $this->view()->setTemplate('message-view');
         $this->view()->assign('department', $department);
@@ -137,14 +156,17 @@ class MessageController extends ActionController
         //  Get message
         $id      = $this->params('id');
         $message = $this->getModel('message')->find($id);
+
         // Check message
         if (!$message->id) {
             $this->jump(['action' => 'index'], __('Please select message'));
         }
+
         // Set options
         $options = [
             'sms_replay' => $this->config('sms_replay'),
         ];
+
         // Set form
         $form = new ReplyForm('reply', $options);
         if ($this->request->isPost()) {
@@ -152,29 +174,35 @@ class MessageController extends ActionController
             $form->setInputFilter(new ReplyFilter($options));
             $form->setData($data);
             if ($form->isValid()) {
+
                 // Set values
                 $values                = $form->getData();
                 $values['ip']          = Pi::user()->getIp();
                 $values['time_create'] = time();
                 $values['department']  = $message->department;
                 $values['message']     = _strip($values['message']);
+
                 // Save date
                 $row = $this->getModel('message')->createRow();
                 $row->assign($values);
                 $row->save();
+
                 // update answerd
                 $message->answered = 1;
                 $message->save();
+
                 // Set department
                 $department                 = $this->getModel('department')->find($message->department)->toArray();
                 $values['department_title'] = $department['title'];
                 $values['department_email'] = $department['email'];
+
                 // Send as mail
                 if ($this->config('sms_replay')) {
                     Pi::service('notification')->smsToUser($values['message'], $values['mobile']);
                 } else {
                     Pi::api('mail', 'contact')->toReply($values);
                 }
+
                 // Jump
                 $this->jump(['action' => 'index'], __('Your reply Send and saved successfully'));
             }
@@ -189,6 +217,7 @@ class MessageController extends ActionController
                 );
                 $mobile = $user['mobile'];
             }
+
             // Set values
             $values = [
                 'uid'     => Pi::user()->getId(),
@@ -200,8 +229,10 @@ class MessageController extends ActionController
             ];
             $form->setData($values);
         }
+
         // Set title
         $title = sprintf(__('Reply to %s'), $message->subject);
+
         // Set view
         $this->view()->setTemplate('message-reply');
         $this->view()->assign('form', $form);
@@ -211,14 +242,20 @@ class MessageController extends ActionController
 
     public function deleteAction()
     {
-        // Get information
+        // Set view
         $this->view()->setTemplate(false);
+
+        // Get information
         $id       = $this->params('id');
         $returnId = $this->params('returnId');
-        $row      = $this->getModel('message')->find($id);
+
+        // Get row
+        $row = $this->getModel('message')->find($id);
         if ($row) {
+
             // Remove answeres
             $this->getModel('message')->delete(['mid' => $row->id]);
+
             // Remove message
             $row->delete();
 
@@ -227,8 +264,8 @@ class MessageController extends ActionController
             } else {
                 $this->jump(['action' => 'index'], __('Your selected message deleted'));
             }
-
         }
+
         $this->jump(['action' => 'index'], __('Please select message'));
     }
 }

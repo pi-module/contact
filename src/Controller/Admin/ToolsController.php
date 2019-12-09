@@ -36,31 +36,39 @@ class ToolsController extends ActionController
             $list[$row->id]    = $row->toArray();
             $options[$row->id] = $list[$row->id]['title'];
         }
-        $form    = new PruneForm('prune', $options);
+
+        // Set message
         $message = __('You can prune all old message, from selected department.');
+
+        // Set form
+        $form    = new PruneForm('prune', $options);
         if ($this->request->isPost()) {
+
             // Set form date
             $values = $this->request->getPost();
+
             // Set prune create
             $where = ['`time_create` < ?' => strtotime($values['date'])];
+
             // Set topics if select
             if ($values['department'] && is_array($values['department'])) {
                 $where[] = 'department IN (' . implode(',', $values['department']) . ')';
             }
+
             // Set prune answer
             if ($values['answer']) {
                 $where[] = 'answered = 1 OR mid != 0';
             }
-            // Delete storys
+
+            // Delete message
             $number = $this->getModel('message')->delete($where);
             if ($number) {
-                // Set class
                 $message = sprintf(__('<strong>%s</strong> old messages removed'), $number);
             } else {
-                // Set class
                 $message = __('Error in pruned messages.');
             }
         }
+
         // Set view
         $this->view()->setTemplate('tools-prune');
         $this->view()->assign('form', $form);
@@ -68,43 +76,22 @@ class ToolsController extends ActionController
         $this->view()->assign('message', $message);
     }
 
-    public function jsonAction()
-    {
-        // Get info from url
-        $module = $this->params('module');
-        // Get config
-        $config = Pi::service('registry')->config->read($module);
-        // Get config
-        $links                = [];
-        $links['postContact'] = Pi::url(
-            $this->url(
-                'contact', [
-                    'module'     => $module,
-                    'controller' => 'index',
-                    'action'     => 'ajax',
-                    'password'   => (!empty($config['json_password'])) ? $config['json_password'] : '',
-                ]
-            )
-        );
-        // Set template
-        $this->view()->setTemplate('tools-json');
-        $this->view()->assign('links', $links);
-    }
-
     public function sitemapAction()
     {
-        $form = new SitemapForm('sitemap');
-
+        // Set message
         $message = __('Rebuild the module links in sitemap module tables');
+
+        // Set form
+        $form = new SitemapForm('sitemap');
         if ($this->request->isPost()) {
             Pi::api('sitemap', 'contact')->sitemap();
             $message = __('Sitemap rebuild finished');
         }
 
+        // Set view
+        $this->view()->setTemplate('tools-sitemap');
         $this->view()->assign('title', __('Rebuild sitemap links'));
         $this->view()->assign('form', $form);
         $this->view()->assign('message', $message);
-        $this->view()->setTemplate('tools-sitemap');
-
     }
 }

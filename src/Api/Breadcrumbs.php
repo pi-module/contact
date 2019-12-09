@@ -25,14 +25,18 @@ class Breadcrumbs extends AbstractBreadcrumbs
     {
         // Get params
         $params = Pi::service('url')->getRouteMatch()->getParams();
+
         // Get config
         $config = Pi::service('registry')->config->read($this->getModule());
+
         // Check breadcrumbs
         if (!$config['breadcrumbs']) {
             return '';
         }
+
         // Set module link
         $moduleData = Pi::registry('module')->read($this->getModule());
+
         // Set index link
         if ($params['action'] == 'index') {
             $href = '';
@@ -43,12 +47,14 @@ class Breadcrumbs extends AbstractBreadcrumbs
                 ]
             );
         }
+
         // Set result
         $result   = [];
         $result[] = [
             'label' => $moduleData['title'],
             'href'  => $href,
         ];
+
         // Set module internal links
         switch ($params['action']) {
             case 'department':

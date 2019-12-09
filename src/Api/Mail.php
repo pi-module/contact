@@ -29,10 +29,12 @@ class Mail extends AbstractApi
         // Get admin main
         $adminmail = Pi::config('adminmail');
         $adminname = Pi::config('adminname');
+
         // Set to
         $to = [
             $values['department_email'] => $values['department_title'],
         ];
+
         // Set to admin
         if (!empty($adminmail) && $adminmail != $values['department_email']) {
             $to = [
@@ -40,8 +42,10 @@ class Mail extends AbstractApi
                 $adminmail                  => $adminname,
             ];
         }
+
         // Set template info
         $values['time_create'] = _date($values['time_create']);
+
         // Send mail
         $this->send($to, $values, 'contact');
     }
@@ -52,8 +56,10 @@ class Mail extends AbstractApi
         $to = [
             $values['email'] => $values['name'],
         ];
+
         // Set template info
         $values['time_create'] = _date($values['time_create']);
+
         // Send mail
         $this->send($to, $values, 'user');
     }
@@ -64,8 +70,10 @@ class Mail extends AbstractApi
         $to = [
             $values['email'] => $values['name'],
         ];
+
         // Set template info
         $values['time_create'] = _date($values['time_create']);
+
         // Send mail
         $this->send($to, $values, 'reply');
     }
@@ -74,6 +82,7 @@ class Mail extends AbstractApi
     {
         // Set template
         $data = Pi::service('mail')->template($file, $values);
+
         // Set message
         /** @var \Zend\Mail\Message $message */
         $message = Pi::service('mail')->message($data['subject'], $data['body'], $data['format']);
