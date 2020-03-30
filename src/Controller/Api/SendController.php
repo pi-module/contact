@@ -36,12 +36,11 @@ class SendController extends ApiController
         $token  = $this->params('token');
 
         // Check token
-        $check = Pi::api('token', 'tools')->check($token, $module);
+        $check = Pi::api('token', 'tools')->check($token);
         if ($check['status'] == 1) {
 
             // Get config
             $config = Pi::service('registry')->config->read($module);
-
 
             // Save statistics
             if (Pi::service('module')->isActive('statistics')) {
