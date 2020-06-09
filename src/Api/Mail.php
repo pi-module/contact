@@ -84,7 +84,7 @@ class Mail extends AbstractApi
         $data = Pi::service('mail')->template($file, $values);
 
         // Set message
-        /** @var \Zend\Mail\Message $message */
+        /** @var \Laminas\Mail\Message $message */
         $message = Pi::service('mail')->message($data['subject'], $data['body'], $data['format']);
         $message->addTo($to);
         $message->setEncoding("UTF-8");
