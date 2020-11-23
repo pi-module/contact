@@ -17,6 +17,7 @@ use Module\Contact\Form\ContactFilter;
 use Module\Contact\Form\ContactForm;
 use Pi;
 use Pi\Mvc\Controller\ActionController;
+use Pi\File\Transfer\Upload;
 
 class IndexController extends ActionController
 {
@@ -53,10 +54,41 @@ class IndexController extends ActionController
             // Get post
             if ($this->request->isPost()) {
                 $data = $this->request->getPost();
+                $file = $this->request->getFiles();
                 $form->setInputFilter(new ContactFilter($option));
                 $form->setData($data);
                 if ($form->isValid()) {
                     $values = $form->getData();
+
+                    // Check attachment
+                    if (intval($config['show_attachment']) == 1 && isset($file['attachment']['name']) && !empty($file['attachment']['name'])) {
+
+                        // Set upload path
+                        $path   = Pi::path('upload/contact');
+
+                        // Image name
+                        $imageName = Pi::api('api', 'contact')->rename($file['attachment']['name']);
+
+                        // Upload
+                        $uploader = new Upload();
+                        $uploader->setDestination($path);
+                        $uploader->setRename($imageName);
+                        $uploader->setExtension($config['file_extension']);
+                        $uploader->setSize($config['file_size']);
+                        if ($uploader->isValid()) {
+                            $uploader->receive();
+
+                            // Get image name
+                            $values['attachment'] = $uploader->getUploaded('attachment');
+
+                        } else {
+                            $this->jump(['action' => 'index'], __('Problem in upload attachment. please try again'));
+                        }
+
+                    } else {
+                        unset($file);
+                        $values['attachment'] = '';
+                    }
 
                     // Set values
                     $values['uid']         = Pi::user()->getId();
@@ -131,7 +163,7 @@ class IndexController extends ActionController
                         'latitude'  => round(!empty($config['map_latitude']) ? $config['map_latitude'] : Pi::config('geo_latitude'), 6),
                         'longitude' => round(!empty($config['map_longitude']) ? $config['map_longitude'] : Pi::config('geo_longitude'), 6),
                         'zoom'      => $config['map_zoom'],
-                        'title'     => !empty($config['map_title']) ?: Pi::config('geo_placename'),
+                        'title'     => !empty($config['map_title']) ? $config['map_title'] : Pi::config('geo_placename'),
                     ],
                 ];
             } else {
@@ -142,7 +174,7 @@ class IndexController extends ActionController
                         'latitude'  => round(!empty($config['map_latitude']) ? $config['map_latitude'] : Pi::config('geo_latitude'), 6),
                         'longitude' => round(!empty($config['map_longitude']) ? $config['map_longitude'] : Pi::config('geo_longitude'), 6),
                         'zoom'      => $config['map_zoom'],
-                        'title'     => !empty($config['map_title']) ?: Pi::config('geo_placename'),
+                        'title'     => !empty($config['map_title']) ? $config['map_title'] : Pi::config('geo_placename'),
                     ],
                     'option'   => [
                         'mapTypeId' => $config['map_type'],

@@ -21,6 +21,7 @@ use Pi\Application\Api\AbstractApi;
 /*
  * Pi::api('api', 'contact')->send($values);
  * Pi::api('api', 'contact')->contact($data);
+ * Pi::api('api', 'contact')->rename($fileName);
  */
 
 class Api extends AbstractApi
@@ -92,5 +93,28 @@ class Api extends AbstractApi
         }
 
         return $result;
+    }
+
+    public function rename($fileName)
+    {
+        // Separating image name and extension
+        $name      = pathinfo($fileName, PATHINFO_FILENAME);
+        $extension = pathinfo($fileName, PATHINFO_EXTENSION);
+        $extension = strtolower($extension);
+
+        // strip name
+        $name = _strip($name);
+        $name = strtolower(trim($name));
+        $name = preg_replace("/[^a-zA-Z0-9 ]+/", "", $name);
+        $name = array_filter(explode(' ', $name));
+        $name = implode('-', $name) . '.' . $extension;
+
+        // Check text length
+        if (mb_strlen($name, 'UTF-8') < 8) {
+            $name = '%random%';
+        }
+
+        // return
+        return $name;
     }
 }

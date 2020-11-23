@@ -39,5 +39,6 @@ class Message extends Model
             'uid',
             'time_create',
             'platform',
+            'attachment'
         ];
 }

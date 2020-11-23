@@ -136,5 +136,15 @@ class ContactFilter extends InputFilter
                 'required' => true,
             ]
         );
+
+        // attachment
+        if ($option['config']['show_attachment']) {
+            $this->add(
+                [
+                    'name'     => 'attachment',
+                    'required' => false,
+                ]
+            );
+        }
     }
 }	

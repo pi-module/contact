@@ -198,6 +198,22 @@ class ContactForm extends BaseForm
             ]
         );
 
+        // attachment
+        if ($this->option['config']['show_attachment']) {
+            $this->add(
+                [
+                    'name'       => 'attachment',
+                    'options'    => [
+                        'label' => __('Attach file'),
+                    ],
+                    'attributes' => [
+                        'type'        => 'file',
+                        'description' => '',
+                    ],
+                ]
+            );
+        }
+
         // captcha
         if (!Pi::service('authentication')->hasIdentity() && $this->option['captcha'] == 1) {
             $captchaMode = $this->option['config']['captcha'];

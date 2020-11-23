@@ -29,6 +29,10 @@ return [
             'name'  => 'form',
         ],
         [
+            'title' => _a('File'),
+            'name'  => 'file',
+        ],
+        [
             'title' => _a('Map'),
             'name'  => 'map',
         ],
@@ -205,6 +209,14 @@ return [
             'edit'        => 'checkbox',
             'category'    => 'form',
         ],
+        'show_attachment'          => [
+            'title'       => _a('show attachment'),
+            'description' => '',
+            'value'       => 0,
+            'filter'      => 'number_int',
+            'edit'        => 'checkbox',
+            'category'    => 'form',
+        ],
         'captcha'               => [
             'title'       => _t('Use CAPTCHA'),
             'description' => _t('Captcha just use for guest'),
@@ -222,6 +234,24 @@ return [
             'value'       => 0,
             'filter'      => 'int',
             'category'    => 'form',
+        ],
+
+        // File
+        'file_size'                 => [
+            'category'    => 'file',
+            'title'       => _a('File Size'),
+            'description' => '',
+            'edit'        => 'text',
+            'filter'      => 'number_int',
+            'value'       => 1000000,
+        ],
+        'file_extension'            => [
+            'category'    => 'file',
+            'title'       => _a('File Extension'),
+            'description' => '',
+            'edit'        => 'textarea',
+            'filter'      => 'string',
+            'value'       => 'jpg,jpeg,png,gif,avi,flv,mp3,mp4,pdf,docs,xdocs,zip,rar',
         ],
 
         // Map

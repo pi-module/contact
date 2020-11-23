@@ -65,6 +65,24 @@ class Update extends BasicUpdate
             }
         }
 
+        // Update to version 1.6.0
+        if (version_compare($moduleVersion, '1.6.0', '<')) {
+            // Alter table : CHANGE message
+            $sql = sprintf("ALTER TABLE %s ADD `attachment` VARCHAR(255) NOT NULL DEFAULT ''", $messageTable);
+            try {
+                $messageAdapter->query($sql, 'execute');
+            } catch (\Exception $exception) {
+                $this->setResult(
+                    'db', [
+                        'status'  => false,
+                        'message' => 'Table alter query failed: '
+                            . $exception->getMessage(),
+                    ]
+                );
+                return false;
+            }
+        }
+
         return true;
     }
 }   
