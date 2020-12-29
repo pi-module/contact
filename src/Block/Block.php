@@ -45,13 +45,15 @@ class Block
         $form = new ContactForm('subscription', $option);
         $form->setAttribute('enctype', 'multipart/form-data');
         $form->setAttribute(
-            'action', Pi::url(
-            Pi::service('url')->assemble(
-                'default', [
+            'action',
+            Pi::url(
+                Pi::service('url')->assemble(
+                    'default',
+                    [
                     'module' => $module,
                 ]
+                )
             )
-        )
         );
         $form->setData($data);
         $block['form'] = $form;

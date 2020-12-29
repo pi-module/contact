@@ -182,7 +182,7 @@ class ContactForm extends BaseForm
             );
         }
 
-        // Message		  
+        // Message
         $this->add(
             [
                 'name'       => 'message',

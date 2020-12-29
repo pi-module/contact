@@ -80,11 +80,9 @@ class IndexController extends ActionController
 
                             // Get image name
                             $values['attachment'] = $uploader->getUploaded('attachment');
-
                         } else {
                             $this->jump(['action' => 'index'], __('Problem in upload attachment. please try again'));
                         }
-
                     } else {
                         unset($file);
                         $values['attachment'] = '';

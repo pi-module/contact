@@ -147,4 +147,4 @@ class ContactFilter extends InputFilter
             );
         }
     }
-}	
+}

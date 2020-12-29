@@ -107,7 +107,7 @@ class ReplyForm extends BaseForm
                 ],
             ]
         );
-        // Message		  
+        // Message
         $this->add(
             [
                 'name'       => 'message',
@@ -134,4 +134,4 @@ class ReplyForm extends BaseForm
             ]
         );
     }
-}	   
+}

@@ -101,4 +101,4 @@ class ReplyFilter extends InputFilter
             ]
         );
     }
-}	    	
+}

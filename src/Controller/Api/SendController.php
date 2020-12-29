@@ -45,7 +45,10 @@ class SendController extends ApiController
             // Save statistics
             if (Pi::service('module')->isActive('statistics')) {
                 Pi::api('log', 'statistics')->save(
-                    'contact', 'send', 0, [
+                    'contact',
+                    'send',
+                    0,
+                    [
                         'source'  => $this->params('platform'),
                         'section' => 'api',
                     ]
@@ -133,7 +136,6 @@ class SendController extends ApiController
                 ],
                 'error'  => [],
             ];
-
         } else {
             // Set error
             $result['error'] = [
