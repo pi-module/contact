@@ -114,7 +114,7 @@ return [
             'category'    => 'form',
         ],
         'show_title'            => [
-            'title'       => _a('show title'),
+            'title'       => _a('Show title'),
             'description' => '',
             'value'       => 1,
             'filter'      => 'number_int',
@@ -122,7 +122,7 @@ return [
             'category'    => 'form',
         ],
         'show_department'       => [
-            'title'       => _a('show Department'),
+            'title'       => _a('Show Department'),
             'description' => '',
             'value'       => 0,
             'filter'      => 'number_int',
@@ -130,7 +130,7 @@ return [
             'category'    => 'form',
         ],
         'show_organization'     => [
-            'title'       => _a('show Organization'),
+            'title'       => _a('Show Organization'),
             'description' => '',
             'value'       => 0,
             'filter'      => 'number_int',
@@ -138,7 +138,7 @@ return [
             'category'    => 'form',
         ],
         'required_organization' => [
-            'title'       => _a('required Organization'),
+            'title'       => _a('Required Organization'),
             'description' => '',
             'value'       => 0,
             'filter'      => 'number_int',
@@ -146,7 +146,7 @@ return [
             'category'    => 'form',
         ],
         'show_homepage'         => [
-            'title'       => _a('show Homepage'),
+            'title'       => _a('Show Homepage'),
             'description' => '',
             'value'       => 0,
             'filter'      => 'number_int',
@@ -154,7 +154,7 @@ return [
             'category'    => 'form',
         ],
         'required_homepage'     => [
-            'title'       => _a('required Homepage'),
+            'title'       => _a('Required Homepage'),
             'description' => '',
             'value'       => 0,
             'filter'      => 'number_int',
@@ -162,7 +162,7 @@ return [
             'category'    => 'form',
         ],
         'show_location'         => [
-            'title'       => _a('show Location'),
+            'title'       => _a('Show Location'),
             'description' => '',
             'value'       => 0,
             'filter'      => 'number_int',
@@ -170,7 +170,7 @@ return [
             'category'    => 'form',
         ],
         'required_location'     => [
-            'title'       => _a('required Location'),
+            'title'       => _a('Required Location'),
             'description' => '',
             'value'       => 0,
             'filter'      => 'number_int',
@@ -178,7 +178,7 @@ return [
             'category'    => 'form',
         ],
         'show_phone'            => [
-            'title'       => _a('show Phone'),
+            'title'       => _a('Show Phone'),
             'description' => '',
             'value'       => 0,
             'filter'      => 'number_int',
@@ -186,7 +186,7 @@ return [
             'category'    => 'form',
         ],
         'required_phone'        => [
-            'title'       => _a('required Phone'),
+            'title'       => _a('Required Phone'),
             'description' => '',
             'value'       => 0,
             'filter'      => 'number_int',
@@ -194,7 +194,7 @@ return [
             'category'    => 'form',
         ],
         'show_address'          => [
-            'title'       => _a('show Address'),
+            'title'       => _a('Show Address'),
             'description' => '',
             'value'       => 0,
             'filter'      => 'number_int',
@@ -202,7 +202,7 @@ return [
             'category'    => 'form',
         ],
         'required_address'      => [
-            'title'       => _a('required Address'),
+            'title'       => _a('Required Address'),
             'description' => '',
             'value'       => 0,
             'filter'      => 'number_int',
@@ -210,7 +210,7 @@ return [
             'category'    => 'form',
         ],
         'show_attachment'          => [
-            'title'       => _a('show attachment'),
+            'title'       => _a('Show attachment'),
             'description' => '',
             'value'       => 0,
             'filter'      => 'number_int',
@@ -226,8 +226,7 @@ return [
                     'options' => [
                         0 => _t('No captcha'),
                         1 => _t('Standard captcha'),
-                        2 => _t('New re-captcha'),
-                        3 => _t('Invisible captcha'),
+                        2 => _t('Google ReCaptcha'),
                     ],
                 ],
             ],

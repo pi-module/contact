@@ -15,7 +15,7 @@ return [
     'meta'     => [
         'title'       => _a('Contact'),
         'description' => _a('Manage Contacts'),
-        'version'     => '1.6.0',
+        'version'     => '1.6.1',
         'license'     => 'New BSD',
         'logo'        => 'image/logo.png',
         'readme'      => 'docs/readme.txt',

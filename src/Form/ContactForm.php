@@ -240,7 +240,7 @@ class ContactForm extends BaseForm
 
                 ],
                 'attributes' => [
-                    'class' => 'btn btn-secondary',
+                    'class' => 'btn btn-primary',
                 ],
             ]
         );
